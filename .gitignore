@@ -67,6 +67,11 @@ Desktop.ini
 /*.mov
 /*.mp4
 /*.zip
+# Personal documents under knowledge assets (keep folder via .gitkeep)
+knowledge/assets/documents/**
+!knowledge/assets/documents/.gitkeep
+knowledge/assets/exports/**
+!knowledge/assets/exports/.gitkeep
 
 # Raw identity intake (phone, full profile dump provenance)
 data/imports/*-identity-*.csv
