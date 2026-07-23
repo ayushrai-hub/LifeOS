@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "description": "Curated list of pages intended for discovery. Not every file in the repo.",
+  "pages": [
+    { "id": "www-home", "title": "Home", "url": "/", "site": "www", "tier": "public-curated" },
+    { "id": "portfolios", "title": "Portfolios", "url": "/sites/portfolios/", "site": "portfolios", "tier": "public-curated" },
+    { "id": "domains", "title": "Domains", "url": "/sites/domains/", "site": "domains", "tier": "public-curated" },
+    { "id": "resumes", "title": "Resumes", "url": "/sites/career/resumes/", "site": "career", "tier": "public-curated" },
+    { "id": "certifications", "title": "Certifications", "url": "/sites/certifications/", "site": "certifications", "tier": "public-curated" },
+    { "id": "projects", "title": "Projects", "url": "/sites/projects/", "site": "projects", "tier": "public-curated" },
+    { "id": "learning", "title": "Learning", "url": "/sites/learning/", "site": "learning", "tier": "public-curated" },
+    { "id": "gallery", "title": "Gallery", "url": "/sites/gallery/", "site": "gallery", "tier": "public-curated" }
+  ]
+}

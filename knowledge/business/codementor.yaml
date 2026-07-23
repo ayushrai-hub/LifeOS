@@ -1,0 +1,22 @@
+id: business.codementor
+type: business_profile
+title: Codementor
+slug: codementor
+platform: Codementor
+username: "ayushrai188327"
+url: https://www.codementor.io/@ayushrai188327
+category: freelance
+purpose: "Codementor profile"
+visibility: public
+priority: 60
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

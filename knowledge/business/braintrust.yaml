@@ -1,0 +1,22 @@
+id: business.braintrust
+type: business_profile
+title: Braintrust
+slug: braintrust
+platform: Braintrust
+username: "1859806"
+url: https://app.usebraintrust.com/talent/1859806
+category: freelance
+purpose: "Braintrust talent profile"
+visibility: public
+priority: 50
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

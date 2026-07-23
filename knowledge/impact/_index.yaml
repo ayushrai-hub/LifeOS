@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/impact
+# Append: { id, slug, title, status, path }
+domain: impact
+title: impact
+updated: 2026-07-23

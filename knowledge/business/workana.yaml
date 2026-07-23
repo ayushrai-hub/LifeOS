@@ -1,0 +1,22 @@
+id: business.workana
+type: business_profile
+title: Workana
+slug: workana
+platform: Workana
+username: "052bc40cbb5e205f5b39bbf629409be3"
+url: https://www.workana.com/freelancer/052bc40cbb5e205f5b39bbf629409be3
+category: freelance
+purpose: "Workana freelancer profile"
+visibility: public
+priority: 55
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

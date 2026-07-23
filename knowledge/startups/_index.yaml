@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/startups
+# Append: { id, slug, title, status, path }
+domain: startups
+title: startups
+updated: 2026-07-23

@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/fitness
+# Append: { id, slug, title, status, path }
+domain: fitness
+title: fitness
+updated: 2026-07-23

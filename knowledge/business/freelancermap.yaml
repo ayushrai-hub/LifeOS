@@ -1,0 +1,22 @@
+id: business.freelancermap
+type: business_profile
+title: Freelancermap
+slug: freelancermap
+platform: Freelancermap
+username: null
+url: https://www.freelancermap.com/profile/senior-ai-engineer-with-machine-learning-and-production-systems-expertise
+category: freelance
+purpose: "Freelancermap profile"
+visibility: public
+priority: 55
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

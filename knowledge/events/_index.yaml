@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/events
+# Append: { id, slug, title, status, path }
+domain: events
+title: events
+updated: 2026-07-23

@@ -1,0 +1,22 @@
+id: business.superteam
+type: business_profile
+title: Superteam Earn
+slug: superteam
+platform: Superteam Earn
+username: "ayush_rai02"
+url: https://superteam.fun/earn/t/ayush_rai02
+category: freelance
+purpose: "Superteam Earn profile"
+visibility: public
+priority: 45
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

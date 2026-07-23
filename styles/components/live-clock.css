@@ -1,0 +1,26 @@
+/* Live clock; bottom-right, quiet, always visible while page is open */
+.live-clock {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--color-text-muted, #444);
+  background: var(--color-bg, #fff);
+  border: 1px solid var(--color-border, #ddd);
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 480px) {
+  .live-clock {
+    right: 0.5rem;
+    bottom: 0.5rem;
+    font-size: 0.65rem;
+  }
+}

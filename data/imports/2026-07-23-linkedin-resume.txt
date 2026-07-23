@@ -1,0 +1,157 @@
+# Provenance: LinkedIn resume / profile text provided by owner (chat import 2026-07-23)
+# Canonical intake only. Normalized entities live under /knowledge. Do not edit after import.
+
+Contact
+4/15A, Chatrasal Nagar, Phase 2,
+Indrapuri, Sector A, Bhopal, 462022,
+M.P.
+7440567944 (Mobile)
+ayushrai0211@gmail.com
+www.linkedin.com/in/ayushrai02
+(LinkedIn)
+www.linkedin.com/services/
+page/369888340937b0b7b7/
+(Other)
+topmate.io/ayush_rai02/ (Personal)
+linktr.ee/ayush_rai02 (Personal)
+
+Top Skills
+Model Context Protocol (MCP)
+Generative AI Development
+Retrieval-Augmented Generation (RAG)
+
+Languages
+English (Professional Working)
+Hindi (Native or Bilingual)
+
+Certifications
+Introduction to Machine Learning
+Mental Health Workshop
+Advanced Excel Workshop
+Pandora Box
+Weird Chess
+
+Honors-Awards
+open mic performer
+
+Ayush Rai
+AI Engineer | RLHF | LLM | RAG | Prompt Engineering | AI Product
+Builder | AI full stack developer | Automation | Agentic AI
+Pune District, Maharashtra, India
+
+Summary
+AI Engineer with 2+ years of experience building production LLM
+and GenAI systems. I work across backend, infrastructure, and
+product to ship practical AI solutions that run reliably at scale.I’ve
+built RAG systems, AI agents, evaluation pipelines, and full-stack AI
+products end-to-end. My focus is on real-world constraints: latency,
+cost, reliability, and safety , not just demos.Previously contributed to
+large-scale model improvement and evaluation projects with OpenAI,
+Scale AI, Snorkel AI, and Turing through partner programs.Tech:
+Python, FastAPI, Node.js, React, PostgreSQL, Docker, LangChain,
+OpenAI API.Currently building AI systems and consulting on
+production LLM workflows and evaluation.
+
+Experience
+FoCDoT Technologies
+Software Developer
+April 2024 - Present (2 years 4 months)
+Bhopal, Madhya Pradesh, India
+As a Software Engineer at FoCDoT Technology Pvt. Ltd., I specialize in
+Reinforcement Learning from Human Feedback (RLHF), working at the
+intersection of AI model optimization and product management. In a fast-paced
+startup environment, I contribute to the research and development of AI-driven
+projects, leveraging cutting-edge technologies and tools, collaborating with
+expert teams, and continuously refining my technical and managerial skills.
+Managing high-priority projects, I ensure AI solutions align with business goals
+while maintaining efficiency and accuracy.
+- Developed expertise in prompt engineering, design patterns, RetrievalAugmented Generation (RAG) techniques and AI model fine-tuning to optimize
+performance across diverse client requirements.
+- Managed a high-profile client contract, overseeing AI training workflows,
+ensuring deliverables met stringent quality benchmarks and deadlines.
+- Led structured code reviews, debugging, and testing, improving AI-generated
+outputs while maintaining best coding practices.
+- Engaged in product management, collaborating with full-stack developers, AI
+engineers, and senior managers to drive AI-powered solutions from research
+to deployment.
+- Honed soft skills in team management, communication, and stakeholder
+presentations, ensuring seamless coordination across technical and business
+teams.
+- Achieved “Best Work” recognition twice for consistently delivering high-quality
+AI solutions and meeting critical project milestones.
+- Continuously learn and adapt to new technologies, managing productivity,
+time, and communication effectively in a dynamic and evolving AI ecosystem.
+
+topmate.io
+Mentor
+January 2026 - Present (7 months)
+
+Outlier
+Generative AI Engineer
+August 2025 - Present (1 year)
+At Outlier, I specialize in Reinforcement Learning from Human Feedback
+(RLHF), optimizing AI models through high-quality data curation, prompt
+engineering, and systematic evaluations. My work involves analyzing complex
+coding and STEM concepts, refining model-generated outputs, and ensuring
+technical accuracy while adapting to evolving project requirements.
+- Developed and optimized training datasets for large language models,
+focusing on code generation, analysis, and validation.
+- Designed and implemented advanced prompting strategies to enhance
+model reasoning and contextual accuracy across Python and JavaScript.
+- Utilized machine learning libraries and frameworks to preprocess, validate,
+and optimize AI-generated outputs for improved performance.
+- Conducted extensive code reviews, debugging, and error analysis to refine
+AI-generated solutions and ensure adherence to best coding practices.
+- Engineered robust data pipelines and automated workflows for processing
+and maintaining high-quality training data.
+This is a contractual role.
+
+All India Radio
+Broadcast Assistant
+May 2025 - September 2025 (5 months)
+Bhopal, Madhya Pradesh, India
+
+RaSoR - Ramanujan Society of Research
+Web Developer
+September 2023 - February 2024 (6 months)
+Chennai, Tamil Nadu, India
+- Learnt React.JS
+- Worked on HTML and CSS web pages.
+- RaSoR is a research society of IIT-M BS degree.
+
+UiPath
+UiPath Student Developer Champion
+October 2022 - July 2023 (10 months)
+Bhopal, Madhya Pradesh, India
+
+Kanha House IITM
+WebOps Member
+September 2022 - July 2023 (11 months)
+Bhopal, Madhya Pradesh, India
+Worked with the social media team of Kanha House.
+
+Education
+LNCT Group of Colleges
+Bachelor of Technology - BTech, computer science and
+engineering · (2020 - 2024)
+
+Indian Institute of Technology, Madras
+IIT Madras online BS degree in data science and progarmming, Data science
+and Applications · (July 2021 - February 2026)
+
+mission English higher Secondary School, Seoni
+12th, pcm · (2008 - 2020)
+
+Lakshmi Narain College of Technology & Science, Kalchuri Nagar,
+Raisen Road, Bhopal-462021
+Bachelor of Technology - BTech, computer science and
+engineering · (2020 - 2024)
+
+The Takshashila Institution
+Graduate, Public Policy Analysis · (September 2025 - December 2025)
+
+Additional owner URLs (same import session)
+https://skills-portfolio-ayushr.vercel.app/
+https://project-showcase-ayushr.vercel.app/
+https://profiles-ayushrai.vercel.app/
+https://github.com/ayushrai-hub

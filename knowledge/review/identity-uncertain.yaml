@@ -1,0 +1,20 @@
+status: imported
+created: 2026-07-23
+updated: 2026-07-23
+items:
+  - id: social.pinterest
+    reason: "pin.it short link - expand to canonical profile/board"
+  - id: business.ayushrai-cc
+    reason: "Verify active personal site"
+  - id: business.superprof
+    reason: "Slug self-description may be outdated"
+  - id: business.turing
+    reason: "Resume preview share URL may be temporary"
+  - id: business.lemonio
+    reason: "Candidate share URL may expire"
+  - id: business.cryptojobs-generic
+    reason: "Generic /talent/profile path"
+  - id: business.cryptotask-generic
+    reason: "Generic /en/profile path"
+  - id: business.laborx-customer
+    reason: "Separate LaborX customer id vs freelancer id"

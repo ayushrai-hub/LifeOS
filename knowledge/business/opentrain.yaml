@@ -1,0 +1,22 @@
+id: business.opentrain
+type: business_profile
+title: OpenTrain
+slug: opentrain
+platform: OpenTrain
+username: "ayush-r-5"
+url: https://www.opentrain.ai/profile/ayush-r-5
+category: freelance
+purpose: "OpenTrain profile"
+visibility: public
+priority: 40
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

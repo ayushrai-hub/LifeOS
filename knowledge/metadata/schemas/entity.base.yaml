@@ -1,0 +1,32 @@
+schema: entity.base
+schema_version: 1
+description: Base fields required on all knowledge entities
+required:
+  - id
+  - type
+  - title
+  - slug
+  - status
+  - visibility
+  - created
+  - updated
+  - author
+  - version
+enums:
+  status: [draft, review, published, archived]
+  visibility: [private, unlisted, public]
+optional:
+  - aliases
+  - keywords
+  - tags
+  - description
+  - summary
+  - priority
+  - search_weight
+  - last_reviewed
+  - seo
+  - relationships
+  - evidence
+  - provenance
+  - review
+  - extensions

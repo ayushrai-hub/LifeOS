@@ -1,0 +1,509 @@
+generated_at: 2026-07-23
+status: imported
+source: data/imports/2026-07-23-identity-links.txt
+count: 84
+profiles:
+  - id: contact.email-proton
+    path: d:/COde/knowledge/contact/email-proton.yaml
+    bucket: contact
+    category: contact
+    status: active
+    url: mailto:ayushrai0211@proton.me
+  - id: contact.whatsapp
+    path: d:/COde/knowledge/contact/whatsapp.yaml
+    bucket: contact
+    category: contact
+    status: active
+    url: https://api.whatsapp.com/send/?phone=7440567944&type=phone_number&app_absent=0
+  - id: social.linkedin
+    path: d:/COde/knowledge/social/linkedin.yaml
+    bucket: social
+    category: professional
+    status: active
+    url: https://www.linkedin.com/in/ayushrai02
+  - id: social.x
+    path: d:/COde/knowledge/social/x.yaml
+    bucket: social
+    category: professional
+    status: active
+    url: https://x.com/AyushRai0211
+  - id: social.facebook
+    path: d:/COde/knowledge/social/facebook.yaml
+    bucket: social
+    category: other
+    status: active
+    url: https://www.facebook.com/profile.php?id=100025749070113
+  - id: social.bluesky
+    path: d:/COde/knowledge/social/bluesky.yaml
+    bucket: social
+    category: professional
+    status: active
+    url: https://bsky.app/profile/ayush-rai.bsky.social
+  - id: social.mastodon
+    path: d:/COde/knowledge/social/mastodon.yaml
+    bucket: social
+    category: professional
+    status: active
+    url: https://mastodon.social/@ayush_rai02
+  - id: social.instagram
+    path: d:/COde/knowledge/social/instagram.yaml
+    bucket: social
+    category: other
+    status: active
+    url: https://www.instagram.com/ayush_rai02
+  - id: social.quora
+    path: d:/COde/knowledge/social/quora.yaml
+    bucket: social
+    category: other
+    status: active
+    url: https://www.quora.com/profile/Ayush-Rai-751
+  - id: social.pinterest
+    path: d:/COde/knowledge/social/pinterest.yaml
+    bucket: social
+    category: other
+    status: needs-review
+    url: https://pin.it/4aCkYUv3y
+  - id: social.luma
+    path: d:/COde/knowledge/social/luma.yaml
+    bucket: social
+    category: other
+    status: active
+    url: https://luma.com/user/usr-qW1UycCmikf2IYz
+  - id: social.medium
+    path: d:/COde/knowledge/social/medium.yaml
+    bucket: social
+    category: writing
+    status: active
+    url: https://medium.com/@ayushrai0211
+  - id: social.substack
+    path: d:/COde/knowledge/social/substack.yaml
+    bucket: social
+    category: writing
+    status: active
+    url: https://substack.com/@ayushrai02
+  - id: social.blogspot
+    path: d:/COde/knowledge/social/blogspot.yaml
+    bucket: social
+    category: writing
+    status: active
+    url: https://ayushrai02.blogspot.com
+  - id: social.bearblog
+    path: d:/COde/knowledge/social/bearblog.yaml
+    bucket: social
+    category: writing
+    status: active
+    url: https://ayush-rai02.bearblog.dev
+  - id: social.lesswrong
+    path: d:/COde/knowledge/social/lesswrong.yaml
+    bucket: social
+    category: writing
+    status: active
+    url: https://www.lesswrong.com/users/ayushrai02
+  - id: social.youtube
+    path: d:/COde/knowledge/social/youtube.yaml
+    bucket: social
+    category: video
+    status: active
+    url: https://www.youtube.com/@ayush_rai02
+  - id: social.youtube-channel-id
+    path: d:/COde/knowledge/social/youtube-channel-id.yaml
+    bucket: social
+    category: video
+    status: duplicate-candidate
+    url: https://www.youtube.com/channel/UC8EVP4JD0JOqwrcgfZ0vZaA
+  - id: social.behance
+    path: d:/COde/knowledge/social/behance.yaml
+    bucket: social
+    category: design
+    status: active
+    url: https://www.behance.net/ayushrai17
+  - id: social.github
+    path: d:/COde/knowledge/social/github.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://github.com/ayushrai-hub
+  - id: social.codewars
+    path: d:/COde/knowledge/social/codewars.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://www.codewars.com/users/ayushrai-hub
+  - id: social.topcoder
+    path: d:/COde/knowledge/social/topcoder.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://profiles.topcoder.com/ayush_rai02
+  - id: social.algora
+    path: d:/COde/knowledge/social/algora.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://algora.io/ayushrai-hub/profile
+  - id: social.osdire
+    path: d:/COde/knowledge/social/osdire.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://osdire.com/ayush_rai_m
+  - id: social.shipd
+    path: d:/COde/knowledge/social/shipd.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://shipd.ai/user/ayush_rai02
+  - id: social.producthunt
+    path: d:/COde/knowledge/social/producthunt.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://www.producthunt.com/@ayush_rai02
+  - id: social.dailydev
+    path: d:/COde/knowledge/social/dailydev.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://app.daily.dev/ayushrai02
+  - id: social.thegitcity
+    path: d:/COde/knowledge/social/thegitcity.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://www.thegitcity.com/dev/ayushrai-hub
+  - id: social.bugcrowd
+    path: d:/COde/knowledge/social/bugcrowd.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://bugcrowd.com/h/ayush_rai02
+  - id: social.hackerone
+    path: d:/COde/knowledge/social/hackerone.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://hackerone.com/ayush_rai02
+  - id: social.intigriti
+    path: d:/COde/knowledge/social/intigriti.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://app.intigriti.com/researcher/profile/ayush_rai02
+  - id: social.hackthebox
+    path: d:/COde/knowledge/social/hackthebox.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://profile.hackthebox.com/profile/019c328a-7024-7362-ba3f-e1dcfb2948a2
+  - id: social.hackenproof
+    path: d:/COde/knowledge/social/hackenproof.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://hackenproof.com/hackers/ayushrai0211
+  - id: social.huntr
+    path: d:/COde/knowledge/social/huntr.yaml
+    bucket: social
+    category: developer
+    status: active
+    url: https://huntr.com/users/ayushrai-hub
+  - id: social.orcid
+    path: d:/COde/knowledge/social/orcid.yaml
+    bucket: social
+    category: research
+    status: active
+    url: https://orcid.org/0009-0005-7341-7856
+  - id: social.trailblazer
+    path: d:/COde/knowledge/social/trailblazer.yaml
+    bucket: social
+    category: other
+    status: active
+    url: https://www.salesforce.com/trailblazer/ayushr02
+  - id: social.opentakshashila
+    path: d:/COde/knowledge/social/opentakshashila.yaml
+    bucket: social
+    category: other
+    status: active
+    url: https://opentakshashila.net/members/35694678
+  - id: social.superprofile
+    path: d:/COde/knowledge/social/superprofile.yaml
+    bucket: social
+    category: other
+    status: active
+    url: https://superprofile.bio/ayushrai02
+  - id: social.linktree
+    path: d:/COde/knowledge/social/linktree.yaml
+    bucket: social
+    category: other
+    status: active
+    url: https://linktr.ee/ayush_rai02
+  - id: social.ownpage
+    path: d:/COde/knowledge/social/ownpage.yaml
+    bucket: social
+    category: other
+    status: active
+    url: https://own.page/ayushrai02
+  - id: business.notion-portfolio
+    path: d:/COde/knowledge/business/notion-portfolio.yaml
+    bucket: business
+    category: business
+    status: active
+    url: https://determined-hyssop-8bb.notion.site/Ayush-s-Portfolio-5d069b2fa8b64d7e8b939a0c9b946e7b
+  - id: business.notion-so-portfolio
+    path: d:/COde/knowledge/business/notion-so-portfolio.yaml
+    bucket: business
+    category: business
+    status: duplicate-candidate
+    url: https://www.notion.so/Ayush-s-Portfolio-5d069b2fa8b64d7e8b939a0c9b946e7b
+  - id: business.netlify-portfolio
+    path: d:/COde/knowledge/business/netlify-portfolio.yaml
+    bucket: business
+    category: business
+    status: active
+    url: https://ayush-rai-work.netlify.app
+  - id: business.super-site
+    path: d:/COde/knowledge/business/super-site.yaml
+    bucket: business
+    category: business
+    status: active
+    url: https://ayush-rai.super.site
+  - id: business.mnml-page
+    path: d:/COde/knowledge/business/mnml-page.yaml
+    bucket: business
+    category: business
+    status: active
+    url: https://ayush-rai.mnml.page
+  - id: business.ayushrai-cc
+    path: d:/COde/knowledge/business/ayushrai-cc.yaml
+    bucket: business
+    category: business
+    status: needs-review
+    url: https://ayushrai.cc.cc
+  - id: business.fiverr
+    path: d:/COde/knowledge/business/fiverr.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.fiverr.com/ayush_rai02
+  - id: business.freelancer
+    path: d:/COde/knowledge/business/freelancer.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.freelancer.com/u/ayushrai0211
+  - id: business.workana
+    path: d:/COde/knowledge/business/workana.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.workana.com/freelancer/052bc40cbb5e205f5b39bbf629409be3
+  - id: business.peopleperhour
+    path: d:/COde/knowledge/business/peopleperhour.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.peopleperhour.com/freelancer/ayush-rai-ai-engineer-zymqwwmm
+  - id: business.malt
+    path: d:/COde/knowledge/business/malt.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.malt.com/profile/ayushrai
+  - id: business.hubstaff
+    path: d:/COde/knowledge/business/hubstaff.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://hubstafftalent.net/profiles/ayush-rai-4
+  - id: business.codementor
+    path: d:/COde/knowledge/business/codementor.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.codementor.io/@ayushrai188327
+  - id: business.expert360
+    path: d:/COde/knowledge/business/expert360.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://app.expert360.com/profile/776c3e9214
+  - id: business.myexpertify
+    path: d:/COde/knowledge/business/myexpertify.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://myexpertify.com/expert-profile?id=691ff9aa811a0a3b433af413
+  - id: business.superprof
+    path: d:/COde/knowledge/business/superprof.yaml
+    bucket: business
+    category: freelance
+    status: needs-review
+    url: https://www.superprof.sg/2nd-year-engineering-student-from-lncts-bhopal-teached-local-students-ngo.html
+  - id: business.freelancermap
+    path: d:/COde/knowledge/business/freelancermap.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.freelancermap.com/profile/senior-ai-engineer-with-machine-learning-and-production-systems-expertise
+  - id: business.yunojuno
+    path: d:/COde/knowledge/business/yunojuno.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://app.yunojuno.com/p/ayush-rai
+  - id: business.ateam
+    path: d:/COde/knowledge/business/ateam.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://platform.a.team/ayushrai1
+  - id: business.remotemore
+    path: d:/COde/knowledge/business/remotemore.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://app.remotemore.com/public/eyJjYW5kaWRhdGVJZCI6IkQ1a3E0RHdSbnlsd0tHMEloQ3dwIiwib3JnYW5pemF0aW9uSWQiOiIiLCJpc1dpdGhvdXRTYWxhcnkiOmZhbHNlfQ==
+  - id: business.rentmyheader
+    path: d:/COde/knowledge/business/rentmyheader.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://rentmyheader.com/ayushrai0211
+  - id: business.remoet
+    path: d:/COde/knowledge/business/remoet.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://remoet.dev/d/ayush-rai02
+  - id: business.turing
+    path: d:/COde/knowledge/business/turing.yaml
+    bucket: business
+    category: freelance
+    status: needs-review
+    url: https://matching.turing.com/developer-resume-preview/26111d5e319d253c577b08239f57a1b9cba29746bb2ced
+  - id: business.torc
+    path: d:/COde/knowledge/business/torc.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://platform.torc.dev/#/profile/ayushrai02
+  - id: business.arc
+    path: d:/COde/knowledge/business/arc.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://arc.dev/@ayushrai188327
+  - id: business.lemonio
+    path: d:/COde/knowledge/business/lemonio.yaml
+    bucket: business
+    category: freelance
+    status: needs-review
+    url: https://magic.lemon.io/share/candidate?id=68c09bc7d31295bad67a375f&availability=Full-time%20only
+  - id: business.weekday
+    path: d:/COde/knowledge/business/weekday.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.weekday.works/people/ayush-rai-ayushrai02
+  - id: business.remoteok
+    path: d:/COde/knowledge/business/remoteok.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://remoteok.com/@ayushrai02
+  - id: business.braintrust
+    path: d:/COde/knowledge/business/braintrust.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://app.usebraintrust.com/talent/1859806
+  - id: business.cryptojobslist
+    path: d:/COde/knowledge/business/cryptojobslist.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://cryptojobslist.com/@ayush_rai02
+  - id: business.cryptojobs
+    path: d:/COde/knowledge/business/cryptojobs.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.cryptojobs.com/talent/ayush-rai-41261
+  - id: business.cryptojobs-generic
+    path: d:/COde/knowledge/business/cryptojobs-generic.yaml
+    bucket: business
+    category: freelance
+    status: needs-review
+    url: https://www.cryptojobs.com/talent/profile
+  - id: business.laborx-freelancer
+    path: d:/COde/knowledge/business/laborx-freelancer.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://laborx.com/freelancers/users/id429358
+  - id: business.laborx-customer
+    path: d:/COde/knowledge/business/laborx-customer.yaml
+    bucket: business
+    category: freelance
+    status: needs-review
+    url: https://laborx.com/customers/users/id437156
+  - id: business.cryptotask-generic
+    path: d:/COde/knowledge/business/cryptotask-generic.yaml
+    bucket: business
+    category: freelance
+    status: needs-review
+    url: https://www.cryptotask.org/en/profile
+  - id: business.cryptotask
+    path: d:/COde/knowledge/business/cryptotask.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.cryptotask.org/en/freelancers/ayush-rai/50292
+  - id: business.superteam
+    path: d:/COde/knowledge/business/superteam.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://superteam.fun/earn/t/ayush_rai02
+  - id: business.opentrain
+    path: d:/COde/knowledge/business/opentrain.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.opentrain.ai/profile/ayush-r-5
+  - id: business.remote3
+    path: d:/COde/knowledge/business/remote3.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.remote3.co/p/ayush_rai02
+  - id: business.bondex
+    path: d:/COde/knowledge/business/bondex.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://network.bondex.app/p/ayush_rai02
+  - id: business.staaake
+    path: d:/COde/knowledge/business/staaake.yaml
+    bucket: business
+    category: freelance
+    status: active
+    url: https://www.staaake.in/ayush_rai02
+  - id: business.kofi
+    path: d:/COde/knowledge/business/kofi.yaml
+    bucket: business
+    category: payment
+    status: active
+    url: https://ko-fi.com/ayush_rai02
+  - id: business.paypal
+    path: d:/COde/knowledge/business/paypal.yaml
+    bucket: business
+    category: payment
+    status: active
+    url: https://paypal.me/ayushrai11
+  - id: business.wise
+    path: d:/COde/knowledge/business/wise.yaml
+    bucket: business
+    category: payment
+    status: active
+    url: https://wise.com/pay/me/ayushr344

@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/principles
+# Append: { id, slug, title, status, path }
+domain: principles
+title: principles
+updated: 2026-07-23

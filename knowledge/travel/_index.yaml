@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/travel
+# Append: { id, slug, title, status, path }
+domain: travel
+title: travel
+updated: 2026-07-23

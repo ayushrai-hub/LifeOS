@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/teaching
+# Append: { id, slug, title, status, path }
+domain: teaching
+title: teaching
+updated: 2026-07-23

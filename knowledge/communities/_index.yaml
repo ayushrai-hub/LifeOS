@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/communities
+# Append: { id, slug, title, status, path }
+domain: communities
+title: communities
+updated: 2026-07-23

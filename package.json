@@ -1,0 +1,18 @@
+{
+  "name": "personal-knowledge-base",
+  "private": true,
+  "description": "Personal Knowledge Base; single source of truth. Website is one consumer.",
+  "scripts": {
+    "validate": "node scripts/knowledge/validate.js",
+    "validate:py": "python scripts/knowledge/validate.py",
+    "import:identity": "python scripts/knowledge/import_identity.py",
+    "build:home": "node scripts/build-home.js",
+    "build:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-site.ps1",
+    "build": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-site.ps1",
+    "qa": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/qa-site.ps1",
+    "start": "npx --yes serve -l 3000 ."
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

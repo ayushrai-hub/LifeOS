@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/management
+# Append: { id, slug, title, status, path }
+domain: management
+title: management
+updated: 2026-07-23

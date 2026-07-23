@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/books
+# Append: { id, slug, title, status, path }
+domain: books
+title: books
+updated: 2026-07-23

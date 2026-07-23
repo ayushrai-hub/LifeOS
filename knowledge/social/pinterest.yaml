@@ -1,0 +1,22 @@
+id: social.pinterest
+type: social_profile
+title: Pinterest
+slug: pinterest
+platform: Pinterest
+username: null
+url: https://pin.it/4aCkYUv3y
+category: other
+purpose: "Pinterest short link"
+visibility: public
+priority: 30
+status: needs-review
+notes: "Short link pin.it - expand/verify canonical board or profile URL."
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

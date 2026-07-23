@@ -1,0 +1,193 @@
+{
+  "generated_at": "2026-07-23",
+  "name": "Ayush Rai",
+  "tagline": "I build software, study how systems behave under real constraints, and keep a working record of what I learn.",
+  "intro": [
+    "This site is my personal knowledge system; notes on the [projects](projects) I ship, the [engineering](engineering) and [artificial intelligence](ai) work behind them, and the [research](research), [writing](writing), and [learning](learning) that shape how I think.",
+    "I care about useful software, measurable [impact](impact), and products that solve real user and [business](business) problems. I document [systems](systems), [open source](open-source) work, [communities](communities) I take part in, and the slower parts of the path: [reading](reading), [fitness](fitness), [timeline](timeline), and a [gallery](gallery) of photographs.",
+    "Deeper pages hold the evidence. Start wherever curiosity points."
+  ],
+  "doors": {
+    "projects": "../projects/index.html",
+    "engineering": "../engineering/index.html",
+    "ai": "../ai/index.html",
+    "research": "../research/index.html",
+    "writing": "../writing/index.html",
+    "learning": "../learning/index.html",
+    "reading": "../reading/index.html",
+    "communities": "../communities/index.html",
+    "leadership": "../leadership/index.html",
+    "management": "../management/index.html",
+    "systems": "../systems/index.html",
+    "business": "../business/index.html",
+    "products": "../products/index.html",
+    "open-source": "../open-source/index.html",
+    "fitness": "../fitness/index.html",
+    "timeline": "../timeline/index.html",
+    "gallery": "../gallery/index.html",
+    "impact": "../impact/index.html",
+    "speaking": "../speaking/index.html",
+    "contact": "../contact/index.html",
+    "blog": "../blog/index.html",
+    "notes": "../notes/index.html",
+    "career": "../career/index.html",
+    "books": "../books/index.html",
+    "ml": "../ml/index.html"
+  },
+  "current_focus": [
+    {
+      "title": "AI coding-agent evaluation / Harbor–Terminus task systems",
+      "short_title": "AI coding-agent evaluation",
+      "blurb": "Harbor / Terminus task systems, Dockerized oracles, review CLIs",
+      "stage": "Applying (tooling + task corpus); Exploring for formal RLHF training",
+      "summary": "Multiple repos dedicated to evaluating LLM coding agents with Dockerized tasks, oracles, and review CLIs.",
+      "href": "../learning/index.html",
+      "source": "knowledge/learning/currently-learning.md"
+    },
+    {
+      "title": "Host security auditing / DFIR-style inventory",
+      "short_title": "Host security auditing",
+      "blurb": "read-only DFIR-style inventory with MITRE-mapped findings",
+      "stage": "Practicing → Applying (toolkit shipped in repo form)",
+      "summary": "Cross-platform read-only audit tool with MITRE mappings and explicit non-destructive safety model.",
+      "href": "../learning/index.html",
+      "source": "knowledge/learning/currently-learning.md"
+    },
+    {
+      "title": "Interpretable business analytics under constraints",
+      "short_title": "Interpretable business analytics",
+      "blurb": "constrained P&L scoring instead of proxy-target ML",
+      "stage": "Applying (competition artifact)",
+      "summary": "Chose transparent P&L scoring over black-box ML when the problem forbade proxy-target models.",
+      "href": "../learning/index.html",
+      "source": "knowledge/learning/currently-learning.md"
+    },
+    {
+      "title": "RAG and agentic LLM applications",
+      "short_title": "RAG and agentic LLM applications",
+      "blurb": "routing, retrieval, and local-first experiment systems",
+      "stage": "Practicing / Applying (multiple systems); not Expert",
+      "summary": "adaptive-rag (LangGraph, Qdrant, routing); MailU (local email RAG); IAS uses an LLM pass.",
+      "href": "../learning/index.html",
+      "source": "knowledge/learning/currently-learning.md"
+    },
+    {
+      "title": "Compliance, KYC, and audit automation (incl. deterministic designs)",
+      "short_title": "Compliance and audit automation",
+      "blurb": "including deterministic, non-generative designs",
+      "stage": "Practicing / Applying",
+      "summary": "IAS-system, SoPia (explicitly non-generative), and related compliance tooling.",
+      "href": "../learning/index.html",
+      "source": "knowledge/learning/currently-learning.md"
+    }
+  ],
+  "latest_work": [
+    {
+      "title": "RLHF-tasks",
+      "date": "2026-07-22",
+      "summary": "coding-agent evaluation toolchain (Harbor / Terminus)",
+      "href": "https://github.com/ayushrai-hub/RLHF-tasks",
+      "kind": "repository",
+      "external": true
+    },
+    {
+      "title": "security-audit",
+      "date": "2026-07-20",
+      "summary": "read-only cross-platform host audit toolkit",
+      "href": "https://github.com/ayushrai-hub/security-audit",
+      "kind": "repository",
+      "external": true
+    },
+    {
+      "title": "amex",
+      "date": "2026-07-06",
+      "summary": "deterministic P&L scoring for 500k cardmembers",
+      "href": "https://github.com/ayushrai-hub/amex",
+      "kind": "repository",
+      "external": true
+    },
+    {
+      "title": "OpenAI-RLHF",
+      "date": "2026-06-25",
+      "summary": "coding-eval task archive (not an RLHF trainer)",
+      "href": "https://github.com/ayushrai-hub/OpenAI-RLHF",
+      "kind": "repository",
+      "external": true
+    },
+    {
+      "title": "IAS-system",
+      "date": "2026-05-10",
+      "summary": "OCR → SOP → score audit pipeline",
+      "href": "https://github.com/ayushrai-hub/IAS-system",
+      "kind": "repository",
+      "external": true
+    },
+    {
+      "title": "SoPia",
+      "date": "2026-04-08",
+      "summary": "deterministic FIR compliance auditor",
+      "href": "https://github.com/ayushrai-hub/SoPia",
+      "kind": "repository",
+      "external": true
+    }
+  ],
+  "recently_updated": [
+    {
+      "title": "Knowledge base",
+      "date": "2026-07-23",
+      "summary": "Identity inventory and system status refreshed.",
+      "href": "../learning/index.html"
+    },
+    {
+      "title": "Currently learning",
+      "date": "2026-07-23",
+      "summary": "Active study and practice areas from public evidence.",
+      "href": "../learning/index.html"
+    },
+    {
+      "title": "GitHub ingest",
+      "date": "2026-07-23",
+      "summary": "Public repositories indexed for projects and latest work.",
+      "href": "../projects/index.html"
+    },
+    {
+      "title": "Projects index",
+      "date": "2026-07-23",
+      "summary": "Canonical project entities under knowledge/projects.",
+      "href": "../projects/index.html"
+    }
+  ],
+  "contact": [
+    {
+      "id": "contact.email-proton",
+      "label": "Proton Mail",
+      "text": "ayushrai0211@proton.me",
+      "href": "mailto:ayushrai0211@proton.me"
+    },
+    {
+      "id": "social.github",
+      "label": "GitHub",
+      "text": "GitHub",
+      "href": "https://github.com/ayushrai-hub"
+    },
+    {
+      "id": "social.linkedin",
+      "label": "LinkedIn",
+      "text": "LinkedIn",
+      "href": "https://www.linkedin.com/in/ayushrai02"
+    },
+    {
+      "id": "social.x",
+      "label": "X",
+      "text": "X",
+      "href": "https://x.com/AyushRai0211"
+    }
+  ],
+  "sources": [
+    "knowledge/_system/homepage.yaml",
+    "knowledge/person/profile.yaml",
+    "knowledge/learning/currently-learning.md",
+    "knowledge/_system/site-status.yaml",
+    "data/imports/github-knowledge-index.json"
+  ]
+}

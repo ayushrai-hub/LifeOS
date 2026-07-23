@@ -1,0 +1,22 @@
+﻿id: social.example
+type: social_profile
+title: Example Platform
+slug: example
+platform: Example
+username: null
+url: https://example.com/
+category: other
+purpose: "[PLACEHOLDER]"
+visibility: public
+priority: 50
+status: needs-review
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: null
+provenance:
+  source: null
+  source_file: null
+  imported_at: null

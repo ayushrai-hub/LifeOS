@@ -1,0 +1,22 @@
+id: business.ateam
+type: business_profile
+title: A.Team
+slug: ateam
+platform: A.Team
+username: "ayushrai1"
+url: https://platform.a.team/ayushrai1
+category: freelance
+purpose: "A.Team platform profile"
+visibility: public
+priority: 55
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/certifications
+# Append: { id, slug, title, status, path }
+domain: certifications
+title: certifications
+updated: 2026-07-23

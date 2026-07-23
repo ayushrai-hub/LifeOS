@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/gallery
+# Append: { id, slug, title, status, path }
+domain: gallery
+title: gallery
+updated: 2026-07-23

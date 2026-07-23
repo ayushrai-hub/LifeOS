@@ -1,0 +1,22 @@
+id: business.cryptojobs
+type: business_profile
+title: CryptoJobs
+slug: cryptojobs
+platform: CryptoJobs
+username: "ayush-rai-41261"
+url: https://www.cryptojobs.com/talent/ayush-rai-41261
+category: freelance
+purpose: "CryptoJobs talent profile"
+visibility: public
+priority: 45
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

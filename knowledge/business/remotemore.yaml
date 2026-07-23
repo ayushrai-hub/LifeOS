@@ -1,0 +1,22 @@
+id: business.remotemore
+type: business_profile
+title: RemoteMore
+slug: remotemore
+platform: RemoteMore
+username: null
+url: https://app.remotemore.com/public/eyJjYW5kaWRhdGVJZCI6IkQ1a3E0RHdSbnlsd0tHMEloQ3dwIiwib3JnYW5pemF0aW9uSWQiOiIiLCJpc1dpdGhvdXRTYWxhcnkiOmZhbHNlfQ==
+category: freelance
+purpose: "RemoteMore public candidate link"
+visibility: public
+priority: 45
+status: active
+notes: "Same URL appeared twice in owner list; stored once."
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

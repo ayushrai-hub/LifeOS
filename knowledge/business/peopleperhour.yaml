@@ -1,0 +1,22 @@
+id: business.peopleperhour
+type: business_profile
+title: PeoplePerHour
+slug: peopleperhour
+platform: PeoplePerHour
+username: "ayush-rai-ai-engineer-zymqwwmm"
+url: https://www.peopleperhour.com/freelancer/ayush-rai-ai-engineer-zymqwwmm
+category: freelance
+purpose: "PeoplePerHour freelancer profile"
+visibility: public
+priority: 55
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

@@ -1,0 +1,82 @@
+# Homepage editorial contract.
+# Consumed by scripts/build-home.js and kept in sync with sites/www/index.html.
+# Auto sections merge from knowledge/learning, github index, and site-status.
+
+id: system.homepage
+type: system
+title: Homepage
+slug: homepage
+status: review
+visibility: public
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.2.0
+
+name: Ayush Rai
+
+tagline: "I build software, study how systems behave under real constraints, and keep a working record of what I learn."
+
+intro:
+  - "This site is my personal knowledge system. When I ship a project, I try to leave a trail of what happened, why it mattered, what broke, and what I would do differently next time. The trail lives in [projects](projects), [engineering](engineering), [artificial intelligence](ai), [research](research), [writing](writing), and [learning](learning). Faceted views sit under [portfolios](portfolios) and [knowledge domains](domains)."
+  - "I care about useful software and measurable [impact](impact). I care about products that solve real user and [business](business) problems. I document [systems](systems), [open source](open-source) work, [communities](communities) I take part in, and the slower parts of the path: [reading](reading), [fitness](fitness), a [timeline](timeline), a [gallery](gallery) of photographs, and [resumes](resumes) when a conversation needs a narrower lens."
+  - "Deeper pages hold the evidence. Start wherever curiosity points."
+
+doors:
+  projects: "../projects/index.html"
+  engineering: "../engineering/index.html"
+  ai: "../ai/index.html"
+  research: "../research/index.html"
+  writing: "../writing/index.html"
+  learning: "../learning/index.html"
+  reading: "../reading/index.html"
+  communities: "../communities/index.html"
+  leadership: "../leadership/index.html"
+  management: "../management/index.html"
+  systems: "../systems/index.html"
+  business: "../business/index.html"
+  products: "../products/index.html"
+  open-source: "../open-source/index.html"
+  fitness: "../fitness/index.html"
+  timeline: "../timeline/index.html"
+  gallery: "../gallery/index.html"
+  impact: "../impact/index.html"
+  speaking: "../speaking/index.html"
+  contact: "../contact/index.html"
+  blog: "../blog/index.html"
+  notes: "../notes/index.html"
+  career: "../career/index.html"
+  books: "../books/index.html"
+  ml: "../ml/index.html"
+  portfolios: "../portfolios/index.html"
+  domains: "../domains/index.html"
+  resumes: "../career/resumes/index.html"
+  certifications: "../certifications/index.html"
+
+contact:
+  - "contact.email-proton"
+  - "social.github"
+  - "social.linkedin"
+  - "social.x"
+
+limits:
+  current_focus: 5
+  latest_work: 6
+  recently_updated: 5
+
+focus_blurbs:
+  - match: "AI coding-agent evaluation"
+    short_title: "AI coding-agent evaluation"
+    blurb: "Harbor and Terminus task systems, Dockerized oracles, review CLIs"
+  - match: "Host security auditing"
+    short_title: "Host security auditing"
+    blurb: "read-only DFIR-style inventory with MITRE-mapped findings"
+  - match: "Interpretable business analytics"
+    short_title: "Interpretable business analytics"
+    blurb: "constrained P&L scoring instead of proxy-target ML"
+  - match: "RAG and agentic"
+    short_title: "RAG and agentic LLM applications"
+    blurb: "routing, retrieval, and local-first experiment systems"
+  - match: "Compliance, KYC"
+    short_title: "Compliance and audit automation"
+    blurb: "including deterministic, non-generative designs"

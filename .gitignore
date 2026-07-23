@@ -1,0 +1,89 @@
+# Secrets & credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+*credentials*.yaml
+*credentials*.yml
+*credentials*.txt
+auth.json
+secrets/
+.secrets/
+
+# Deploy / local tooling
+.vercel
+.vercel/
+.netlify/
+.turbo/
+.cache/
+dist/
+build/
+coverage/
+tmp/
+temp/
+*.local
+*.local.*
+
+# Dependencies
+node_modules/
+.node_modules/
+__pycache__/
+*.pyc
+.Python
+.venv/
+venv/
+.env/
+
+# Logs & OS
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Personal / sensitive local artifacts (do not publish)
+# PDFs and loose media at repo root only (site/knowledge media stays tracked)
+/*.pdf
+/*.PDF
+/*.jpg
+/*.jpeg
+/*.JPG
+/*.JPEG
+/*.png
+/*.PNG
+/*.webp
+/*.heic
+/*.mov
+/*.mp4
+/*.zip
+
+# Raw identity intake (phone, full profile dump provenance)
+data/imports/*-identity-*.csv
+data/imports/*-identity-*.txt
+data/imports/*-identity-*.xlsx
+data/imports/*-identity-*.xls
+
+# Phone / private contact channels
+knowledge/contact/whatsapp.yaml
+scripts/knowledge/identity-links.json
+scripts/knowledge/identity-links-source.txt
+
+# Local private scratch (optional drop zone)
+private/
+.local/
+inbox-private/
+
+# Cursor / agent local state
+.cursor/
+agent-transcripts/

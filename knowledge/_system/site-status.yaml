@@ -1,0 +1,34 @@
+# Knowledge base system status
+# Historical dates vs live UI clock are different concerns.
+# Live clock = browser local time (consumer UI).
+# These fields = when knowledge / deploys actually changed.
+
+knowledge_last_updated: 2026-07-23
+knowledge_initialized: 2026-07-23
+schema_version: 1
+notes_latest: |
+  Identity inventory imported. Homepage, portfolios, domains, resumes,
+  certifications, media templates, and responsive site CSS published.
+  Run scripts/build-site.ps1 after catalog edits. Run scripts/qa-site.ps1 before deploy.
+
+
+consumers:
+  website:
+    last_content_publish: 2026-07-23
+    last_deployed: null
+    last_deployed_notes: "[PLACEHOLDER: set when Vercel deploy succeeds]"
+    live_clock:
+      enabled: true
+      position: bottom-right
+      update_interval_ms: 1000
+      timezone_mode: visitor-local
+      script: /scripts/live-clock.js
+    build:
+      catalog: data/site-catalog.json
+      site_script: scripts/build-site.ps1
+      qa_script: scripts/qa-site.ps1
+      home_script: scripts/build-home.js
+
+chronology_notes: |
+  Owner will provide dates for work periods and prior website updates.
+  Record work as timeline_event / experience entities; do not only note them here.

@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/writing
+# Append: { id, slug, title, status, path }
+domain: writing
+title: writing
+updated: 2026-07-23

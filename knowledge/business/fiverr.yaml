@@ -1,0 +1,22 @@
+id: business.fiverr
+type: business_profile
+title: Fiverr
+slug: fiverr
+platform: Fiverr
+username: "ayush_rai02"
+url: https://www.fiverr.com/ayush_rai02
+category: freelance
+purpose: "Fiverr freelancer profile"
+visibility: public
+priority: 70
+status: active
+notes: "Owner URL included public_mode=true; normalized without query."
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/mentoring
+# Append: { id, slug, title, status, path }
+domain: mentoring
+title: mentoring
+updated: 2026-07-23

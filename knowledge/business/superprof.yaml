@@ -1,0 +1,22 @@
+id: business.superprof
+type: business_profile
+title: Superprof
+slug: superprof
+platform: Superprof
+username: null
+url: https://www.superprof.sg/2nd-year-engineering-student-from-lncts-bhopal-teached-local-students-ngo.html
+category: freelance
+purpose: "Superprof tutoring profile"
+visibility: public
+priority: 45
+status: needs-review
+notes: "Slug describes student tutoring; verify still current self-description."
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

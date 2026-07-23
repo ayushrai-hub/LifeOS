@@ -1,0 +1,41 @@
+schema: identity.profile
+schema_version: 1
+description: Social, contact, and business profile records
+required:
+  - id
+  - type
+  - title
+  - slug
+  - platform
+  - url
+  - category
+  - purpose
+  - visibility
+  - priority
+  - status
+  - created
+  - updated
+  - author
+  - version
+enums:
+  type: [social_profile, contact_channel, business_profile]
+  category:
+    - professional
+    - developer
+    - writing
+    - video
+    - design
+    - freelance
+    - payment
+    - research
+    - business
+    - contact
+    - other
+  status: [active, inactive, unknown, needs-review, duplicate-candidate, draft, review, published, archived]
+optional:
+  - username
+  - notes
+  - last_verified
+  - provenance
+  - superseded_by
+  - relationships

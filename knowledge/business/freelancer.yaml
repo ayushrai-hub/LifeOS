@@ -1,0 +1,22 @@
+id: business.freelancer
+type: business_profile
+title: Freelancer.com
+slug: freelancer
+platform: Freelancer.com
+username: "ayushrai0211"
+url: https://www.freelancer.com/u/ayushrai0211
+category: freelance
+purpose: "Freelancer.com profile"
+visibility: public
+priority: 65
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

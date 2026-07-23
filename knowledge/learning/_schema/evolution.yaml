@@ -1,0 +1,55 @@
+# Continuous evolution schema (learning layer)
+
+## Goal
+
+New artifacts update learning history and graph **without restructuring** `knowledge/learning/`.
+
+## Stable directories (do not rename casually)
+
+```
+knowledge/learning/
+  currently-learning.md      # rolling active set
+  roadmap.md
+  future-interests.md
+  deep-dives.md
+  research-topics.md
+  learning-methodology.md
+  stages.md
+  evidence-ledger.md
+  domains/<slug>.md          # one file per domain; append sections over time
+  courses/<slug>.md          # when certificates/courses exist
+  history/YYYY-MM.md         # append-only monthly log
+  _schema/                   # templates + this file
+```
+
+## Automatic update checklist (human or script)
+
+| Incoming artifact | Actions |
+|-------------------|---------|
+| New GitHub repo | Ensure `github/repositories/<slug>/`; map to domain slug(s); add edges `demonstrates`/`uses`; maybe `history/` line |
+| New book note | `knowledge/books/notes/…` + edge `influences` → domain; list under domain “Owner-consumed” |
+| New article | `knowledge/writing/…` + edges |
+| New course/cert | `learning/courses/<slug>.md` + evidence-ledger row |
+| New experiment | `knowledge/research/experiments/…` + domain Experiments section |
+| New talk | `knowledge/public-speaking/…` + edges |
+| Timeline event | `knowledge/timeline/…` + edge to domain |
+
+## Stage changes
+
+Always append:
+
+```text
+YYYY-MM-DD: domain.<slug> stage exploring → practicing; evidence: <path>
+```
+
+to `history/YYYY-MM.md`.
+
+## Website consumption
+
+Site reads these files later. Site must not invent stages. Missing owner-consumed books/papers stay empty.
+
+## Non-goals
+
+- No yearly folder reshuffles
+- No per-year domain copies
+- No deleting history files

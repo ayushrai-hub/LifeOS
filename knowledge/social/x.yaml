@@ -1,0 +1,22 @@
+id: social.x
+type: social_profile
+title: X
+slug: x
+platform: X
+username: "AyushRai0211"
+url: https://x.com/AyushRai0211
+category: professional
+purpose: "Public posts / presence on X"
+visibility: public
+priority: 90
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

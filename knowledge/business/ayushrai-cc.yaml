@@ -1,0 +1,22 @@
+id: business.ayushrai-cc
+type: business_profile
+title: cc.cc
+slug: ayushrai-cc
+platform: cc.cc
+username: "ayushrai"
+url: https://ayushrai.cc.cc
+category: business
+purpose: "cc.cc personal site"
+visibility: public
+priority: 50
+status: needs-review
+notes: "Verify whether this is an active personal site or redirect."
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

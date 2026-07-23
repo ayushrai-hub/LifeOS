@@ -1,0 +1,22 @@
+id: social.lesswrong
+type: social_profile
+title: LessWrong
+slug: lesswrong
+platform: LessWrong
+username: "ayushrai02"
+url: https://www.lesswrong.com/users/ayushrai02
+category: writing
+purpose: "LessWrong user profile"
+visibility: public
+priority: 55
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

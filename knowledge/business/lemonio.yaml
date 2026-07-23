@@ -1,0 +1,22 @@
+id: business.lemonio
+type: business_profile
+title: Lemon.io
+slug: lemonio
+platform: Lemon.io
+username: "68c09bc7d31295bad67a375f"
+url: https://magic.lemon.io/share/candidate?id=68c09bc7d31295bad67a375f&availability=Full-time%20only
+category: freelance
+purpose: "Lemon.io candidate share link"
+visibility: public
+priority: 45
+status: needs-review
+notes: "Share link with availability query; may expire or be private-gated."
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

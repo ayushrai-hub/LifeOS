@@ -1,0 +1,38 @@
+{
+  "domain": "example.com",
+  "protocol": "https",
+  "owner": {
+    "name": "Ayush Rai",
+    "short_name": "Ayush",
+    "email": "ayushrai0211@proton.me",
+    "tagline": "I build software, study how systems behave under real constraints, and keep a working record of what I learn."
+  },
+  "sites": [
+    { "id": "www", "title": "Home", "path": "sites/www" },
+    { "id": "portfolios", "title": "Portfolios", "path": "sites/portfolios" },
+    { "id": "domains", "title": "Domains", "path": "sites/domains" },
+    { "id": "engineering", "title": "Engineering", "path": "sites/engineering" },
+    { "id": "ai", "title": "AI", "path": "sites/ai" },
+    { "id": "ml", "title": "ML", "path": "sites/ml" },
+    { "id": "projects", "title": "Projects", "path": "sites/projects" },
+    { "id": "writing", "title": "Writing", "path": "sites/writing" },
+    { "id": "blog", "title": "Blog", "path": "sites/blog" },
+    { "id": "notes", "title": "Notes", "path": "sites/notes" },
+    { "id": "research", "title": "Research", "path": "sites/research" },
+    { "id": "career", "title": "Career", "path": "sites/career" },
+    { "id": "leadership", "title": "Leadership", "path": "sites/leadership" },
+    { "id": "management", "title": "Management", "path": "sites/management" },
+    { "id": "books", "title": "Books", "path": "sites/books" },
+    { "id": "certifications", "title": "Certifications", "path": "sites/certifications" },
+    { "id": "technologies", "title": "Technologies", "path": "sites/technologies" },
+    { "id": "media", "title": "Media", "path": "sites/media" },
+    { "id": "learning", "title": "Learning", "path": "sites/learning" },
+    { "id": "gallery", "title": "Gallery", "path": "sites/gallery" },
+    { "id": "contact", "title": "Contact", "path": "sites/contact" }
+  ],
+  "catalog": "data/site-catalog.json",
+  "local": {
+    "port": 3000,
+    "note": "Browse via /sites/<name>/ when using path-based local preview. Run npm run build:site after catalog edits."
+  }
+}

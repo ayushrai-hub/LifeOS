@@ -1,0 +1,22 @@
+id: business.expert360
+type: business_profile
+title: Expert360
+slug: expert360
+platform: Expert360
+username: "776c3e9214"
+url: https://app.expert360.com/profile/776c3e9214
+category: freelance
+purpose: "Expert360 profile"
+visibility: public
+priority: 45
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

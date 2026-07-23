@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/reflections
+# Append: { id, slug, title, status, path }
+domain: reflections
+title: reflections
+updated: 2026-07-23

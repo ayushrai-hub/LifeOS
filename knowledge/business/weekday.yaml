@@ -1,0 +1,22 @@
+id: business.weekday
+type: business_profile
+title: Weekday
+slug: weekday
+platform: Weekday
+username: "ayushrai02"
+url: https://www.weekday.works/people/ayush-rai-ayushrai02
+category: freelance
+purpose: "Weekday people profile"
+visibility: public
+priority: 45
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

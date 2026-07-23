@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/timeline
+# Append: { id, slug, title, status, path }
+domain: timeline
+title: timeline
+updated: 2026-07-23

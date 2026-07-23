@@ -1,0 +1,11 @@
+# SEO publication policy for consumers
+include_in_sitemap: published_public_only
+default_noindex_for:
+  - private
+  - unlisted
+  - draft
+  - review
+allow_full_sitemap: false
+notes: |
+  Homepage remains curated and sparse even if sitemap lists reachable URLs.
+  Owner may tighten this later.

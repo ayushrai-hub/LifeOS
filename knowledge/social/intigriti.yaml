@@ -1,0 +1,22 @@
+id: social.intigriti
+type: social_profile
+title: Intigriti
+slug: intigriti
+platform: Intigriti
+username: "ayush_rai02"
+url: https://app.intigriti.com/researcher/profile/ayush_rai02
+category: developer
+purpose: "Intigriti researcher profile"
+visibility: public
+priority: 65
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

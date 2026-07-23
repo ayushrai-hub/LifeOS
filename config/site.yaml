@@ -1,0 +1,6 @@
+# Site / deploy config (consumer)
+domain: null
+vercel_project: personal-knowledge-base
+live_clock: true
+notes: |
+  Set domain when known. Knowledge remains independent of this file.

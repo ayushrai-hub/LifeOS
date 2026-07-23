@@ -1,0 +1,22 @@
+id: social.opentakshashila
+type: social_profile
+title: Open Takshashila
+slug: opentakshashila
+platform: Open Takshashila
+username: "35694678"
+url: https://opentakshashila.net/members/35694678
+category: other
+purpose: "Open Takshashila membership profile"
+visibility: public
+priority: 35
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

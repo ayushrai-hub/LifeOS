@@ -1,0 +1,3 @@
+# Redirect map for stable public IDs / paths after renames
+# from_path → to_path (consumer URLs)
+redirects: []

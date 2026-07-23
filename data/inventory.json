@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "note": "Inventory of source materials to ingest later (resume, LinkedIn, GitHub, etc.).",
+  "sources": [
+    { "type": "resume", "status": "missing", "path": null },
+    { "type": "linkedin", "status": "missing", "url": null },
+    { "type": "github", "status": "ingested", "url": "https://github.com/ayushrai-hub", "path": "knowledge/github/", "ingested": "2026-07-23" },
+    { "type": "twitter", "status": "missing", "url": null },
+    { "type": "blogs", "status": "missing", "items": [] },
+    { "type": "projects", "status": "missing", "items": [] },
+    { "type": "research", "status": "missing", "items": [] },
+    { "type": "talks", "status": "missing", "items": [] },
+    { "type": "certificates", "status": "missing", "items": [] },
+    { "type": "contact", "status": "missing", "items": [] }
+  ]
+}

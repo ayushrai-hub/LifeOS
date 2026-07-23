@@ -1,0 +1,222 @@
+edges:
+  # GitHub profile
+  - id: edge.person-has-github-profile
+    from: person.ayush-rai
+    predicate: has_profile
+    to: github.profile.ayushrai-hub
+    created: 2026-07-23
+    notes: "Ingested from https://github.com/ayushrai-hub"
+
+  # Showcase repos owned by profile
+  - id: edge.github-owns-adaptive-rag
+    from: github.profile.ayushrai-hub
+    predicate: owns
+    to: github.repo.adaptive-rag
+    created: 2026-07-23
+    notes: "showcase"
+  - id: edge.github-owns-rlhf-tasks
+    from: github.profile.ayushrai-hub
+    predicate: owns
+    to: github.repo.rlhf-tasks
+    created: 2026-07-23
+    notes: "showcase"
+  - id: edge.github-owns-openai-rlhf
+    from: github.profile.ayushrai-hub
+    predicate: owns
+    to: github.repo.openai-rlhf
+    created: 2026-07-23
+    notes: "showcase"
+  - id: edge.github-owns-ias-system
+    from: github.profile.ayushrai-hub
+    predicate: owns
+    to: github.repo.ias-system
+    created: 2026-07-23
+    notes: "showcase"
+  - id: edge.github-owns-sopia
+    from: github.profile.ayushrai-hub
+    predicate: owns
+    to: github.repo.sopia
+    created: 2026-07-23
+    notes: "showcase"
+  - id: edge.github-owns-fileu
+    from: github.profile.ayushrai-hub
+    predicate: owns
+    to: github.repo.fileu
+    created: 2026-07-23
+    notes: "showcase"
+  - id: edge.github-owns-security-audit
+    from: github.profile.ayushrai-hub
+    predicate: owns
+    to: github.repo.security-audit
+    created: 2026-07-23
+    notes: "showcase"
+  - id: edge.github-owns-amex
+    from: github.profile.ayushrai-hub
+    predicate: owns
+    to: github.repo.amex
+    created: 2026-07-23
+    notes: "showcase"
+  - id: edge.github-owns-chatbot
+    from: github.profile.ayushrai-hub
+    predicate: owns
+    to: github.repo.chatbot
+    created: 2026-07-23
+    notes: "showcase"
+
+  # Related project pairs
+  - id: edge.ias-related-sopia
+    from: github.repo.ias-system
+    predicate: related_to
+    to: github.repo.sopia
+    created: 2026-07-23
+    notes: "Same broad compliance/audit domain; different methods (LLM-assisted vs deterministic)"
+  - id: edge.rlhf-tasks-related-openai-rlhf
+    from: github.repo.rlhf-tasks
+    predicate: related_to
+    to: github.repo.openai-rlhf
+    created: 2026-07-23
+    notes: "Both AI coding-eval corpora/tooling; not the same product"
+  - id: edge.rlhf-tasks-related-new-harbor
+    from: github.repo.rlhf-tasks
+    predicate: related_to
+    to: github.repo.new-harbor-tasks
+    created: 2026-07-23
+    notes: "Harbor/Terminus family; new-harbor-tasks thinner"
+  - id: edge.my-learning-canonical-over-karm
+    from: github.repo.my-learning
+    predicate: supersedes
+    to: github.repo.karm
+    created: 2026-07-23
+    notes: "Karm README is stub; curriculum depth in my-learning"
+  - id: edge.wecare-related-wecarengo
+    from: github.repo.wecare
+    predicate: related_to
+    to: github.repo.wecarengo
+    created: 2026-07-23
+    notes: "Likely NGO site family; WeCareNGO missing README"
+
+  # Skills (lightweight; expand when skill entities exist)
+  - id: edge.adaptive-rag-demonstrates-rag
+    from: github.repo.adaptive-rag
+    predicate: demonstrates
+    to: skill.rag
+    created: 2026-07-23
+    notes: "README-backed"
+  - id: edge.adaptive-rag-uses-langgraph
+    from: github.repo.adaptive-rag
+    predicate: uses
+    to: technology.langgraph
+    created: 2026-07-23
+    notes: ""
+  - id: edge.rlhf-tasks-demonstrates-ai-evals
+    from: github.repo.rlhf-tasks
+    predicate: demonstrates
+    to: skill.ai-evals
+    created: 2026-07-23
+    notes: ""
+  - id: edge.fileu-demonstrates-cli-safety
+    from: github.repo.fileu
+    predicate: demonstrates
+    to: skill.systems-utilities
+    created: 2026-07-23
+    notes: ""
+  - id: edge.amex-related-competition
+    from: github.repo.amex
+    predicate: related_to
+    to: community.amex-campus-challenge-2026
+    created: 2026-07-23
+    notes: "Competition context from README; placement unverified"
+
+  # Learning domains ↔ repos
+  - id: edge.adaptive-rag-in-domain-rag
+    from: github.repo.adaptive-rag
+    predicate: advances
+    to: learning.domain.rag-and-agentic-systems
+    created: 2026-07-23
+    notes: "stage applying"
+  - id: edge.mailu-in-domain-rag
+    from: github.repo.mailu
+    predicate: advances
+    to: learning.domain.rag-and-agentic-systems
+    created: 2026-07-23
+    notes: ""
+  - id: edge.rlhf-tasks-in-domain-evals
+    from: github.repo.rlhf-tasks
+    predicate: advances
+    to: learning.domain.ai-coding-agent-evaluation
+    created: 2026-07-23
+    notes: "currently-learning active"
+  - id: edge.openai-rlhf-in-domain-evals
+    from: github.repo.openai-rlhf
+    predicate: advances
+    to: learning.domain.ai-coding-agent-evaluation
+    created: 2026-07-23
+    notes: ""
+  - id: edge.ias-in-domain-compliance
+    from: github.repo.ias-system
+    predicate: advances
+    to: learning.domain.compliance-and-audit-systems
+    created: 2026-07-23
+    notes: ""
+  - id: edge.sopia-in-domain-compliance
+    from: github.repo.sopia
+    predicate: advances
+    to: learning.domain.compliance-and-audit-systems
+    created: 2026-07-23
+    notes: ""
+  - id: edge.sopia-in-domain-det-vs-gen
+    from: github.repo.sopia
+    predicate: advances
+    to: learning.domain.deterministic-vs-generative-design
+    created: 2026-07-23
+    notes: ""
+  - id: edge.chatbot-in-domain-det-vs-gen
+    from: github.repo.chatbot
+    predicate: advances
+    to: learning.domain.deterministic-vs-generative-design
+    created: 2026-07-23
+    notes: ""
+  - id: edge.security-audit-in-domain-security
+    from: github.repo.security-audit
+    predicate: advances
+    to: learning.domain.security-and-host-auditing
+    created: 2026-07-23
+    notes: "currently-learning active"
+  - id: edge.amex-in-domain-interpretable
+    from: github.repo.amex
+    predicate: advances
+    to: learning.domain.interpretable-analytics
+    created: 2026-07-23
+    notes: ""
+  - id: edge.wecare-in-domain-react
+    from: github.repo.wecare
+    predicate: advances
+    to: learning.domain.fullstack-typescript-react
+    created: 2026-07-23
+    notes: ""
+  - id: edge.fileu-in-domain-python-utils
+    from: github.repo.fileu
+    predicate: advances
+    to: learning.domain.python-systems-utilities
+    created: 2026-07-23
+    notes: ""
+  - id: edge.my-learning-in-domain-curriculum
+    from: github.repo.my-learning
+    predicate: advances
+    to: learning.domain.curriculum-and-engineering-education
+    created: 2026-07-23
+    notes: "teaching materials; not proof of personal mastery of listed competencies"
+  - id: edge.person-has-learning-profile
+    from: person.ayush-rai
+    predicate: has_profile
+    to: learning.currently-learning
+    created: 2026-07-23
+    notes: ""
+
+# Example:
+# - id: edge.python-used-in-alpha
+#   from: technology.python
+#   predicate: used_in
+#   to: project.alpha
+#   created: 2026-07-23
+#   notes: ""

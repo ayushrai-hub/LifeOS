@@ -1,0 +1,22 @@
+id: contact.email-proton
+type: contact_channel
+title: Proton Mail
+slug: email-proton
+platform: Proton Mail
+username: "ayushrai0211@proton.me"
+url: mailto:ayushrai0211@proton.me
+category: contact
+purpose: "Primary email contact"
+visibility: public
+priority: 100
+status: active
+notes: "Owner-provided address ayushrai0211@proton.me"
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

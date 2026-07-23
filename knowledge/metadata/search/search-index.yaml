@@ -1,0 +1,15 @@
+# Search stub; regenerate from entities later
+generated_at: 2026-07-23
+documents:
+  - id: person.owner
+    type: person
+    title: "[PLACEHOLDER: Full legal or public name]"
+    slug: owner
+    aliases: []
+    keywords: []
+    tags: []
+    description: "[PLACEHOLDER: one-line factual descriptor]"
+    summary: ""
+    search_weight: 1.0
+    visibility: private
+    status: draft

@@ -1,0 +1,23 @@
+id: business.notion-so-portfolio
+type: business_profile
+title: Notion
+slug: notion-so-portfolio
+platform: Notion
+username: "Ayush-s-Portfolio"
+url: https://www.notion.so/Ayush-s-Portfolio-5d069b2fa8b64d7e8b939a0c9b946e7b
+category: business
+purpose: "Notion.so portfolio URL (same page id)"
+visibility: public
+priority: 15
+status: duplicate-candidate
+notes: "Same portfolio page id as business.notion-portfolio. Prefer notion.site URL."
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23
+superseded_by: business.notion-portfolio

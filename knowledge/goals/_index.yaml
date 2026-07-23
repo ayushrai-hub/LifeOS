@@ -1,0 +1,6 @@
+items: []
+# Machine index for knowledge/goals
+# Append: { id, slug, title, status, path }
+domain: goals
+title: goals
+updated: 2026-07-23

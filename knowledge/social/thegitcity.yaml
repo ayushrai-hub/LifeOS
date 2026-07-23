@@ -1,0 +1,22 @@
+id: social.thegitcity
+type: social_profile
+title: The Git City
+slug: thegitcity
+platform: The Git City
+username: "ayushrai-hub"
+url: https://www.thegitcity.com/dev/ayushrai-hub
+category: developer
+purpose: "The Git City developer profile"
+visibility: public
+priority: 40
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

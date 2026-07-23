@@ -1,0 +1,22 @@
+id: social.luma
+type: social_profile
+title: Luma
+slug: luma
+platform: Luma
+username: "usr-qW1UycCmikf2IYz"
+url: https://luma.com/user/usr-qW1UycCmikf2IYz
+category: other
+purpose: "Luma events user profile"
+visibility: public
+priority: 40
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23

@@ -1,0 +1,2 @@
+/* Entry stylesheet: single import for maintainability. */
+@import url("./site.css");

@@ -1,0 +1,22 @@
+id: social.producthunt
+type: social_profile
+title: Product Hunt
+slug: producthunt
+platform: Product Hunt
+username: "ayush_rai02"
+url: https://www.producthunt.com/@ayush_rai02
+category: developer
+purpose: "Product Hunt profile"
+visibility: public
+priority: 60
+status: active
+notes: ""
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: owner-provided-link-list
+  source_file: data/imports/2026-07-23-identity-links.txt
+  imported_at: 2026-07-23
