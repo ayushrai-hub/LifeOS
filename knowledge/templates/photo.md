@@ -15,13 +15,17 @@ location: null
 camera: null
 license: "all-rights-reserved"
 alt_text: "[PLACEHOLDER: accessible description]"
-file_path: "assets/images/[PLACEHOLDER]"
+file_path: "knowledge/media/photos/[PLACEHOLDER]"
 width: null
 height: null
+people: []
 relationships:
   related_projects: []
   related_events: []
   related_people: [person.owner]
+  related_communities: []
+  related_timeline: []
+  related_articles: []
   related_gallery: []
 ---
 
@@ -33,8 +37,8 @@ relationships:
 
 ## What happened
 
-[PLACEHOLDER: Context for the photograph.]
+[PLACEHOLDER]
 
 ## Why it is here
 
-[PLACEHOLDER: What this image documents in the knowledge system.]
+[PLACEHOLDER]

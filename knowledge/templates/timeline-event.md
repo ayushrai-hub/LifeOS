@@ -1,5 +1,5 @@
 ﻿---
-id: event.example
+id: event.timeline.example
 type: timeline_event
 title: "[PLACEHOLDER]"
 slug: example
@@ -11,15 +11,20 @@ updated: 2026-07-23
 author: person.owner
 version: 0.1.0
 occurred_at: null
-category: life|career|education|project|other
+category: education|project|job|community|travel|speaking|reading|research|fitness|volunteer|competition|achievement|failure|lesson|other
 relationships:
   related_projects: []
   related_companies: []
   related_people: []
   related_events: []
+  related_skills: []
+  related_articles: []
+  related_media: []
+  related_communities: []
+  related_technologies: []
 ---
 
-# Event
+# Timeline event
 
 ## Details
 
@@ -28,3 +33,7 @@ relationships:
 ## Significance
 
 [PLACEHOLDER]
+
+## Linked entities
+
+[PLACEHOLDER: prefer ids over duplicated prose]
