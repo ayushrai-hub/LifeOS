@@ -4,42 +4,40 @@ title: Ayush Rai
 slug: owner
 aliases: []
 keywords:
-  - AI Engineer
-  - RLHF
-  - LLM
-  - RAG
-  - Prompt Engineering
-  - Agentic AI
+  - Software Engineer
+  - AI systems
+  - automation
+  - developer tools
 tags:
   - ai
   - engineering
-description: "AI Engineer | RLHF | LLM | RAG | Prompt Engineering | AI Product Builder | AI full stack developer | Automation | Agentic AI"
-summary: "AI Engineer with 2+ years of experience building production LLM and GenAI systems across backend, infrastructure, and product."
+description: "Software Engineer building AI systems, focused on automation and developer tools."
+summary: "Software Engineer building AI systems, focused on automation and developer tools."
 status: review
 visibility: public
 priority: 100
 search_weight: 1.0
 created: 2026-07-23
-updated: 2026-07-23
-last_reviewed: null
+updated: 2026-07-24
+last_reviewed: 2026-07-24
 author: person.owner
-version: 0.2.0
+version: 0.3.0
 seo:
   title: Ayush Rai
-  description: "AI Engineer building production LLM and GenAI systems; RAG, agents, evaluation, full-stack AI products."
+  description: "Software Engineer building AI systems, focused on automation and developer tools."
   canonical_path: /
 preferred_name: Ayush Rai
 headline: "AI Engineer | RLHF | LLM | RAG | Prompt Engineering | AI Product Builder | AI full stack developer | Automation | Agentic AI"
-location: "Pune District, Maharashtra, India"
-location_secondary: "Bhopal, Madhya Pradesh, India (postal address / several roles)"
-location_notes: "LinkedIn headline location is Pune District; contact address and several roles list Bhopal. status: review_required for primary public location."
+location: "Bhopal, Madhya Pradesh, India"
+location_secondary: "Pune District, Maharashtra, India (historical / work context where applicable)"
+location_notes: "Public headline location is Bhopal, Madhya Pradesh, India. Pune is historical/work only. Do not publish street or residential address."
 languages:
   - skill.english
   - skill.hindi
 provenance:
-  source: linkedin-resume
-  source_file: data/imports/2026-07-23-linkedin-resume.txt
-  imported_at: 2026-07-23
+  source: owner-canonical-2026-07-24
+  source_file: docs/OWNER_INTAKE.md
+  imported_at: 2026-07-24
 relationships:
   related_projects: []
   related_skills:
@@ -86,7 +84,7 @@ identity:
     - social.github
     - social.x
     - contact.email-gmail
-    - contact.email-proton
+    - contact.phone
     - business.digital-identity-hub
     - business.project-showcase
     - business.skills-portfolio
@@ -95,9 +93,6 @@ identity:
     - business.topmate
   contact:
     - contact.email-gmail
-    - contact.email-proton
     - contact.phone
     - contact.whatsapp
-    - contact.postal-address-bhopal
-    - contact.calendly
   portrait: photo.ayush-rai-workspace-2024

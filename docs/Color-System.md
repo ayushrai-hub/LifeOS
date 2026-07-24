@@ -31,7 +31,8 @@ Inline links use classic document blue (underline + color). Visited links shift 
 
 ## Dark mode
 
-Not in v1. If added later, invert carefully and keep contrast AA. Do not ship a half-broken toggle.
+Black-and-white invert via top-right **Dark / Light** toggle (`html[data-theme="dark"]`).
+Preference is stored in `localStorage.theme`. Keep contrast AA; do not add colored dark themes.
 
 ## Charts / diagrams
 

@@ -1,32 +1,33 @@
 ﻿id: contact.calendly
 type: contact_channel
 title: Calendly
+name: Calendly
 slug: calendly
 platform: Calendly
 username: "ayushrai0211"
 display_name: "Ayush Rai"
 url: https://calendly.com/ayushrai0211
-category: contact
-purpose: "Scheduling"
-description: "Meeting scheduling link"
+category: scheduling
+purpose: "Book a meeting"
+description: "Schedule a meeting through Calendly."
 primary_audience: "clients collaborators"
 visibility: public
+verified: true
 priority: 80
 status: active
-notes: "From GitHub README Connect"
-tags: ["contact", "scheduling"]
+notes: "Canonical booking URL confirmed by owner 2026-07-24. Publish on Contact only; not on homepage."
+tags: ["contact", "scheduling", "booking"]
 aliases: []
-last_updated: null
+last_updated: 2026-07-24
 related_skills: []
 related_projects: []
 related_companies: []
 related_technologies: []
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.1.0
-last_verified: 2026-07-23
+version: 0.3.0
+last_verified: 2026-07-24
 provenance:
-  source: linkedin-resume-and-owner-chat
-  source_file: data/imports/2026-07-23-linkedin-resume.txt
-  imported_at: 2026-07-23
+  source: owner-canonical-2026-07-24
+  imported_at: 2026-07-24

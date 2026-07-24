@@ -19,7 +19,7 @@ items:
   - id: business.laborx-customer
     reason: "Separate LaborX customer id vs freelancer id"
   - id: person.owner
-    reason: "Location conflict: LinkedIn headline Pune District vs Bhopal postal address / role locations"
+    reason: "RESOLVED 2026-07-24: public location is Bhopal, Madhya Pradesh, India; Pune is historical/work only; street address not published"
   - id: contact.phone
     reason: "Country code assumed +91 for tel: URL"
   - id: education.mission-english-hss-12th

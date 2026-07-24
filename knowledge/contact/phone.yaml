@@ -1,0 +1,31 @@
+﻿id: contact.phone
+type: contact_channel
+title: Mobile Phone
+slug: phone
+platform: Phone
+username: "+91 7440567944"
+display_name: "Ayush Rai"
+url: tel:+917440567944
+category: contact
+purpose: "Primary public phone"
+description: "Public mobile number +91 7440567944."
+primary_audience: "recruiters clients collaborators"
+visibility: public
+priority: 85
+status: active
+notes: "Canonical public phone per owner 2026-07-24. Country code +91 confirmed. Same number used by contact.whatsapp."
+tags: ["contact", "phone"]
+aliases: ["7440567944", "+91 7440567944", "+917440567944"]
+last_updated: 2026-07-24
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-23
+updated: 2026-07-24
+author: person.owner
+version: 0.2.0
+last_verified: 2026-07-24
+provenance:
+  source: owner-canonical-2026-07-24
+  imported_at: 2026-07-24

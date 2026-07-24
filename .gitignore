@@ -81,7 +81,6 @@ data/imports/*-identity-*.xls
 
 # Phone / private contact channels (do not publish to public GitHub)
 knowledge/contact/whatsapp.yaml
-knowledge/contact/phone.yaml
 knowledge/contact/postal-address-bhopal.yaml
 knowledge/inbox/
 knowledge/media/photos/sources/
@@ -101,4 +100,6 @@ inbox-private/
 agent-transcripts/
 
 # OpenMemory - IDE/Assistant specific rules
+.cursor/rules/openmemory.mdc
+.cursor/rules/openmemory.mdc
 .cursor/rules/openmemory.mdc

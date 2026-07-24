@@ -4,8 +4,8 @@
   "owner": {
     "name": "Ayush Rai",
     "short_name": "Ayush",
-    "email": "ayushrai0211@proton.me",
-    "tagline": "I build software, study how systems behave under real constraints, and keep a working record of what I learn."
+    "email": "ayushrai0211@gmail.com",
+    "tagline": "Software Engineer building AI systems, focused on automation and developer tools."
   },
   "sites": [
     { "id": "www", "title": "Home", "path": "sites/www" },

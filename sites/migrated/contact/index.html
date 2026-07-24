@@ -9,7 +9,16 @@
   <meta name="robots" content="noindex,follow">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../../../styles/site.css">
+    <script>
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="../../../styles/site.css?v=20260724c">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -22,7 +31,7 @@
       <li>Email: <a href="mailto:ayushrai0211@gmail.com">ayushrai0211@gmail.com</a></li>
       <li>Phone / WhatsApp: <a href="https://api.whatsapp.com/send/?phone=7440567944&amp;text&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer">+91-7440567944</a></li>
       <li>Scheduling: <a href="https://cal.com/ayush-rai-02" rel="noopener noreferrer">cal.com/ayush-rai-02</a></li>
-      <li>Location: Bhopal, India (remote available)</li>
+      <li>Location: Bhopal, Madhya Pradesh, India</li>
       <li>Response time claimed on site: within 24 hours</li>
     </ul>
     <p>Selected public profiles linked from the site bundle:</p>
@@ -37,7 +46,8 @@
       <li><a href="https://substack.com/@ayushrai02" rel="noopener noreferrer">Substack</a></li>
       <li><a href="https://linktr.ee/ayush_rai02" rel="noopener noreferrer">Linktree</a></li>
     </ul>
-    <p class="muted">Note: the knowledge base also records Proton Mail (<a href="mailto:ayushrai0211@proton.me">ayushrai0211@proton.me</a>) as a contact channel. Both addresses appear in different sources.</p>
+    <p class="muted">Note: Gmail is the primary public contact. The knowledge base also keeps Proton Mail (<a href="mailto:ayushrai0211@proton.me">ayushrai0211@proton.me</a>) as a secondary channel.</p>
   </main>
+  <script src="/scripts/site-chrome.js" defer></script>
 </body>
 </html>

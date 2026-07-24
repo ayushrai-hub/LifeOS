@@ -8,7 +8,16 @@
   <meta name="author" content="Ayush Rai">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../../styles/site.css">
+    <script>
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="../../styles/site.css?v=20260724c">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -18,5 +27,6 @@
     <p>Management is the craft of making delivery predictable without lying about status. Evidence lives in cadence notes, postmortems, and projects that finished.</p><ul class="related-links"><li><a href="../portfolios/project-management/index.html">Project management portfolio</a></li><li><a href="../leadership/index.html">Leadership</a></li></ul>
     <p class="foot"><a href="../www/index.html">Home</a></p>
   </main>
+  <script src="/scripts/site-chrome.js" defer></script>
 </body>
 </html>

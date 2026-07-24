@@ -3,6 +3,8 @@
  * Updates continuously while the page is open.
  * Independent of knowledge chronology / last-updated fields.
  *
+ * Prefer /scripts/site-chrome.js for the combined clock + theme chrome.
+ *
  * Usage:
  *   <div id="live-clock" class="live-clock" aria-live="off"></div>
  *   <script src="/scripts/live-clock.js" defer></script>

@@ -12,7 +12,16 @@
   <meta property="og:description" content="Resumes, timeline, and career evidence.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="../../styles/site.css">
+    <script>
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="../../styles/site.css?v=20260724d">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -31,6 +40,14 @@
         <li><a href="./resumes/security.html">Security Resume</a></li>
       </ul>
     </section>
+    <section aria-labelledby="mentoring">
+      <h2 id="mentoring">Mentoring</h2>
+      <p>
+        <a href="https://topmate.io/ayush_rai02" rel="noopener noreferrer">Topmate</a>
+        <span class="muted"> — Book mentorship sessions, career guidance, resume reviews, and professional consultations.</span>
+      </p>
+      <p class="muted">Scheduling for general calls lives on <a href="../contact/index.html#booking">Contact</a>.</p>
+    </section>
     <section aria-labelledby="also">
       <h2 id="also">Also</h2>
       <ul class="related-links">
@@ -42,5 +59,6 @@
     </section>
     <p class="foot"><a href="../www/index.html">Home</a></p>
   </main>
+  <script src="/scripts/site-chrome.js" defer></script>
 </body>
 </html>

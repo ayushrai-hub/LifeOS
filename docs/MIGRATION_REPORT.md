@@ -53,7 +53,7 @@ Generator: `scripts/migrate-ayushrai-site.ps1`.
 
 | Topic | Live site | Knowledge base |
 |-------|-----------|----------------|
-| Email | `ayushrai0211@gmail.com` | Proton `ayushrai0211@proton.me` (primary contact entity) |
+| Email | `ayushrai0211@gmail.com` | Gmail primary (`contact.email-gmail`); Proton archived (secondary email: none) |
 | Tone | Portfolio marketing SPA | Evidence-first knowledge system |
 | Stack | Next/React/Tailwind SPA | Static HTML/CSS consumer |
 

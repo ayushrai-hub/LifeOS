@@ -3,11 +3,11 @@ id: mentoring.topmate-sessions
 type: mentoring
 title: Topmate mentoring
 slug: topmate-sessions
-description: "Mentoring via topmate.io (Mentor role from January 2026)."
-status: review
+description: "Book mentorship sessions, career guidance, resume reviews, and professional consultations on Topmate."
+status: published
 visibility: public
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
 version: 0.1.0
 role: mentor
@@ -32,7 +32,7 @@ provenance:
 
 ## Context
 
-Public Mentor listing on topmate.io alongside career identity. Session topics and outcomes are not listed in the LinkedIn source — log each meaningful mentorship as evidence under `impact/evidence/` when real.
+Canonical profile: [https://topmate.io/ayush_rai02](https://topmate.io/ayush_rai02) (`business.topmate`). Featured on Career and Contact mentoring sections; not on the homepage. Session topics and outcomes are not fully listed yet — log each meaningful mentorship as evidence under `impact/evidence/` when real.
 
 ## What I offer (honest)
 

@@ -15,7 +15,7 @@ version: 0.3.0
 
 name: Ayush Rai
 
-tagline: "I build software, study how systems behave under real constraints, and keep a working record of what I learn."
+tagline: "Software Engineer building AI systems, focused on automation and developer tools."
 
 intro:
   - "Personal knowledge system: what I ship, what broke, and what I would do differently. Evidence lives in the pages below. Start wherever curiosity points."
@@ -75,11 +75,14 @@ doors:
   certifications: "../certifications/index.html"
 
 contact:
-  - "contact.email-proton"
+  - "contact.email-gmail"
+  - "contact.phone"
   - "social.github"
   - "social.linkedin"
   - "social.x"
   - "social.linktree"
+
+contact_note: "reply within 24 hrs"
 
 footer: "0 frameworks were used to make this simple responsive website because I am becoming seriously allergic to 500-pound websites. This one is pure HTML and CSS in two static files and that's it."
 
@@ -87,6 +90,14 @@ limits:
   current_focus: 5
   latest_work: 6
   recently_updated: 5
+
+# Pinned at the top of Latest Work (before GitHub showcase ingest).
+latest_work_pins:
+  - title: RevenueRoles
+    date: "2026-07-24"
+    summary: "technical revenue job intelligence and job board"
+    href: "https://revenueroles.in/"
+    external: true
 
 focus_blurbs:
   - match: "AI coding-agent evaluation"

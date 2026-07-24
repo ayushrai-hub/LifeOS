@@ -76,8 +76,17 @@ function Write-Page {
   <meta property="og:description" content="$(Esc $Description)">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="$(Esc $css)">
+  <link rel="stylesheet" href="$(Esc $css)?v=20260724b">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -85,6 +94,7 @@ function Write-Page {
 $draft$BodyHtml
     <p class="foot"><a href="$(Esc $homeHref)">Home</a></p>
   </main>
+  <script src="/scripts/site-chrome.js" defer></script>
 </body>
 </html>
 "@

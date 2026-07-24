@@ -1,32 +1,33 @@
 ﻿id: business.buymeacoffee
 type: business_profile
 title: Buy Me a Coffee
+name: Buy Me a Coffee
 slug: buymeacoffee
 platform: Buy Me a Coffee
 username: "ayush_rai02"
 display_name: "Ayush Rai"
 url: https://buymeacoffee.com/ayush_rai02
-category: payment
-purpose: "Support / tipping"
-description: "Buy Me a Coffee support link from GitHub README"
+category: support
+purpose: "Optional support for open-source and educational work"
+description: "If my work has helped you, you can support future open-source projects and educational content."
 primary_audience: "supporters"
 visibility: public
-priority: 55
+verified: true
+priority: 40
 status: active
-notes: "From GitHub README"
-tags: ["payments"]
-aliases: []
-last_updated: null
+notes: "Support channel only. Place on Contact as secondary Support My Work; never homepage hero/CTA. Omit from Person sameAs."
+tags: ["support", "payments"]
+aliases: ["buy-me-a-coffee", "bmc"]
+last_updated: 2026-07-24
 related_skills: []
 related_projects: []
 related_companies: []
 related_technologies: []
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.1.0
-last_verified: 2026-07-23
+version: 0.2.0
+last_verified: 2026-07-24
 provenance:
-  source: linkedin-resume-and-owner-chat
-  source_file: data/imports/2026-07-23-linkedin-resume.txt
-  imported_at: 2026-07-23
+  source: owner-canonical-2026-07-24
+  imported_at: 2026-07-24

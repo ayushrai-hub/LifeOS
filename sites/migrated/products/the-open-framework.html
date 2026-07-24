@@ -9,7 +9,16 @@
   <meta name="robots" content="noindex,follow">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../../../styles/site.css">
+    <script>
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="../../../styles/site.css?v=20260724c">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -27,5 +36,6 @@
 
     <section aria-labelledby="stack"><h2 id="stack">Tech stack listed</h2><p>Frontend: Next.js, TypeScript (strict), Tailwind with design tokens, Radix UI. Backend: NestJS or Spring Boot, REST and OpenAPI. Auth: OAuth 2.0, RBAC, progressive verification. Data: PostgreSQL, S3-compatible storage, immutable audit logs.</p></section>
   </main>
+  <script src="/scripts/site-chrome.js" defer></script>
 </body>
 </html>

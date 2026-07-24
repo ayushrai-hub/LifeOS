@@ -6,16 +6,16 @@ platform: Proton Mail
 username: "ayushrai0211@proton.me"
 url: mailto:ayushrai0211@proton.me
 category: contact
-purpose: "Primary email contact"
-visibility: public
-priority: 100
-status: active
-notes: "Owner-provided address ayushrai0211@proton.me"
+purpose: "Non-public email record only"
+visibility: private
+priority: 20
+status: archived
+notes: "Owner declared secondary email: none (2026-07-24). Keep entity for provenance; do not publish on site contact surfaces."
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.1.0
-last_verified: 2026-07-23
+version: 0.2.0
+last_verified: 2026-07-24
 provenance:
   source: owner-provided-link-list
   source_file: data/imports/2026-07-23-identity-links.txt

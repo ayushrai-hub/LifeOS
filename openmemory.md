@@ -15,13 +15,14 @@ Personal Knowledge Base (PKB) / LifeOS. Canonical facts live in `/knowledge`; `/
 
 - **Homepage (`sites/www`):** Wide shell (`.page.home`), photo + lede side-by-side (`.home-hero`), compact door nav (`.home-doors`), three useful panels (`.home-panels`: focus / latest / updated), colophon footer from `homepage.yaml`
 - **Favicon:** `assets/icons/favicon.svg` (geometric A monogram, ink on paper); also mirrored at `/favicon.svg`; linked site-wide via `<link rel="icon">`
+- **Site chrome:** Fixed top-right B/W theme toggle (`scripts/site-chrome.js`, styles in `site.css`)
 - **Inner pages:** Narrower reading measure (`--measure` ~48rem), document aesthetic (Georgia, blue links, no cards)
 
 ## Patterns
 
 - Minimal document UI; denser vertical rhythm; use width for lists/panels on home, keep prose measure readable
 - No em dashes; evidence over marketing copy
-- Edit homepage editorial in `knowledge/_system/homepage.yaml`, then `node scripts/build-home.js`
+- **Contact surfaces:** Booking (Calendly + Cal.com) and Support (Buy Me a Coffee) live on `sites/contact`; Topmate mentoring on Career + Contact; never homepage hero/CTA
 
 ## User Defined Namespaces
 

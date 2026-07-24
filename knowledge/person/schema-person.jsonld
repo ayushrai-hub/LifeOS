@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://thelifeofayush.vercel.app/#person",
+  "name": "Ayush Rai",
+  "url": "https://thelifeofayush.vercel.app/",
+  "email": "mailto:ayushrai0211@gmail.com",
+  "telephone": "+91-7440567944",
+  "jobTitle": "Software Engineer",
+  "description": "Software Engineer building AI systems, focused on automation and developer tools.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bhopal",
+    "addressRegion": "Madhya Pradesh",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://github.com/ayushrai-hub",
+    "https://www.linkedin.com/in/ayushrai02",
+    "https://x.com/AyushRai0211",
+    "https://linktr.ee/ayush_rai02",
+    "https://calendly.com/ayushrai0211",
+    "https://cal.com/ayush-rai-02",
+    "https://topmate.io/ayush_rai02"
+  ]
+}

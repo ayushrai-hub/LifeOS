@@ -40,7 +40,9 @@ function loadHomepageYaml(filePath) {
     doors_nav: [],
     contact: [],
     footer: "",
+    contact_note: "",
     limits: { current_focus: 5, latest_work: 6, recently_updated: 5 },
+    latest_work_pins: [],
     focus_blurbs: [],
   };
 
@@ -68,7 +70,8 @@ function loadHomepageYaml(filePath) {
       ) {
         val = val.slice(1, -1);
       }
-      if (key === "name" || key === "tagline" || key === "footer") data[key] = val;
+      if (key === "name" || key === "tagline" || key === "footer" || key === "contact_note")
+        data[key] = val;
       continue;
     }
 
@@ -127,6 +130,46 @@ function loadHomepageYaml(filePath) {
       const key = trimmed.slice(0, i).trim();
       const val = Number(trimmed.slice(i + 1).trim());
       data.limits[key] = val;
+      continue;
+    }
+
+    if (section === "latest_work_pins") {
+      if (trimmed.startsWith("- title:")) {
+        let val = trimmed.replace(/^- title:\s*/, "").trim();
+        if (
+          (val.startsWith('"') && val.endsWith('"')) ||
+          (val.startsWith("'") && val.endsWith("'"))
+        ) {
+          val = val.slice(1, -1);
+        }
+        data.latest_work_pins.push({
+          title: val,
+          date: "",
+          summary: "",
+          href: "",
+          external: true,
+          kind: "pin",
+        });
+        continue;
+      }
+      const last = data.latest_work_pins[data.latest_work_pins.length - 1];
+      if (!last) continue;
+      const field = trimmed.match(
+        /^(date|summary|href|external|kind):\s*(.*)$/
+      );
+      if (!field) continue;
+      let val = field[2].trim();
+      if (
+        (val.startsWith('"') && val.endsWith('"')) ||
+        (val.startsWith("'") && val.endsWith("'"))
+      ) {
+        val = val.slice(1, -1);
+      }
+      if (field[1] === "external") {
+        last.external = val !== "false";
+      } else {
+        last[field[1]] = val;
+      }
       continue;
     }
 
@@ -379,6 +422,8 @@ function resolveContact(ids) {
     let text = label;
     if (href.startsWith("mailto:")) {
       text = ent.username || href.replace(/^mailto:/, "");
+    } else if (href.startsWith("tel:")) {
+      text = ent.username || href.replace(/^tel:/, "");
     } else if (ent.username && /github|linkedin|x\.com|twitter/i.test(href)) {
       text = label;
     }
@@ -471,9 +516,23 @@ function renderHtml(home) {
   const contactHtml = home.contact
     .map((c) => {
       const rel = c.href.startsWith("http") ? ' rel="noopener noreferrer"' : "";
-      return `<a href="${escapeHtml(c.href)}"${rel}>${escapeHtml(c.text)}</a>`;
+      const note =
+        home.contact_note && c.href.startsWith("mailto:")
+          ? ` <span class="muted">(${escapeHtml(home.contact_note)})</span>`
+          : "";
+      return `<a href="${escapeHtml(c.href)}"${rel}>${escapeHtml(
+        c.text
+      )}</a>${note}`;
     })
     .join("\n          ·\n          ");
+
+  const personSchemaPath = path.join(KNOWLEDGE, "person/schema-person.jsonld");
+  const personSchema = fs.existsSync(personSchemaPath)
+    ? read(personSchemaPath).trim()
+    : "";
+  const schemaHtml = personSchema
+    ? `  <script type="application/ld+json">\n${personSchema}\n  </script>`
+    : "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -484,8 +543,24 @@ function renderHtml(home) {
   <meta name="description" content="${escapeHtml(home.tagline)}">
   <meta name="author" content="${escapeHtml(home.name)}">
   <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="${escapeHtml(home.name)}">
+  <meta property="og:description" content="${escapeHtml(home.tagline)}">
+  <meta property="og:type" content="profile">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="${escapeHtml(home.name)}">
+  <meta name="twitter:description" content="${escapeHtml(home.tagline)}">
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../../styles/site.css?v=20260724">
+  <link rel="stylesheet" href="../../styles/site.css?v=20260724c">
+${schemaHtml}
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -551,6 +626,7 @@ ${recentHtml || '          <li class="muted">Nothing published yet.</li>'}
         : ""
     }
   </main>
+  <script src="/scripts/site-chrome.js" defer></script>
 </body>
 </html>
 `;
@@ -589,7 +665,22 @@ function main() {
       };
     });
 
-  const latest = loadLatestWork(editorial.limits.latest_work);
+  const pinned = (editorial.latest_work_pins || [])
+    .filter((p) => p && p.title && p.href)
+    .map((p) => ({
+      title: p.title,
+      date: p.date || "",
+      summary: p.summary || "",
+      href: p.href,
+      kind: p.kind || "pin",
+      external: p.external !== false,
+    }));
+  const fromGithub = loadLatestWork(editorial.limits.latest_work);
+  const seen = new Set(pinned.map((p) => p.title.toLowerCase()));
+  const latest = [
+    ...pinned,
+    ...fromGithub.filter((item) => !seen.has(item.title.toLowerCase())),
+  ].slice(0, editorial.limits.latest_work);
   const recent = loadRecentlyUpdated(
     editorial.limits.recently_updated,
     learningDate
@@ -607,6 +698,7 @@ function main() {
     latest_work: latest,
     recently_updated: recent,
     contact,
+    contact_note: editorial.contact_note || "",
     footer: editorial.footer || "",
     sources: [
       "knowledge/_system/homepage.yaml",

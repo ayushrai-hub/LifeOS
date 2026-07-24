@@ -9,7 +9,16 @@
   <meta name="robots" content="noindex,follow">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../../../styles/site.css">
+    <script>
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="../../../styles/site.css?v=20260724c">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -24,5 +33,6 @@
     </ul></section>
     <p><a href="https://drive.google.com/file/d/1SdTEH72nLWGtL50vYh_tH7Fhj_JJ881J/view?usp=sharing" rel="noopener noreferrer">Verification / certificate file</a></p>
   </main>
+  <script src="/scripts/site-chrome.js" defer></script>
 </body>
 </html>

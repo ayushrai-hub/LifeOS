@@ -7,14 +7,14 @@ description: "Path narrative; grows as life does."
 status: draft
 visibility: private
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
 version: 0.1.0
 ---
 
 # Personal Story
 
-I am Ayush Rai, based in Bhopal. I build software, study how systems behave under real constraints, and keep a working record of what I learn.
+I am Ayush Rai, based in Bhopal, Madhya Pradesh, India. I am a software engineer building AI systems, focused on automation and developer tools.
 
 ## Arc so far (honest, short)
 

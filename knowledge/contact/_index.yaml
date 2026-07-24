@@ -1,8 +1,17 @@
 # Contact channels (canonical)
 primary_email: contact.email-gmail
-secondary_email: contact.email-proton
+secondary_email: null
 phone: contact.phone
 whatsapp: contact.whatsapp
 postal_address: contact.postal-address-bhopal
 calendly: contact.calendly
-generated_at: 2026-07-23
+cal_com: contact.cal-com
+topmate: business.topmate
+buymeacoffee: business.buymeacoffee
+booking_link: contact.calendly
+public_location: "Bhopal, Madhya Pradesh, India"
+generated_at: 2026-07-24
+notes: >
+  Secondary email: none. Booking: Calendly + Cal.com on Contact.
+  Topmate: mentoring/career surfaces only. Buy Me a Coffee: Contact support only.
+  Postal address entity exists but must not be published. Do not put these on the homepage.

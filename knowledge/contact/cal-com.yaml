@@ -1,0 +1,33 @@
+id: contact.cal-com
+type: contact_channel
+title: Cal.com
+name: Cal.com
+slug: cal-com
+platform: Cal.com
+username: "ayush-rai-02"
+display_name: "Ayush Rai"
+url: https://cal.com/ayush-rai-02
+category: scheduling
+purpose: "Book a meeting"
+description: "Book a meeting using Cal.com."
+primary_audience: "clients collaborators"
+visibility: public
+verified: true
+priority: 80
+status: active
+notes: "Canonical booking URL confirmed by owner 2026-07-24. Publish on Contact only; not on homepage."
+tags: ["contact", "scheduling", "booking"]
+aliases: ["calcom", "cal.com"]
+last_updated: 2026-07-24
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-24
+updated: 2026-07-24
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-24
+provenance:
+  source: owner-canonical-2026-07-24
+  imported_at: 2026-07-24

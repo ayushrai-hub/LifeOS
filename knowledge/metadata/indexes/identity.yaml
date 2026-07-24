@@ -34,9 +34,9 @@ profiles:
     status: active
     url: https://app.usebraintrust.com/talent/1859806
   - id: business.buymeacoffee
-    path: D:/COde/knowledge/business/buymeacoffee.yaml
+    path: knowledge/business/buymeacoffee.yaml
     bucket: business
-    category: payment
+    category: support
     status: active
     url: https://buymeacoffee.com/ayush_rai02
   - id: business.codementor
@@ -268,9 +268,9 @@ profiles:
     status: active
     url: https://superteam.fun/earn/t/ayush_rai02
   - id: business.topmate
-    path: D:/COde/knowledge/business/topmate.yaml
+    path: knowledge/business/topmate.yaml
     bucket: business
-    category: professional
+    category: mentoring
     status: active
     url: https://topmate.io/ayush_rai02
   - id: business.torc
@@ -310,11 +310,17 @@ profiles:
     status: active
     url: https://app.yunojuno.com/p/ayush-rai
   - id: contact.calendly
-    path: D:/COde/knowledge/contact/calendly.yaml
+    path: knowledge/contact/calendly.yaml
     bucket: contact
-    category: contact
+    category: scheduling
     status: active
     url: https://calendly.com/ayushrai0211
+  - id: contact.cal-com
+    path: knowledge/contact/cal-com.yaml
+    bucket: contact
+    category: scheduling
+    status: active
+    url: https://cal.com/ayush-rai-02
   - id: contact.email-gmail
     path: D:/COde/knowledge/contact/email-gmail.yaml
     bucket: contact
@@ -325,7 +331,7 @@ profiles:
     path: D:/COde/knowledge/contact/email-proton.yaml
     bucket: contact
     category: contact
-    status: active
+    status: archived
     url: mailto:ayushrai0211@proton.me
   - id: contact.phone
     path: D:/COde/knowledge/contact/phone.yaml
@@ -338,6 +344,7 @@ profiles:
     bucket: contact
     category: contact
     status: active
+    visibility: private
     url: null
   - id: contact.whatsapp
     path: D:/COde/knowledge/contact/whatsapp.yaml

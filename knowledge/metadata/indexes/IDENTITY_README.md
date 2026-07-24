@@ -16,9 +16,12 @@ Do not hardcode these URLs in website HTML. Read the YAML entities (or the index
 | `social.linkedin` | https://www.linkedin.com/in/ayushrai02 |
 | `social.github` | https://github.com/ayushrai-hub |
 | `social.x` | https://x.com/AyushRai0211 |
-| `contact.email-proton` | mailto:ayushrai0211@proton.me |
+| `contact.email-gmail` | mailto:ayushrai0211@gmail.com (primary) |
+| `contact.phone` | tel:+917440567944 |
 | `business.notion-portfolio` | Notion portfolio (preferred host) |
 | `business.netlify-portfolio` | https://ayush-rai-work.netlify.app |
+
+Public location: Bhopal, Madhya Pradesh, India (city-level only). Secondary email: none. Booking link: unknown.
 
 ## Counts (2026-07-23 import)
 

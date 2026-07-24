@@ -7,18 +7,20 @@ description: Factual biographical summary.
 status: review
 visibility: public
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.3.0
+version: 0.4.0
 relationships:
   related_people: [person.owner]
 ---
 
 # Biography
 
-Ayush Rai is a builder based in Bhopal (also active in Pune District / Maharashtra professional context on LinkedIn). He works on production LLM and GenAI systems — RAG, agents, evaluation, full-stack AI products — with attention to latency, cost, reliability, and safety.
+Ayush Rai is a software engineer based in Bhopal, Madhya Pradesh, India. He builds AI systems with a focus on automation and developer tools.
 
 He is growing a **living knowledge system** of career, communities, domains, speaking, writing, fitness, impact, and learning so the public website can evolve as he does. Crafts he trains deliberately: **public speaking**, **storytelling**, **market understanding**, and **geopolitics** literacy — adjacent to engineering, not as finished identities.
+
+Pune District, Maharashtra appears only as a historical or work context where a role or source requires it, not as the public headline location. Street and residential addresses are not published.
 
 ## Formal trail (entities, not slogans)
 
