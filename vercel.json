@@ -3,9 +3,8 @@
   "framework": null,
   "installCommand": "",
   "buildCommand": "",
-  "outputDirectory": ".",
   "cleanUrls": true,
-  "trailingSlash": false,
+  "trailingSlash": true,
   "headers": [
     {
       "source": "/(.*)",
@@ -34,7 +33,7 @@
       ]
     }
   ],
-  "rewrites": [
-    { "source": "/", "destination": "/sites/www/index.html" }
+  "redirects": [
+    { "source": "/", "destination": "/sites/www/", "permanent": false }
   ]
 }
