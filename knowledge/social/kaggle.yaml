@@ -1,0 +1,32 @@
+﻿id: social.kaggle
+type: social_profile
+title: Kaggle
+slug: kaggle
+platform: Kaggle
+username: "ayushrai02"
+display_name: "Ayush Rai"
+url: https://www.kaggle.com/ayushrai02
+category: developer
+purpose: "Data science competitions and notebooks"
+description: "Kaggle profile linked from GitHub README"
+primary_audience: "data-scientists"
+visibility: public
+priority: 70
+status: active
+notes: "From GitHub README Connect badges"
+tags: ["developer", "data-science", "ai"]
+aliases: []
+last_updated: null
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: linkedin-resume-and-owner-chat
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  imported_at: 2026-07-23

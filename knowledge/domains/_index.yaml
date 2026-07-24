@@ -1,6 +1,28 @@
-items: []
-# Machine index for knowledge/domains
-# Append: { id, slug, title, status, path }
+items:
+  - { id: domain.artificial-intelligence, slug: artificial-intelligence, title: "Artificial Intelligence", status: draft, path: domains/artificial-intelligence.md }
+  - { id: domain.machine-learning, slug: machine-learning, title: "Machine Learning", status: draft, path: domains/machine-learning.md }
+  - { id: domain.software-engineering, slug: software-engineering, title: "Software Engineering", status: draft, path: domains/software-engineering.md }
+  - { id: domain.backend-engineering, slug: backend-engineering, title: "Backend Engineering", status: draft, path: domains/backend-engineering.md }
+  - { id: domain.frontend-engineering, slug: frontend-engineering, title: "Frontend Engineering", status: draft, path: domains/frontend-engineering.md }
+  - { id: domain.data-engineering, slug: data-engineering, title: "Data Engineering", status: draft, path: domains/data-engineering.md }
+  - { id: domain.systems-design, slug: systems-design, title: "Systems Design", status: draft, path: domains/systems-design.md }
+  - { id: domain.developer-tools, slug: developer-tools, title: "Developer Tools", status: draft, path: domains/developer-tools.md }
+  - { id: domain.automation, slug: automation, title: "Automation", status: draft, path: domains/automation.md }
+  - { id: domain.product-engineering, slug: product-engineering, title: "Product Engineering", status: draft, path: domains/product-engineering.md }
+  - { id: domain.business, slug: business, title: "Business", status: draft, path: domains/business.md }
+  - { id: domain.management, slug: management, title: "Management", status: draft, path: domains/management.md }
+  - { id: domain.leadership, slug: leadership, title: "Leadership", status: draft, path: domains/leadership.md }
+  - { id: domain.public-policy, slug: public-policy, title: "Public Policy", status: draft, path: domains/public-policy.md }
+  - { id: domain.economics, slug: economics, title: "Economics", status: draft, path: domains/economics.md }
+  - { id: domain.cybersecurity, slug: cybersecurity, title: "Cybersecurity", status: draft, path: domains/cybersecurity.md }
+  - { id: domain.open-source, slug: open-source, title: "Open Source", status: draft, path: domains/open-source.md }
+  - { id: domain.startups, slug: startups, title: "Startups", status: draft, path: domains/startups.md }
+  - { id: domain.research, slug: research, title: "Research", status: draft, path: domains/research.md }
+  - { id: domain.market-understanding, slug: market-understanding, title: "Market understanding", status: draft, path: domains/market-understanding.md }
+  - { id: domain.geopolitics, slug: geopolitics, title: "Geopolitics", status: draft, path: domains/geopolitics.md }
+  - { id: domain.public-speaking, slug: public-speaking, title: "Public speaking", status: draft, path: domains/public-speaking.md }
+  - { id: domain.storytelling, slug: storytelling, title: "Storytelling", status: draft, path: domains/storytelling.md }
+  - { id: domain.communication, slug: communication, title: "Communication", status: draft, path: domains/communication.md }
 domain: domains
-title: domains
+title: Domains
 updated: 2026-07-23

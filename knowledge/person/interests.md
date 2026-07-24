@@ -8,26 +8,28 @@ visibility: private
 created: 2026-07-23
 updated: 2026-07-23
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Interests
 
-Do not maintain a separate speculative interest list here.
+Durable field identities: [`../domains/`](../domains/).  
+Evidence-based learning stages: [`../learning/README.md`](../learning/README.md).
 
-**Canonical evidence-based learning profile:** [`../learning/README.md`](../learning/README.md)
+## Active attention
 
-## Recurring themes (GitHub-evidenced)
+1. Artificial intelligence / RAG / agents; `domain.artificial-intelligence`
+2. Software & product engineering; `domain.software-engineering`, `domain.product-engineering`
+3. Public speaking & storytelling; `domain.public-speaking`, `domain.storytelling`
+4. Market understanding; `domain.market-understanding`
+5. Geopolitics (serious amateur); `domain.geopolitics`
+6. Cybersecurity / audit automation; `domain.cybersecurity`, `domain.automation`
+7. Open source as public practice; `domain.open-source`
 
-1. RAG / agentic LLM applications; stage Applying/Practicing  
-2. AI coding-agent evaluation (Harbor/Terminus); stage Applying  
-3. Compliance & audit automation (incl. deterministic designs); stage Applying/Practicing  
-4. Host security auditing; stage Applying  
-5. Full-stack TypeScript/React product UIs; stage Practicing  
-6. Interpretable analytics under constraints; stage Applying  
-7. Python safety-minded utilities; stage Applying  
-8. Curriculum / teaching materials; stage Learning (materials only)
+## Watching
 
-## Not established from evidence
+Machine learning depth, data engineering, economics, public policy, management/leadership practice.
 
-Books, research agenda beyond repo themes, certificates, LinkedIn skills; see [`../learning/evidence-ledger.md`](../learning/evidence-ledger.md).
+## Not established from evidence yet
+
+Books finished, formal certificates, talk history; capture via `books/`, `certifications/inbox.md`, `speaking/`.

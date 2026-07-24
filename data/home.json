@@ -1,11 +1,9 @@
 {
-  "generated_at": "2026-07-23",
+  "generated_at": "2026-07-24",
   "name": "Ayush Rai",
-  "tagline": "I build software, study how systems behave under real constraints, and keep a working record of what I learn.",
+  "tagline": "AI Engineer building production LLM and GenAI systems; RAG, agents, evaluation, full-stack AI products.",
   "intro": [
-    "This site is my personal knowledge system; notes on the [projects](projects) I ship, the [engineering](engineering) and [artificial intelligence](ai) work behind them, and the [research](research), [writing](writing), and [learning](learning) that shape how I think.",
-    "I care about useful software, measurable [impact](impact), and products that solve real user and [business](business) problems. I document [systems](systems), [open source](open-source) work, [communities](communities) I take part in, and the slower parts of the path: [reading](reading), [fitness](fitness), [timeline](timeline), and a [gallery](gallery) of photographs.",
-    "Deeper pages hold the evidence. Start wherever curiosity points."
+    "Personal knowledge system: what I ship, what broke, and what I would do differently. Evidence lives in the pages below. Start wherever curiosity points."
   ],
   "doors": {
     "projects": "../projects/index.html",
@@ -32,51 +30,77 @@
     "notes": "../notes/index.html",
     "career": "../career/index.html",
     "books": "../books/index.html",
-    "ml": "../ml/index.html"
+    "ml": "../ml/index.html",
+    "portfolios": "../portfolios/index.html",
+    "domains": "../domains/index.html",
+    "resumes": "../career/resumes/index.html",
+    "certifications": "../certifications/index.html"
   },
+  "doors_nav": [
+    "projects",
+    "engineering",
+    "ai",
+    "learning",
+    "research",
+    "writing",
+    "portfolios",
+    "domains",
+    "products",
+    "resumes",
+    "impact",
+    "business",
+    "systems",
+    "open-source",
+    "communities",
+    "timeline",
+    "gallery",
+    "fitness",
+    "reading",
+    "contact"
+  ],
   "current_focus": [
     {
       "title": "AI coding-agent evaluation / Harbor–Terminus task systems",
       "short_title": "AI coding-agent evaluation",
-      "blurb": "Harbor / Terminus task systems, Dockerized oracles, review CLIs",
-      "stage": "Applying (tooling + task corpus); Exploring for formal RLHF training",
+      "stage": "Applying (tooling + task corpus); Exploring for formal RLHF *training*",
       "summary": "Multiple repos dedicated to evaluating LLM coding agents with Dockerized tasks, oracles, and review CLIs.",
+      "blurb": "Harbor and Terminus task systems, Dockerized oracles, review CLIs",
       "href": "../learning/index.html",
       "source": "knowledge/learning/currently-learning.md"
     },
     {
       "title": "Host security auditing / DFIR-style inventory",
       "short_title": "Host security auditing",
-      "blurb": "read-only DFIR-style inventory with MITRE-mapped findings",
       "stage": "Practicing → Applying (toolkit shipped in repo form)",
       "summary": "Cross-platform read-only audit tool with MITRE mappings and explicit non-destructive safety model.",
+      "blurb": "read-only DFIR-style inventory with MITRE-mapped findings",
       "href": "../learning/index.html",
       "source": "knowledge/learning/currently-learning.md"
     },
     {
       "title": "Interpretable business analytics under constraints",
       "short_title": "Interpretable business analytics",
-      "blurb": "constrained P&L scoring instead of proxy-target ML",
       "stage": "Applying (competition artifact)",
       "summary": "Chose transparent P&L scoring over black-box ML when the problem forbade proxy-target models.",
+      "blurb": "constrained P&L scoring instead of proxy-target ML",
       "href": "../learning/index.html",
       "source": "knowledge/learning/currently-learning.md"
     },
     {
       "title": "RAG and agentic LLM applications",
       "short_title": "RAG and agentic LLM applications",
-      "blurb": "routing, retrieval, and local-first experiment systems",
       "stage": "Practicing / Applying (multiple systems); not Expert",
-      "summary": "adaptive-rag (LangGraph, Qdrant, routing); MailU (local email RAG); IAS uses an LLM pass.",
+      "summary": null,
+      "blurb": "routing, retrieval, and local-first experiment systems",
       "href": "../learning/index.html",
       "source": "knowledge/learning/currently-learning.md"
     },
     {
       "title": "Compliance, KYC, and audit automation (incl. deterministic designs)",
       "short_title": "Compliance and audit automation",
-      "blurb": "including deterministic, non-generative designs",
       "stage": "Practicing / Applying",
-      "summary": "IAS-system, SoPia (explicitly non-generative), and related compliance tooling.",
+      "summary": null,
+      "blurb": "including deterministic, non-generative designs",
       "href": "../learning/index.html",
       "source": "knowledge/learning/currently-learning.md"
     }
@@ -181,8 +205,15 @@
       "label": "X",
       "text": "X",
       "href": "https://x.com/AyushRai0211"
+    },
+    {
+      "id": "social.linktree",
+      "label": "Linktree",
+      "text": "Linktree",
+      "href": "https://linktr.ee/ayush_rai02"
     }
   ],
+  "footer": "0 frameworks were used to make this simple responsive website because I am becoming seriously allergic to 500-pound websites. This one is pure HTML and CSS in two static files and that's it.",
   "sources": [
     "knowledge/_system/homepage.yaml",
     "knowledge/person/profile.yaml",

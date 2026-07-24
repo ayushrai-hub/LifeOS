@@ -1,4 +1,14 @@
-items: []
+items:
+  - id: product.shiksha-mitra
+    slug: shiksha-mitra
+    title: Shiksha-Mitra
+    status: draft
+    path: knowledge/products/shiksha-mitra.md
+  - id: product.revenueroles
+    slug: revenueroles
+    title: RevenueRoles
+    status: draft
+    path: knowledge/products/revenueroles.md
 # Machine index for knowledge/products
 # Append: { id, slug, title, status, path }
 domain: products

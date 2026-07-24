@@ -1,0 +1,32 @@
+﻿id: business.project-showcase
+type: business_profile
+title: Project Showcase
+slug: project-showcase
+platform: Project Showcase
+username: null
+display_name: "Ayush Rai Project Showcase"
+url: https://project-showcase-ayushr.vercel.app
+category: other
+purpose: "Projects and architecture showcase"
+description: "Public project showcase: AI Engineer & Product Builder"
+primary_audience: "recruiters clients"
+visibility: public
+priority: 92
+status: active
+notes: "Owner-provided Vercel portfolio"
+tags: ["portfolio", "projects", "ai"]
+aliases: ["project-showcase-ayushr"]
+last_updated: null
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: linkedin-resume-and-owner-chat
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  imported_at: 2026-07-23

@@ -1,6 +1,6 @@
-items: []
-# Machine index for knowledge/speaking
-# Append: { id, slug, title, status, path }
+items:
+  - { id: speaking.storytelling.craft, slug: storytelling-craft, path: speaking/storytelling/craft.md }
+  - { id: speaking.engagement.open-mic-performer, slug: open-mic-performer, path: speaking/engagements/open-mic-performer.md }
 domain: speaking
-title: speaking
+title: Speaking
 updated: 2026-07-23

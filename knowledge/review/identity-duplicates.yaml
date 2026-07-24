@@ -11,3 +11,12 @@ items:
   - id: business.remotemore
     reason: "Identical RemoteMore URL listed twice in owner paste; stored once"
     preferred: business.remotemore
+  - id: social.twitter-legacy
+    reason: "twitter.com URL likely same account as social.x"
+    preferred: social.x
+  - id: education.lnct-btech-cse
+    reason: "Same BTech CSE 2020–2024 as education.lncts-btech-cse under different college name"
+    preferred: education.lncts-btech-cse
+  - id: organization.lnct-group
+    reason: "Likely same college system as organization.lncts"
+    preferred: organization.lncts

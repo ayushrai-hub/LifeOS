@@ -1,0 +1,32 @@
+﻿id: business.google-drive-resume
+type: business_profile
+title: Google Drive Resume
+slug: google-drive-resume
+platform: Google Drive Resume
+username: null
+display_name: "Ayush Rai Resume"
+url: https://drive.google.com/file/d/1EjIs-sIQrmHf0vRoQ9pTiDM_4M5x_P2p/view
+category: other
+purpose: "Resume document"
+description: "Resume PDF/document linked from GitHub README"
+primary_audience: "recruiters"
+visibility: public
+priority: 85
+status: active
+notes: "Google Drive file; access permissions unknown"
+tags: ["resume", "portfolio", "career"]
+aliases: []
+last_updated: null
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: linkedin-resume-and-owner-chat
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  imported_at: 2026-07-23

@@ -1,0 +1,9 @@
+items:
+  - { id: company.focdot-technologies, slug: focdot-technologies, title: "FoCDoT Technologies", path: companies/focdot-technologies.md }
+  - { id: company.outlier, slug: outlier, title: "Outlier", path: companies/outlier.md }
+  - { id: company.topmate, slug: topmate, title: "topmate.io", path: companies/topmate.md }
+  - { id: company.all-india-radio, slug: all-india-radio, title: "All India Radio", path: companies/all-india-radio.md }
+  - { id: company.uipath, slug: uipath, title: "UiPath", path: companies/uipath.md }
+domain: companies
+title: Companies
+updated: 2026-07-23

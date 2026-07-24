@@ -4,19 +4,29 @@ title: Linktree
 slug: linktree
 platform: Linktree
 username: "ayush_rai02"
+display_name: "Ayush Rai"
 url: https://linktr.ee/ayush_rai02
 category: other
-purpose: "Linktree link hub"
+purpose: "Link aggregator"
+description: "Personal link aggregator listed on LinkedIn contact as Personal"
+primary_audience: "general public"
 visibility: public
 priority: 75
 status: active
-notes: ""
+notes: "Also listed on LinkedIn contact block"
+tags: ["personal-branding", "link-aggregator"]
+aliases: ["ayush_rai02"]
+last_updated: null
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
 created: 2026-07-23
 updated: 2026-07-23
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 last_verified: 2026-07-23
 provenance:
-  source: owner-provided-link-list
-  source_file: data/imports/2026-07-23-identity-links.txt
+  source: linkedin-resume
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
   imported_at: 2026-07-23

@@ -1,0 +1,6 @@
+items:
+  - { id: course.iitm-bs-data-science-applications, slug: iitm-bs-data-science-applications, status: review, path: learning/courses/iitm-bs-data-science-applications.md }
+  - { id: course.takshashila-public-policy-analysis, slug: takshashila-public-policy-analysis, status: review, path: learning/courses/takshashila-public-policy-analysis.md }
+domain: learning.courses
+title: Courses
+updated: 2026-07-23

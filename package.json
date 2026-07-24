@@ -9,8 +9,9 @@
     "build:home": "node scripts/build-home.js",
     "build:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-site.ps1",
     "build": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-site.ps1",
+    "migrate:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/migrate-ayushrai-site.ps1",
     "qa": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/qa-site.ps1",
-    "start": "npx --yes serve -l 3000 ."
+    "start": "python3 -m http.server 3000"
   },
   "engines": {
     "node": ">=18"

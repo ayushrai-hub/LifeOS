@@ -7,8 +7,10 @@ knowledge_last_updated: 2026-07-23
 knowledge_initialized: 2026-07-23
 schema_version: 1
 notes_latest: |
-  Identity inventory imported. Homepage, portfolios, domains, resumes,
-  certifications, media templates, and responsive site CSS published.
+  Life-system expansion: communities, timeline spine, certifications/courses entities,
+  philosophy fills, principles, mentoring, speaking engagement seeds, longevity-guide.
+  Growth crafts: public speaking, storytelling, market understanding, geopolitics.
+  Folders remain append-only; see knowledge/_system/longevity-guide.md.
   Run scripts/build-site.ps1 after catalog edits. Run scripts/qa-site.ps1 before deploy.
 
 

@@ -37,7 +37,9 @@ function loadHomepageYaml(filePath) {
     tagline: "",
     intro: [],
     doors: {},
+    doors_nav: [],
     contact: [],
+    footer: "",
     limits: { current_focus: 5, latest_work: 6, recently_updated: 5 },
     focus_blurbs: [],
   };
@@ -66,7 +68,7 @@ function loadHomepageYaml(filePath) {
       ) {
         val = val.slice(1, -1);
       }
-      if (key === "name" || key === "tagline") data[key] = val;
+      if (key === "name" || key === "tagline" || key === "footer") data[key] = val;
       continue;
     }
 
@@ -79,6 +81,18 @@ function loadHomepageYaml(filePath) {
         val = val.slice(1, -1);
       }
       data.intro.push(val);
+      continue;
+    }
+
+    if (section === "doors_nav" && trimmed.startsWith("- ")) {
+      let val = trimmed.slice(2).trim();
+      if (
+        (val.startsWith('"') && val.endsWith('"')) ||
+        (val.startsWith("'") && val.endsWith("'"))
+      ) {
+        val = val.slice(1, -1);
+      }
+      data.doors_nav.push(val);
       continue;
     }
 
@@ -383,17 +397,38 @@ function learningFrontmatterDate(md) {
   return m ? m[1] : null;
 }
 
+const DOOR_LABELS = {
+  ai: "AI",
+  "open-source": "open source",
+};
+
 function renderHtml(home) {
-  const introHtml = home.intro
-    .map((p) => `    <p>${mdLinksToHtml(p, home.doors)}</p>`)
-    .join("\n\n");
+  const introHtml = (home.intro || [])
+    .map((p) => `        <p class="home-intro">${mdLinksToHtml(p, home.doors)}</p>`)
+    .join("\n");
+
+  const doorKeys =
+    home.doors_nav && home.doors_nav.length
+      ? home.doors_nav
+      : Object.keys(home.doors || {});
+  const doorsHtml = doorKeys
+    .filter((key) => home.doors[key])
+    .map((key) => {
+      const label = DOOR_LABELS[key] || key.replace(/-/g, " ");
+      return `          <a href="${escapeHtml(home.doors[key])}">${escapeHtml(
+        label
+      )}</a>`;
+    })
+    .join("\n");
 
   const focusHtml = home.current_focus
     .map((item) => {
       const label = item.short_title || item.title;
       const meta = item.blurb || item.summary || item.stage || "";
-      return `      <li><a href="${escapeHtml(item.href)}">${escapeHtml(label)}</a>${
-        meta ? ` <span class="muted">;  ${escapeHtml(meta)}</span>` : ""
+      return `          <li><a href="${escapeHtml(item.href)}">${escapeHtml(
+        label
+      )}</a>${
+        meta ? ` <span class="muted">; ${escapeHtml(meta)}</span>` : ""
       }</li>`;
     })
     .join("\n");
@@ -402,13 +437,15 @@ function renderHtml(home) {
     .map((item) => {
       const rel = item.external ? ' rel="noopener noreferrer"' : "";
       const date = item.date
-        ? ` <time datetime="${escapeHtml(item.date)}">${escapeHtml(item.date)}</time>`
+        ? `<time datetime="${escapeHtml(item.date)}">${escapeHtml(
+            item.date
+          )}</time> `
         : "";
-      return `      <li>${date} <a href="${escapeHtml(item.href)}"${rel}>${escapeHtml(
+      return `          <li>${date}<a href="${escapeHtml(item.href)}"${rel}>${escapeHtml(
         item.title
       )}</a>${
         item.summary
-          ? ` <span class="muted">;  ${escapeHtml(item.summary)}</span>`
+          ? ` <span class="muted">; ${escapeHtml(item.summary)}</span>`
           : ""
       }</li>`;
     })
@@ -417,13 +454,15 @@ function renderHtml(home) {
   const recentHtml = home.recently_updated
     .map((item) => {
       const date = item.date
-        ? ` <time datetime="${escapeHtml(item.date)}">${escapeHtml(item.date)}</time>`
+        ? `<time datetime="${escapeHtml(item.date)}">${escapeHtml(
+            item.date
+          )}</time> `
         : "";
-      return `      <li>${date} <a href="${escapeHtml(item.href)}">${escapeHtml(
+      return `          <li>${date}<a href="${escapeHtml(item.href)}">${escapeHtml(
         item.title
       )}</a>${
         item.summary
-          ? ` <span class="muted">;  ${escapeHtml(item.summary)}</span>`
+          ? ` <span class="muted">; ${escapeHtml(item.summary)}</span>`
           : ""
       }</li>`;
     })
@@ -434,7 +473,7 @@ function renderHtml(home) {
       const rel = c.href.startsWith("http") ? ' rel="noopener noreferrer"' : "";
       return `<a href="${escapeHtml(c.href)}"${rel}>${escapeHtml(c.text)}</a>`;
     })
-    .join(" · ");
+    .join("\n          ·\n          ");
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -443,43 +482,74 @@ function renderHtml(home) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(home.name)}</title>
   <meta name="description" content="${escapeHtml(home.tagline)}">
-  <link rel="stylesheet" href="../../styles/site.css">
+  <meta name="author" content="${escapeHtml(home.name)}">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles/site.css?v=20260724">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
   <main id="content" class="page home">
-    <header>
-      <h1>${escapeHtml(home.name)}</h1>
-      <p class="tagline">${escapeHtml(home.tagline)}</p>
-    </header>
+    <div class="home-hero">
+      <figure class="home-photo">
+        <img
+          src="../../assets/images/portraits/ayush-rai--workspace-2024.jpg"
+          width="1600"
+          height="1067"
+          alt="Ayush Rai working on a laptop in a workspace, with a whiteboard of notes behind him."
+          decoding="async"
+          fetchpriority="high"
+        >
+      </figure>
+
+      <div class="home-lede">
+        <header>
+          <h1>${escapeHtml(home.name)}</h1>
+          <p class="tagline">${escapeHtml(home.tagline)}</p>
+        </header>
 
 ${introHtml}
 
-    <section aria-labelledby="current-focus">
-      <h2 id="current-focus">Current Focus</h2>
-      <ul class="home-list">
-${focusHtml || '      <li class="muted">Nothing published yet.</li>'}
-      </ul>
-    </section>
+        <nav class="home-doors" aria-label="Browse">
+${doorsHtml}
+        </nav>
 
-    <section aria-labelledby="latest-work">
-      <h2 id="latest-work">Latest Work</h2>
-      <ul class="home-list">
-${latestHtml || '      <li class="muted">Nothing published yet.</li>'}
-      </ul>
-    </section>
+        <p class="home-contact">
+          ${contactHtml}
+        </p>
+      </div>
+    </div>
 
-    <section aria-labelledby="recently-updated">
-      <h2 id="recently-updated">Recently Updated</h2>
-      <ul class="home-list">
-${recentHtml || '      <li class="muted">Nothing published yet.</li>'}
-      </ul>
-    </section>
+    <div class="home-panels">
+      <section aria-labelledby="current-focus">
+        <h2 id="current-focus">Current Focus</h2>
+        <ul class="home-list">
+${focusHtml || '          <li class="muted">Nothing published yet.</li>'}
+        </ul>
+      </section>
 
-    <section aria-labelledby="contact">
-      <h2 id="contact">Contact</h2>
-      <p>${contactHtml}</p>
-    </section>
+      <section aria-labelledby="latest-work">
+        <h2 id="latest-work">Latest Work</h2>
+        <ul class="home-list">
+${latestHtml || '          <li class="muted">Nothing published yet.</li>'}
+        </ul>
+      </section>
+
+      <section aria-labelledby="recently-updated">
+        <h2 id="recently-updated">Recently Updated</h2>
+        <ul class="home-list">
+${recentHtml || '          <li class="muted">Nothing published yet.</li>'}
+        </ul>
+      </section>
+    </div>
+
+    ${
+      home.footer
+        ? `<footer class="site-footer">
+      <p>${escapeHtml(home.footer)}</p>
+    </footer>`
+        : ""
+    }
   </main>
 </body>
 </html>
@@ -532,10 +602,12 @@ function main() {
     tagline,
     intro: editorial.intro,
     doors: editorial.doors,
+    doors_nav: editorial.doors_nav,
     current_focus: focus,
     latest_work: latest,
     recently_updated: recent,
     contact,
+    footer: editorial.footer || "",
     sources: [
       "knowledge/_system/homepage.yaml",
       "knowledge/person/profile.yaml",

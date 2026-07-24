@@ -31,7 +31,7 @@ relationships:
 
 ## Evidence of progress
 
-[PLACEHOLDER: outcomes for the mentee or for me — not vibes]
+[PLACEHOLDER: outcomes for the mentee or for me; not vibes]
 
 ## Lessons
 

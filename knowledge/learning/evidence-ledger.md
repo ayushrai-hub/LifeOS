@@ -17,7 +17,7 @@
 | Book notes | Missing | No |
 | Research notes / papers authored | Missing | No |
 | Public talks | Missing | No |
-| Certificates / course completions | Missing | No |
+| Certificates / course completions | Linked ([Drive folder](https://drive.google.com/drive/folders/1rO4e2Ve77dDyb4Yr_iOR61NJvVcxpHi5?usp=sharing)); entities not yet written | No (folder only; not ingested as entities) |
 | Saved links | Missing | No |
 
 ## What can be inferred

@@ -18,7 +18,7 @@ Get-ChildItem $Root -Recurse -Include *.html,*.css,*.js,*.md,*.yaml,*.yml,*.json
   Where-Object { $_.FullName -notmatch '\\.git\\|\\node_modules\\|\\data\\imports\\graahak-snapshot\\' } |
   ForEach-Object {
     $t = [IO.File]::ReadAllText($_.FullName)
-    $em += ([regex]::Matches($t, '—')).Count
+    $em += ([regex]::Matches($t, '; ')).Count
   }
 if ($em -gt 0) { Fail "em dash count=$em" } else { Ok "no em dashes" }
 

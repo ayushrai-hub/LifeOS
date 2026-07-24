@@ -13,10 +13,21 @@ version: 0.1.0
 
 # Goals
 
-## Current
+Granular goal entities also live in `knowledge/goals/`. This page is the human summary.
 
-[PLACEHOLDER; date each goal]
+## Current (2026)
+
+1. Grow this knowledge system into a durable life graph (domains, timeline, media, impact). See `goal.keep-growth-crafts-alive`.
+2. Deepen AI/RAG/agent evaluation with measured experiments, not demos alone.
+3. Practice public speaking and storytelling with logged engagements.
+4. Build market and geopolitics literacy through dated thinking notes.
+5. Record courses and certifications as they complete (`certifications/`, `learning/courses/`).
+6. Keep fitness as a long-term timeline (`fitness/`).
 
 ## Deferred
 
-[PLACEHOLDER]
+[PLACEHOLDER: owner fills]
+
+## Review cadence
+
+Revisit monthly; archive completed goals as `goal.*` with `state: done`.

@@ -1,6 +1,5 @@
-items: []
-# Machine index for knowledge/impact
-# Append: { id, slug, title, status, path }
+items:
+  - { id: impact.overview, slug: overview, path: impact/overview.md }
 domain: impact
-title: impact
+title: Impact
 updated: 2026-07-23

@@ -1,0 +1,6 @@
+items:
+  - { id: achievement.open-mic-performer, slug: open-mic-performer, path: achievements/open-mic-performer.md }
+  - { id: achievement.focdot-best-work-twice, slug: focdot-best-work-twice, path: achievements/focdot-best-work-twice.md }
+domain: achievements
+title: Achievements
+updated: 2026-07-23

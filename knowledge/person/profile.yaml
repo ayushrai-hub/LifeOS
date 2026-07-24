@@ -3,10 +3,18 @@ type: person
 title: Ayush Rai
 slug: owner
 aliases: []
-keywords: []
-tags: []
-description: "I build software, study how systems behave under real constraints, and keep a working record of what I learn."
-summary: ""
+keywords:
+  - AI Engineer
+  - RLHF
+  - LLM
+  - RAG
+  - Prompt Engineering
+  - Agentic AI
+tags:
+  - ai
+  - engineering
+description: "AI Engineer | RLHF | LLM | RAG | Prompt Engineering | AI Product Builder | AI full stack developer | Automation | Agentic AI"
+summary: "AI Engineer with 2+ years of experience building production LLM and GenAI systems across backend, infrastructure, and product."
 status: review
 visibility: public
 priority: 100
@@ -15,21 +23,44 @@ created: 2026-07-23
 updated: 2026-07-23
 last_reviewed: null
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 seo:
   title: Ayush Rai
-  description: "Personal knowledge system; projects, engineering, AI, writing, and learning."
+  description: "AI Engineer building production LLM and GenAI systems; RAG, agents, evaluation, full-stack AI products."
   canonical_path: /
 preferred_name: Ayush Rai
-location: Bhopal
+headline: "AI Engineer | RLHF | LLM | RAG | Prompt Engineering | AI Product Builder | AI full stack developer | Automation | Agentic AI"
+location: "Pune District, Maharashtra, India"
+location_secondary: "Bhopal, Madhya Pradesh, India (postal address / several roles)"
+location_notes: "LinkedIn headline location is Pune District; contact address and several roles list Bhopal. status: review_required for primary public location."
+languages:
+  - skill.english
+  - skill.hindi
+provenance:
+  source: linkedin-resume
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  imported_at: 2026-07-23
 relationships:
   related_projects: []
-  related_skills: []
+  related_skills:
+    - skill.mcp
+    - skill.generative-ai-development
+    - skill.rag
+    - skill.rlhf
+    - skill.prompt-engineering
   related_articles: []
   related_books: []
   related_people: []
-  related_companies: []
-  related_technologies: []
+  related_companies:
+    - company.focdot-technologies
+    - company.outlier
+    - company.topmate
+  related_technologies:
+    - technology.python
+    - technology.fastapi
+    - technology.react
+    - technology.langchain
+    - technology.openai-api
   related_events: []
 narratives:
   - person.biography
@@ -54,10 +85,19 @@ identity:
     - social.linkedin
     - social.github
     - social.x
+    - contact.email-gmail
     - contact.email-proton
+    - business.digital-identity-hub
+    - business.project-showcase
+    - business.skills-portfolio
     - business.notion-portfolio
     - business.netlify-portfolio
+    - business.topmate
   contact:
+    - contact.email-gmail
     - contact.email-proton
+    - contact.phone
     - contact.whatsapp
+    - contact.postal-address-bhopal
+    - contact.calendly
   portrait: photo.ayush-rai-workspace-2024

@@ -1,0 +1,32 @@
+﻿id: business.linkedin-services
+type: business_profile
+title: LinkedIn Services
+slug: linkedin-services
+platform: LinkedIn Services
+username: null
+display_name: "Ayush Rai LinkedIn Services"
+url: https://www.linkedin.com/services/page/369888340937b0b7b7
+category: professional
+purpose: "LinkedIn services / offerings page"
+description: "LinkedIn services page marked as Other on resume contact block"
+primary_audience: "clients prospects"
+visibility: public
+priority: 70
+status: active
+notes: "Distinct from primary LinkedIn profile URL; keep separate"
+tags: ["professional", "business", "consulting"]
+aliases: []
+last_updated: null
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: linkedin-resume-and-owner-chat
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  imported_at: 2026-07-23

@@ -1,6 +1,5 @@
-items: []
-# Machine index for knowledge/goals
-# Append: { id, slug, title, status, path }
+items:
+  - { id: goal.keep-growth-crafts-alive, slug: keep-growth-crafts-alive, path: goals/keep-growth-crafts-alive.md }
 domain: goals
-title: goals
+title: Goals
 updated: 2026-07-23

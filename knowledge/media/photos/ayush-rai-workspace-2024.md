@@ -17,6 +17,7 @@ paths:
   canonical: knowledge/media/photos/ayush-rai--workspace-2024.jpg
   web: assets/images/portraits/ayush-rai--workspace-2024.jpg
 source_filename: 20240614183756_IMG_5564.JPG
+source_path: knowledge/media/photos/sources/20240614183756_IMG_5564.JPG
 usage:
   - sites/www/index.html
 relationships:

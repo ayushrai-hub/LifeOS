@@ -1,6 +1,10 @@
-items: []
-# Machine index for knowledge/certifications
-# Append: { id, slug, title, status, path }
+items:
+  - { id: cert.introduction-to-machine-learning, slug: introduction-to-machine-learning, status: review, path: certifications/introduction-to-machine-learning.md }
+  - { id: cert.mental-health-workshop, slug: mental-health-workshop, status: review, path: certifications/mental-health-workshop.md }
+  - { id: cert.advanced-excel-workshop, slug: advanced-excel-workshop, status: review, path: certifications/advanced-excel-workshop.md }
+  - { id: cert.pandora-box, slug: pandora-box, status: review, path: certifications/pandora-box.md }
+  - { id: cert.weird-chess, slug: weird-chess, status: review, path: certifications/weird-chess.md }
 domain: certifications
-title: certifications
+title: Certifications
 updated: 2026-07-23
+notes: All current entries lack issuer/date/proof — keep status review until media attached.

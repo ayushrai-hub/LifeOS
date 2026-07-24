@@ -7,10 +7,59 @@
     { "type": "github", "status": "ingested", "url": "https://github.com/ayushrai-hub", "path": "knowledge/github/", "ingested": "2026-07-23" },
     { "type": "twitter", "status": "missing", "url": null },
     { "type": "blogs", "status": "missing", "items": [] },
-    { "type": "projects", "status": "missing", "items": [] },
+    { "type": "projects", "status": "partial", "items": [
+      {
+        "type": "project",
+        "id": "project.my-learning",
+        "title": "my-learning",
+        "status": "active",
+        "url": null,
+        "repository": "https://github.com/ayushrai-hub/my-learning",
+        "linked": "2026-07-23",
+        "note": "Tech-Arsenal / Karm curriculum repository."
+      },
+      {
+        "type": "product",
+        "id": "product.shiksha-mitra",
+        "title": "Shiksha-Mitra",
+        "status": "building",
+        "url": "https://shiksha-mitra.vercel.app/",
+        "repository": "https://github.com/ayushrai-hub/Shiksha-Mitra",
+        "linked": "2026-07-23"
+      },
+      {
+        "type": "product",
+        "id": "product.revenueroles",
+        "title": "RevenueRoles",
+        "status": "building",
+        "url": "https://revenueroles.in/",
+        "repository": "https://github.com/ayushrai-hub/RevenueRoles",
+        "web_app": "https://github.com/ayushrai-hub/RevenueRoles/tree/main/apps/web",
+        "linked": "2026-07-23"
+      }
+    ] },
     { "type": "research", "status": "missing", "items": [] },
     { "type": "talks", "status": "missing", "items": [] },
-    { "type": "certificates", "status": "missing", "items": [] },
-    { "type": "contact", "status": "missing", "items": [] }
+    {
+      "type": "certificates",
+      "status": "linked",
+      "url": "https://drive.google.com/drive/folders/1rO4e2Ve77dDyb4Yr_iOR61NJvVcxpHi5?usp=sharing",
+      "note": "Shared Google Drive folder of certificate files (PDFs and images). Individual credential entities still to be written under knowledge/certifications/.",
+      "linked": "2026-07-23",
+      "items": []
+    },
+    {
+      "type": "contact",
+      "status": "partial",
+      "items": [
+        {
+          "type": "linktree",
+          "status": "linked",
+          "url": "https://linktr.ee/ayush_rai02",
+          "entity": "social.linktree",
+          "linked": "2026-07-23"
+        }
+      ]
+    }
   ]
 }

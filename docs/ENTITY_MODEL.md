@@ -17,33 +17,67 @@ Everything of lasting interest is an **entity**: a typed, identified, referencea
 | Company | `company` | `knowledge/companies/` |
 | Organization | `organization` | `knowledge/organizations/` |
 | Client | `client` | `knowledge/clients/` |
+| Community | `community` | `knowledge/communities/` |
+| Domain | `domain` | `knowledge/domains/` |
 | Book | `book` | `knowledge/books/` |
 | Book note | `book_note` | `knowledge/books/notes/` |
+| Reading list | `reading_list` | `knowledge/reading/lists/` |
 | Article / Essay | `article` | `knowledge/writing/` |
 | Blog post | `blog_post` | `knowledge/writing/blogs/` |
 | Research paper | `research_paper` | `knowledge/research/papers/` |
-| Experiment | `experiment` | `knowledge/research/experiments/` |
+| Experiment | `experiment` | `knowledge/experiments/` or `knowledge/research/experiments/` |
+| Thinking note | `thinking_note` | `knowledge/thinking/` |
+| Principle | `principle` | `knowledge/principles/` |
+| Note | `note` | `knowledge/notes/` |
+| Idea | `idea` | `knowledge/ideas/` |
+| Product | `product` | `knowledge/products/` |
+| Startup | `startup` | `knowledge/startups/` |
+| Event | `event` | `knowledge/events/` |
+| Timeline event | `timeline_event` | `knowledge/timeline/` |
+| Travel | `travel` | `knowledge/travel/` |
+| Gallery | `gallery` | `knowledge/gallery/` |
+| Fitness log | `fitness_log` | `knowledge/fitness/logs/` |
+| Impact | `impact` | `knowledge/impact/` |
+| Teaching | `teaching` | `knowledge/teaching/` |
+| Mentoring | `mentoring` | `knowledge/mentoring/` |
+| Leadership note | `leadership_note` | `knowledge/leadership/` |
+| Management note | `management_note` | `knowledge/management/` |
+| Goal | `goal` | `knowledge/goals/` |
+| Reflection | `reflection` | `knowledge/reflections/` |
 | Certification | `certification` | `knowledge/certifications/` |
+| Course | `course` | `knowledge/learning/courses/` |
 | Award | `award` | `knowledge/awards/` |
 | Achievement | `achievement` | `knowledge/achievements/` |
-| Conference | `conference` | `knowledge/public-speaking/conferences/` |
-| Talk | `talk` | `knowledge/public-speaking/talks/` |
-| Presentation | `presentation` | `knowledge/public-speaking/presentations/` |
+| Conference | `conference` | `knowledge/speaking/` (legacy: `public-speaking/`) |
+| Talk | `talk` | `knowledge/speaking/talks/` |
+| Presentation | `presentation` | `knowledge/media/presentations/` |
 | Video | `video` | `knowledge/media/videos/` |
 | Podcast | `podcast` | `knowledge/media/podcasts/` |
 | Photo | `photo` | `knowledge/media/photos/` |
 | Diagram | `diagram` | `knowledge/media/diagrams/` |
-| Slide deck | `presentation` (slides) | `knowledge/public-speaking/presentations/` or media |
-| Course | `course` | `knowledge/learning/courses/` |
+| Slides | `slides` | `knowledge/media/slides/` |
+| Document | `document` | `knowledge/media/documents/` |
+| Design asset | `design_asset` | `knowledge/media/design/` |
 | Learning profile | `learning_profile` | `knowledge/learning/*.md` |
 | Learning domain | `learning_domain` | `knowledge/learning/domains/` |
-| Timeline event | `timeline_event` | `knowledge/timeline/` |
 | Social profile | `social_profile` | `knowledge/social/` |
 | Contact channel | `contact_channel` | `knowledge/contact/` |
 | Business profile | `business_profile` | `knowledge/business/` |
 | Philosophy note | `philosophy` | `knowledge/person/philosophy/` |
 
 New types may be added only with an update to this document and a template under `/knowledge/templates`.
+
+### Domain vs learning domain
+
+- **`domain`** (`knowledge/domains/`): durable identity of a field (AI, geopolitics, storytelling…). Lives for decades.
+- **`learning_domain`** (`knowledge/learning/domains/`): current stage + evidence for how far you have practiced that field.
+
+Link them via `relationships.related_learning_domains`.
+
+### Event vs timeline event
+
+- **`event`**: rich attendance/outcome record (hackathon, conference, meetup).
+- **`timeline_event`**: chronological spine entry; often points at a richer `event`, `project`, `travel`, etc.
 
 ---
 
@@ -69,12 +103,8 @@ Dedicated narrative entities (separate files, linked from profile):
 
 Philosophy files under `knowledge/person/philosophy/`:
 
-- `leadership.md`
-- `learning.md`
-- `career.md`
-- `writing.md`
-- `engineering.md`
-- `ai.md`
+- Classic: `leadership.md`, `learning.md`, `career.md`, `writing.md`, `engineering.md`, `ai.md`
+- How-I set (evolving practice): `how-i-learn.md`, `how-i-think.md`, `how-i-build.md`, `how-i-lead.md`, `how-i-communicate.md`, `how-i-make-decisions.md`, `how-i-prioritize.md`, `how-i-manage-teams.md`, `how-i-solve-problems.md`, `how-i-research.md`, `how-i-write.md`, `how-i-design-systems.md`, `how-i-approach-business.md`
 
 ---
 
@@ -155,6 +185,10 @@ Examples:
 - `person.owner`
 - `skill.python`
 - `project.knowledge-base`
+- `domain.geopolitics`
+- `community.local-ai-meetup`
+- `event.hackathon-2026`
+- `impact.users-helped-mailu`
 - `company.acme`
 - `social.github`
 - `achievement.patent-2024`
@@ -166,3 +200,4 @@ See [NAMING_CONVENTIONS.md](./NAMING_CONVENTIONS.md).
 - [DATA_MODEL.md](./DATA_MODEL.md)
 - [RELATIONSHIP_MODEL.md](./RELATIONSHIP_MODEL.md)
 - [FILE_STRUCTURE.md](./FILE_STRUCTURE.md)
+- [KNOWLEDGE_SYSTEM.md](./KNOWLEDGE_SYSTEM.md)

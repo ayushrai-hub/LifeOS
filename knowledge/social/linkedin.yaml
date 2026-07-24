@@ -4,19 +4,40 @@ title: LinkedIn
 slug: linkedin
 platform: LinkedIn
 username: "ayushrai02"
+display_name: "Ayush Rai"
 url: https://www.linkedin.com/in/ayushrai02
 category: professional
-purpose: "Professional profile"
+purpose: "Professional identity and career network"
+description: "Primary LinkedIn profile for professional presence. Headline: AI Engineer | RLHF | LLM | RAG | Prompt Engineering | AI Product Builder | AI full stack developer | Automation | Agentic AI"
+primary_audience: "recruiters employers peers"
 visibility: public
 priority: 100
 status: active
-notes: ""
+notes: "Canonical professional profile from LinkedIn resume import. Related: business.linkedin-services"
+tags: ["professional", "networking", "recruiting", "personal-branding"]
+aliases: ["in/ayushrai02"]
+last_updated: null
+related_skills:
+  - skill.mcp
+  - skill.generative-ai-development
+  - skill.rag
+  - skill.rlhf
+related_projects: []
+related_companies:
+  - company.focdot-technologies
+  - company.outlier
+related_technologies:
+  - technology.python
+  - technology.langchain
 created: 2026-07-23
 updated: 2026-07-23
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 last_verified: 2026-07-23
 provenance:
-  source: owner-provided-link-list
-  source_file: data/imports/2026-07-23-identity-links.txt
+  source: linkedin-resume-and-identity-import
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
   imported_at: 2026-07-23
+relationships:
+  supports:
+    - person.owner

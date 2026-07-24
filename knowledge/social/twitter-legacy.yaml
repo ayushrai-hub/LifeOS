@@ -1,0 +1,33 @@
+﻿id: social.twitter-legacy
+type: social_profile
+title: Twitter Legacy
+slug: twitter-legacy
+platform: Twitter Legacy
+username: "ayushrai0211"
+display_name: "Ayush Rai"
+url: https://twitter.com/ayushrai0211
+category: professional
+purpose: "Legacy Twitter URL"
+description: "Legacy twitter.com URL from GitHub README pointing to same account"
+primary_audience: "general public"
+visibility: public
+priority: 40
+status: duplicate-candidate
+notes: "Likely same account as X profile; mark duplicate-candidate of social.x"
+tags: ["social-media"]
+aliases: ["ayushrai0211"]
+last_updated: null
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: linkedin-resume-and-owner-chat
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  imported_at: 2026-07-23
+superseded_by: social.x

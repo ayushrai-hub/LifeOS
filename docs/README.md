@@ -1,30 +1,51 @@
-# Documentation Index
+# Documentation index
 
-## Knowledge system (primary)
+Operating manuals for the personal knowledge base and its static website consumer.
+
+## Start
 
 | Doc | Purpose |
 |-----|---------|
-| [KNOWLEDGE_SYSTEM.md](./KNOWLEDGE_SYSTEM.md) | Foundation principles |
-| [DATA_MODEL.md](./DATA_MODEL.md) | Record shapes |
-| [ENTITY_MODEL.md](./ENTITY_MODEL.md) | Entity catalog |
-| [RELATIONSHIP_MODEL.md](./RELATIONSHIP_MODEL.md) | Graph edges |
-| [FILE_STRUCTURE.md](./FILE_STRUCTURE.md) | Folder map |
-| [NAMING_CONVENTIONS.md](./NAMING_CONVENTIONS.md) | IDs and filenames |
-| [METADATA_GUIDELINES.md](./METADATA_GUIDELINES.md) | Metadata standards |
-| [VERSIONING.md](./VERSIONING.md) | Versions and migrations |
+| [ARCHITECTURE.md](./ARCHITECTURE.md) | System layers, constraints, extension points |
+| [FILE_STRUCTURE.md](./FILE_STRUCTURE.md) | Directory map and ownership |
+| [PAGES.md](./PAGES.md) | Public and migrated HTML inventory |
+| [CONTENT_MAP.md](./CONTENT_MAP.md) | Topics → paths → sources |
+| [KNOWLEDGE_GRAPH.md](./KNOWLEDGE_GRAPH.md) | Entity types and link model |
+| [COMPONENTS.md](./COMPONENTS.md) | Reusable HTML fragments |
+| [STYLES.md](./STYLES.md) | CSS architecture |
+| [SCRIPTS.md](./SCRIPTS.md) | Build, QA, import, validate |
+| [OPTIMIZATION_REPORT.md](./OPTIMIZATION_REPORT.md) | Cleanup actions and remaining debt |
+| [MIGRATION_REPORT.md](./MIGRATION_REPORT.md) | ayushrai.site crawl and migration |
+| [CHANGELOG.md](./CHANGELOG.md) | Significant repository changes |
+
+## Knowledge system (canonical)
+
+| Doc | Purpose |
+|-----|---------|
+| [KNOWLEDGE_SYSTEM.md](./KNOWLEDGE_SYSTEM.md) | SoT principles |
+| [ENTITY_MODEL.md](./ENTITY_MODEL.md) | Entity types |
+| [DATA_MODEL.md](./DATA_MODEL.md) | Fields and schemas |
+| [RELATIONSHIP_MODEL.md](./RELATIONSHIP_MODEL.md) | Edges |
 | [CONTENT_WORKFLOW.md](./CONTENT_WORKFLOW.md) | Intake → publish |
-| [CONTENT_GUIDELINES.md](./CONTENT_GUIDELINES.md) | Honesty and structure |
-| [STYLE_GUIDE.md](./STYLE_GUIDE.md) | Writing mechanics |
-| [VOICE_AND_TONE.md](./VOICE_AND_TONE.md) | Voice |
-| [EDITOR_GUIDE.md](./EDITOR_GUIDE.md) | How to edit |
-| [QUALITY_CHECKLIST.md](./QUALITY_CHECKLIST.md) | Publish gate |
-| [CONTENT_CHECKLIST.md](./CONTENT_CHECKLIST.md) | Per-type checks |
-| [SEO_GUIDELINES.md](./SEO_GUIDELINES.md) | SEO from entities |
-| [ACCESSIBILITY_GUIDELINES.md](./ACCESSIBILITY_GUIDELINES.md) | A11y for content/UI |
-| [FUTURE_FEATURES.md](./FUTURE_FEATURES.md) | Roadmap |
-| [workflows/IMPORT_IDENTITY.md](./workflows/IMPORT_IDENTITY.md) | Spreadsheet import |
-| [workflows/VALIDATION_RULES.md](./workflows/VALIDATION_RULES.md) | Validation |
+| [NAMING_CONVENTIONS.md](./NAMING_CONVENTIONS.md) | IDs and slugs |
 
-## Website consumer (secondary)
+## Design and voice
 
-Architecture, Design-Principles, Information-Architecture, Linking-Strategy, Typography, Color-System, Brand, SEO, Accessibility, and related docs describe how a minimal static site may present knowledge; not how facts are stored.
+| Doc | Purpose |
+|-----|---------|
+| [Design-Principles.md](./Design-Principles.md) | Document-first UI |
+| [Typography.md](./Typography.md) | Fluid type |
+| [Color-System.md](./Color-System.md) | Ink on paper + blue links |
+| [Information-Architecture.md](./Information-Architecture.md) | Explore via inline links |
+| [VOICE_AND_TONE.md](./VOICE_AND_TONE.md) | Writing voice |
+| [Linking-Strategy.md](./Linking-Strategy.md) | No mega-menus |
+
+## Quality
+
+| Doc | Purpose |
+|-----|---------|
+| [ACCESSIBILITY_GUIDELINES.md](./ACCESSIBILITY_GUIDELINES.md) | a11y |
+| [SEO_GUIDELINES.md](./SEO_GUIDELINES.md) | SEO for entities/pages |
+| [QUALITY_CHECKLIST.md](./QUALITY_CHECKLIST.md) | Ship checklist |
+
+Older Title-Case duplicates (for example `Voice-and-Tone.md`, `Folder-Structure.md`) are superseded by the files above when they conflict. Prefer this index.

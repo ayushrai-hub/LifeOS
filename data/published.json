@@ -8,6 +8,10 @@
     { "id": "resumes", "title": "Resumes", "url": "/sites/career/resumes/", "site": "career", "tier": "public-curated" },
     { "id": "certifications", "title": "Certifications", "url": "/sites/certifications/", "site": "certifications", "tier": "public-curated" },
     { "id": "projects", "title": "Projects", "url": "/sites/projects/", "site": "projects", "tier": "public-curated" },
+    { "id": "project-my-learning", "title": "my-learning", "url": "/sites/projects/my-learning.html", "site": "projects", "tier": "public-curated" },
+    { "id": "products", "title": "Products", "url": "/sites/products/", "site": "products", "tier": "public-curated" },
+    { "id": "product-shiksha-mitra", "title": "Shiksha-Mitra", "url": "/sites/products/shiksha-mitra.html", "site": "products", "tier": "public-curated" },
+    { "id": "product-revenueroles", "title": "RevenueRoles", "url": "/sites/products/revenueroles.html", "site": "products", "tier": "public-curated" },
     { "id": "learning", "title": "Learning", "url": "/sites/learning/", "site": "learning", "tier": "public-curated" },
     { "id": "gallery", "title": "Gallery", "url": "/sites/gallery/", "site": "gallery", "tier": "public-curated" }
   ]

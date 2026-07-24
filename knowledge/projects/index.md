@@ -17,7 +17,13 @@ Canonical project entities live as `knowledge/projects/<slug>.md` (and optional 
 
 | ID | Title | Status | Visibility | Showcase | Repository |
 |----|-------|--------|------------|----------|------------|
+| `project.my-learning` | my-learning (Tech-Arsenal / Karm) | draft | public | Curriculum project | [ayushrai-hub/my-learning](https://github.com/ayushrai-hub/my-learning) |
 | `project.graahak` | Graahak (TruthPrice UI) | draft / unfinished prototype | unlisted | Do not feature as finished product | [ayushrai-hub/graahak](https://github.com/ayushrai-hub/graahak) |
+
+## my-learning artifacts
+
+- Entity: [my-learning.md](./my-learning.md)
+- GitHub ingest: [../github/repositories/my-learning/summary.md](../github/repositories/my-learning/summary.md)
 
 ## Graahak artifacts
 

@@ -34,6 +34,15 @@ Both must use the same predicate vocabulary below.
 | `supersedes` | Replaces older entity | new → old |
 | `duplicate_of` | Same real-world thing (review queue) | candidate → canonical |
 | `mentions` | Soft reference without strong coupling | article → entity |
+| `member_of` | Person participates in community | person → community |
+| `attended` | Person/event attendance | person → event |
+| `presented_at` | Talk given at event | talk → event |
+| `evidences` | Artifact proves impact/skill/domain | impact/project → claim target |
+| `captured_at_event` | Media from an event | photo → event |
+| `in_gallery` | Photo included in gallery | photo → gallery |
+| `in_domain` | Work sits in a durable domain | project → domain |
+| `stage_of` | Learning domain tracks practice stage of a domain | learning_domain → domain |
+| `milestone_of` | Timeline spine points at rich entity | timeline_event → event/project/travel |
 
 Prefer specific predicates over `related_to`.
 
@@ -51,6 +60,11 @@ relationships:
   related_companies: []
   related_technologies: []
   related_events: []
+  related_domains: []
+  related_communities: []
+  related_media: []
+  related_timeline: []
+  related_impact: []
 ```
 
 These bags are **indexes of convenience**. Where direction matters, also record an explicit predicate in an edge file or typed field (`uses`, `built_at`, etc.).

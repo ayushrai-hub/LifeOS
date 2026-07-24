@@ -4,19 +4,38 @@ title: GitHub
 slug: github
 platform: GitHub
 username: "ayushrai-hub"
+display_name: "Ayush Rai"
 url: https://github.com/ayushrai-hub
 category: developer
-purpose: "GitHub profile / repositories"
+purpose: "Software engineering portfolio and open source"
+description: "AI Engineer | Full Stack Developer | LLMs | Open Source | Product building | 0 -> 1"
+primary_audience: "developers open-source collaborators"
 visibility: public
 priority: 100
 status: active
-notes: ""
+notes: "Canonical GitHub identity. Deeper ingest in knowledge/github/. Owner reconfirmed URL in chat import."
+tags: ["developer", "open-source", "portfolio", "ai"]
+aliases: ["ayushrai-hub"]
+last_updated: null
+related_skills:
+  - skill.generative-ai-development
+  - skill.rag
+  - skill.python
+related_projects: []
+related_companies: []
+related_technologies:
+  - technology.python
+  - technology.react
 created: 2026-07-23
 updated: 2026-07-23
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 last_verified: 2026-07-23
 provenance:
-  source: owner-provided-link-list
-  source_file: data/imports/2026-07-23-identity-links.txt
+  source: linkedin-resume-and-owner-chat
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  also_source: data/imports/github-profile.json
   imported_at: 2026-07-23
+relationships:
+  supports:
+    - business.project-showcase

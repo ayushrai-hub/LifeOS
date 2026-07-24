@@ -79,10 +79,17 @@ data/imports/*-identity-*.txt
 data/imports/*-identity-*.xlsx
 data/imports/*-identity-*.xls
 
-# Phone / private contact channels
+# Phone / private contact channels (do not publish to public GitHub)
 knowledge/contact/whatsapp.yaml
+knowledge/contact/phone.yaml
+knowledge/contact/postal-address-bhopal.yaml
+knowledge/inbox/
+knowledge/media/photos/sources/
 scripts/knowledge/identity-links.json
 scripts/knowledge/identity-links-source.txt
+data/imports/*linkedin-resume*
+data/imports/ayushrai-site-crawl/index-bundle-excerpt.txt
+scripts/knowledge/import_linkedin_resume.py
 
 # Local private scratch (optional drop zone)
 private/
@@ -92,3 +99,6 @@ inbox-private/
 # Cursor / agent local state
 .cursor/
 agent-transcripts/
+
+# OpenMemory - IDE/Assistant specific rules
+.cursor/rules/openmemory.mdc

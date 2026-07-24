@@ -2,9 +2,11 @@
 
 ## Purpose
 
-This repository’s **Personal Knowledge Base (PKB)** under `/knowledge` is the single source of truth for the owner’s digital presence.
+This repository’s **Personal Knowledge Base (PKB)** under `/knowledge` is the single source of truth for the owner’s **life, work, learning, and long-term growth** - not only a portfolio.
 
 Websites, resumes, portfolios, blogs, newsletters, presentations, APIs, dashboards, mobile apps, search indexes, and AI agents are **consumers**. They must not invent or hardcode facts that belong in the knowledge base.
+
+The long-term goal is a **living knowledge graph** that powers every interface. Structure must accept decades of new experience **without restructuring** (add entities; archive; do not fashionably rename the tree). See `knowledge/_system/domain-map.yaml`.
 
 ```
 ┌──────────────────────────────────────────────────────────┐

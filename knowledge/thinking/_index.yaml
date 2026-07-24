@@ -1,6 +1,6 @@
-items: []
-# Machine index for knowledge/thinking
-# Append: { id, slug, title, status, path }
+items:
+  - { id: thinking.market-lens, slug: market-lens, path: thinking/market-lens.md }
+  - { id: thinking.geopolitics-lens, slug: geopolitics-lens, path: thinking/geopolitics-lens.md }
 domain: thinking
-title: thinking
+title: Thinking notes
 updated: 2026-07-23

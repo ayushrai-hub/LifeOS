@@ -1,6 +1,11 @@
-items: []
-# Machine index for knowledge/timeline
-# Append: { id, slug, title, status, path }
+items:
+  - { id: event.timeline.lnct-btech-start, slug: lnct-btech-start, occurred_at: "2020", category: education, path: timeline/career-events/lnct-btech-start.md }
+  - { id: event.timeline.iitm-bs-start, slug: iitm-bs-start, occurred_at: "2021-07", category: education, path: timeline/career-events/iitm-bs-start.md }
+  - { id: event.timeline.focdot-join, slug: focdot-join, occurred_at: "2024-04", category: job, path: timeline/career-events/focdot-join.md }
+  - { id: event.timeline.takshashila-ppa, slug: takshashila-ppa, occurred_at: "2025-09", category: education, path: timeline/career-events/takshashila-ppa.md }
+  - { id: event.timeline.topmate-mentor-start, slug: topmate-mentor-start, occurred_at: "2026-01", category: community, path: timeline/career-events/topmate-mentor-start.md }
+  - { id: event.timeline.knowledge-system-expansion, slug: knowledge-system-expansion, occurred_at: "2026-07-23", category: project, path: timeline/life-events/knowledge-system-expansion.md }
 domain: timeline
-title: timeline
+title: Personal timeline
 updated: 2026-07-23
+notes: Chronological spine; richer detail lives on linked experience/event/community entities.

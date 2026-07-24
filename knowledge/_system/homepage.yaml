@@ -9,18 +9,39 @@ slug: homepage
 status: review
 visibility: public
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.2.0
+version: 0.3.0
 
 name: Ayush Rai
 
 tagline: "I build software, study how systems behave under real constraints, and keep a working record of what I learn."
 
 intro:
-  - "This site is my personal knowledge system. When I ship a project, I try to leave a trail of what happened, why it mattered, what broke, and what I would do differently next time. The trail lives in [projects](projects), [engineering](engineering), [artificial intelligence](ai), [research](research), [writing](writing), and [learning](learning). Faceted views sit under [portfolios](portfolios) and [knowledge domains](domains)."
-  - "I care about useful software and measurable [impact](impact). I care about products that solve real user and [business](business) problems. I document [systems](systems), [open source](open-source) work, [communities](communities) I take part in, and the slower parts of the path: [reading](reading), [fitness](fitness), a [timeline](timeline), a [gallery](gallery) of photographs, and [resumes](resumes) when a conversation needs a narrower lens."
-  - "Deeper pages hold the evidence. Start wherever curiosity points."
+  - "Personal knowledge system: what I ship, what broke, and what I would do differently. Evidence lives in the pages below. Start wherever curiosity points."
+
+# Primary browse links on the homepage (order matters).
+doors_nav:
+  - projects
+  - engineering
+  - ai
+  - learning
+  - research
+  - writing
+  - portfolios
+  - domains
+  - products
+  - resumes
+  - impact
+  - business
+  - systems
+  - open-source
+  - communities
+  - timeline
+  - gallery
+  - fitness
+  - reading
+  - contact
 
 doors:
   projects: "../projects/index.html"
@@ -58,6 +79,9 @@ contact:
   - "social.github"
   - "social.linkedin"
   - "social.x"
+  - "social.linktree"
+
+footer: "0 frameworks were used to make this simple responsive website because I am becoming seriously allergic to 500-pound websites. This one is pure HTML and CSS in two static files and that's it."
 
 limits:
   current_focus: 5

@@ -1,4 +1,0 @@
-/* Optional theme hooks; default is light document. Keep empty overrides minimal. */
-:root[data-theme="default"] {
-  /* tokens already define default */
-}

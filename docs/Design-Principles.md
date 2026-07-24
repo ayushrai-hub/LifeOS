@@ -29,7 +29,7 @@ If a design choice conflicts with a higher priority, discard it.
 
 ## What we never do
 
-- Em dashes (`—`). Use commas, semicolons, colons, or full stops.
+- Em dashes (`-`). Use commas, semicolons, colons, or full stops.
 - Gradients
 - Glassmorphism
 - Shadows as decoration

@@ -1,4 +1,8 @@
 # Contact channels (canonical)
-primary_email: contact.email-proton
+primary_email: contact.email-gmail
+secondary_email: contact.email-proton
+phone: contact.phone
 whatsapp: contact.whatsapp
+postal_address: contact.postal-address-bhopal
+calendly: contact.calendly
 generated_at: 2026-07-23

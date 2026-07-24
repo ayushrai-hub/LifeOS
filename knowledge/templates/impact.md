@@ -29,7 +29,7 @@ relationships:
 
 ## Evidence
 
-[PLACEHOLDER: metrics, links, artifacts, dates — not titles]
+[PLACEHOLDER: metrics, links, artifacts, dates; not titles]
 
 ## Who benefited
 

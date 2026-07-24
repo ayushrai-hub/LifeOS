@@ -1,0 +1,32 @@
+﻿id: business.topmate
+type: business_profile
+title: Topmate
+slug: topmate
+platform: Topmate
+username: "ayush_rai02"
+display_name: "Ayush Rai"
+url: https://topmate.io/ayush_rai02
+category: professional
+purpose: "Mentoring and booking"
+description: "Personal mentoring / booking profile; Mentor role since January 2026"
+primary_audience: "mentees clients"
+visibility: public
+priority: 85
+status: active
+notes: "Also listed on LinkedIn contact and GitHub README"
+tags: ["mentoring", "consulting", "professional"]
+aliases: ["ayush_rai02"]
+last_updated: null
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: linkedin-resume-and-owner-chat
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  imported_at: 2026-07-23

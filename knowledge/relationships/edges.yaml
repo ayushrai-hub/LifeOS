@@ -213,6 +213,148 @@ edges:
     created: 2026-07-23
     notes: ""
 
+  # LinkedIn resume import 2026-07-23
+  - id: edge.linkedin-supports-professional-identity
+    from: social.linkedin
+    predicate: supports
+    to: person.owner
+    created: 2026-07-23
+    notes: "LinkedIn is primary professional identity surface"
+  - id: edge.github-supports-engineering-portfolio
+    from: social.github
+    predicate: supports
+    to: business.project-showcase
+    created: 2026-07-23
+    notes: "GitHub supports software engineering portfolio; showcase site is a consumer surface"
+  - id: edge.medium-supports-technical-writing
+    from: social.medium
+    predicate: related_to
+    to: person.owner
+    created: 2026-07-23
+    notes: "Medium supports technical writing presence"
+  - id: edge.youtube-supports-teaching
+    from: social.youtube
+    predicate: related_to
+    to: person.owner
+    created: 2026-07-23
+    notes: "YouTube supports teaching / video tutorials purpose"
+  - id: edge.behance-supports-design-portfolio
+    from: social.behance
+    predicate: supports
+    to: business.notion-portfolio
+    created: 2026-07-23
+    notes: "Behance supports design portfolio; related to broader portfolio surfaces"
+  - id: edge.topmate-supports-mentoring
+    from: business.topmate
+    predicate: supports
+    to: experience.topmate-mentor
+    created: 2026-07-23
+    notes: "Topmate profile supports Mentor experience"
+  - id: edge.focdot-employed
+    from: experience.focdot-software-developer
+    predicate: employed_by
+    to: company.focdot-technologies
+    created: 2026-07-23
+    notes: ""
+  - id: edge.outlier-employed
+    from: experience.outlier-generative-ai-engineer
+    predicate: employed_by
+    to: company.outlier
+    created: 2026-07-23
+    notes: "Contractual"
+  - id: edge.skills-portfolio-related-skills
+    from: business.skills-portfolio
+    predicate: related_to
+    to: skill.generative-ai-development
+    created: 2026-07-23
+    notes: "Skills portfolio site surfaces skill inventory"
+  - id: edge.project-showcase-related-github
+    from: business.project-showcase
+    predicate: related_to
+    to: social.github
+    created: 2026-07-23
+    notes: ""
+  - id: edge.identity-hub-aggregates-profiles
+    from: business.digital-identity-hub
+    predicate: related_to
+    to: social.linkedin
+    created: 2026-07-23
+    notes: "Hub aggregates digital identity links"
+  - id: edge.lnct-edu-duplicate
+    from: education.lnct-btech-cse
+    predicate: duplicate_of
+    to: education.lncts-btech-cse
+    created: 2026-07-23
+    notes: "Same BTech 2020-2024 listed twice under different college name strings"
+  - id: edge.twitter-legacy-dup
+    from: social.twitter-legacy
+    predicate: duplicate_of
+    to: social.x
+    created: 2026-07-23
+    notes: ""
+
+  # Life-system expansion 2026-07-23
+  - id: edge.takshashila-community-supports-policy-domain
+    from: community.takshashila-institution
+    predicate: supports
+    to: domain.public-policy
+    created: 2026-07-23
+    notes: ""
+  - id: edge.takshashila-community-related-geopolitics
+    from: community.takshashila-institution
+    predicate: related_to
+    to: domain.geopolitics
+    created: 2026-07-23
+    notes: ""
+  - id: edge.open-mic-demonstrates-speaking
+    from: speaking.engagement.open-mic-performer
+    predicate: demonstrates
+    to: domain.public-speaking
+    created: 2026-07-23
+    notes: "Honor only; venue/date unknown"
+  - id: edge.open-mic-demonstrates-storytelling
+    from: speaking.engagement.open-mic-performer
+    predicate: demonstrates
+    to: domain.storytelling
+    created: 2026-07-23
+    notes: ""
+  - id: edge.topmate-mentoring-supports-communication
+    from: mentoring.topmate-sessions
+    predicate: supports
+    to: domain.communication
+    created: 2026-07-23
+    notes: ""
+  - id: edge.market-lens-supports-market-domain
+    from: thinking.market-lens
+    predicate: supports
+    to: domain.market-understanding
+    created: 2026-07-23
+    notes: ""
+  - id: edge.geopolitics-lens-supports-geopolitics-domain
+    from: thinking.geopolitics-lens
+    predicate: supports
+    to: domain.geopolitics
+    created: 2026-07-23
+    notes: ""
+  - id: edge.speak-principle-supports-speaking-domain
+    from: principle.speak-to-land-ideas
+    predicate: supports
+    to: domain.public-speaking
+    created: 2026-07-23
+    notes: ""
+  - id: edge.focdot-timeline-related-experience
+    from: event.timeline.focdot-join
+    predicate: related_to
+    to: experience.focdot-software-developer
+    created: 2026-07-23
+    notes: ""
+  - id: edge.growth-goal-related-speaking
+    from: goal.keep-growth-crafts-alive
+    predicate: related_to
+    to: domain.public-speaking
+    created: 2026-07-23
+    notes: ""
+
 # Example:
 # - id: edge.python-used-in-alpha
 #   from: technology.python

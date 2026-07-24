@@ -18,3 +18,33 @@ items:
     reason: "Generic /en/profile path"
   - id: business.laborx-customer
     reason: "Separate LaborX customer id vs freelancer id"
+  - id: person.owner
+    reason: "Location conflict: LinkedIn headline Pune District vs Bhopal postal address / role locations"
+  - id: contact.phone
+    reason: "Country code assumed +91 for tel: URL"
+  - id: education.mission-english-hss-12th
+    reason: "Date span 2008–2020 may include schooling beyond class 12"
+  - id: education.iitm-bs-data-science
+    reason: "Source spelling progarmming; confirm end date February 2026"
+  - id: business.skills-portfolio
+    reason: "Verify Vercel deploy still live"
+  - id: business.project-showcase
+    reason: "Verify Vercel deploy still live"
+  - id: business.digital-identity-hub
+    reason: "Verify Vercel deploy still live"
+  - id: business.linkedin-services
+    reason: "LinkedIn services pages can expire"
+  - id: cert.introduction-to-machine-learning
+    reason: "Issuer, date, credential ID missing"
+  - id: cert.mental-health-workshop
+    reason: "Issuer, date, credential ID missing"
+  - id: cert.advanced-excel-workshop
+    reason: "Issuer, date, credential ID missing"
+  - id: cert.pandora-box
+    reason: "Issuer, date, credential ID missing"
+  - id: cert.weird-chess
+    reason: "Issuer, date, credential ID missing"
+  - id: award.open-mic-performer
+    reason: "Issuer, date, event context missing"
+  - id: achievement.focdot-best-work-twice
+    reason: "Dates and award artifacts missing"

@@ -1,6 +1,7 @@
-items: []
-# Machine index for knowledge/fitness
-# Append: { id, slug, title, status, path }
+items:
+  - { id: fitness.philosophy, slug: fitness-philosophy, path: fitness/philosophy.md }
+  - { id: fitness.goals, slug: fitness-goals, path: fitness/goals.md }
 domain: fitness
-title: fitness
+title: Fitness
 updated: 2026-07-23
+notes: Logs and milestones folders ready; no invented metrics.

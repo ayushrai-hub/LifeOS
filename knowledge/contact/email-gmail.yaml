@@ -1,0 +1,32 @@
+﻿id: contact.email-gmail
+type: contact_channel
+title: Gmail
+slug: email-gmail
+platform: Gmail
+username: "ayushrai0211@gmail.com"
+display_name: "Ayush Rai"
+url: mailto:ayushrai0211@gmail.com
+category: contact
+purpose: "Primary public email from LinkedIn contact block"
+description: "Gmail address listed on LinkedIn resume contact section."
+primary_audience: "recruiters clients collaborators"
+visibility: public
+priority: 90
+status: active
+notes: "Distinct from contact.email-proton (ayushrai0211@proton.me)."
+tags: ["contact", "email"]
+aliases: ["ayushrai0211@gmail.com"]
+last_updated: null
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: linkedin-resume-and-owner-chat
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  imported_at: 2026-07-23

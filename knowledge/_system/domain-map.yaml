@@ -1,0 +1,40 @@
+items:
+  # Longevity map: folder → entity type → template
+  - { folder: communities, type: community, template: community.md }
+  - { folder: domains, type: domain, template: domain.md }
+  - { folder: reading, type: reading_list, template: reading-list.md }
+  - { folder: writing, type: article, template: article.md }
+  - { folder: research, type: research_paper, template: research.md }
+  - { folder: thinking, type: thinking_note, template: thinking-note.md }
+  - { folder: principles, type: principle, template: principle.md }
+  - { folder: fitness, type: fitness_log, template: fitness-log.md }
+  - { folder: travel, type: travel, template: travel.md }
+  - { folder: events, type: event, template: event.md }
+  - { folder: gallery, type: gallery, template: gallery.md }
+  - { folder: speaking, type: talk, template: talk.md }
+  - { folder: teaching, type: teaching, template: teaching.md }
+  - { folder: mentoring, type: mentoring, template: mentoring.md }
+  - { folder: leadership, type: leadership_note, template: leadership-note.md }
+  - { folder: management, type: management_note, template: management-note.md }
+  - { folder: impact, type: impact, template: impact.md }
+  - { folder: products, type: product, template: product.md }
+  - { folder: companies, type: company, template: company.md }
+  - { folder: startups, type: startup, template: startup.md }
+  - { folder: ideas, type: idea, template: idea.md }
+  - { folder: experiments, type: experiment, template: experiment.md }
+  - { folder: books, type: book, template: book.md }
+  - { folder: notes, type: note, template: note.md }
+  - { folder: timeline, type: timeline_event, template: timeline-event.md }
+  - { folder: learning, type: learning_domain, template: course.md }
+  - { folder: goals, type: goal, template: goal.md }
+  - { folder: reflections, type: reflection, template: reflection.md }
+  - { folder: certifications, type: certification, template: certification.md }
+  - { folder: media, type: photo, template: photo.md }
+  - { folder: person/philosophy, type: philosophy, template: philosophy.md }
+domain: _system
+title: Knowledge domain map
+updated: 2026-07-23
+notes: >
+  Website, AI assistants, search, and future products should treat these folders
+  as stable namespaces. Add files; avoid renaming folders.
+  See longevity-guide.md for where new life events go.

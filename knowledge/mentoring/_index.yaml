@@ -1,6 +1,5 @@
-items: []
-# Machine index for knowledge/mentoring
-# Append: { id, slug, title, status, path }
+items:
+  - { id: mentoring.topmate-sessions, slug: topmate-sessions, path: mentoring/topmate-sessions.md }
 domain: mentoring
-title: mentoring
+title: Mentoring
 updated: 2026-07-23

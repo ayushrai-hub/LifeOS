@@ -1,0 +1,18 @@
+items:
+  - developer
+  - opensource
+  - ai
+  - startup
+  - research
+  - hackathon
+  - college
+  - ngo
+  - volunteer
+  - professional
+  - online
+  - meetup
+  - conference
+domain: communities
+title: Community categories
+updated: 2026-07-23
+notes: Use category field on community entities; add new category strings here when needed.

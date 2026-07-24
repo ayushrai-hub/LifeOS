@@ -2,6 +2,14 @@
 
 Courses and certifications completed or in progress. Credentials need verification links when public.
 
+## Source folder
+
+Shared certificate files live here (until each credential is a knowledge entity):
+
+- [Certificates (Google Drive)](https://drive.google.com/drive/folders/1rO4e2Ve77dDyb4Yr_iOR61NJvVcxpHi5?usp=sharing)
+
+Also recorded in `data/inventory.json` and `_index.yaml`.
+
 ## How to add
 
 Copy `templates/certification.md` or `course.md`. Store certificate files under `media/certificates/`.

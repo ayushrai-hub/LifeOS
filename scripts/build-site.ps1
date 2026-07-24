@@ -76,6 +76,7 @@ function Write-Page {
   <meta property="og:description" content="$(Esc $Description)">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="$(Esc $css)">
 </head>
 <body>
@@ -327,6 +328,7 @@ $certBody = @"
     <h1>Certifications</h1>
     <p class="tagline">Credentials with evidence, not badges for decoration.</p>
     <p>Every certification in the knowledge base should name the provider, the issue date, the credential identifier, the skills it claims, the projects that used those skills, and a verification link when one exists. Until a credential is written as an entity, it does not appear here.</p>
+    <p>Certificate files: <a href="https://drive.google.com/drive/folders/1rO4e2Ve77dDyb4Yr_iOR61NJvVcxpHi5?usp=sharing" rel="noopener noreferrer">Google Drive folder</a>.</p>
     <section aria-labelledby="list">
       <h2 id="list">Published credentials</h2>
       <p class="placeholder">No certification entities are published yet. Add them under knowledge/certifications using the certification template.</p>

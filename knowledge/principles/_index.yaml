@@ -1,6 +1,7 @@
-items: []
-# Machine index for knowledge/principles
-# Append: { id, slug, title, status, path }
+items:
+  - { id: principle.evidence-over-titles, slug: evidence-over-titles, path: principles/evidence-over-titles.md }
+  - { id: principle.smallest-working-slice, slug: smallest-working-slice, path: principles/smallest-working-slice.md }
+  - { id: principle.speak-to-land-ideas, slug: speak-to-land-ideas, path: principles/speak-to-land-ideas.md }
 domain: principles
-title: principles
+title: Principles
 updated: 2026-07-23

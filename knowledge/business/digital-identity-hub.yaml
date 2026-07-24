@@ -1,0 +1,32 @@
+﻿id: business.digital-identity-hub
+type: business_profile
+title: Digital Identity Hub
+slug: digital-identity-hub
+platform: Digital Identity Hub
+username: null
+display_name: "Ayush Rai Digital Identity Hub"
+url: https://profiles-ayushrai.vercel.app
+category: other
+purpose: "Aggregated digital identity directory"
+description: "Digital Identity Hub listing professional developer freelance security social writing media web3 education payment profiles"
+primary_audience: "agents recruiters self"
+visibility: public
+priority: 95
+status: active
+notes: "Master directory of profile URLs"
+tags: ["portfolio", "personal-branding", "identity-hub"]
+aliases: ["profiles-ayushrai"]
+last_updated: null
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: linkedin-resume-and-owner-chat
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  imported_at: 2026-07-23

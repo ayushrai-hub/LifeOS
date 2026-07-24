@@ -1,6 +1,8 @@
-items: []
-# Machine index for knowledge/communities
-# Append: { id, slug, title, status, path }
+items:
+  - { id: community.rasor, slug: rasor, title: "RaSoR", category: research, path: communities/rasor.md }
+  - { id: community.uipath-student-developer-champions, slug: uipath-student-developer-champions, title: "UiPath Student Developer Champions", category: professional, path: communities/uipath-student-developer-champions.md }
+  - { id: community.kanha-house-iitm, slug: kanha-house-iitm, title: "Kanha House (IIT Madras)", category: college, path: communities/kanha-house-iitm.md }
+  - { id: community.takshashila-institution, slug: takshashila-institution, title: "The Takshashila Institution", category: professional, path: communities/takshashila-institution.md }
 domain: communities
-title: communities
+title: Communities
 updated: 2026-07-23

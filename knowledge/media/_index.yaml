@@ -1,0 +1,9 @@
+items:
+  - { id: media.photo.ayush-rai-workspace-2024, slug: ayush-rai-workspace-2024, type: photo, path: media/photos/ayush-rai-workspace-2024.md }
+domain: media
+title: Media assets
+updated: 2026-07-23
+notes: >
+  Every binary under media/ should have a sibling metadata entity (.md/.yaml).
+  Subfolders: photos, videos, certificates, slides, presentations, diagrams,
+  documents, design, podcasts, screenshots.

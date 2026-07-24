@@ -1,0 +1,32 @@
+﻿id: business.skills-portfolio
+type: business_profile
+title: Skills Portfolio
+slug: skills-portfolio
+platform: Skills Portfolio
+username: null
+display_name: "Ayush Rai Skills Portfolio"
+url: https://skills-portfolio-ayushr.vercel.app
+category: other
+purpose: "Skills stack showcase"
+description: "Public skills portfolio site: AI Engineer & Full-Stack Developer"
+primary_audience: "recruiters clients"
+visibility: public
+priority: 88
+status: active
+notes: "Owner-provided Vercel portfolio"
+tags: ["portfolio", "skills", "ai"]
+aliases: ["skills-portfolio-ayushr"]
+last_updated: null
+related_skills: []
+related_projects: []
+related_companies: []
+related_technologies: []
+created: 2026-07-23
+updated: 2026-07-23
+author: person.owner
+version: 0.1.0
+last_verified: 2026-07-23
+provenance:
+  source: linkedin-resume-and-owner-chat
+  source_file: data/imports/2026-07-23-linkedin-resume.txt
+  imported_at: 2026-07-23
