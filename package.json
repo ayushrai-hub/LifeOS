@@ -8,12 +8,11 @@
     "import:identity": "python scripts/knowledge/import_identity.py",
     "build:home": "node scripts/build-home.js",
     "build:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-site.ps1",
-    "build": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-site.ps1",
     "migrate:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/migrate-ayushrai-site.ps1",
     "qa": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/qa-site.ps1",
     "start": "python3 -m http.server 3000"
   },
   "engines": {
-    "node": ">=18"
+    "node": "20.x"
   }
 }
