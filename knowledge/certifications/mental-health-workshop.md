@@ -25,7 +25,7 @@ relationships:
   related_technologies: []
   related_projects: []
   related_domains: []
-notes: "Issuer/date/proof missing — review_required."
+notes: "Issuer/date/proof missing; review_required."
 provenance:
   source: linkedin-resume
   imported_at: 2026-07-23
@@ -39,7 +39,7 @@ Listed on LinkedIn Certifications without issuer or date.
 
 ## Why it mattered
 
-Personal and professional capacity — builders who ignore mental health burn the timeline.
+Personal and professional capacity: builders who ignore mental health burn the timeline.
 
 ## Evidence
 

@@ -4,7 +4,7 @@ Generated: 2026-07-23
 
 ## Immediate
 
-1. Resolve LNCT vs LNCTS education duplicate — keep one canonical, archive or supersede the other.
+1. Resolve LNCT vs LNCTS education duplicate; keep one canonical, archive or supersede the other.
 2. Choose primary public location (Pune vs Bhopal) and update `person.owner`.
 3. Add certification issuers/dates from certificate PDFs into `knowledge/inbox/` then normalize.
 4. Confirm Vercel portfolio trio + Topmate + LinkedIn services URLs with a live check; record `last_verified`.

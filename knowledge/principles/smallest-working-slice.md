@@ -32,7 +32,7 @@ How-I-learn and how-I-build checklists; market-lens three sentences before large
 
 ## Exceptions
 
-Safety-critical paths may need more upfront design — still time-box and document assumptions.
+Safety-critical paths may need more upfront design; still time-box and document assumptions.
 
 ## Revision history
 

@@ -34,5 +34,5 @@ Hook → stakes → complication → insight → concrete ask.
 
 ## Practice log
 
-- 2026-07-23: Captured LinkedIn honor **open mic performer** as `speaking.engagement.open-mic-performer` (date/venue unknown — do not invent).
+- 2026-07-23: Captured LinkedIn honor **open mic performer** as `speaking.engagement.open-mic-performer` (date/venue unknown; do not invent).
 - Add dated bullets here or link `talk.*` / `reflection.*` entities after each rehearsal or stage.

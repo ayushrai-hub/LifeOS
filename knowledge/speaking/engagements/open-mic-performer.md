@@ -3,7 +3,7 @@ id: speaking.engagement.open-mic-performer
 type: talk
 title: Open mic performer
 slug: open-mic-performer
-description: "Honor/award listed on LinkedIn: open mic performer — speaking and stage practice evidence."
+description: "Honor/award listed on LinkedIn: open mic performer; speaking and stage practice evidence."
 status: review
 visibility: public
 created: 2026-07-23
@@ -35,7 +35,7 @@ Listed under LinkedIn Honors & Awards as **open mic performer**.
 
 ## What is unknown
 
-Date, venue, topic, recording, audience size — all unknown. Do not invent.
+Date, venue, topic, recording, audience size: all unknown. Do not invent.
 
 ## Why it sits here
 

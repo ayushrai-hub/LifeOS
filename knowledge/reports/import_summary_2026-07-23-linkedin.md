@@ -1,4 +1,4 @@
-﻿# Import summary — LinkedIn resume + identity enrichment
+﻿# Import summary: LinkedIn resume + identity enrichment
 
 Generated: 2026-07-23
 

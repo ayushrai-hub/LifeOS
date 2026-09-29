@@ -399,7 +399,7 @@ function renderHtml(data) {
   const updated = escapeHtml(str(data.updated));
   const title = "Currently Reading; Ayush Rai";
   const description =
-    "A public log of what Ayush Rai is reading, learning, researching, and building from.";
+    "What Ayush Rai is reading right now, with notes on what he's learning and building from it.";
 
   const currentHtml = current.length
     ? `${renderTable(current)}\n\n${current.map(renderCurrentEntry).join("\n\n")}`
@@ -410,11 +410,11 @@ function renderHtml(data) {
 
   const finishedHtml = finished.length
     ? finished.map(renderFinishedEntry).join("\n\n")
-    : `      <p class="muted">Nothing finished and logged yet. Completed resources move here with what they changed.</p>`;
+    : `      <p class="muted">Nothing finished yet.</p>`;
 
   const builtHtml = built.length
     ? built.map(renderBuiltEntry).join("\n\n")
-    : `      <p class="muted">Nothing built from a logged resource yet. When a resource changes a project, the project, the resource, and the specific change are recorded here.</p>`;
+    : `      <p class="muted">Nothing yet. A project goes here once I can point to the resource behind a decision in it.</p>`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -472,13 +472,13 @@ ${finishedHtml}
 
     <section aria-labelledby="learning">
       <h2 id="learning">Learning</h2>
-      <p>Broader areas I'm exploring right now. Reading entries link back to the area they feed.</p>
+      <p>Topics I'm working through right now, broader than any single book or paper.</p>
 ${renderLearning(data.learning || [], entriesById)}
     </section>
 
     <section aria-labelledby="built-from-reading">
       <h2 id="built-from-reading">Built From Reading</h2>
-      <p>Reading changes how I build. This is where that shows: the project, the resource that influenced it, and what specifically changed.</p>
+      <p>Projects where something I read changed a decision. Each one names the resource and what it changed.</p>
 ${builtHtml}
     </section>
 

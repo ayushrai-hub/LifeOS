@@ -1,6 +1,6 @@
 # Person philosophy
 
-How Ayush operates — classic themes plus evolving **How-I** practice pages.
+How Ayush operates: classic themes plus evolving **How-I** practice pages.
 
 ## Classic
 

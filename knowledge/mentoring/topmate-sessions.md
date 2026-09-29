@@ -32,11 +32,11 @@ provenance:
 
 ## Context
 
-Canonical profile: [https://topmate.io/ayush_rai02](https://topmate.io/ayush_rai02) (`business.topmate`). Featured on Career and Contact mentoring sections; not on the homepage. Session topics and outcomes are not fully listed yet — log each meaningful mentorship as evidence under `impact/evidence/` when real.
+Canonical profile: [https://topmate.io/ayush_rai02](https://topmate.io/ayush_rai02) (`business.topmate`). Featured on Career and Contact mentoring sections; not on the homepage. Session topics and outcomes are not fully listed yet; log each meaningful mentorship as evidence under `impact/evidence/` when real.
 
 ## What I offer (honest)
 
-AI / LLM systems, production constraints, and career navigation for builders — only topics I can back with practice.
+AI / LLM systems, production constraints, and career navigation for builders, and only topics I can back with practice.
 
 ## What I track
 

@@ -19,7 +19,7 @@ relationships:
   related_companies: [company.focdot-technologies]
   related_experiences: [experience.focdot-software-developer]
 evidence: []
-notes: "Dates and artifacts not in LinkedIn text — attach media when available."
+notes: "Dates and artifacts not in LinkedIn text; attach media when available."
 provenance:
   source: linkedin-resume
   imported_at: 2026-07-23

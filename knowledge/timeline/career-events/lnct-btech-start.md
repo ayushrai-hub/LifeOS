@@ -29,7 +29,7 @@ relationships:
 
 ## Details
 
-LinkedIn lists both LNCT Group of Colleges and Lakshmi Narain College of Technology & Science for BTech CSE 2020–2024 — treat as one education path pending dedupe review.
+LinkedIn lists both LNCT Group of Colleges and Lakshmi Narain College of Technology & Science for BTech CSE 2020–2024; treat as one education path pending dedupe review.
 
 ## Significance
 

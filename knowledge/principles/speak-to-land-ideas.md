@@ -32,7 +32,7 @@ Technical work fails in silence; persuasion without substance also fails. Train 
 
 ## Exceptions
 
-Not every note needs a stage — but every major project should get a human-readable story.
+Not every note needs a stage, but every major project should get a human-readable story.
 
 ## Revision history
 

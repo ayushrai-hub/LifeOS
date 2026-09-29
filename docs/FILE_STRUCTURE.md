@@ -41,7 +41,7 @@
 │   ├── build-site.ps1
 │   ├── build-home.js
 │   ├── migrate-ayushrai-site.ps1
-│   ├── qa-site.ps1
+│   ├── qa-site.js       # npm run qa (qa-site.ps1 wraps it)
 │   ├── live-clock.js    # optional; not wired
 │   └── knowledge/       # validate + import
 ├── templates/pages/     # HTML starters

@@ -11,7 +11,7 @@ notes_latest: |
   philosophy fills, principles, mentoring, speaking engagement seeds, longevity-guide.
   Growth crafts: public speaking, storytelling, market understanding, geopolitics.
   Folders remain append-only; see knowledge/_system/longevity-guide.md.
-  Run scripts/build-site.ps1 after catalog edits. Run scripts/qa-site.ps1 before deploy.
+  Run scripts/build-site.ps1 after catalog edits. Run npm run qa (scripts/qa-site.js) before deploy.
 
 
 consumers:
@@ -28,7 +28,7 @@ consumers:
     build:
       catalog: data/site-catalog.json
       site_script: scripts/build-site.ps1
-      qa_script: scripts/qa-site.ps1
+      qa_script: scripts/qa-site.js
       home_script: scripts/build-home.js
 
 chronology_notes: |

@@ -1,7 +1,7 @@
 ---
 id: course.iitm-bs-data-science-applications
 type: course
-title: IIT Madras BS — Data Science and Applications (program)
+title: IIT Madras BS in Data Science and Applications (program)
 slug: iitm-bs-data-science-applications
 description: "IIT Madras online BS degree in Data Science and Programming / Data Science and Applications (Jul 2021 – Feb 2026)."
 status: review
@@ -25,7 +25,7 @@ provenance:
   imported_at: 2026-07-23
 ---
 
-# IIT Madras BS — Data Science and Applications
+# IIT Madras BS in Data Science and Applications
 
 ## Why I took it
 

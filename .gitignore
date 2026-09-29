@@ -90,6 +90,9 @@ data/imports/*linkedin-resume*
 data/imports/ayushrai-site-crawl/index-bundle-excerpt.txt
 scripts/knowledge/import_linkedin_resume.py
 
+# Local clone of the Expert-O repo (nested .git, node_modules, .env.local). Never commit it.
+knowledge/github/repositories/expert-o/
+
 # Local private scratch (optional drop zone)
 private/
 .local/

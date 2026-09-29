@@ -18,7 +18,7 @@ relationships:
 
 # Writing Philosophy
 
-I write to pin down what I actually believe after contact with a system — not to perform expertise.
+I write to pin down what I actually believe after contact with a system, not to perform expertise.
 
 ## Operating pattern
 

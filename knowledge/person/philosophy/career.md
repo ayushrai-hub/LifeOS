@@ -18,7 +18,7 @@ relationships:
 
 # Career Philosophy
 
-Career is a portfolio of shipped systems, honest learning stages, and people helped — recorded here so memory cannot rewrite it.
+Career is a portfolio of shipped systems, honest learning stages, and people helped, recorded here so memory cannot rewrite it.
 
 ## Operating pattern
 

@@ -26,7 +26,7 @@ relationships:
   related_technologies: []
   related_projects: []
   related_domains: [domain.machine-learning, domain.artificial-intelligence]
-notes: "Issuer, date, and proof missing from LinkedIn paste — review_required."
+notes: "Issuer, date, and proof missing from LinkedIn paste; review_required."
 provenance:
   source: linkedin-resume
   imported_at: 2026-07-23

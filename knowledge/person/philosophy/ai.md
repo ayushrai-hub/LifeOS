@@ -18,7 +18,7 @@ relationships:
 
 # AI Philosophy
 
-I treat AI as infrastructure under constraints: latency, cost, reliability, safety — not as magic slides.
+I treat AI as infrastructure under constraints (latency, cost, reliability, safety), not as magic slides.
 
 ## Operating pattern
 

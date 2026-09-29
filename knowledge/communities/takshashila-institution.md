@@ -33,7 +33,7 @@ provenance:
 
 ## Why I joined
 
-To study public policy analysis seriously and sit adjacent to geopolitics, economics, and institutional thinking — not as a pundit, as a builder who reads the map.
+To study public policy analysis seriously and sit adjacent to geopolitics, economics, and institutional thinking, not as a pundit but as a builder who reads the map.
 
 ## What I contributed
 
@@ -41,7 +41,7 @@ Completed Graduate program in Public Policy Analysis (Sep–Dec 2025 per LinkedI
 
 ## What I learned
 
-[PLACEHOLDER: frameworks, readings, cohort lessons — fill from notes]
+[PLACEHOLDER: frameworks, readings, cohort lessons; fill from notes]
 
 ## People I met
 

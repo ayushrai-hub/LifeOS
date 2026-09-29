@@ -43,7 +43,7 @@ Reduce duplication, remove dead presentation code, keep one CSS system, clarify 
 
 ## QA
 
-`npm run qa` / `scripts/qa-site.ps1`: em dashes, viewport meta, catalog file presence, portrait size.
+`npm run qa` / `scripts/qa-site.js`: em dashes (U+2014), viewport meta, catalog file presence, portrait size.
 
 ## Related
 

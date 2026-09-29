@@ -10,6 +10,12 @@
 - Linked from `/sites/reading/`, `/sites/learning/`, and the sitemap.
 - `npm run build:reading` / `npm run check:reading`; GitHub Actions check keeps the generated page in sync with the data.
 
+### QA and repo hygiene
+
+- `npm run qa` now runs `scripts/qa-site.js` (Node, no PowerShell). The em dash check looks for U+2014 and its HTML entities; the old check searched for `"; "` and could not catch anything. `qa-site.ps1` is kept as a wrapper.
+- Replaced the em dashes that check had been missing: mostly the separator between a link and its id in knowledge indexes, plus the contact and career pages. Replacements follow the site's `; ` convention, or a comma or colon where that reads better.
+- `.gitignore` excludes the local Expert-O clone at `knowledge/github/repositories/expert-o/`.
+
 ## 2026-07-23
 
 ### Migration

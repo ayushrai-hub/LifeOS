@@ -32,7 +32,7 @@ This repository is a **long-term personal knowledge system**. The website is one
 ```bash
 npm run validate       # knowledge validation (Node)
 npm run build:site     # generate resumes, portfolios, domains from data/site-catalog.json
-npm run qa             # static QA (em dashes, viewport, catalog coverage)
+npm run qa             # static QA (em dashes, viewport, catalog coverage); exits 1 on failure
 npm start              # local static preview on http://localhost:3000 (Python http.server)
 node scripts/build-home.js   # regenerate homepage from knowledge/_system/homepage.yaml
 ```

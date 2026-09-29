@@ -27,7 +27,7 @@ relationships:
 
 ## Outcome
 
-Dated notes and engagements appear over months — not a one-time domain stub.
+Dated notes and engagements appear over months, not a one-time domain stub.
 
 ## Cadence (adjust as life allows)
 
@@ -40,4 +40,4 @@ Dated notes and engagements appear over months — not a one-time domain stub.
 
 ## Done looks like
 
-Indexes list real entities; impact evidence grows; philosophy pages get revision history — not vanity rewrites.
+Indexes list real entities; impact evidence grows; philosophy pages get revision history, not vanity rewrites.

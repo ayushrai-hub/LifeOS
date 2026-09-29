@@ -1,7 +1,7 @@
 ---
 id: community.rasor
 type: community
-title: RaSoR — Ramanujan Society of Research
+title: RaSoR (Ramanujan Society of Research)
 slug: rasor
 description: "Research society of the IIT Madras BS degree; web development contribution period."
 status: review
@@ -28,7 +28,7 @@ provenance:
   imported_at: 2026-07-23
 ---
 
-# RaSoR — Ramanujan Society of Research
+# RaSoR (Ramanujan Society of Research)
 
 ## Why I joined
 

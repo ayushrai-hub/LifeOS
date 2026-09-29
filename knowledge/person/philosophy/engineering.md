@@ -18,7 +18,7 @@ relationships:
 
 # Engineering Philosophy
 
-I engineer for reality: interfaces, failure, and maintenance — not for cleverness alone.
+I engineer for reality: interfaces, failure, and maintenance, not for cleverness alone.
 
 ## Operating pattern
 

@@ -6,7 +6,7 @@ Meaning: imported into the knowledge base but not yet referenced by person prima
 
 ## Likely under-referenced identity profiles
 
-Many freelance/web3/security profiles under `knowledge/business/` and `knowledge/social/` remain valid inventory but are not in `person.owner.identity.primary`. That is intentional — primary highlights core surfaces only.
+Many freelance/web3/security profiles under `knowledge/business/` and `knowledge/social/` remain valid inventory but are not in `person.owner.identity.primary`. That is intentional; primary highlights core surfaces only.
 
 ## Narrative placeholders still unused as facts
 

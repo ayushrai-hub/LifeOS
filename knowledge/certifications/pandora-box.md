@@ -25,7 +25,7 @@ relationships:
   related_technologies: []
   related_projects: []
   related_domains: []
-notes: "Ambiguous title; issuer/date unknown — review_required. Clarify what program this was."
+notes: "Ambiguous title; issuer/date unknown; review_required. Clarify what program this was."
 provenance:
   source: linkedin-resume
   imported_at: 2026-07-23

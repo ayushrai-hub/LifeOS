@@ -36,11 +36,11 @@ To learn automation / RPA practice and participate in a vendor student-developer
 
 ## What I contributed
 
-Held the Student Developer Champion role (responsibilities not detailed in source — fill when recalled).
+Held the Student Developer Champion role (responsibilities not detailed in source; fill when recalled).
 
 ## What I learned
 
-[PLACEHOLDER: workshops, tools, community rituals — do not invent]
+[PLACEHOLDER: workshops, tools, community rituals; do not invent]
 
 ## People I met
 

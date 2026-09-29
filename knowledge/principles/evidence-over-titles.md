@@ -3,7 +3,7 @@ id: principle.evidence-over-titles
 type: principle
 title: Evidence over titles
 slug: evidence-over-titles
-description: "Claims require artifacts, dates, or honest unknown — titles alone are not proof."
+description: "Claims require artifacts, dates, or honest unknown; titles alone are not proof."
 status: draft
 visibility: private
 created: 2026-07-23
@@ -20,7 +20,7 @@ relationships:
 
 ## Statement
 
-If I cannot point to evidence, I mark `draft`/`review` — I do not invent polish.
+If I cannot point to evidence, I mark `draft`/`review`; I do not invent polish.
 
 ## Why it exists
 

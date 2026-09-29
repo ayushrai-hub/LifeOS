@@ -25,7 +25,7 @@ relationships:
   related_technologies: []
   related_projects: []
   related_domains: [domain.business, domain.data-engineering]
-notes: "Issuer/date/proof missing — review_required."
+notes: "Issuer/date/proof missing; review_required."
 provenance:
   source: linkedin-resume
   imported_at: 2026-07-23

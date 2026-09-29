@@ -3,7 +3,7 @@ id: philosophy.leadership
 type: philosophy
 title: Leadership Philosophy
 slug: leadership
-description: "Lead with clarity, ownership, and evidence — not theater."
+description: "Lead with clarity, ownership, and evidence, not theater."
 status: draft
 visibility: private
 created: 2026-07-23
@@ -35,7 +35,7 @@ Leadership is making progress legible and decisions reversible when possible. Ti
 
 ## Growing edge
 
-More documented management notes in `management/` and `leadership/` as scope grows. Formal outcomes still thin — add with examples.
+More documented management notes in `management/` and `leadership/` as scope grows. Formal outcomes still thin; add with examples.
 
 ## Revision history
 
