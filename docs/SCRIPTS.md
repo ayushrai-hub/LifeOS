@@ -8,6 +8,8 @@
 | `npm run validate:py` | `scripts/knowledge/validate.py` | Same (Python) |
 | `npm run import:identity` | `scripts/knowledge/import_identity.py` | Import identity links |
 | `npm run build:home` | `scripts/build-home.js` | Homepage from knowledge (needs Node) |
+| `npm run build:reading` | `scripts/build-reading.js` + `build-home.js` | Currently Reading page, then homepage Recently Updated |
+| `npm run check:reading` | `scripts/build-reading.js --check` | Validate reading data; fail if the page is stale |
 | `npm run build:site` / `build` | `scripts/build-site.ps1` | Portfolios, domains, resumes |
 | `npm run qa` | `scripts/qa-site.ps1` | Em dash, viewport, catalog coverage |
 | `npm start` | `npx serve` | Local static server |
@@ -26,7 +28,8 @@
 | Script | Reads | Writes |
 |--------|-------|--------|
 | `build-site.ps1` | `data/site-catalog.json` | `sites/portfolios/**`, `domains/**`, `career/**`, hubs |
-| `build-home.js` | `knowledge/_system/homepage.yaml`, learning, GitHub index, contacts | `data/home.json`, `sites/www/index.html` |
+| `build-home.js` | `knowledge/_system/homepage.yaml`, learning, reading log, GitHub index, contacts | `data/home.json`, `sites/www/index.html` |
+| `build-reading.js` | `knowledge/reading/currently-reading.json` | `sites/currently-reading/index.html` |
 | `migrate-ayushrai-site.ps1` | Embedded crawl facts | `sites/migrated/**` |
 | `qa-site.ps1` | `sites/**`, catalog, portrait asset | Console report |
 

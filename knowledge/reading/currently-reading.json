@@ -1,0 +1,52 @@
+{
+  "id": "reading.currently-reading",
+  "type": "reading_log",
+  "title": "Currently Reading",
+  "slug": "currently-reading",
+  "status": "published",
+  "visibility": "public",
+  "created": "2026-09-29",
+  "updated": "2026-09-29",
+  "author": "person.owner",
+  "version": "1.0.0",
+  "schema": "knowledge/reading/README.md#currently-reading-log",
+  "template": "knowledge/templates/reading-log-entry.json",
+  "entries": [],
+  "learning": [
+    {
+      "id": "ai-coding-agent-evaluation",
+      "topic": "AI coding-agent evaluation",
+      "description": "Harbor and Terminus task systems, Dockerized oracles, review CLIs",
+      "href": "../domains/agents/index.html",
+      "related": []
+    },
+    {
+      "id": "host-security-auditing",
+      "topic": "Host security auditing",
+      "description": "read-only DFIR-style inventory with MITRE-mapped findings",
+      "href": "../domains/cyber-security/index.html",
+      "related": []
+    },
+    {
+      "id": "interpretable-business-analytics",
+      "topic": "Interpretable business analytics",
+      "description": "constrained P&L scoring instead of proxy-target ML",
+      "href": "../domains/business/index.html",
+      "related": []
+    },
+    {
+      "id": "rag-and-agentic-llm-applications",
+      "topic": "RAG and agentic LLM applications",
+      "description": "routing, retrieval, and local-first experiment systems",
+      "href": "../domains/llms/index.html",
+      "related": []
+    },
+    {
+      "id": "compliance-and-audit-automation",
+      "topic": "Compliance and audit automation",
+      "description": "including deterministic, non-generative designs",
+      "href": "../domains/application-security/index.html",
+      "related": []
+    }
+  ]
+}

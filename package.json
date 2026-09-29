@@ -7,6 +7,8 @@
     "validate:py": "python scripts/knowledge/validate.py",
     "import:identity": "python scripts/knowledge/import_identity.py",
     "build:home": "node scripts/build-home.js",
+    "build:reading": "node scripts/build-reading.js && node scripts/build-home.js",
+    "check:reading": "node scripts/build-reading.js --check",
     "build:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-site.ps1",
     "migrate:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/migrate-ayushrai-site.ps1",
     "qa": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/qa-site.ps1",

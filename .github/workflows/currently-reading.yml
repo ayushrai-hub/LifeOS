@@ -1,0 +1,24 @@
+name: Currently Reading
+
+on:
+  push:
+    paths:
+      - "knowledge/reading/currently-reading.json"
+      - "scripts/build-reading.js"
+      - "sites/currently-reading/**"
+  pull_request:
+    paths:
+      - "knowledge/reading/currently-reading.json"
+      - "scripts/build-reading.js"
+      - "sites/currently-reading/**"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate data and confirm generated page is current
+        run: node scripts/build-reading.js --check

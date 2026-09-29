@@ -7,6 +7,7 @@
  *   knowledge/person/profile.yaml
  *   knowledge/learning/currently-learning.md
  *   knowledge/_system/site-status.yaml
+ *   knowledge/reading/currently-reading.json
  *   data/imports/github-knowledge-index.json
  *   knowledge/contact/*.yaml, knowledge/social/*.yaml
  *
@@ -364,6 +365,19 @@ function loadRecentlyUpdated(limit, learningUpdated) {
   const status = loadEntityYaml(path.join(KNOWLEDGE, "_system/site-status.yaml"));
   const items = [];
 
+  const readingPath = path.join(KNOWLEDGE, "reading/currently-reading.json");
+  if (fs.existsSync(readingPath)) {
+    const reading = JSON.parse(read(readingPath));
+    if (reading.updated) {
+      items.push({
+        title: "Currently Reading",
+        date: reading.updated,
+        summary: "What I'm reading, learning, and building from.",
+        href: "../currently-reading/index.html",
+      });
+    }
+  }
+
   if (status.knowledge_last_updated) {
     items.push({
       title: "Knowledge base",
@@ -705,6 +719,7 @@ function main() {
       "knowledge/person/profile.yaml",
       "knowledge/learning/currently-learning.md",
       "knowledge/_system/site-status.yaml",
+      "knowledge/reading/currently-reading.json",
       "data/imports/github-knowledge-index.json",
     ],
   };

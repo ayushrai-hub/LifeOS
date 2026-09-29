@@ -26,6 +26,7 @@ doors_nav:
   - engineering
   - ai
   - learning
+  - currently-reading
   - research
   - writing
   - portfolios
@@ -51,6 +52,7 @@ doors:
   writing: "../writing/index.html"
   learning: "../learning/index.html"
   reading: "../reading/index.html"
+  currently-reading: "../currently-reading/index.html"
   communities: "../communities/index.html"
   leadership: "../leadership/index.html"
   management: "../management/index.html"

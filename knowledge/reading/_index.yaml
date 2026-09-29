@@ -1,6 +1,7 @@
-items: []
+items:
+  - { id: reading.currently-reading, slug: currently-reading, title: Currently Reading, status: published, path: knowledge/reading/currently-reading.json }
 # Machine index for knowledge/reading
 # Append: { id, slug, title, status, path }
 domain: reading
 title: reading
-updated: 2026-07-23
+updated: 2026-09-29

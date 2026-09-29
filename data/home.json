@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-09-29",
   "name": "Ayush Rai",
   "tagline": "Software Engineer building AI systems, focused on automation and developer tools.",
   "intro": [
@@ -13,6 +13,7 @@
     "writing": "../writing/index.html",
     "learning": "../learning/index.html",
     "reading": "../reading/index.html",
+    "currently-reading": "../currently-reading/index.html",
     "communities": "../communities/index.html",
     "leadership": "../leadership/index.html",
     "management": "../management/index.html",
@@ -41,6 +42,7 @@
     "engineering",
     "ai",
     "learning",
+    "currently-reading",
     "research",
     "writing",
     "portfolios",
@@ -157,6 +159,12 @@
   ],
   "recently_updated": [
     {
+      "title": "Currently Reading",
+      "date": "2026-09-29",
+      "summary": "What I'm reading, learning, and building from.",
+      "href": "../currently-reading/index.html"
+    },
+    {
       "title": "Knowledge base",
       "date": "2026-07-23",
       "summary": "Identity inventory and system status refreshed.",
@@ -226,6 +234,7 @@
     "knowledge/person/profile.yaml",
     "knowledge/learning/currently-learning.md",
     "knowledge/_system/site-status.yaml",
+    "knowledge/reading/currently-reading.json",
     "data/imports/github-knowledge-index.json"
   ]
 }

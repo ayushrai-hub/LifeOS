@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-29
+
+### Currently Reading
+
+- Added `/sites/currently-reading/`: a public reading and learning log (Currently Reading, Finished, Learning, Built From Reading).
+- Data lives in `knowledge/reading/currently-reading.json`; `scripts/build-reading.js` validates it and renders static HTML (no client JS). Schema and update workflow: `knowledge/reading/README.md`.
+- Homepage: `currently reading` door and a Recently Updated line driven by the log's `updated` date.
+- Linked from `/sites/reading/`, `/sites/learning/`, and the sitemap.
+- `npm run build:reading` / `npm run check:reading`; GitHub Actions check keeps the generated page in sync with the data.
+
 ## 2026-07-23
 
 ### Migration
