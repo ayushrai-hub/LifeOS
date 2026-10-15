@@ -1,0 +1,7 @@
+{
+  "resource": "https://life.ayushrai.site/api/v1",
+  "resource_name": "Ayush Rai public knowledge API",
+  "authorization_servers": ["https://life.ayushrai.site"],
+  "scopes_supported": ["knowledge:read"],
+  "bearer_methods_supported": ["header"]
+}

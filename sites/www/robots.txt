@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sites/www/sitemap.xml
+Sitemap: https://life.ayushrai.site/sitemap.xml
+schemamap: https://life.ayushrai.site/schemamap.xml

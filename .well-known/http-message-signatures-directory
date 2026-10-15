@@ -1,0 +1,14 @@
+{
+  "keys": [
+    {
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "AfGufYmdUpK4w6f6t7PYwg5SeGI79xAyYfkwgCl32Jk",
+      "kid": "life-ayushrai-bot-2026",
+      "use": "sig",
+      "alg": "EdDSA",
+      "nbf": 1792017381,
+      "exp": 1855175781
+    }
+  ]
+}

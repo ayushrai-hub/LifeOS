@@ -1,0 +1,16 @@
+{
+  "name": "life-ayushrai",
+  "version": "1.0.0",
+  "description": "Read Ayush Rai's public knowledge site from scripts and agents.",
+  "homepage": "https://life.ayushrai.site/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushrai-hub/LifeOS.git"
+  },
+  "bin": {
+    "life-ayushrai": "./bin/life.js"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "files": ["index.js", "bin"]
+}

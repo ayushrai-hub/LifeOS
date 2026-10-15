@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Ayush Rai</title>
+    <link>https://life.ayushrai.site/</link>
+    <description>Public pages from Ayush Rai's knowledge site.</description>
+    <item>
+      <title>Home</title>
+      <link>https://life.ayushrai.site/sites/www/</link>
+      <description>AI Engineer in Bhopal. LLM applications, RAG, and evaluation.</description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>https://life.ayushrai.site/sites/projects/</link>
+      <description>Adaptive RAG, MailU, and OpenAI-RLHF.</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://life.ayushrai.site/sites/contact/</link>
+      <description>Email, phone, and booking links.</description>
+    </item>
+    <item>
+      <title>Developers</title>
+      <link>https://life.ayushrai.site/developers/</link>
+      <description>Quickstart, sandbox, and API map.</description>
+    </item>
+  </channel>
+</rss>

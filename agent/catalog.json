@@ -1,0 +1,71 @@
+{
+  "name": "Ayush Rai",
+  "tagline": "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines.",
+  "location": "Bhopal, Madhya Pradesh, India",
+  "email": "ayushrai0211@gmail.com",
+  "telephone": "+91-7440567944",
+  "roles": ["AI Engineer", "Applied AI Engineer", "LLM & Evaluation Engineer"],
+  "source": "https://github.com/ayushrai-hub/LifeOS",
+  "pages": [
+    {
+      "url": "https://life.ayushrai.site/sites/www/",
+      "name": "Ayush Rai",
+      "description": "Public homepage for Ayush Rai, an AI Engineer in Bhopal who ships LLM applications, RAG systems, and evaluation pipelines.",
+      "keywords": "home profile ayush rai bhopal"
+    },
+    {
+      "url": "https://life.ayushrai.site/about/",
+      "name": "About",
+      "description": "Biography: AI Engineer in Bhopal, FoCDoT, evaluation work, and the public knowledge site.",
+      "keywords": "about biography who is"
+    },
+    {
+      "url": "https://life.ayushrai.site/sites/projects/",
+      "name": "Projects",
+      "description": "Flagship projects include Adaptive RAG, MailU, and the OpenAI-RLHF evaluation repository.",
+      "keywords": "projects adaptive rag mailu openai rlhf"
+    },
+    {
+      "url": "https://life.ayushrai.site/sites/products/",
+      "name": "Products",
+      "description": "Shiksha-Mitra is a mutual-accountability growth companion. RevenueRoles is technical revenue job intelligence.",
+      "keywords": "products shiksha-mitra revenueroles"
+    },
+    {
+      "url": "https://life.ayushrai.site/sites/ai/",
+      "name": "AI",
+      "description": "AI engineering notes: LLM applications, RAG, agents, and evaluation.",
+      "keywords": "ai llm rag agents evaluation"
+    },
+    {
+      "url": "https://life.ayushrai.site/sites/engineering/",
+      "name": "Engineering",
+      "description": "Engineering practice, including Python and FastAPI backend work.",
+      "keywords": "engineering python fastapi backend"
+    },
+    {
+      "url": "https://life.ayushrai.site/sites/career/",
+      "name": "Career",
+      "description": "Career pages, resumes, and experience. Primary engineering role is at FoCDoT Technologies.",
+      "keywords": "career resume focdot experience"
+    },
+    {
+      "url": "https://life.ayushrai.site/sites/contact/",
+      "name": "Contact",
+      "description": "Email ayushrai0211@gmail.com, phone +91 7440567944, Calendly, Cal.com, and Topmate mentoring.",
+      "keywords": "contact email phone calendly cal.com topmate"
+    },
+    {
+      "url": "https://life.ayushrai.site/developers/",
+      "name": "Developers",
+      "description": "Developer portal: quickstart, OpenAPI, sandbox, MCP servers, and auth.md.",
+      "keywords": "developers api sandbox mcp openapi"
+    },
+    {
+      "url": "https://life.ayushrai.site/privacy/",
+      "name": "Privacy",
+      "description": "This static site stores a theme choice in localStorage and does not run an account system.",
+      "keywords": "privacy localstorage theme"
+    }
+  ]
+}

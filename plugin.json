@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "life-ayushrai",
+  "version": "1.0.0",
+  "description": "Skills and MCP servers for Ayush Rai's public knowledge site.",
+  "author": {
+    "name": "Ayush Rai",
+    "url": "https://life.ayushrai.site/"
+  },
+  "homepage": "https://life.ayushrai.site/developers/",
+  "repository": "https://github.com/ayushrai-hub/LifeOS",
+  "license": "MIT",
+  "keywords": ["profile", "knowledge", "mcp"]
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "",
+  "installCommand": "npm install",
   "buildCommand": "",
   "cleanUrls": true,
   "trailingSlash": true,
@@ -11,14 +11,56 @@
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        {
+          "key": "Link",
+          "value": "</sitemap.xml>; rel=\"sitemap\", </index.md>; rel=\"alternate\"; type=\"text/markdown\", </.well-known/api-catalog>; rel=\"api-catalog\", </openapi.json>; rel=\"service-desc\"; type=\"application/openapi+json\", </.well-known/ard.json>; rel=\"describedby\""
+        }
       ]
     },
     {
-      "source": "/knowledge/(.*)",
+      "source": "/",
+      "headers": [{ "key": "Vary", "value": "Accept, User-Agent" }]
+    },
+    {
+      "source": "/sites/www/",
+      "headers": [{ "key": "Vary", "value": "Accept, User-Agent" }]
+    },
+    {
+      "source": "/(.*).md",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=60" }
+        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
+        { "key": "Vary", "value": "Accept" }
       ]
+    },
+    {
+      "source": "/.well-known/api-catalog",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/linkset+json;profile=\"https://www.rfc-editor.org/info/rfc9727\""
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/oauth-protected-resource",
+      "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }]
+    },
+    {
+      "source": "/.well-known/oauth-authorization-server",
+      "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }]
+    },
+    {
+      "source": "/.well-known/http-message-signatures-directory",
+      "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }]
+    },
+    {
+      "source": "/mcp/(.*)/server-card",
+      "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }]
+    },
+    {
+      "source": "/knowledge/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=60" }]
     },
     {
       "source": "/assets/(.*)",
@@ -34,6 +76,70 @@
     }
   ],
   "redirects": [
-    { "source": "/", "destination": "/sites/www/", "permanent": false }
+    {
+      "source": "/",
+      "missing": [
+        { "type": "header", "key": "accept", "value": "text/markdown" },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "GPTBot|ClaudeBot|ChatGPT-User|PerplexityBot|Google-Extended|Applebot-Extended|ora-agent|DeepSeekBot"
+        },
+        { "type": "query", "key": "mode", "value": "agent" }
+      ],
+      "destination": "/sites/www/",
+      "permanent": false
+    },
+    { "source": "/contact", "destination": "/sites/contact/", "permanent": false },
+    { "source": "/contact/", "destination": "/sites/contact/", "permanent": false }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "mode", "value": "agent" }],
+      "destination": "/agent/mode.json"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept", "value": "text/markdown" }],
+      "destination": "/index.md"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "GPTBot|ClaudeBot|ChatGPT-User|PerplexityBot|Google-Extended|Applebot-Extended|ora-agent|DeepSeekBot"
+        }
+      ],
+      "destination": "/index.md"
+    },
+    { "source": "/.well-known/llms.txt", "destination": "/llms.txt" },
+    { "source": "/agents.md", "destination": "/AGENTS.md" },
+    { "source": "/api/llms.txt", "destination": "/section-llms/api.txt" },
+    { "source": "/ask", "destination": "/api/ask" },
+    { "source": "/api/v1/sandbox", "destination": "/api/sandbox" },
+    { "source": "/v1/sandbox", "destination": "/api/sandbox" },
+    { "source": "/api", "destination": "/api/guard" },
+    { "source": "/api/", "destination": "/api/guard" },
+    { "source": "/api/v1", "destination": "/api/guard" },
+    { "source": "/api/v1/", "destination": "/api/guard" },
+    { "source": "/v1", "destination": "/api/guard" },
+    { "source": "/v1/", "destination": "/api/guard" },
+    { "source": "/v2", "destination": "/api/guard" },
+    { "source": "/v2/", "destination": "/api/guard" },
+    { "source": "/agent/identity", "destination": "/api/agent?op=identity" },
+    { "source": "/agent/auth", "destination": "/api/agent?op=identity" },
+    { "source": "/agent/claim", "destination": "/api/agent?op=claim" },
+    { "source": "/agent/identity/claim", "destination": "/api/agent?op=claim" },
+    { "source": "/agent/events", "destination": "/api/agent?op=events" },
+    { "source": "/oauth/token", "destination": "/api/agent?op=token" },
+    { "source": "/oauth/revoke", "destination": "/api/agent?op=revoke" },
+    { "source": "/oauth/authorize", "destination": "/api/agent?op=authorize" },
+    { "source": "/mcp/knowledge", "destination": "/api/mcp?surface=knowledge" },
+    { "source": "/mcp/docs", "destination": "/api/mcp?surface=docs" },
+    { "source": "/a2a", "destination": "/api/a2a" },
+    { "source": "/:path*", "destination": "/api/not-found?path=:path*" }
   ]
 }

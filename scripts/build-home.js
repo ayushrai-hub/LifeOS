@@ -563,6 +563,11 @@ function renderHtml(home) {
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="${escapeHtml(home.name)}">
   <meta name="twitter:description" content="${escapeHtml(home.tagline)}">
+  <link rel="canonical" href="https://life.ayushrai.site/sites/www/">
+  <link rel="alternate" type="text/markdown" href="https://life.ayushrai.site/index.md">
+  <meta property="og:url" content="https://life.ayushrai.site/sites/www/">
+  <meta property="og:image" content="https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg">
+  <meta name="twitter:image" content="https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg">
   <script>
     (function () {
       try {
@@ -639,10 +644,68 @@ ${recentHtml || '          <li class="muted">Nothing published yet.</li>'}
     </footer>`
         : ""
     }
+    <form class="home-ask" action="/ask" method="get" toolname="ask_ayush_rai" tooldescription="Ask a question about Ayush Rai's public profile, projects, writing, and contact details.">
+      <label for="agent-query">Ask this site</label>
+      <input id="agent-query" name="query" type="search" toolparamdescription="Natural-language question about Ayush Rai.">
+      <button type="submit">Ask</button>
+    </form>
+    <p class="home-contact">
+      <a href="/developers/">Developers</a>
+      ·
+      <a href="/llms.txt">llms.txt</a>
+      ·
+      <a href="https://github.com/ayushrai-hub/LifeOS" rel="noopener noreferrer">Site source</a>
+    </p>
   </main>
   <script src="/scripts/site-chrome.js" defer></script>
 </body>
 </html>
+`;
+}
+
+function renderMarkdown(home) {
+  const focus = (home.current_focus || [])
+    .map((item) => `- ${item.short_title || item.title}`)
+    .join("\n");
+  const latest = (home.latest_work || [])
+    .map((item) => `- ${item.title}${item.summary ? `: ${item.summary}` : ""}`)
+    .join("\n");
+  const contact = (home.contact || [])
+    .map((item) => `- [${item.text}](${item.href})`)
+    .join("\n");
+  return `# ${home.name}
+
+${home.tagline}
+
+Personal knowledge site for Ayush Rai, an AI Engineer in Bhopal, Madhya Pradesh, India.
+
+## When to use this site
+
+Use this page when you need public facts about Ayush Rai: his roles, projects, products, writing, or how to contact him. Do not use it for private data, credentials, or invented metrics.
+
+## Start here
+
+- [llms.txt](https://life.ayushrai.site/llms.txt)
+- [Developers](https://life.ayushrai.site/developers/)
+- [Auth for agents](https://life.ayushrai.site/auth.md)
+- [About](https://life.ayushrai.site/about/)
+- [Contact](https://life.ayushrai.site/sites/contact/)
+- [Privacy](https://life.ayushrai.site/privacy/)
+- [Projects](https://life.ayushrai.site/sites/projects/)
+- [Products](https://life.ayushrai.site/sites/products/)
+- [Source repository](https://github.com/ayushrai-hub/LifeOS)
+
+## Current focus
+
+${focus || "- Nothing published yet."}
+
+## Latest work
+
+${latest || "- Nothing published yet."}
+
+## Contact
+
+${contact || "- See the contact page."}
 `;
 }
 
@@ -726,7 +789,10 @@ function main() {
 
   write(path.join(ROOT, "data/home.json"), JSON.stringify(home, null, 2) + "\n");
   write(path.join(ROOT, "sites/www/index.html"), renderHtml(home));
-  console.log("Wrote data/home.json and sites/www/index.html");
+  const markdown = renderMarkdown(home);
+  write(path.join(ROOT, "index.md"), markdown);
+  write(path.join(ROOT, "sites/www/index.md"), markdown);
+  console.log("Wrote data/home.json, sites/www/index.html, and index.md");
 }
 
 main();

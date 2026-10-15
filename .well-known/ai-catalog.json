@@ -1,0 +1,16 @@
+{
+  "servers": [
+    {
+      "name": "site.ayushrai.life/knowledge",
+      "description": "Read Ayush Rai's public profile, projects, and contacts.",
+      "url": "https://life.ayushrai.site/mcp/knowledge",
+      "card": "https://life.ayushrai.site/mcp/knowledge/server-card"
+    },
+    {
+      "name": "site.ayushrai.life/docs",
+      "description": "Look up pages in Ayush Rai's public site documentation.",
+      "url": "https://life.ayushrai.site/mcp/docs",
+      "card": "https://life.ayushrai.site/mcp/docs/server-card"
+    }
+  ]
+}

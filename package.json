@@ -12,9 +12,14 @@
     "build:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-site.ps1",
     "migrate:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/migrate-ayushrai-site.ps1",
     "qa": "node scripts/qa-site.js",
+    "check:agent": "node scripts/check-agent-surface.js",
+    "build:markdown": "node scripts/build-markdown-twins.js",
     "start": "python3 -m http.server 3000"
   },
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.10.1"
   }
 }

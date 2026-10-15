@@ -1,0 +1,6 @@
+{"@context":"https://schema.org","@type":"Person","name":"Ayush Rai","url":"https://life.ayushrai.site/sites/www/","jobTitle":"AI Engineer","address":{"@type":"PostalAddress","addressLocality":"Bhopal","addressRegion":"Madhya Pradesh","addressCountry":"IN"}}
+{"@context":"https://schema.org","@type":"WebSite","name":"Ayush Rai","url":"https://life.ayushrai.site/"}
+{"@context":"https://schema.org","@type":"WebPage","name":"Projects","url":"https://life.ayushrai.site/sites/projects/"}
+{"@context":"https://schema.org","@type":"WebPage","name":"Contact","url":"https://life.ayushrai.site/sites/contact/"}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"RevenueRoles","url":"https://revenueroles.in/"}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shiksha-Mitra","url":"https://shiksha-mitra.vercel.app/"}

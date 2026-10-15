@@ -1,0 +1,49 @@
+# Ayush Rai
+
+AI Engineer in Bhopal, Madhya Pradesh, India. This site is his public knowledge base: work, projects, products, writing, and how to reach him.
+
+## When to use this
+
+Use life.ayushrai.site when the job is one of these:
+
+- Identify Ayush Rai and his public roles: AI Engineer, Applied AI Engineer, and LLM and Evaluation Engineer.
+- Find flagship projects (Adaptive RAG, MailU, OpenAI-RLHF) or products (Shiksha-Mitra, RevenueRoles).
+- Quote contact details that are already public, or send a person to the contact page.
+- Call the public ask endpoint, the sandbox, or an MCP server to read those same facts.
+
+Do not use this site to invent metrics, infer a street address, or send messages as Ayush. Booking links are Calendly and Cal.com. Mentoring is on Topmate.
+
+## Agent endpoints
+
+- [Markdown home](https://life.ayushrai.site/index.md): canonical markdown for the site root.
+- [Auth guide](https://life.ayushrai.site/auth.md): how an agent obtains a public-read token.
+- [Developer portal](https://life.ayushrai.site/developers/): quickstart, sandbox, and API map.
+- [OpenAPI](https://life.ayushrai.site/openapi.json): machine-readable HTTP API.
+- [Ask](https://life.ayushrai.site/ask): NLWeb question endpoint.
+- [Sandbox](https://life.ayushrai.site/api/v1/sandbox): public facts, no token, no writes.
+- [Knowledge MCP](https://life.ayushrai.site/mcp/knowledge): tools that read the public profile.
+- [Docs MCP](https://life.ayushrai.site/mcp/docs): tools that read the public page index.
+- [Agent card](https://life.ayushrai.site/.well-known/agent-card.json): A2A card.
+- [ARD catalog](https://life.ayushrai.site/.well-known/ard.json): agentic resource discovery.
+- [Full guide](https://life.ayushrai.site/llms-full.txt): longer notes for agents.
+
+## Section indexes
+
+- [Docs](https://life.ayushrai.site/docs/llms.txt)
+- [API](https://life.ayushrai.site/api/llms.txt)
+- [Developers](https://life.ayushrai.site/developers/llms.txt)
+- [Guides](https://life.ayushrai.site/guides/llms.txt)
+- [Reference](https://life.ayushrai.site/reference/llms.txt)
+
+## Pages
+
+- [Home](https://life.ayushrai.site/sites/www/)
+- [About](https://life.ayushrai.site/about/)
+- [Projects](https://life.ayushrai.site/sites/projects/)
+- [AI](https://life.ayushrai.site/sites/ai/)
+- [Engineering](https://life.ayushrai.site/sites/engineering/)
+- [Products](https://life.ayushrai.site/sites/products/)
+- [Career](https://life.ayushrai.site/sites/career/)
+- [Contact](https://life.ayushrai.site/sites/contact/)
+- [Privacy](https://life.ayushrai.site/privacy/)
+- [Source code and AGENTS.md](https://github.com/ayushrai-hub/LifeOS)

@@ -1,0 +1,13 @@
+# Docs
+
+Section index for people and agents reading the public documentation.
+
+- [Root agent index](https://life.ayushrai.site/llms.txt)
+- [Auth walkthrough](https://life.ayushrai.site/auth.md)
+- [Developer portal](https://life.ayushrai.site/developers/)
+- [About](https://life.ayushrai.site/about/)
+- [Privacy](https://life.ayushrai.site/privacy/)
+- [Projects](https://life.ayushrai.site/sites/projects/)
+- [Repository instructions](https://github.com/ayushrai-hub/LifeOS/blob/main/AGENTS.md)
+
+Use the docs MCP server at https://life.ayushrai.site/mcp/docs when you want this index over MCP.

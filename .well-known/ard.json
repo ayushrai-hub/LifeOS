@@ -1,0 +1,51 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:life.ayushrai.site:server:knowledge",
+      "displayName": "Ayush Rai knowledge",
+      "type": "application/mcp-server-card+json",
+      "url": "https://life.ayushrai.site/mcp/knowledge/server-card",
+      "description": "MCP server for Ayush Rai's public profile, projects, and contact facts.",
+      "capabilities": ["get_profile", "get_contact", "search_public_facts"],
+      "representativeQueries": [
+        "who is Ayush Rai",
+        "what projects has Ayush Rai shipped",
+        "how do I contact Ayush Rai"
+      ]
+    },
+    {
+      "identifier": "urn:air:life.ayushrai.site:server:docs",
+      "displayName": "Ayush Rai docs",
+      "type": "application/mcp-server-card+json",
+      "url": "https://life.ayushrai.site/mcp/docs/server-card",
+      "description": "MCP server for the public documentation index on life.ayushrai.site.",
+      "capabilities": ["list_docs", "read_doc"],
+      "representativeQueries": [
+        "where is the developer portal",
+        "link the auth guide for this site"
+      ]
+    },
+    {
+      "identifier": "urn:air:life.ayushrai.site:agent:profile",
+      "displayName": "Ayush Rai agent",
+      "type": "application/a2a-agent-card+json",
+      "url": "https://life.ayushrai.site/.well-known/agent-card.json",
+      "description": "Agent card for questions about Ayush Rai's public site.",
+      "representativeQueries": [
+        "ask Ayush Rai's site who he is",
+        "find his public contact details"
+      ]
+    },
+    {
+      "identifier": "urn:air:life.ayushrai.site:api:public",
+      "displayName": "Ayush Rai HTTP API",
+      "type": "application/openapi+json",
+      "url": "https://life.ayushrai.site/openapi.json",
+      "description": "OpenAPI document for the ask endpoint, sandbox, and public-read API.",
+      "representativeQueries": [
+        "show the OpenAPI spec for life.ayushrai.site",
+        "call the sandbox API"
+      ]
+    }
+  ]
+}

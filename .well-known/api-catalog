@@ -1,0 +1,23 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://life.ayushrai.site/api/v1",
+      "item": [
+        {
+          "href": "https://life.ayushrai.site/openapi.json",
+          "type": "application/openapi+json"
+        }
+      ],
+      "service-desc": [
+        {
+          "href": "https://life.ayushrai.site/openapi.json",
+          "type": "application/openapi+json"
+        },
+        {
+          "href": "https://life.ayushrai.site/auth.md",
+          "type": "text/markdown"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+const { toolResult, ORIGIN } = require("../agent/answers");
+
+const SERVERS = {
+  knowledge: {
+    name: "site.ayushrai.life/knowledge",
+    version: "1.0.0",
+    instructions: "Read public facts about Ayush Rai. Do not invent metrics.",
+    tools: [
+      {
+        name: "get_profile",
+        description: "Return Ayush Rai's public profile summary.",
+        inputSchema: { type: "object", properties: {}, additionalProperties: false },
+      },
+      {
+        name: "get_contact",
+        description: "Return public email, phone, and booking links.",
+        inputSchema: { type: "object", properties: {}, additionalProperties: false },
+      },
+      {
+        name: "search_public_facts",
+        description: "Search public site pages by a short query.",
+        inputSchema: {
+          type: "object",
+          properties: { query: { type: "string", description: "Words to match against public pages." } },
+          required: ["query"],
+          additionalProperties: false,
+        },
+      },
+    ],
+  },
+  docs: {
+    name: "site.ayushrai.life/docs",
+    version: "1.0.0",
+    instructions: "Answer from the public documentation index. Cite the page URL.",
+    tools: [
+      {
+        name: "list_docs",
+        description: "List public documentation and section pages.",
+        inputSchema: { type: "object", properties: {}, additionalProperties: false },
+      },
+      {
+        name: "read_doc",
+        description: "Find documentation pages that match a query.",
+        inputSchema: {
+          type: "object",
+          properties: { query: { type: "string", description: "Documentation topic." } },
+          required: ["query"],
+          additionalProperties: false,
+        },
+      },
+    ],
+  },
+};
+
+function readBody(req) {
+  if (req.body && typeof req.body === "object") return Promise.resolve(req.body);
+  if (typeof req.body === "string" && req.body) {
+    try {
+      return Promise.resolve(JSON.parse(req.body));
+    } catch (err) {
+      return Promise.resolve({});
+    }
+  }
+  return new Promise((resolve) => {
+    const chunks = [];
+    req.on("data", (chunk) => chunks.push(chunk));
+    req.on("end", () => {
+      const raw = Buffer.concat(chunks).toString("utf8");
+      if (!raw) return resolve({});
+      try {
+        resolve(JSON.parse(raw));
+      } catch (err) {
+        resolve({});
+      }
+    });
+    req.on("error", () => resolve({}));
+  });
+}
+
+function rpcResult(id, result) {
+  return { jsonrpc: "2.0", id, result };
+}
+
+function handleMessage(surface, message) {
+  const server = SERVERS[surface] || SERVERS.knowledge;
+  const id = Object.prototype.hasOwnProperty.call(message, "id") ? message.id : null;
+  const method = message.method;
+  if (method === "initialize") {
+    return rpcResult(id, {
+      protocolVersion: "2025-06-18",
+      capabilities: { tools: { listChanged: false } },
+      serverInfo: { name: server.name, version: server.version },
+      instructions: server.instructions,
+    });
+  }
+  if (method === "ping") return rpcResult(id, {});
+  if (method === "tools/list") return rpcResult(id, { tools: server.tools });
+  if (method === "tools/call") {
+    const params = message.params || {};
+    const text = toolResult(surface, params.name, params.arguments || {});
+    return rpcResult(id, { content: [{ type: "text", text }], isError: false });
+  }
+  if (id === null) return null;
+  return {
+    jsonrpc: "2.0",
+    id,
+    error: { code: -32601, message: `Unknown method: ${method || "none"}` },
+  };
+}
+
+module.exports = async function mcp(req, res) {
+  const fromQuery = req.query && req.query.surface;
+  let fromUrl = "";
+  try {
+    fromUrl = new URL(req.url, "https://life.ayushrai.site").searchParams.get("surface") || "";
+  } catch (err) {
+    fromUrl = "";
+  }
+  const surface = fromQuery || fromUrl || "knowledge";
+  const server = SERVERS[surface] || SERVERS.knowledge;
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  if (req.method === "OPTIONS") {
+    res.setHeader("Allow", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
+    res.status(204).end();
+    return;
+  }
+
+  if (req.method === "GET") {
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.status(200).json({
+      name: server.name,
+      version: server.version,
+      serverCard: `${ORIGIN}/mcp/${surface}/server-card`,
+    });
+    return;
+  }
+
+  if (req.method !== "POST") {
+    res.setHeader("Allow", "GET, POST, OPTIONS");
+    res.status(405).json({ error: "method_not_allowed" });
+    return;
+  }
+
+  const body = await readBody(req);
+  const messages = Array.isArray(body) ? body : [body];
+  const responses = messages.map((message) => handleMessage(surface, message)).filter(Boolean);
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  if (!responses.length) {
+    res.status(202).end();
+    return;
+  }
+  res.status(200).json(Array.isArray(body) ? responses : responses[0]);
+};

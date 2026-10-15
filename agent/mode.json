@@ -1,0 +1,34 @@
+{
+  "mode": "agent",
+  "name": "Ayush Rai",
+  "url": "https://life.ayushrai.site/",
+  "description": "Public knowledge site for an AI Engineer in Bhopal. Use it for profile, projects, products, and published contact details.",
+  "capabilities": [
+    "public profile and biography",
+    "projects and products",
+    "published contact details",
+    "NLWeb /ask",
+    "read-only sandbox",
+    "knowledge MCP and docs MCP"
+  ],
+  "authentication": {
+    "public_reads": "No token for /ask, /llms.txt, markdown pages, or /api/v1/sandbox.",
+    "protected_resource_metadata": "https://life.ayushrai.site/.well-known/oauth-protected-resource",
+    "authorization_server": "https://life.ayushrai.site/.well-known/oauth-authorization-server",
+    "auth_guide": "https://life.ayushrai.site/auth.md",
+    "www_authenticate": "Bearer resource_metadata=\"https://life.ayushrai.site/.well-known/oauth-protected-resource\"",
+    "sandbox": "https://life.ayushrai.site/api/v1/sandbox"
+  },
+  "endpoints": {
+    "ask": "https://life.ayushrai.site/ask",
+    "sandbox": "https://life.ayushrai.site/api/v1/sandbox",
+    "openapi": "https://life.ayushrai.site/openapi.json",
+    "api_catalog": "https://life.ayushrai.site/.well-known/api-catalog",
+    "llms": "https://life.ayushrai.site/llms.txt",
+    "markdown_home": "https://life.ayushrai.site/index.md",
+    "mcp_knowledge": "https://life.ayushrai.site/mcp/knowledge",
+    "mcp_docs": "https://life.ayushrai.site/mcp/docs",
+    "agent_card": "https://life.ayushrai.site/.well-known/agent-card.json",
+    "ard": "https://life.ayushrai.site/.well-known/ard.json"
+  }
+}

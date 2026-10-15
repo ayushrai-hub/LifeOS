@@ -1,0 +1,13 @@
+# Reference
+
+Machine-readable documents.
+
+- [OpenAPI](https://life.ayushrai.site/openapi.json)
+- [API catalog](https://life.ayushrai.site/.well-known/api-catalog)
+- [ARD catalog](https://life.ayushrai.site/.well-known/ard.json)
+- [MCP catalog](https://life.ayushrai.site/.well-known/ai-catalog.json)
+- [A2A agent card](https://life.ayushrai.site/.well-known/agent-card.json)
+- [Agent skills](https://life.ayushrai.site/.well-known/agent-skills/index.json)
+- [Protected resource](https://life.ayushrai.site/.well-known/oauth-protected-resource)
+- [Authorization server](https://life.ayushrai.site/.well-known/oauth-authorization-server)
+- [Sitemap](https://life.ayushrai.site/sitemap.xml)

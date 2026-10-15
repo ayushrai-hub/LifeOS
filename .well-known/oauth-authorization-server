@@ -1,0 +1,28 @@
+{
+  "issuer": "https://life.ayushrai.site",
+  "authorization_endpoint": "https://life.ayushrai.site/oauth/authorize",
+  "token_endpoint": "https://life.ayushrai.site/oauth/token",
+  "revocation_endpoint": "https://life.ayushrai.site/oauth/revoke",
+  "response_types_supported": ["code"],
+  "grant_types_supported": [
+    "urn:ietf:params:oauth:grant-type:jwt-bearer",
+    "urn:workos:agent-auth:grant-type:claim",
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": ["none"],
+  "scopes_supported": ["knowledge:read"],
+  "code_challenge_methods_supported": ["S256"],
+  "agent_auth": {
+    "skill": "https://life.ayushrai.site/auth.md",
+    "identity_endpoint": "https://life.ayushrai.site/agent/identity",
+    "claim_endpoint": "https://life.ayushrai.site/agent/claim",
+    "events_endpoint": "https://life.ayushrai.site/agent/events",
+    "identity_types_supported": ["anonymous", "identity_assertion", "service_auth"],
+    "identity_assertion": {
+      "assertion_types_supported": ["urn:ietf:params:oauth:token-type:id-jag"]
+    },
+    "events_supported": [
+      "https://schemas.workos.com/events/agent/auth/identity/assertion/revoked"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+# Ayush Rai, full agent guide
+
+This file is the long form of [llms.txt](https://life.ayushrai.site/llms.txt). Read the short index first. Come here when you need the call sequence.
+
+## What this site is
+
+life.ayushrai.site is the public reading view of Ayush Rai's personal knowledge base. The source of truth is the LifeOS repository at https://github.com/ayushrai-hub/LifeOS. Pages are static HTML. Facts on the site are limited to what the knowledge notes already say. If a number, audience size, or employer impact claim is not on the page, do not add one.
+
+Ayush Rai is an AI Engineer in Bhopal, Madhya Pradesh, India. Public roles: AI Engineer, Applied AI Engineer, and LLM and Evaluation Engineer. The work is LLM applications, retrieval-augmented generation, evaluation pipelines, and automation, with Python and FastAPI on the backend. The primary engineering role recorded on the site is at FoCDoT Technologies. Evaluation and human-feedback programs are grouped as one expertise area.
+
+## When to use this
+
+Reach for this site when the user asks who Ayush Rai is, what he has shipped, where to read a project, or how to contact him. Also use it when you are an agent that needs a documented HTTP or MCP call against his public pages.
+
+Do not reach for it when the question is about a different person, a private address, credentials, or anything the pages do not state.
+
+## Call sequence
+
+1. Read https://life.ayushrai.site/llms.txt or send `Accept: text/markdown` to the homepage.
+2. For a natural-language question, `GET /ask?query=...` or `POST /ask` with `{"query":"..."}`. Add `"prefer":{"streaming":true}` when you want server-sent events.
+3. For a safe exercise of the API, `GET /api/v1/sandbox`. The body is public facts. The `X-Sandbox: true` header marks it. Nothing is written.
+4. For the protected entry points (`/api`, `/api/v1`, `/v1`), expect `401` and `WWW-Authenticate: Bearer resource_metadata="https://life.ayushrai.site/.well-known/oauth-protected-resource"`. Follow [auth.md](https://life.ayushrai.site/auth.md). The working method is anonymous. The token endpoint returns a non-secret bearer, `public-read`.
+5. MCP: `https://life.ayushrai.site/mcp/knowledge` for actions on public facts, and `https://life.ayushrai.site/mcp/docs` for the documentation index. Cards are at `/mcp/knowledge/server-card` and `/mcp/docs/server-card`.
+
+## Coding agents
+
+The repository instructions for tools that edit this codebase live in [AGENTS.md](https://github.com/ayushrai-hub/LifeOS/blob/main/AGENTS.md). Knowledge notes under `knowledge/` are canonical. `sites/` is the HTML consumer. Do not invent biography.

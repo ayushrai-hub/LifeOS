@@ -1,0 +1,7 @@
+# Awards
+
+Awards listed on ayushrai.site
+
+HTML page: https://life.ayushrai.site/sites/migrated/awards/
+
+This markdown twin is for agents. The HTML page is the reading view.

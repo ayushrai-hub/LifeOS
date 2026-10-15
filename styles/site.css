@@ -727,6 +727,21 @@ samp {
   opacity: 0.9;
 }
 
+.home-ask {
+  margin: 1.25rem 0 0;
+}
+
+.home-ask label {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.home-ask input[type="search"] {
+  font: inherit;
+  width: min(100%, 28rem);
+  margin-right: 0.5rem;
+}
+
 /* Print */
 @media print {
   body {

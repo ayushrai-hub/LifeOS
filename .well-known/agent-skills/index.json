@@ -1,0 +1,20 @@
+{
+  "skills": [
+    {
+      "name": "lookup-ayush-rai",
+      "description": "Look up Ayush Rai's public profile, roles, and location when the question is about who he is."
+    },
+    {
+      "name": "find-projects-and-products",
+      "description": "Find Adaptive RAG, MailU, OpenAI-RLHF, Shiksha-Mitra, and RevenueRoles on the public site."
+    },
+    {
+      "name": "contact-ayush-rai",
+      "description": "Return the published email, phone, Calendly, Cal.com, and Topmate links."
+    },
+    {
+      "name": "read-site-docs",
+      "description": "Read the developer portal, auth guide, and section indexes before calling the API."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sandbox; Ayush Rai</title>
+  <meta name="description" content="How to call the read-only sandbox for life.ayushrai.site.">
+  <meta name="author" content="Ayush Rai">
+  <link rel="canonical" href="https://life.ayushrai.site/sandbox/">
+  <link rel="alternate" type="text/markdown" href="https://life.ayushrai.site/sandbox/index.md">
+  <meta property="og:title" content="Sandbox; Ayush Rai">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles/site.css?v=20261016">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <main id="content" class="page knowledge-page">
+    <h1>Sandbox</h1>
+    <p>Call <a href="/api/v1/sandbox"><code>GET /api/v1/sandbox</code></a> to exercise the API without a token. The JSON body is the public profile and page list. The response header <code>X-Sandbox: true</code> marks the call. There is no separate private dataset, and the handler does not write, delete, or send messages.</p>
+    <p>Use the sandbox when you want a safe first request. Use <a href="/auth.md">auth.md</a> only if you are practicing the 401 discovery flow against <code>/api/v1</code>. Both return public facts.</p>
+    <p class="foot"><a href="/developers/">Developers</a> · <a href="/sites/www/">Home</a></p>
+  </main>
+  <script src="/scripts/site-chrome.js" defer></script>
+</body>
+</html>

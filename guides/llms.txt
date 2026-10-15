@@ -1,0 +1,9 @@
+# Guides
+
+Short guides for using the public site as an agent.
+
+- [When to use the site](https://life.ayushrai.site/llms.txt)
+- [Full call sequence](https://life.ayushrai.site/llms-full.txt)
+- [How to authenticate](https://life.ayushrai.site/auth.md)
+- [How to ask a question](https://life.ayushrai.site/ask)
+- [How to use the sandbox](https://life.ayushrai.site/sandbox/)

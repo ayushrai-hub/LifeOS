@@ -1,0 +1,33 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "Ayush Rai",
+  "description": "Answers questions about Ayush Rai's public profile, projects, products, and contact details.",
+  "url": "https://life.ayushrai.site/a2a",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["text/plain", "application/json"],
+  "skills": [
+    {
+      "id": "lookup-profile",
+      "name": "Lookup profile",
+      "description": "Public biography, roles, and location for Ayush Rai.",
+      "tags": ["profile"]
+    },
+    {
+      "id": "find-work",
+      "name": "Find projects and products",
+      "description": "Flagship projects and the public products Shiksha-Mitra and RevenueRoles.",
+      "tags": ["projects", "products"]
+    },
+    {
+      "id": "contact",
+      "name": "Public contact",
+      "description": "Email, phone, and booking links that are already published on the site.",
+      "tags": ["contact"]
+    }
+  ]
+}

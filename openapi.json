@@ -1,0 +1,88 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Ayush Rai public site API",
+    "version": "1.0.0",
+    "summary": "Read-only questions, a sandbox, and a public-read token for the same facts.",
+    "description": "Public knowledge API for life.ayushrai.site. Sandbox and /ask need no token. /api/v1 returns 401 until you follow auth.md."
+  },
+  "servers": [
+    { "url": "https://life.ayushrai.site" }
+  ],
+  "paths": {
+    "/ask": {
+      "get": {
+        "operationId": "askGet",
+        "summary": "Ask a public question",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "streaming",
+            "in": "query",
+            "schema": { "type": "string", "enum": ["true", "false"] }
+          }
+        ],
+        "responses": {
+          "200": { "description": "NLWeb JSON or server-sent events" }
+        }
+      },
+      "post": {
+        "operationId": "askPost",
+        "summary": "Ask a public question as JSON",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": { "type": "string" },
+                  "prefer": {
+                    "type": "object",
+                    "properties": { "streaming": { "type": "boolean" } }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "NLWeb JSON or server-sent events" }
+        }
+      }
+    },
+    "/api/v1/sandbox": {
+      "get": {
+        "operationId": "sandbox",
+        "summary": "Sandbox of public facts",
+        "responses": {
+          "200": { "description": "Public catalog with X-Sandbox: true" }
+        }
+      }
+    },
+    "/api/v1": {
+      "get": {
+        "operationId": "readApi",
+        "summary": "Protected public-read API",
+        "security": [{ "publicRead": [] }],
+        "responses": {
+          "200": { "description": "Profile summary when Bearer public-read is sent" },
+          "401": { "description": "WWW-Authenticate points at protected-resource metadata" }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "publicRead": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Non-secret bearer public-read from the token endpoint. See /auth.md."
+      }
+    }
+  }
+}

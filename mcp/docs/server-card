@@ -1,0 +1,12 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "site.ayushrai.life/docs",
+  "description": "Look up pages in Ayush Rai's public site documentation.",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://life.ayushrai.site/mcp/docs"
+    }
+  ]
+}
