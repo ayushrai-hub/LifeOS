@@ -47,16 +47,11 @@ export function prefersMarkdown(acceptHeader) {
 
 export function decide({ pathname, accept = "", userAgent = "", mode = "" }) {
   const path = bare(pathname);
-  const home =
-    path === "/" ||
-    path === "/index.html" ||
-    path === "/sites/www" ||
-    path === "/sites/www/index.html";
+  const home = path === "/" || path === "/index.html";
   if (!home) return { action: "ignore" };
   if (mode === "agent") return { action: "json" };
   if (prefersMarkdown(accept)) return { action: "markdown" };
   if (BOT_UA.test(String(userAgent))) return { action: "markdown" };
   // Serve homepage HTML at / via rewrite so the public URL stays canonical.
-  if (path === "/" || path === "/index.html") return { action: "home" };
-  return { action: "html" };
+  return { action: "home" };
 }

@@ -76,8 +76,8 @@
     }
   ],
   "redirects": [
-    { "source": "/contact", "destination": "/sites/contact/", "permanent": false },
-    { "source": "/contact/", "destination": "/sites/contact/", "permanent": false }
+    { "source": "/contact", "destination": "/sites/contact", "permanent": false },
+    { "source": "/contact/", "destination": "/sites/contact", "permanent": false }
   ],
   "rewrites": [
     {

@@ -114,6 +114,14 @@ export default async function middleware(request) {
 
   const url = new URL(request.url);
 
+  // Collapse the filesystem homepage path onto the canonical public URL.
+  const barePath = url.pathname.replace(/\/+$/, "") || "/";
+  if (barePath === "/sites/www" || barePath === "/sites/www/index.html") {
+    const dest = new URL("/", request.url);
+    dest.search = url.search;
+    return Response.redirect(dest, 308);
+  }
+
   // With trailingSlash:false, normalize directory URLs so probes and pages share one path.
   if (url.pathname !== "/" && url.pathname.endsWith("/") && !STATIC_FILE.test(url.pathname)) {
     const dest = new URL(request.url);

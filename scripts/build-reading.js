@@ -21,7 +21,7 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 const DEFAULT_DATA = path.join(ROOT, "knowledge/reading/currently-reading.json");
 const DEFAULT_OUT = path.join(ROOT, "sites/currently-reading/index.html");
-const PAGE_URL = "https://thelifeofayush.vercel.app/sites/currently-reading/";
+const PAGE_URL = "https://life.ayushrai.site/sites/currently-reading";
 const STYLESHEET = "../../styles/site.css?v=20260929a";
 
 const TYPES = [
@@ -482,7 +482,7 @@ ${renderLearning(data.learning || [], entriesById)}
 ${builtHtml}
     </section>
 
-    <p class="foot"><a href="../www/index.html">Home</a> · <a href="../reading/index.html">Reading</a> · <a href="../learning/index.html">Learning</a> · <a href="../projects/index.html">Projects</a></p>
+    <p class="foot"><a href="/">Home</a> · <a href="/sites/reading">Reading</a> · <a href="/sites/learning">Learning</a> · <a href="/sites/projects">Projects</a></p>
   </main>
   <script src="/scripts/site-chrome.js" defer></script>
 </body>

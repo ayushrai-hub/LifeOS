@@ -15,7 +15,12 @@ version: 0.4.0
 
 name: Ayush Rai
 
+# Search / social title (visible H1 stays `name`).
+seo_title: "Ayush Rai; AI Engineer in Bhopal"
+
 tagline: "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
+
+seo_description: "Public knowledge site of Ayush Rai, AI Engineer in Bhopal: LLM applications, RAG systems, evaluation pipelines, projects, products, and career notes."
 
 intro:
   - "Personal knowledge system: what I ship, what broke, and what I would do differently. Evidence lives in the pages below. Start wherever curiosity points."
@@ -44,37 +49,38 @@ doors_nav:
   - reading
   - contact
 
+# Root-absolute paths so links work when the homepage is served at / (canonical).
 doors:
-  projects: "../projects/index.html"
-  engineering: "../engineering/index.html"
-  ai: "../ai/index.html"
-  research: "../research/index.html"
-  writing: "../writing/index.html"
-  learning: "../learning/index.html"
-  reading: "../reading/index.html"
-  currently-reading: "../currently-reading/index.html"
-  communities: "../communities/index.html"
-  leadership: "../leadership/index.html"
-  management: "../management/index.html"
-  systems: "../systems/index.html"
-  business: "../business/index.html"
-  products: "../products/index.html"
-  open-source: "../open-source/index.html"
-  fitness: "../fitness/index.html"
-  timeline: "../timeline/index.html"
-  gallery: "../gallery/index.html"
-  impact: "../impact/index.html"
-  speaking: "../speaking/index.html"
-  contact: "../contact/index.html"
-  blog: "../blog/index.html"
-  notes: "../notes/index.html"
-  career: "../career/index.html"
-  books: "../books/index.html"
-  ml: "../ml/index.html"
-  portfolios: "../portfolios/index.html"
-  domains: "../domains/index.html"
-  resumes: "../career/resumes/index.html"
-  certifications: "../certifications/index.html"
+  projects: "/sites/projects"
+  engineering: "/sites/engineering"
+  ai: "/sites/ai"
+  research: "/sites/research"
+  writing: "/sites/writing"
+  learning: "/sites/learning"
+  reading: "/sites/reading"
+  currently-reading: "/sites/currently-reading"
+  communities: "/sites/communities"
+  leadership: "/sites/leadership"
+  management: "/sites/management"
+  systems: "/sites/systems"
+  business: "/sites/business"
+  products: "/sites/products"
+  open-source: "/sites/open-source"
+  fitness: "/sites/fitness"
+  timeline: "/sites/timeline"
+  gallery: "/sites/gallery"
+  impact: "/sites/impact"
+  speaking: "/sites/speaking"
+  contact: "/sites/contact"
+  blog: "/sites/blog"
+  notes: "/sites/notes"
+  career: "/sites/career"
+  books: "/sites/books"
+  ml: "/sites/ml"
+  portfolios: "/sites/portfolios"
+  domains: "/sites/domains"
+  resumes: "/sites/career/resumes"
+  certifications: "/sites/certifications"
 
 contact:
   - "contact.email-gmail"

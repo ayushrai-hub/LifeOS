@@ -9,6 +9,8 @@
     "build:home": "node scripts/build-home.js",
     "build:reading": "node scripts/build-reading.js && node scripts/build-home.js",
     "check:reading": "node scripts/build-reading.js --check",
+    "build:seo": "node scripts/apply-seo-meta.js && node scripts/build-reading.js && node scripts/build-home.js && node scripts/build-sitemap.js && node scripts/write-research-integrity.js",
+    "check:seo": "node scripts/check-seo.js",
     "build:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-site.ps1",
     "migrate:site": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/migrate-ayushrai-site.ps1",
     "qa": "node scripts/qa-site.js",

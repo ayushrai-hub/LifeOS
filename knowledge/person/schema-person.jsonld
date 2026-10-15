@@ -31,10 +31,12 @@
     {
       "@type": "WebSite",
       "@id": "https://life.ayushrai.site/#website",
-      "name": "Ayush Rai",
+      "name": "Ayush Rai; life.ayushrai.site",
+      "alternateName": "LifeOS",
       "url": "https://life.ayushrai.site/",
-      "description": "Public knowledge site for Ayush Rai.",
+      "description": "Public knowledge site of Ayush Rai: LLM applications, RAG systems, evaluation pipelines, projects, products, and career notes.",
       "publisher": { "@id": "https://life.ayushrai.site/#person" },
+      "inLanguage": "en",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://life.ayushrai.site/ask?query={query}",
@@ -42,80 +44,13 @@
       }
     },
     {
-      "@type": "BreadcrumbList",
-      "@id": "https://life.ayushrai.site/#breadcrumbs",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://life.ayushrai.site/"
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://life.ayushrai.site/#service",
-      "name": "AI engineering",
-      "serviceType": "LLM applications, RAG systems, and evaluation pipelines",
-      "description": "Ayush Rai designs and ships production LLM applications, retrieval systems, and evaluation pipelines.",
-      "provider": { "@id": "https://life.ayushrai.site/#person" },
-      "areaServed": "Worldwide",
-      "url": "https://life.ayushrai.site/sites/ai/"
-    },
-    {
-      "@type": "Product",
-      "@id": "https://life.ayushrai.site/#revenueroles",
-      "name": "RevenueRoles",
-      "description": "Technical revenue job intelligence and job board.",
-      "url": "https://revenueroles.in/",
-      "brand": { "@id": "https://life.ayushrai.site/#person" }
-    },
-    {
-      "@type": "Product",
-      "@id": "https://life.ayushrai.site/#shiksha-mitra",
-      "name": "Shiksha-Mitra",
-      "description": "Mutual-accountability growth companion with check-ins, goals, a journal, and shared tasks.",
-      "url": "https://shiksha-mitra.vercel.app/",
-      "brand": { "@id": "https://life.ayushrai.site/#person" }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://life.ayushrai.site/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Who is Ayush Rai?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ayush Rai is an AI Engineer based in Bhopal, Madhya Pradesh, India. He designs and ships production LLM applications, RAG systems, and evaluation pipelines."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I contact Ayush Rai?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Email ayushrai0211@gmail.com or call +91 7440567944. Meetings can be booked on Calendly or Cal.com. Mentoring is on Topmate. Details are on the contact page."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is this website?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "life.ayushrai.site is Ayush Rai's public knowledge site: projects, products, career, writing, and the notes behind them. The source repository is github.com/ayushrai-hub/LifeOS."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How should an AI agent use this site?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Start at /llms.txt or the developer portal at /developers/. Fetch /index.md or send Accept: text/markdown. Use /?mode=agent for the machine-readable API, MCP, skills, SDK, and authentication map. Ask at /ask, use the sandbox at /api/v1/sandbox, and async jobs at /api/v1/jobs. Read /auth.md before calling protected API paths."
-          }
-        }
-      ]
+      "@type": "ProfilePage",
+      "@id": "https://life.ayushrai.site/#profilepage",
+      "url": "https://life.ayushrai.site/",
+      "name": "Ayush Rai; AI Engineer in Bhopal",
+      "isPartOf": { "@id": "https://life.ayushrai.site/#website" },
+      "mainEntity": { "@id": "https://life.ayushrai.site/#person" },
+      "about": { "@id": "https://life.ayushrai.site/#person" }
     }
   ]
 }

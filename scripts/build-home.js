@@ -71,7 +71,14 @@ function loadHomepageYaml(filePath) {
       ) {
         val = val.slice(1, -1);
       }
-      if (key === "name" || key === "tagline" || key === "footer" || key === "contact_note")
+      if (
+        key === "name" ||
+        key === "tagline" ||
+        key === "seo_title" ||
+        key === "seo_description" ||
+        key === "footer" ||
+        key === "contact_note"
+      )
         data[key] = val;
       continue;
     }
@@ -300,7 +307,7 @@ function parseCurrentlyLearning(md) {
       stage: stage || null,
       summary: why || null,
       blurb,
-      href: "../learning/index.html",
+      href: "/sites/learning",
       source: "knowledge/learning/currently-learning.md",
     });
   }
@@ -373,7 +380,7 @@ function loadRecentlyUpdated(limit, learningUpdated) {
         title: "Currently Reading",
         date: reading.updated,
         summary: "What I'm reading, learning, and building from.",
-        href: "../currently-reading/index.html",
+        href: "/sites/currently-reading",
       });
     }
   }
@@ -383,7 +390,7 @@ function loadRecentlyUpdated(limit, learningUpdated) {
       title: "Knowledge base",
       date: status.knowledge_last_updated,
       summary: "Identity inventory and system status refreshed.",
-      href: "../learning/index.html",
+      href: "/sites/learning",
     });
   }
 
@@ -392,7 +399,7 @@ function loadRecentlyUpdated(limit, learningUpdated) {
       title: "Currently learning",
       date: learningUpdated,
       summary: "Active study and practice areas from public evidence.",
-      href: "../learning/index.html",
+      href: "/sites/learning",
     });
   }
 
@@ -400,14 +407,14 @@ function loadRecentlyUpdated(limit, learningUpdated) {
     title: "GitHub ingest",
     date: "2026-07-23",
     summary: "Public repositories indexed for projects and latest work.",
-    href: "../projects/index.html",
+    href: "/sites/projects",
   });
 
   items.push({
     title: "Projects index",
     date: "2026-07-23",
     summary: "Canonical project entities under knowledge/projects.",
-    href: "../projects/index.html",
+    href: "/sites/projects",
   });
 
   return items.slice(0, limit);
@@ -548,26 +555,34 @@ function renderHtml(home) {
     ? `  <script type="application/ld+json">\n${personSchema}\n  </script>`
     : "";
 
+  const pageTitle = home.seo_title || `${home.name}; AI Engineer in Bhopal`;
+  const pageDescription = home.seo_description || home.tagline;
+  const ogImage =
+    "https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg";
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(home.name)}</title>
-  <meta name="description" content="${escapeHtml(home.tagline)}">
+  <title>${escapeHtml(pageTitle)}</title>
+  <meta name="description" content="${escapeHtml(pageDescription)}">
   <meta name="author" content="${escapeHtml(home.name)}">
   <meta name="theme-color" content="#ffffff">
-  <meta property="og:title" content="${escapeHtml(home.name)}">
-  <meta property="og:description" content="${escapeHtml(home.tagline)}">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="${escapeHtml(home.name)}">
-  <meta name="twitter:description" content="${escapeHtml(home.tagline)}">
+  <meta property="og:title" content="${escapeHtml(pageTitle)}">
+  <meta property="og:description" content="${escapeHtml(pageDescription)}">
+  <meta property="og:type" content="profile">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
+  <meta name="twitter:description" content="${escapeHtml(pageDescription)}">
   <link rel="canonical" href="https://life.ayushrai.site/">
   <link rel="alternate" type="text/markdown" href="https://life.ayushrai.site/index.md">
   <meta property="og:url" content="https://life.ayushrai.site/">
-  <meta property="og:image" content="https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg">
-  <meta name="twitter:image" content="https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg">
+  <meta property="og:image" content="${ogImage}">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1067">
+  <meta property="og:image:alt" content="Ayush Rai at a workspace">
+  <meta name="twitter:image" content="${ogImage}">
   <script>
     (function () {
       try {
@@ -578,7 +593,7 @@ function renderHtml(home) {
     })();
   </script>
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../../styles/site.css?v=20260724c">
+  <link rel="stylesheet" href="/styles/site.css?v=20260724c">
 ${schemaHtml}
 </head>
 <body>
@@ -587,7 +602,7 @@ ${schemaHtml}
     <div class="home-hero">
       <figure class="home-photo">
         <img
-          src="../../assets/images/portraits/ayush-rai--workspace-2024.jpg"
+          src="/assets/images/portraits/ayush-rai--workspace-2024.jpg"
           width="1600"
           height="1067"
           alt="Ayush Rai working on a laptop in a workspace, with a whiteboard of notes behind him."
@@ -777,6 +792,8 @@ function main() {
     generated_at: new Date().toISOString().slice(0, 10),
     name,
     tagline,
+    seo_title: editorial.seo_title || "",
+    seo_description: editorial.seo_description || "",
     intro: editorial.intro,
     doors: editorial.doors,
     doors_nav: editorial.doors_nav,

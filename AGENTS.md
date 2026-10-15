@@ -19,4 +19,4 @@ LifeOS is Ayush Rai's personal knowledge base and the static site served at http
 - Preview with `python3 -m http.server 3000`. Vercel serves this repository as static files plus the `api/` functions and `middleware.js`.
 - After homepage edits, run `npm run build:home` and commit the generated `sites/www/index.html` and `index.md`. There is no Vercel build step that regenerates them.
 
-Humans who open `/` are redirected to `/sites/www/`. Agents that send `Accept: text/markdown`, a known bot user agent, or `?mode=agent` get markdown or JSON instead.
+Humans who open `/` get the homepage HTML (rewritten from `sites/www/`). `/sites/www` permanently redirects to `/`. Agents that send `Accept: text/markdown`, a known bot user agent, or `?mode=agent` get markdown or JSON instead.

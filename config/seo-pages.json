@@ -1,0 +1,211 @@
+{
+  "origin": "https://life.ayushrai.site",
+  "default_og_image": "https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg",
+  "pages": [
+    {
+      "file": "sites/ai/index.html",
+      "path": "/sites/ai",
+      "title": "Artificial Intelligence; Ayush Rai",
+      "description": "Production LLM applications, RAG systems, evaluation pipelines, and AI automation notes from Ayush Rai."
+    },
+    {
+      "file": "sites/blog/index.html",
+      "path": "/sites/blog",
+      "title": "Blog; Ayush Rai",
+      "description": "Dated posts from Ayush Rai on engineering, AI systems, and related notes."
+    },
+    {
+      "file": "sites/books/index.html",
+      "path": "/sites/books",
+      "title": "Books; Ayush Rai",
+      "description": "Reading list and book notes curated by Ayush Rai."
+    },
+    {
+      "file": "sites/business/index.html",
+      "path": "/sites/business",
+      "title": "Business; Ayush Rai",
+      "description": "Notes on how products create value and how businesses work, from Ayush Rai."
+    },
+    {
+      "file": "sites/career/index.html",
+      "path": "/sites/career",
+      "title": "Career; Ayush Rai",
+      "description": "Work history, resumes, and career evidence for Ayush Rai, AI Engineer in Bhopal."
+    },
+    {
+      "file": "sites/certifications/index.html",
+      "path": "/sites/certifications",
+      "title": "Certifications; Ayush Rai",
+      "description": "Credentials with evidence for Ayush Rai, not decorative badges."
+    },
+    {
+      "file": "sites/communities/index.html",
+      "path": "/sites/communities",
+      "title": "Communities; Ayush Rai",
+      "description": "Groups, events, and communities where Ayush Rai shows up."
+    },
+    {
+      "file": "sites/contact/index.html",
+      "path": "/sites/contact",
+      "title": "Contact; Ayush Rai",
+      "description": "Contact Ayush Rai in Bhopal, Madhya Pradesh, India. Email ayushrai0211@gmail.com; reply within 24 hrs. Book via Calendly or Cal.com."
+    },
+    {
+      "file": "sites/domains/index.html",
+      "path": "/sites/domains",
+      "title": "Knowledge domains; Ayush Rai",
+      "description": "Domain index for Ayush Rai's personal knowledge system: topics studied, practiced, and documented."
+    },
+    {
+      "file": "sites/engineering/index.html",
+      "path": "/sites/engineering",
+      "title": "Engineering; Ayush Rai",
+      "description": "Backend and systems engineering notes: Python, FastAPI, APIs, and production AI infrastructure."
+    },
+    {
+      "file": "sites/fitness/index.html",
+      "path": "/sites/fitness",
+      "title": "Fitness; Ayush Rai",
+      "description": "Training, habits, and what actually stuck for Ayush Rai."
+    },
+    {
+      "file": "sites/gallery/index.html",
+      "path": "/sites/gallery",
+      "title": "Gallery; Ayush Rai",
+      "description": "Photographs and visual notes documenting people, places, and work."
+    },
+    {
+      "file": "sites/impact/index.html",
+      "path": "/sites/impact",
+      "title": "Impact; Ayush Rai",
+      "description": "Outcomes Ayush Rai can point to with public evidence."
+    },
+    {
+      "file": "sites/leadership/index.html",
+      "path": "/sites/leadership",
+      "title": "Leadership; Ayush Rai",
+      "description": "Teams, mentoring, and standards shown in practice by Ayush Rai."
+    },
+    {
+      "file": "sites/learning/index.html",
+      "path": "/sites/learning",
+      "title": "Learning; Ayush Rai",
+      "description": "What Ayush Rai is studying, practicing, and applying, with public evidence."
+    },
+    {
+      "file": "sites/management/index.html",
+      "path": "/sites/management",
+      "title": "Management; Ayush Rai",
+      "description": "Operating cadence, process, and delivery notes from Ayush Rai."
+    },
+    {
+      "file": "sites/media/index.html",
+      "path": "/sites/media",
+      "title": "Media; Ayush Rai",
+      "description": "Images, certificates, slides, videos, and diagrams with metadata."
+    },
+    {
+      "file": "sites/ml/index.html",
+      "path": "/sites/ml",
+      "title": "Machine Learning; Ayush Rai",
+      "description": "Models, data, and experiments with evidence from Ayush Rai."
+    },
+    {
+      "file": "sites/notes/index.html",
+      "path": "/sites/notes",
+      "title": "Notes; Ayush Rai",
+      "description": "Evergreen and working notes from Ayush Rai's knowledge system."
+    },
+    {
+      "file": "sites/open-source/index.html",
+      "path": "/sites/open-source",
+      "title": "Open Source; Ayush Rai",
+      "description": "Public repositories and open-source contributions by Ayush Rai."
+    },
+    {
+      "file": "sites/portfolios/index.html",
+      "path": "/sites/portfolios",
+      "title": "Portfolios; Ayush Rai",
+      "description": "Faceted portfolios across crafts and domains in Ayush Rai's public work."
+    },
+    {
+      "file": "sites/products/index.html",
+      "path": "/sites/products",
+      "title": "Products; Ayush Rai",
+      "description": "Product work by Ayush Rai: problems, decisions, and shipped surfaces including Shiksha-Mitra and RevenueRoles."
+    },
+    {
+      "file": "sites/projects/index.html",
+      "path": "/sites/projects",
+      "title": "Projects; Ayush Rai",
+      "description": "Project case studies and public repositories: Adaptive RAG, MailU, OpenAI-RLHF, and related work."
+    },
+    {
+      "file": "sites/reading/index.html",
+      "path": "/sites/reading",
+      "title": "Reading; Ayush Rai",
+      "description": "Books, papers, and notes from what Ayush Rai reads."
+    },
+    {
+      "file": "sites/research/index.html",
+      "path": "/sites/research",
+      "title": "Research; Ayush Rai",
+      "description": "Research index: questions, experiments, and cautious claims from Ayush Rai. Separate hypothesis from result."
+    },
+    {
+      "file": "sites/speaking/index.html",
+      "path": "/sites/speaking",
+      "title": "Speaking; Ayush Rai",
+      "description": "Talks, presentations, and teaching sessions by Ayush Rai."
+    },
+    {
+      "file": "sites/systems/index.html",
+      "path": "/sites/systems",
+      "title": "Systems; Ayush Rai",
+      "description": "Notes on how systems are designed, operated, and fail, by Ayush Rai."
+    },
+    {
+      "file": "sites/technologies/index.html",
+      "path": "/sites/technologies",
+      "title": "Technologies; Ayush Rai",
+      "description": "Tools and platforms as first-class knowledge entities in Ayush Rai's notes."
+    },
+    {
+      "file": "sites/timeline/index.html",
+      "path": "/sites/timeline",
+      "title": "Timeline; Ayush Rai",
+      "description": "Chronology of public work, learning, and career evidence for Ayush Rai."
+    },
+    {
+      "file": "sites/writing/index.html",
+      "path": "/sites/writing",
+      "title": "Writing; Ayush Rai",
+      "description": "Durable essays and careful notes: decisions, failures, and methods someone else could reuse."
+    }
+  ],
+  "sitemap_extra": [
+    { "path": "/", "file": "sites/www/index.html" },
+    { "path": "/about", "file": "about/index.md" },
+    { "path": "/agents.md", "file": "AGENTS.md" },
+    { "path": "/auth.md", "file": "auth.md" },
+    { "path": "/developers", "file": "developers/index.html" },
+    { "path": "/developers/deprecation", "file": "developers/deprecation/index.html" },
+    { "path": "/docs", "file": "docs/index.html" },
+    { "path": "/guides", "file": "guides/index.html" },
+    { "path": "/index.md", "file": "index.md" },
+    { "path": "/llms.txt", "file": "llms.txt" },
+    { "path": "/pricing.md", "file": "pricing.md" },
+    { "path": "/privacy", "file": "privacy/index.md" },
+    { "path": "/reference", "file": "reference/index.html" },
+    { "path": "/sandbox", "file": "sandbox/index.html" },
+    { "path": "/skills.md", "file": "skills.md" },
+    { "path": "/sites/career/resumes", "file": "sites/career/resumes/index.html" },
+    { "path": "/sites/currently-reading", "file": "sites/currently-reading/index.html" }
+  ],
+  "research_integrity": [
+    "sites/research/index.html",
+    "sites/writing/index.html",
+    "sites/research/portfolio/index.html",
+    "sites/writing/portfolio/index.html"
+  ]
+}

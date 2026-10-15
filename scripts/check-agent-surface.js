@@ -81,10 +81,11 @@ async function main() {
 
   check("homepage markdown negotiation", () => {
     assert.equal(decide({ pathname: "/", accept: "text/markdown" }).action, "markdown");
-    assert.equal(decide({ pathname: "/sites/www/", accept: "text/html", userAgent: "ClaudeBot/1.0" }).action, "markdown");
+    assert.equal(decide({ pathname: "/", accept: "text/html", userAgent: "ClaudeBot/1.0" }).action, "markdown");
     assert.equal(decide({ pathname: "/", mode: "agent", accept: "text/html" }).action, "json");
     assert.equal(decide({ pathname: "/", accept: "text/html", userAgent: "Mozilla/5.0" }).action, "home");
-    assert.equal(decide({ pathname: "/sites/www/", accept: "text/html" }).action, "html");
+    // /sites/www is redirected in middleware; negotiate treats it as non-home.
+    assert.equal(decide({ pathname: "/sites/www/", accept: "text/html" }).action, "ignore");
     assert.equal(decide({ pathname: "/", accept: "text/html,application/xhtml+xml,*/*;q=0.8" }).action, "home");
     assert.equal(decide({ pathname: "/", accept: "text/markdown;q=0.1, text/html" }).action, "home");
   });
@@ -177,16 +178,18 @@ async function main() {
     assert.equal(plugin.$schema, "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json");
     assert.ok(plugin.name);
     assert.match(read("robots.txt"), /^schemamap:\s+https:\/\/life\.ayushrai\.site\/schemamap\.xml/m);
-    assert.match(read("sitemap.xml"), /<lastmod>2026-10-16<\/lastmod>/);
+    assert.match(read("sitemap.xml"), /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
     assert.match(read("index.md"), /^# /m);
     const home = read("sites/www/index.html");
     assert.match(home, /rel="canonical" href="https:\/\/life\.ayushrai\.site\/"/);
     assert.match(home, /property="og:image" content="https:\/\/life\.ayushrai\.site\/assets\//);
-    assert.match(home, /property="og:type" content="website"/);
+    assert.match(home, /property="og:type" content="profile"/);
     assert.match(home, /<html lang="en">/);
     assert.match(home, /type="text\/markdown"/);
     assert.match(home, /toolname="ask_ayush_rai"/);
-    assert.match(home, /FAQPage/);
+    assert.ok(!home.includes("FAQPage"), "FAQPage JSON-LD removed (not visible on page)");
+    assert.match(home, /"@type": "Person"/);
+    assert.match(home, /"@type": "WebSite"/);
     assert.match(read("scripts/site-chrome.js"), /document\.modelContext/);
     assert.match(read("scripts/site-chrome.js"), /navigator\.modelContext/);
   });
