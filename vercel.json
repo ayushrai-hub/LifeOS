@@ -116,6 +116,10 @@
       "destination": "/index.md"
     },
     { "source": "/.well-known/llms.txt", "destination": "/llms.txt" },
+    { "source": "/.well-known/api-catalog", "destination": "/api/linkset" },
+    { "source": "/.well-known/api-catalog/", "destination": "/api/linkset" },
+    { "source": "/api/llms.txt.md", "destination": "/section-llms/api.md" },
+    { "source": "/developers/llms.txt.md", "destination": "/developers/llms.md" },
     { "source": "/agents.md", "destination": "/AGENTS.md" },
     { "source": "/api/llms.txt", "destination": "/section-llms/api.txt" },
     { "source": "/ask", "destination": "/api/ask" },

@@ -100,7 +100,7 @@ async function main() {
 
   check("auth.md structure", () => {
     const text = read("auth.md");
-    assert.ok(text.startsWith("# "));
+    assert.match(text, /^# Authentication$/m);
     assert.ok(text.length > 200);
     for (const heading of ["Discover", "Pick a method", "Register", "Claim", "Exchange", "Use the access_token", "Errors", "Revocation"]) {
       assert.match(text, new RegExp(`^## ${heading}$`, "m"));
@@ -112,6 +112,7 @@ async function main() {
 
   check("discovery documents", () => {
     const ard = json(".well-known/ard.json");
+    assert.equal(ard.specVersion, "1.0");
     assert.ok(ard.entries.length >= 2);
     assert.ok(ard.entries.every((entry) => entry.identifier && entry.displayName && entry.type && entry.url));
     const card = json("mcp/knowledge/server-card");
@@ -121,7 +122,10 @@ async function main() {
     assert.equal(card.tools, undefined);
     const skills = json(".well-known/agent-skills/index.json");
     assert.ok(skills.skills.every((skill) => skill.name && skill.description));
-    const catalog = json(".well-known/api-catalog");
+    assert.match(skills.when_to_use, /When to use this/);
+    const aiCatalog = json(".well-known/ai-catalog.json");
+    assert.ok(Array.isArray(aiCatalog.entries));
+    const catalog = json("agent/linkset.json");
     assert.ok(Array.isArray(catalog.linkset));
     const prm = json(".well-known/oauth-protected-resource");
     assert.ok(prm.resource && prm.authorization_servers.length);
@@ -137,7 +141,7 @@ async function main() {
     assert.ok(plugin.name);
     assert.match(read("robots.txt"), /^schemamap:\s+https:\/\/life\.ayushrai\.site\/schemamap\.xml/m);
     assert.match(read("sitemap.xml"), /<lastmod>2026-10-16<\/lastmod>/);
-    assert.match(read("index.md"), /^# /);
+    assert.match(read("index.md"), /^# /m);
     const home = read("sites/www/index.html");
     assert.match(home, /rel="canonical"/);
     assert.match(home, /property="og:image"/);

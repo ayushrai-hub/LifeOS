@@ -4,17 +4,37 @@ const SERVERS = {
   knowledge: {
     name: "site.ayushrai.life/knowledge",
     version: "1.0.0",
-    instructions: "Read public facts about Ayush Rai. Do not invent metrics.",
+    instructions: "Product MCP server. Read Ayush Rai's public profile, projects, and contact facts. Do not invent metrics.",
     tools: [
       {
         name: "get_profile",
         description: "Return Ayush Rai's public profile summary.",
-        inputSchema: { type: "object", properties: {}, additionalProperties: false },
+        inputSchema: {
+          type: "object",
+          properties: {
+            include_contact: {
+              type: "boolean",
+              description: "Include the published email and phone in the summary.",
+            },
+          },
+          additionalProperties: false,
+        },
+        annotations: { readOnlyHint: true },
       },
       {
         name: "get_contact",
         description: "Return public email, phone, and booking links.",
-        inputSchema: { type: "object", properties: {}, additionalProperties: false },
+        inputSchema: {
+          type: "object",
+          properties: {
+            channel: {
+              type: "string",
+              description: "Optional filter: email, phone, or booking.",
+            },
+          },
+          additionalProperties: false,
+        },
+        annotations: { readOnlyHint: true },
       },
       {
         name: "search_public_facts",
@@ -25,6 +45,7 @@ const SERVERS = {
           required: ["query"],
           additionalProperties: false,
         },
+        annotations: { readOnlyHint: true },
       },
     ],
   },
@@ -36,7 +57,17 @@ const SERVERS = {
       {
         name: "list_docs",
         description: "List public documentation and section pages.",
-        inputSchema: { type: "object", properties: {}, additionalProperties: false },
+        inputSchema: {
+          type: "object",
+          properties: {
+            section: {
+              type: "string",
+              description: "Optional section name, such as developers, auth, or projects.",
+            },
+          },
+          additionalProperties: false,
+        },
+        annotations: { readOnlyHint: true },
       },
       {
         name: "read_doc",
@@ -47,6 +78,7 @@ const SERVERS = {
           required: ["query"],
           additionalProperties: false,
         },
+        annotations: { readOnlyHint: true },
       },
     ],
   },
@@ -97,7 +129,25 @@ function handleMessage(surface, message) {
   if (method === "tools/list") return rpcResult(id, { tools: server.tools });
   if (method === "tools/call") {
     const params = message.params || {};
-    const text = toolResult(surface, params.name, params.arguments || {});
+    const known = server.tools.some((tool) => tool.name === params.name);
+    if (!known) {
+      return {
+        jsonrpc: "2.0",
+        id,
+        error: { code: -32602, message: `Unknown tool: ${params.name || "none"}` },
+      };
+    }
+    const tool = server.tools.find((item) => item.name === params.name);
+    const args = params.arguments || {};
+    const missing = (tool.inputSchema.required || []).filter((key) => args[key] == null || args[key] === "");
+    if (missing.length) {
+      return {
+        jsonrpc: "2.0",
+        id,
+        error: { code: -32602, message: `Missing required arguments: ${missing.join(", ")}` },
+      };
+    }
+    const text = toolResult(surface, params.name, args);
     return rpcResult(id, { content: [{ type: "text", text }], isError: false });
   }
   if (id === null) return null;

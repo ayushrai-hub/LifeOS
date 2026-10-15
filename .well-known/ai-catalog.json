@@ -1,8 +1,25 @@
 {
+  "specVersion": "1.0",
+  "entries": [
+    {
+      "identifier": "urn:air:life.ayushrai.site:server:knowledge",
+      "displayName": "Ayush Rai knowledge",
+      "type": "application/mcp-server-card+json",
+      "url": "https://life.ayushrai.site/mcp/knowledge/server-card",
+      "description": "Product MCP server: read Ayush Rai's public profile, projects, and contact facts."
+    },
+    {
+      "identifier": "urn:air:life.ayushrai.site:server:docs",
+      "displayName": "Ayush Rai docs",
+      "type": "application/mcp-server-card+json",
+      "url": "https://life.ayushrai.site/mcp/docs/server-card",
+      "description": "Documentation MCP server for the public page index."
+    }
+  ],
   "servers": [
     {
       "name": "site.ayushrai.life/knowledge",
-      "description": "Read Ayush Rai's public profile, projects, and contacts.",
+      "description": "Product actions on Ayush Rai's public profile and contacts.",
       "url": "https://life.ayushrai.site/mcp/knowledge",
       "card": "https://life.ayushrai.site/mcp/knowledge/server-card"
     },

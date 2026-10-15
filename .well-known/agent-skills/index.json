@@ -1,4 +1,6 @@
 {
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "when_to_use": "When to use this: the job is about Ayush Rai's public profile, projects, products, or published contact details. Call /ask or the knowledge MCP server. Do not use these skills for private data, street addresses, or invented metrics.",
   "skills": [
     {
       "name": "lookup-ayush-rai",

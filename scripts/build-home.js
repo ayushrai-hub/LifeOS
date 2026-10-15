@@ -673,7 +673,14 @@ function renderMarkdown(home) {
   const contact = (home.contact || [])
     .map((item) => `- [${item.text}](${item.href})`)
     .join("\n");
-  return `# ${home.name}
+  return `---
+title: ${home.name}
+description: ${home.tagline}
+canonical: https://life.ayushrai.site/index.md
+last-updated: ${home.generated_at}
+---
+
+# ${home.name}
 
 ${home.tagline}
 

@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
   "name": "site.ayushrai.life/knowledge",
-  "description": "Read Ayush Rai's public profile, projects, and contacts.",
+  "description": "Product actions on Ayush Rai's public profile and contacts.",
   "version": "1.0.0",
   "remotes": [
     {

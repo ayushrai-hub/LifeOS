@@ -1,3 +1,10 @@
+---
+title: Skill
+description: Official agent skills published from this repository.
+canonical: https://life.ayushrai.site/skill.md
+last-updated: 2026-10-16
+---
+
 # Skill
 
 Official skills in this repository:
