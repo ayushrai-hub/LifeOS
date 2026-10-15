@@ -1,10 +1,3 @@
----
-title: Authentication
-description: How an agent obtains a public-read token for life.ayushrai.site.
-canonical: https://life.ayushrai.site/auth.md
-last-updated: 2026-10-16
----
-
 # Authentication
 
 Agents that call the protected API on life.ayushrai.site should follow this guide. Public pages, `/ask`, `/llms.txt`, and `/api/v1/sandbox` do not need a token. Protected entry points answer `GET` with `401` and a `WWW-Authenticate` challenge that points at the protected-resource metadata.

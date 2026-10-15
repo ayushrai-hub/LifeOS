@@ -121,7 +121,8 @@ async function main() {
     assert.ok(card.remotes[0].url.startsWith("https://life.ayushrai.site/mcp/"));
     assert.equal(card.tools, undefined);
     const skills = json(".well-known/agent-skills/index.json");
-    assert.ok(skills.skills.every((skill) => skill.name && skill.description));
+    assert.ok(skills.skills.every((skill) => skill.name && skill.description && skill.type === "skill-md" && skill.digest.startsWith("sha256:")));
+    assert.match(read("auth.md"), /^# Authentication\r?\n/);
     assert.match(skills.when_to_use, /When to use this/);
     const aiCatalog = json(".well-known/ai-catalog.json");
     assert.ok(Array.isArray(aiCatalog.entries));

@@ -47,6 +47,22 @@ const SERVERS = {
         },
         annotations: { readOnlyHint: true },
       },
+      {
+        name: "book_a_conversation",
+        description: "Return Ayush Rai's public booking links so the caller can schedule time.",
+        inputSchema: {
+          type: "object",
+          properties: {
+            topic: {
+              type: "string",
+              description: "What the conversation is about.",
+            },
+          },
+          required: ["topic"],
+          additionalProperties: false,
+        },
+        annotations: { readOnlyHint: false },
+      },
     ],
   },
   docs: {

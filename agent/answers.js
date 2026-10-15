@@ -55,6 +55,9 @@ function toolResult(surface, name, args) {
   if (name === "get_contact") {
     return `Email ${catalog.email}. Phone ${catalog.telephone}. Contact page: ${ORIGIN}/sites/contact/. Booking: https://calendly.com/ayushrai0211 and https://cal.com/ayush-rai-02. Mentoring: https://topmate.io/ayush_rai02.`;
   }
+  if (name === "book_a_conversation") {
+    return `Booking links for ${args && args.topic ? args.topic : "a conversation"}: https://calendly.com/ayushrai0211 and https://cal.com/ayush-rai-02. This does not create a booking. The caller opens one of those links.`;
+  }
   if (name === "search_public_facts") {
     return pagesFor(args && args.query).map((page) => `${page.name}: ${page.description} (${page.url})`).join("\n");
   }

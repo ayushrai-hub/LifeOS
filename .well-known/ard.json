@@ -6,6 +6,10 @@
       "displayName": "Ayush Rai knowledge",
       "type": "application/mcp-server-card+json",
       "url": "https://life.ayushrai.site/mcp/knowledge/server-card",
+      "trustManifest": {
+        "identity": "https://life.ayushrai.site/",
+        "attestations": ["https://github.com/ayushrai-hub/LifeOS"]
+      },
       "description": "MCP server for Ayush Rai's public profile, projects, and contact facts.",
       "capabilities": ["get_profile", "get_contact", "search_public_facts"],
       "representativeQueries": [
