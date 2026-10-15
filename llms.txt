@@ -21,10 +21,14 @@ Do not use this site to invent metrics, infer a street address, or send messages
 - [OpenAPI](https://life.ayushrai.site/openapi.json): machine-readable HTTP API.
 - [Ask](https://life.ayushrai.site/ask): NLWeb question endpoint.
 - [Sandbox](https://life.ayushrai.site/api/v1/sandbox): public facts, no token, no writes.
-- [Knowledge MCP](https://life.ayushrai.site/mcp/knowledge): tools that read the public profile.
+- [Product MCP](https://life.ayushrai.site/mcp/product): tools that act on the public profile (knowledge alias: /mcp/knowledge).
 - [Docs MCP](https://life.ayushrai.site/mcp/docs): tools that read the public page index.
+- [Batch API](https://life.ayushrai.site/api/v1/batch): answer up to 10 public questions in one POST.
 - [Agent card](https://life.ayushrai.site/.well-known/agent-card.json): A2A card.
 - [ARD catalog](https://life.ayushrai.site/.well-known/ard.json): agentic resource discovery.
+- [AGENTS.md](https://life.ayushrai.site/AGENTS.md): how coding agents should edit this site.
+- [plugin.json](https://life.ayushrai.site/plugin.json): Agent Plugins manifest.
+- [Deprecation policy](https://life.ayushrai.site/developers/deprecation/): versioning and Sunset rules.
 - [Full guide](https://life.ayushrai.site/llms-full.txt): longer notes for agents.
 
 ## Section indexes

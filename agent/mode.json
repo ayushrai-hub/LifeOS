@@ -3,16 +3,26 @@
   "name": "Ayush Rai",
   "url": "https://life.ayushrai.site/",
   "description": "Public knowledge site for an AI Engineer in Bhopal. Use it for profile, projects, products, and published contact details.",
+  "when_to_use": "Identify Ayush Rai, quote public projects and products, fetch published contact details, or call /ask, the sandbox, product MCP, or docs MCP. Do not invent metrics or send messages as him.",
   "capabilities": [
     "public profile and biography",
     "projects and products",
     "published contact details",
     "NLWeb /ask",
     "read-only sandbox",
-    "knowledge MCP and docs MCP"
+    "batch public questions",
+    "product MCP and docs MCP",
+    "markdown negotiation"
   ],
+  "repository": {
+    "url": "https://github.com/ayushrai-hub/LifeOS",
+    "agents": "https://github.com/ayushrai-hub/LifeOS/blob/main/AGENTS.md",
+    "plugin": "https://github.com/ayushrai-hub/LifeOS/blob/main/plugin.json",
+    "site_agents": "https://life.ayushrai.site/AGENTS.md",
+    "site_plugin": "https://life.ayushrai.site/plugin.json"
+  },
   "authentication": {
-    "public_reads": "No token for /ask, /llms.txt, markdown pages, or /api/v1/sandbox.",
+    "public_reads": "No token for /ask, /llms.txt, markdown pages, /api/v1/sandbox, or /api/v1/batch.",
     "protected_resource_metadata": "https://life.ayushrai.site/.well-known/oauth-protected-resource",
     "authorization_server": "https://life.ayushrai.site/.well-known/oauth-authorization-server",
     "auth_guide": "https://life.ayushrai.site/auth.md",
@@ -22,13 +32,20 @@
   "endpoints": {
     "ask": "https://life.ayushrai.site/ask",
     "sandbox": "https://life.ayushrai.site/api/v1/sandbox",
+    "batch": "https://life.ayushrai.site/api/v1/batch",
     "openapi": "https://life.ayushrai.site/openapi.json",
     "api_catalog": "https://life.ayushrai.site/.well-known/api-catalog",
     "llms": "https://life.ayushrai.site/llms.txt",
+    "auth": "https://life.ayushrai.site/auth.md",
+    "developers": "https://life.ayushrai.site/developers/",
     "markdown_home": "https://life.ayushrai.site/index.md",
+    "mcp_product": "https://life.ayushrai.site/mcp/product",
     "mcp_knowledge": "https://life.ayushrai.site/mcp/knowledge",
     "mcp_docs": "https://life.ayushrai.site/mcp/docs",
     "agent_card": "https://life.ayushrai.site/.well-known/agent-card.json",
-    "ard": "https://life.ayushrai.site/.well-known/ard.json"
+    "agent_skills": "https://life.ayushrai.site/.well-known/agent-skills/index.json",
+    "ard": "https://life.ayushrai.site/.well-known/ard.json",
+    "sitemap": "https://life.ayushrai.site/sitemap.xml",
+    "deprecation": "https://life.ayushrai.site/developers/deprecation/"
   }
 }

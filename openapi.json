@@ -3,8 +3,12 @@
   "info": {
     "title": "Ayush Rai public site API",
     "version": "1.0.0",
-    "summary": "Read-only questions, a sandbox, and a public-read token for the same facts.",
-    "description": "Public knowledge API for life.ayushrai.site. Sandbox and /ask need no token. /api/v1 returns 401 until you follow auth.md."
+    "summary": "Read-only questions, sandbox, batch lookup, and a public-read token for the same facts.",
+    "description": "Public knowledge API for life.ayushrai.site. Sandbox and /ask need no token. /api/v1 returns 401 until you follow auth.md. Soft rate limit: 120 requests per 60 seconds per client. See /developers/deprecation/ for versioning.",
+    "contact": {
+      "name": "Ayush Rai",
+      "url": "https://life.ayushrai.site/sites/contact/"
+    }
   },
   "servers": [
     { "url": "https://life.ayushrai.site" }
@@ -18,7 +22,8 @@
           {
             "name": "query",
             "in": "query",
-            "schema": { "type": "string" }
+            "required": true,
+            "schema": { "type": "string", "minLength": 1 }
           },
           {
             "name": "streaming",
@@ -27,20 +32,49 @@
           }
         ],
         "responses": {
-          "200": { "description": "NLWeb JSON or server-sent events" }
+          "200": {
+            "description": "NLWeb JSON or server-sent events",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/AskResponse" }
+              }
+            },
+            "headers": {
+              "RateLimit-Limit": { "schema": { "type": "integer" } },
+              "RateLimit-Remaining": { "schema": { "type": "integer" } }
+            }
+          },
+          "400": {
+            "description": "Missing query",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
         }
       },
       "post": {
         "operationId": "askPost",
         "summary": "Ask a public question as JSON",
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" },
+            "description": "Optional client key echoed back. Asks are safe to retry."
+          }
+        ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": ["query"],
                 "properties": {
-                  "query": { "type": "string" },
+                  "query": { "type": "string", "minLength": 1 },
                   "prefer": {
                     "type": "object",
                     "properties": { "streaming": { "type": "boolean" } }
@@ -51,7 +85,26 @@
           }
         },
         "responses": {
-          "200": { "description": "NLWeb JSON or server-sent events" }
+          "200": {
+            "description": "NLWeb JSON or server-sent events",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/AskResponse" }
+              }
+            },
+            "headers": {
+              "Idempotency-Key": { "schema": { "type": "string" } },
+              "RateLimit-Limit": { "schema": { "type": "integer" } }
+            }
+          },
+          "400": {
+            "description": "Missing query",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
         }
       }
     },
@@ -59,8 +112,82 @@
       "get": {
         "operationId": "sandbox",
         "summary": "Sandbox of public facts",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": { "type": "integer", "minimum": 1, "default": 1 }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 50 }
+          }
+        ],
         "responses": {
-          "200": { "description": "Public catalog with X-Sandbox: true" }
+          "200": {
+            "description": "Public catalog with X-Sandbox: true",
+            "headers": {
+              "X-Sandbox": { "schema": { "type": "string", "enum": ["true"] } },
+              "RateLimit-Limit": { "schema": { "type": "integer" } }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CatalogResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/batch": {
+      "post": {
+        "operationId": "batchAsk",
+        "summary": "Answer up to 10 public questions in one request",
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["queries"],
+                "properties": {
+                  "queries": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "items": { "type": "string", "minLength": 1 }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Per-query NLWeb answers",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/BatchResponse" }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid batch",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
         }
       }
     },
@@ -69,9 +196,38 @@
         "operationId": "readApi",
         "summary": "Protected public-read API",
         "security": [{ "publicRead": [] }],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": { "type": "integer", "minimum": 1, "default": 1 }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 50 }
+          }
+        ],
         "responses": {
-          "200": { "description": "Profile summary when Bearer public-read is sent" },
-          "401": { "description": "WWW-Authenticate points at protected-resource metadata" }
+          "200": {
+            "description": "Profile summary when Bearer public-read is sent",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CatalogResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "WWW-Authenticate points at protected-resource metadata",
+            "headers": {
+              "WWW-Authenticate": { "schema": { "type": "string" } }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
         }
       }
     }
@@ -82,6 +238,111 @@
         "type": "http",
         "scheme": "bearer",
         "description": "Non-secret bearer public-read from the token endpoint. See /auth.md."
+      }
+    },
+    "schemas": {
+      "ErrorObject": {
+        "type": "object",
+        "required": ["code", "message", "status"],
+        "properties": {
+          "code": { "type": "string" },
+          "message": { "type": "string" },
+          "status": { "type": "integer" },
+          "docs": { "type": "string", "format": "uri" },
+          "auth": { "type": "string", "format": "uri" }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": { "$ref": "#/components/schemas/ErrorObject" },
+          "resource_metadata": { "type": "string", "format": "uri" }
+        }
+      },
+      "AskMeta": {
+        "type": "object",
+        "required": ["response_type", "version"],
+        "properties": {
+          "response_type": { "type": "string" },
+          "version": { "type": "string" }
+        }
+      },
+      "AskResult": {
+        "type": "object",
+        "properties": {
+          "url": { "type": "string", "format": "uri" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "score": { "type": "number" }
+        }
+      },
+      "AskResponse": {
+        "type": "object",
+        "required": ["_meta", "query", "results"],
+        "properties": {
+          "_meta": { "$ref": "#/components/schemas/AskMeta" },
+          "query": { "type": "string" },
+          "results": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/AskResult" }
+          }
+        }
+      },
+      "Pagination": {
+        "type": "object",
+        "required": ["page", "limit", "total", "has_more"],
+        "properties": {
+          "page": { "type": "integer" },
+          "limit": { "type": "integer" },
+          "total": { "type": "integer" },
+          "has_more": { "type": "boolean" },
+          "next_page": { "type": ["integer", "null"] }
+        }
+      },
+      "PageItem": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "description": { "type": "string" }
+        }
+      },
+      "CatalogResponse": {
+        "type": "object",
+        "properties": {
+          "sandbox": { "type": "boolean" },
+          "mode": { "type": "string" },
+          "notice": { "type": "string" },
+          "resource": { "type": "string", "format": "uri" },
+          "scope": { "type": "string" },
+          "summary": { "type": "string" },
+          "pages": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/PageItem" }
+          },
+          "pagination": { "$ref": "#/components/schemas/Pagination" }
+        }
+      },
+      "BatchResponse": {
+        "type": "object",
+        "required": ["resource", "count", "results"],
+        "properties": {
+          "resource": { "type": "string", "format": "uri" },
+          "count": { "type": "integer" },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "index": { "type": "integer" },
+                "query": { "type": "string" },
+                "answer": { "$ref": "#/components/schemas/AskResponse" },
+                "error": { "$ref": "#/components/schemas/ErrorObject" }
+              }
+            }
+          }
+        }
       }
     }
   }

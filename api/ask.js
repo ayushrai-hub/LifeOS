@@ -1,3 +1,4 @@
+const { rateLimitHeaders, cors, errorBody } = require("../agent/http");
 const { nlweb } = require("../agent/answers");
 
 function readBody(req) {
@@ -42,23 +43,31 @@ function queryOf(req, body) {
 }
 
 module.exports = async function ask(req, res) {
+  cors(res, "GET, POST, OPTIONS", "Content-Type, Accept, Prefer, Idempotency-Key");
+  rateLimitHeaders(res);
+
   if (req.method === "OPTIONS") {
     res.setHeader("Allow", "GET, POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, Prefer");
     res.status(204).end();
     return;
   }
   if (req.method !== "GET" && req.method !== "POST") {
     res.setHeader("Allow", "GET, POST, OPTIONS");
-    res.status(405).json({ error: "method_not_allowed" });
+    res.status(405).json(errorBody("method_not_allowed", "Use GET or POST.", 405));
     return;
   }
 
   const body = req.method === "POST" ? await readBody(req) : {};
-  const payload = nlweb(queryOf(req, body));
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  const idempotency = req.headers["idempotency-key"];
+  if (idempotency) res.setHeader("Idempotency-Key", String(idempotency));
+
+  const query = queryOf(req, body);
+  if (!query.trim()) {
+    res.status(400).json(errorBody("invalid_query", "Provide a non-empty query string.", 400));
+    return;
+  }
+
+  const payload = nlweb(query);
 
   if (!wantsStream(req, body)) {
     res.setHeader("Content-Type", "application/json; charset=utf-8");

@@ -1,103 +1,110 @@
 const { toolResult, ORIGIN } = require("../agent/answers");
+const { rateLimitHeaders, cors } = require("../agent/http");
+
+const PRODUCT = {
+  name: "site.ayushrai.life/product",
+  version: "1.0.0",
+  instructions:
+    "Product MCP server. Take read-only actions against Ayush Rai's public profile, projects, and contact facts. Do not invent metrics.",
+  tools: [
+    {
+      name: "get_profile",
+      description: "Return Ayush Rai's public profile summary.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          include_contact: {
+            type: "boolean",
+            description: "Include the published email and phone in the summary.",
+          },
+        },
+        additionalProperties: false,
+      },
+      annotations: { readOnlyHint: true },
+    },
+    {
+      name: "get_contact",
+      description: "Return public email, phone, and booking links.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          channel: {
+            type: "string",
+            description: "Optional filter: email, phone, or booking.",
+          },
+        },
+        additionalProperties: false,
+      },
+      annotations: { readOnlyHint: true },
+    },
+    {
+      name: "search_public_facts",
+      description: "Search public site pages by a short query.",
+      inputSchema: {
+        type: "object",
+        properties: { query: { type: "string", description: "Words to match against public pages." } },
+        required: ["query"],
+        additionalProperties: false,
+      },
+      annotations: { readOnlyHint: true },
+    },
+    {
+      name: "book_a_conversation",
+      description: "Return Ayush Rai's public booking links so the caller can schedule time.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          topic: {
+            type: "string",
+            description: "What the conversation is about.",
+          },
+        },
+        required: ["topic"],
+        additionalProperties: false,
+      },
+      annotations: { readOnlyHint: false },
+    },
+  ],
+};
+
+const DOCS = {
+  name: "site.ayushrai.life/docs",
+  version: "1.0.0",
+  instructions: "Answer from the public documentation index. Cite the page URL.",
+  tools: [
+    {
+      name: "list_docs",
+      description: "List public documentation and section pages.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          section: {
+            type: "string",
+            description: "Optional section name, such as developers, auth, or projects.",
+          },
+        },
+        additionalProperties: false,
+      },
+      annotations: { readOnlyHint: true },
+    },
+    {
+      name: "read_doc",
+      description: "Find documentation pages that match a query.",
+      inputSchema: {
+        type: "object",
+        properties: { query: { type: "string", description: "Documentation topic." } },
+        required: ["query"],
+        additionalProperties: false,
+      },
+      annotations: { readOnlyHint: true },
+    },
+  ],
+};
 
 const SERVERS = {
-  knowledge: {
-    name: "site.ayushrai.life/knowledge",
-    version: "1.0.0",
-    instructions: "Product MCP server. Read Ayush Rai's public profile, projects, and contact facts. Do not invent metrics.",
-    tools: [
-      {
-        name: "get_profile",
-        description: "Return Ayush Rai's public profile summary.",
-        inputSchema: {
-          type: "object",
-          properties: {
-            include_contact: {
-              type: "boolean",
-              description: "Include the published email and phone in the summary.",
-            },
-          },
-          additionalProperties: false,
-        },
-        annotations: { readOnlyHint: true },
-      },
-      {
-        name: "get_contact",
-        description: "Return public email, phone, and booking links.",
-        inputSchema: {
-          type: "object",
-          properties: {
-            channel: {
-              type: "string",
-              description: "Optional filter: email, phone, or booking.",
-            },
-          },
-          additionalProperties: false,
-        },
-        annotations: { readOnlyHint: true },
-      },
-      {
-        name: "search_public_facts",
-        description: "Search public site pages by a short query.",
-        inputSchema: {
-          type: "object",
-          properties: { query: { type: "string", description: "Words to match against public pages." } },
-          required: ["query"],
-          additionalProperties: false,
-        },
-        annotations: { readOnlyHint: true },
-      },
-      {
-        name: "book_a_conversation",
-        description: "Return Ayush Rai's public booking links so the caller can schedule time.",
-        inputSchema: {
-          type: "object",
-          properties: {
-            topic: {
-              type: "string",
-              description: "What the conversation is about.",
-            },
-          },
-          required: ["topic"],
-          additionalProperties: false,
-        },
-        annotations: { readOnlyHint: false },
-      },
-    ],
-  },
-  docs: {
-    name: "site.ayushrai.life/docs",
-    version: "1.0.0",
-    instructions: "Answer from the public documentation index. Cite the page URL.",
-    tools: [
-      {
-        name: "list_docs",
-        description: "List public documentation and section pages.",
-        inputSchema: {
-          type: "object",
-          properties: {
-            section: {
-              type: "string",
-              description: "Optional section name, such as developers, auth, or projects.",
-            },
-          },
-          additionalProperties: false,
-        },
-        annotations: { readOnlyHint: true },
-      },
-      {
-        name: "read_doc",
-        description: "Find documentation pages that match a query.",
-        inputSchema: {
-          type: "object",
-          properties: { query: { type: "string", description: "Documentation topic." } },
-          required: ["query"],
-          additionalProperties: false,
-        },
-        annotations: { readOnlyHint: true },
-      },
-    ],
-  },
+  product: PRODUCT,
+  knowledge: PRODUCT,
+  docs: DOCS,
 };
 
 function readBody(req) {
@@ -129,8 +136,13 @@ function rpcResult(id, result) {
   return { jsonrpc: "2.0", id, result };
 }
 
+function resolveSurface(name) {
+  if (name === "docs") return "docs";
+  return "product";
+}
+
 function handleMessage(surface, message) {
-  const server = SERVERS[surface] || SERVERS.knowledge;
+  const server = SERVERS[resolveSurface(surface)];
   const id = Object.prototype.hasOwnProperty.call(message, "id") ? message.id : null;
   const method = message.method;
   if (method === "initialize") {
@@ -182,13 +194,13 @@ module.exports = async function mcp(req, res) {
   } catch (err) {
     fromUrl = "";
   }
-  const surface = fromQuery || fromUrl || "knowledge";
-  const server = SERVERS[surface] || SERVERS.knowledge;
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  const surface = resolveSurface(fromQuery || fromUrl || "product");
+  const server = SERVERS[surface];
+  cors(res, "GET, POST, OPTIONS", "Content-Type, Accept");
+  rateLimitHeaders(res);
 
   if (req.method === "OPTIONS") {
     res.setHeader("Allow", "GET, POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
     res.status(204).end();
     return;
   }
@@ -198,6 +210,7 @@ module.exports = async function mcp(req, res) {
     res.status(200).json({
       name: server.name,
       version: server.version,
+      role: surface === "docs" ? "documentation" : "product",
       serverCard: `${ORIGIN}/mcp/${surface}/server-card`,
     });
     return;

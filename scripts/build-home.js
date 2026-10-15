@@ -559,7 +559,7 @@ function renderHtml(home) {
   <meta name="theme-color" content="#ffffff">
   <meta property="og:title" content="${escapeHtml(home.name)}">
   <meta property="og:description" content="${escapeHtml(home.tagline)}">
-  <meta property="og:type" content="profile">
+  <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="${escapeHtml(home.name)}">
   <meta name="twitter:description" content="${escapeHtml(home.tagline)}">

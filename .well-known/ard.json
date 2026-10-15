@@ -2,16 +2,16 @@
   "specVersion": "1.0",
   "entries": [
     {
-      "identifier": "urn:air:life.ayushrai.site:server:knowledge",
-      "displayName": "Ayush Rai knowledge",
+      "identifier": "urn:air:life.ayushrai.site:server:product",
+      "displayName": "Ayush Rai product",
       "type": "application/mcp-server-card+json",
-      "url": "https://life.ayushrai.site/mcp/knowledge/server-card",
+      "url": "https://life.ayushrai.site/mcp/product/server-card",
       "trustManifest": {
         "identity": "https://life.ayushrai.site/",
         "attestations": ["https://github.com/ayushrai-hub/LifeOS"]
       },
-      "description": "MCP server for Ayush Rai's public profile, projects, and contact facts.",
-      "capabilities": ["get_profile", "get_contact", "search_public_facts"],
+      "description": "Product MCP server for profile, contact, search, and booking actions.",
+      "capabilities": ["get_profile", "get_contact", "search_public_facts", "book_a_conversation"],
       "representativeQueries": [
         "who is Ayush Rai",
         "what projects has Ayush Rai shipped",
@@ -23,7 +23,11 @@
       "displayName": "Ayush Rai docs",
       "type": "application/mcp-server-card+json",
       "url": "https://life.ayushrai.site/mcp/docs/server-card",
-      "description": "MCP server for the public documentation index on life.ayushrai.site.",
+      "trustManifest": {
+        "identity": "https://life.ayushrai.site/",
+        "attestations": ["https://github.com/ayushrai-hub/LifeOS"]
+      },
+      "description": "Documentation MCP server for the public page index on life.ayushrai.site.",
       "capabilities": ["list_docs", "read_doc"],
       "representativeQueries": [
         "where is the developer portal",
@@ -35,6 +39,10 @@
       "displayName": "Ayush Rai agent",
       "type": "application/a2a-agent-card+json",
       "url": "https://life.ayushrai.site/.well-known/agent-card.json",
+      "trustManifest": {
+        "identity": "https://life.ayushrai.site/",
+        "attestations": ["https://github.com/ayushrai-hub/LifeOS"]
+      },
       "description": "Agent card for questions about Ayush Rai's public site.",
       "representativeQueries": [
         "ask Ayush Rai's site who he is",
@@ -46,7 +54,11 @@
       "displayName": "Ayush Rai HTTP API",
       "type": "application/openapi+json",
       "url": "https://life.ayushrai.site/openapi.json",
-      "description": "OpenAPI document for the ask endpoint, sandbox, and public-read API.",
+      "trustManifest": {
+        "identity": "https://life.ayushrai.site/",
+        "attestations": ["https://github.com/ayushrai-hub/LifeOS"]
+      },
+      "description": "OpenAPI document for ask, sandbox, batch, and public-read API.",
       "representativeQueries": [
         "show the OpenAPI spec for life.ayushrai.site",
         "call the sandbox API"

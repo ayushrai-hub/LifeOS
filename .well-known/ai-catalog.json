@@ -2,11 +2,11 @@
   "specVersion": "1.0",
   "entries": [
     {
-      "identifier": "urn:air:life.ayushrai.site:server:knowledge",
-      "displayName": "Ayush Rai knowledge",
+      "identifier": "urn:air:life.ayushrai.site:server:product",
+      "displayName": "Ayush Rai product",
       "type": "application/mcp-server-card+json",
-      "url": "https://life.ayushrai.site/mcp/knowledge/server-card",
-      "description": "Product MCP server: read Ayush Rai's public profile, projects, and contact facts."
+      "url": "https://life.ayushrai.site/mcp/product/server-card",
+      "description": "Product MCP server for profile, contact, search, and booking actions."
     },
     {
       "identifier": "urn:air:life.ayushrai.site:server:docs",
@@ -18,16 +18,18 @@
   ],
   "servers": [
     {
-      "name": "site.ayushrai.life/knowledge",
-      "description": "Product actions on Ayush Rai's public profile and contacts.",
-      "url": "https://life.ayushrai.site/mcp/knowledge",
-      "card": "https://life.ayushrai.site/mcp/knowledge/server-card"
+      "name": "site.ayushrai.life/product",
+      "description": "Product MCP: profile, contact, search, and booking links.",
+      "url": "https://life.ayushrai.site/mcp/product",
+      "card": "https://life.ayushrai.site/mcp/product/server-card",
+      "role": "product"
     },
     {
       "name": "site.ayushrai.life/docs",
       "description": "Look up pages in Ayush Rai's public site documentation.",
       "url": "https://life.ayushrai.site/mcp/docs",
-      "card": "https://life.ayushrai.site/mcp/docs/server-card"
+      "card": "https://life.ayushrai.site/mcp/docs/server-card",
+      "role": "documentation"
     }
   ]
 }

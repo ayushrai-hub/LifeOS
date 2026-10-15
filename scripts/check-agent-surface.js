@@ -115,11 +115,16 @@ async function main() {
     assert.equal(ard.specVersion, "1.0");
     assert.ok(ard.entries.length >= 2);
     assert.ok(ard.entries.every((entry) => entry.identifier && entry.displayName && entry.type && entry.url));
-    const card = json("mcp/knowledge/server-card");
+    const card = json("mcp/product/server-card");
     assert.equal(card.$schema, "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json");
+    assert.equal(card.name, "site.ayushrai.life/product");
     assert.ok(card.description.length <= 100);
     assert.ok(card.remotes[0].url.startsWith("https://life.ayushrai.site/mcp/"));
     assert.equal(card.tools, undefined);
+    const openapi = json("openapi.json");
+    assert.ok(openapi.components.schemas.ErrorResponse);
+    assert.ok(openapi.components.schemas.AskResponse);
+    assert.ok(openapi.paths["/api/v1/batch"]);
     const skills = json(".well-known/agent-skills/index.json");
     assert.ok(skills.skills.every((skill) => skill.name && skill.description && skill.type === "skill-md" && skill.digest.startsWith("sha256:")));
     assert.match(read("auth.md"), /^# Authentication\r?\n/);
@@ -192,6 +197,7 @@ async function main() {
   check("API 401 challenge", () => {
     assert.equal(denied.statusCode, 401);
     assert.match(denied.headers["www-authenticate"], /resource_metadata="https:\/\/life\.ayushrai\.site\/\.well-known\/oauth-protected-resource"/);
+    assert.ok(denied.headers["ratelimit-limit"] || denied.headers["RateLimit-Limit"]);
   });
 
   const allowed = await invoke(guard, {
@@ -200,6 +206,22 @@ async function main() {
   });
   check("public-read bearer", () => {
     assert.equal(allowed.statusCode, 200);
+    const payload = JSON.parse(allowed.body);
+    assert.ok(payload.pagination);
+    assert.ok(Array.isArray(payload.pages));
+  });
+
+  const batch = require("../api/batch");
+  const batchRes = await invoke(batch, {
+    method: "POST",
+    url: "/api/batch",
+    headers: { "content-type": "application/json", "idempotency-key": "test-1" },
+    body: JSON.stringify({ queries: ["Ayush", "projects"] }),
+  });
+  check("batch endpoint", () => {
+    assert.equal(batchRes.statusCode, 200);
+    assert.equal(batchRes.headers["idempotency-key"], "test-1");
+    assert.equal(JSON.parse(batchRes.body).count, 2);
   });
 
   const preflight = await invoke(agent, { method: "OPTIONS", url: "/api/agent?op=identity", query: { op: "identity" } });

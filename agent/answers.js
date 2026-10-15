@@ -40,7 +40,7 @@ function profileText() {
 }
 
 function toolResult(surface, name, args) {
-  if (surface === "docs") {
+  if (surface === "docs" || surface === "documentation") {
     if (name === "list_docs") {
       return catalog.pages
         .map((page) => `- ${page.name}: ${page.url}`)

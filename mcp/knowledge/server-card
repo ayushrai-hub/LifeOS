@@ -1,9 +1,14 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
-  "name": "site.ayushrai.life/knowledge",
-  "description": "Product actions on Ayush Rai's public profile and contacts.",
+  "name": "site.ayushrai.life/product",
+  "description": "Product MCP: profile, contact, search, and booking links.",
   "version": "1.0.0",
+  "icon": "https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg",
   "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://life.ayushrai.site/mcp/product"
+    },
     {
       "type": "streamable-http",
       "url": "https://life.ayushrai.site/mcp/knowledge"

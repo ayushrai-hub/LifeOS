@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API versioning and deprecation; Ayush Rai</title>
+  <meta name="description" content="Versioning and deprecation policy for the public life.ayushrai.site API.">
+  <meta name="author" content="Ayush Rai">
+  <meta property="og:title" content="API versioning and deprecation">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://life.ayushrai.site/developers/deprecation/">
+  <meta property="og:image" content="https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg">
+  <link rel="canonical" href="https://life.ayushrai.site/developers/deprecation/">
+  <link rel="alternate" type="text/markdown" href="https://life.ayushrai.site/developers/deprecation/index.md">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles/site.css?v=20261016">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <main id="content" class="page knowledge-page">
+    <h1>API versioning and deprecation</h1>
+    <p class="tagline">How the public read API changes over time.</p>
+
+    <p>The current surface lives under <code>/api/v1</code>, plus unversioned helpers <code>/ask</code> and the MCP paths. The OpenAPI document at <a href="/openapi.json">/openapi.json</a> is the machine-readable contract.</p>
+
+    <h2>Stability</h2>
+    <p>Additive changes (new optional fields, new endpoints, new MCP tools) may ship without bumping the URL version. Removing or renaming a field, changing an auth challenge shape, or changing a required request field is a breaking change.</p>
+
+    <h2>Deprecation</h2>
+    <p>Before a breaking change ships, responses on the retiring path carry <code>Deprecation: true</code> and a <code>Sunset</code> HTTP date at least 30 days out. The replacement path is documented here and in <a href="/llms.txt">llms.txt</a>. After the Sunset date the old path may return <code>410 Gone</code> with a link to the replacement.</p>
+
+    <h2>Current notice</h2>
+    <p>No endpoints are deprecated today. <code>/mcp/knowledge</code> is an alias of the product MCP at <code>/mcp/product</code> and will remain available.</p>
+
+    <p class="foot"><a href="/developers/">Developers</a> · <a href="/openapi.json">OpenAPI</a> · <a href="/llms.txt">llms.txt</a></p>
+  </main>
+  <script src="/scripts/site-chrome.js" defer></script>
+</body>
+</html>
