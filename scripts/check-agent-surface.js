@@ -206,10 +206,27 @@ async function main() {
   check("agent mode document is machine-readable", () => {
     const mode = json("agent/mode.json");
     assert.equal(mode.mode, "agent");
+    assert.equal(mode.agent, true);
+    assert.ok(mode.api && mode.api.ask && mode.api.jobs);
+    assert.ok(mode.mcp && mode.mcp.product);
+    assert.ok(mode.skills && mode.skills.install.includes("ayushrai-hub/LifeOS"));
     assert.ok(mode.endpoints.ask && mode.endpoints.jobs && mode.endpoints.openapi);
     assert.ok(mode.authentication.auth_guide);
-    assert.ok(mode.sdk && mode.sdk.package === "life-ayushrai");
+    assert.ok(mode.sdk && mode.sdk.npm_package === "life-ayushrai");
+    assert.ok(mode.sdk.cli === "life-ayushrai");
+    assert.ok(mode.developer_portal.includes("/developers"));
     assert.ok(Array.isArray(mode.capabilities) && mode.capabilities.length >= 6);
+    const blob = JSON.stringify(mode).toLowerCase();
+    for (const signal of ["llms.txt", "openapi", "mcp", "api", "endpoint", "agent", "sandbox", "sdk", "skill", "authentication", "developers"]) {
+      assert.ok(blob.includes(signal), `missing agent-mode signal: ${signal}`);
+    }
+  });
+
+  check("Python SDK package metadata", () => {
+    const text = read("packages/life_ayushrai/pyproject.toml");
+    assert.match(text, /name = "life-ayushrai"/);
+    assert.match(text, /Homepage = "https:\/\/life\.ayushrai\.site\/"/);
+    assert.match(text, /life-ayushrai = "life_ayushrai\.cli:main"/);
   });
 
   check("SDK package metadata", () => {

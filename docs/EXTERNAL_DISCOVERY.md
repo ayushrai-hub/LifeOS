@@ -1,39 +1,73 @@
-# External discovery checklist (P3)
+# External discovery checklist (Ora gaps)
 
-Owner actions that cannot be completed from this repository alone. Do not mark these done without evidence.
+Owner actions that cannot finish from this repository alone. Do not mark done without evidence.
 
-## ChatGPT apps / connectors
+## Wikipedia / Wikidata (Discovery −4)
 
-- [ ] Confirm eligibility for the ChatGPT apps or connectors directory for a personal knowledge site.
-- [ ] Prepare listing copy from `/developers/` and `/llms.txt` only; no invented metrics.
-- [ ] Submit with the owner OpenAI account. Status: pending owner submission.
+- [ ] Confirm independent notability with reliable secondary sources. Do not create a promotional Wikipedia article.
+- [ ] If justified, create a Wikidata item with official website `P856` = `https://life.ayushrai.site/`.
+- [ ] Status: blocked on notability and editorial process. Not implementable in this repo.
 
-## Wikidata / Wikipedia
+## ChatGPT apps / connectors (Discovery −2)
 
-- [ ] Evaluate independent notability for Ayush Rai or for LifeOS as a product. Do not create promotional Wikipedia pages.
-- [ ] If sources exist, create or update a Wikidata item with official website `P856` = `https://life.ayushrai.site/`.
-- [ ] Status: not started; notability not asserted by this repo.
+- [ ] Confirm whether a personal knowledge site is eligible for ChatGPT apps/connectors.
+- [ ] Submit with the owner OpenAI account using copy from `/developers/` and `/llms.txt` only.
+- [ ] Status: pending owner submission.
 
-## skills.sh
+## MCP registries (Discovery −1)
 
-- [ ] Confirm the current skills.sh publication flow (`npx skills` / docs at skills.sh).
-- [ ] Publish the real skills under `/skills/*/SKILL.md` as official self-published skills.
-- [ ] Status: pending owner publication. Local skill files already exist.
+```bash
+npx @smithery/cli auth login
+npx @smithery/cli mcp publish https://life.ayushrai.site/mcp/product -n <your-org>/life-product
+```
 
-## MCP registries
+- [ ] Publish product MCP on Smithery (or mcp.so) with homepage/repo pointing at life.ayushrai.site.
+- [ ] Paste the registry URL into `/developers/` MCP section for bi-directional verification.
+- [ ] Status: blocked on Smithery API key in this environment.
 
-- [ ] Register the product MCP (`https://life.ayushrai.site/mcp/product/`) on Smithery or mcp.so.
-- [ ] Ensure bi-directional verification (homepage/repository/domain match).
-- [ ] Status: pending owner registry account.
+## npm + PyPI SDK/CLI (Discovery −1, Usability −3/−3)
 
-## Package registries
+Packages are ready in-repo:
 
-- [ ] `npm login` as the package owner.
-- [ ] Publish `packages/life-ayushrai` with `homepage` = `https://life.ayushrai.site/` and `repository` pointing at LifeOS.
-- [ ] Optional later: PyPI or other language SDKs only if a stable consumer exists.
-- [ ] Status: blocked on npm auth in this environment (`npm whoami` fails).
+- `packages/life-ayushrai` (npm + CLI `life-ayushrai`)
+- `packages/life_ayushrai` (PyPI + CLI `life-ayushrai`)
 
-## Citations and third-party docs
+```bash
+cd packages/life-ayushrai && npm login && npm publish --access public
+cd packages/life_ayushrai && python3 -m build && twine upload dist/*
+```
 
-- [ ] Link the public site from existing independent profiles only where accurate (GitHub, LinkedIn, personal posts).
-- [ ] Do not fabricate reviews, user counts, or press coverage.
+- [ ] `npm login` / publish `life-ayushrai`
+- [ ] PyPI publish `life-ayushrai`
+- [ ] Status: blocked on registry auth (`npm whoami` fails here).
+
+## skills.sh (Access −1/−2)
+
+Skills live under `skills/` and install with:
+
+```bash
+npx skills add ayushrai-hub/LifeOS
+```
+
+Listing appears via install telemetry (no separate submit form). An install was run from this machine; allow skills.sh time to index.
+
+- [ ] Confirm https://skills.sh/ayushrai-hub/LifeOS (or skill pages) after indexing.
+- [ ] Optional: share install command so others generate additional telemetry.
+
+## Agent mode (Access warning)
+
+`/?mode=agent` returns structured JSON with api, mcp, skills, authentication, sdk, endpoints, and developer_portal. Redeploy and rescans should raise signal count.
+
+## Async jobs (Usability −2)
+
+Implemented: `POST /api/v1/jobs` → `202` + `Location`, documented in OpenAPI. Force-rescan after deploy; cached Ora results may still show fail until the daily force quota resets.
+
+## Ora rescan
+
+```bash
+curl -sS -X POST https://ora.ai/api/scan \
+  -H 'content-type: application/json' \
+  -d '{"url":"life.ayushrai.site","force":true}'
+```
+
+Force scans are capped (6/day). Without `force`, a fresh cache window may still serve the previous score.

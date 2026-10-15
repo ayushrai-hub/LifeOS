@@ -106,3 +106,4 @@ agent-transcripts/
 .cursor/rules/openmemory.mdc
 .cursor/rules/openmemory.mdc
 .cursor/rules/openmemory.mdc
+*.tgz

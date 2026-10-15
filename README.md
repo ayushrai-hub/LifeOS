@@ -33,11 +33,27 @@ This repository is a **long-term personal knowledge system**. The website is one
 npm run validate       # knowledge validation (Node)
 npm run build:site     # generate resumes, portfolios, domains from data/site-catalog.json
 npm run qa             # static QA (em dashes, viewport, catalog coverage); exits 1 on failure
+npm run check:agent    # agent surface checks (negotiation, discovery, jobs, trust pages)
 npm start              # local static preview on http://localhost:3000 (Python http.server)
 node scripts/build-home.js   # regenerate homepage from knowledge/_system/homepage.yaml
 ```
 
-Browse the homepage at `/sites/www/` or `/` under the local server.
+Browse the homepage at `/sites/www/` or `/` under the local server. Public site: https://life.ayushrai.site/. Developer portal: https://life.ayushrai.site/developers/.
+
+## Agent skills (skills.sh)
+
+```bash
+npx skills add ayushrai-hub/LifeOS
+```
+
+See [skills/README.md](skills/README.md).
+
+## SDK / CLI packages
+
+- JavaScript: [packages/life-ayushrai](packages/life-ayushrai) (`life-ayushrai` CLI)
+- Python: [packages/life_ayushrai](packages/life_ayushrai)
+
+Publish with owner registry auth (`npm publish` / `python -m build && twine upload`).
 
 ## Website consumer
 

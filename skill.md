@@ -1,16 +1,20 @@
 ---
-title: Skill
-description: Official agent skills published from this repository.
-canonical: https://life.ayushrai.site/skill.md
-last-updated: 2026-10-16
+name: life-ayushrai-skills
+description: Official agent skills for Ayush Rai's public knowledge site at life.ayushrai.site. Install with npx skills add ayushrai-hub/LifeOS.
 ---
 
-# Skill
+# LifeOS agent skills
 
-Official skills in this repository:
+Official skills in this repository for https://life.ayushrai.site/:
 
-- `lookup-ayush-rai` for the public profile.
-- `find-projects-and-products` for projects and the two public products.
-- `contact-ayush-rai` for published contact links.
+- `lookup-ayush-rai` for the public profile
+- `find-projects-and-products` for projects and public products
+- `contact-ayush-rai` for published contact links
 
-Each skill has a `SKILL.md` under `skills/`. The index for agents is https://life.ayushrai.site/.well-known/agent-skills/index.json.
+Install:
+
+```bash
+npx skills add ayushrai-hub/LifeOS
+```
+
+Each skill has a `SKILL.md` under `skills/`. Machine index: https://life.ayushrai.site/.well-known/agent-skills/index.json

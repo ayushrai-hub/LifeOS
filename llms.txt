@@ -29,6 +29,8 @@ Do not use this site to send messages as Ayush, to collect secrets, or to answer
 
 - [Homepage (HTML)](https://life.ayushrai.site/)
 - [Homepage (Markdown)](https://life.ayushrai.site/index.md)
+- [Agent mode JSON](https://life.ayushrai.site/?mode=agent)
+- [Developer portal](https://life.ayushrai.site/developers/)
 - [About](https://life.ayushrai.site/about/)
 - [Contact](https://life.ayushrai.site/sites/contact/)
 - [Privacy](https://life.ayushrai.site/privacy/)
@@ -38,6 +40,8 @@ Do not use this site to send messages as Ayush, to collect secrets, or to answer
 - [Engineering](https://life.ayushrai.site/sites/engineering/)
 - [Career](https://life.ayushrai.site/sites/career/)
 - [Sitemap](https://life.ayushrai.site/sitemap.xml)
+- [Jobs API (202 Accepted)](https://life.ayushrai.site/api/v1/jobs)
+- [Agent skills](https://github.com/ayushrai-hub/LifeOS/tree/main/skills) (`npx skills add ayushrai-hub/LifeOS`)
 - [Agent editing notes](https://life.ayushrai.site/agents.md)
 - [GitHub](https://github.com/ayushrai-hub)
 - [LinkedIn](https://www.linkedin.com/in/ayushrai02)

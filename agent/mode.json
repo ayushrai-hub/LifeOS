@@ -1,9 +1,13 @@
 {
   "mode": "agent",
+  "agent": true,
   "name": "Ayush Rai",
   "url": "https://life.ayushrai.site/",
-  "description": "Public knowledge site for an AI Engineer in Bhopal. Use it for profile, projects, products, and published contact details.",
-  "when_to_use": "Identify Ayush Rai, quote public projects and products, fetch published contact details, or call /ask, the sandbox, product MCP, or docs MCP. Do not invent metrics or send messages as him.",
+  "description": "Public knowledge site for an AI Engineer in Bhopal. Machine-readable agent view of profile, projects, products, contact, API, MCP, sandbox, SDK, and CLI.",
+  "when_to_use": "Identify Ayush Rai, quote public projects and products, fetch published contact details, call the ask endpoint, sandbox, jobs API, product MCP, or docs MCP. Do not invent metrics or send messages as him.",
+  "developer_portal": "https://life.ayushrai.site/developers/",
+  "llms_txt": "https://life.ayushrai.site/llms.txt",
+  "openapi": "https://life.ayushrai.site/openapi.json",
   "content_types": [
     "text/html",
     "text/markdown",
@@ -16,33 +20,75 @@
     "public profile and biography",
     "projects and products",
     "published contact details",
-    "NLWeb /ask with optional SSE streaming",
+    "NLWeb ask endpoint with optional SSE streaming",
     "read-only sandbox",
     "batch public questions",
-    "async jobs with 202 Accepted and poll URL",
+    "async jobs with HTTP 202 Accepted and Location poll URL",
     "product MCP and docs MCP",
     "markdown negotiation",
-    "structured JSON errors"
+    "structured JSON API errors",
+    "official skills under skills/",
+    "SDK and CLI package life-ayushrai"
   ],
+  "api": {
+    "ask": "https://life.ayushrai.site/ask",
+    "sandbox": "https://life.ayushrai.site/api/v1/sandbox",
+    "batch": "https://life.ayushrai.site/api/v1/batch",
+    "jobs": "https://life.ayushrai.site/api/v1/jobs",
+    "openapi": "https://life.ayushrai.site/openapi.json",
+    "catalog": "https://life.ayushrai.site/.well-known/api-catalog"
+  },
+  "mcp": {
+    "product": "https://life.ayushrai.site/mcp/product",
+    "knowledge": "https://life.ayushrai.site/mcp/knowledge",
+    "docs": "https://life.ayushrai.site/mcp/docs",
+    "server_card": "https://life.ayushrai.site/mcp/product/server-card"
+  },
+  "skills": {
+    "index": "https://life.ayushrai.site/.well-known/agent-skills/index.json",
+    "install": "npx skills add ayushrai-hub/LifeOS",
+    "names": [
+      "lookup-ayush-rai",
+      "find-projects-and-products",
+      "contact-ayush-rai"
+    ]
+  },
   "authentication": {
     "public_reads": "No token for /ask, /llms.txt, markdown pages, /api/v1/sandbox, /api/v1/batch, or /api/v1/jobs.",
     "protected_resource_metadata": "https://life.ayushrai.site/.well-known/oauth-protected-resource",
     "authorization_server": "https://life.ayushrai.site/.well-known/oauth-authorization-server",
     "auth_guide": "https://life.ayushrai.site/auth.md",
     "www_authenticate": "Bearer resource_metadata=\"https://life.ayushrai.site/.well-known/oauth-protected-resource\"",
-    "sandbox": "https://life.ayushrai.site/api/v1/sandbox/",
-    "methods": ["none for public reads", "Bearer public-read for /api/v1", "anonymous register at /agent/identity"]
+    "sandbox": "https://life.ayushrai.site/api/v1/sandbox",
+    "methods": [
+      "none for public reads",
+      "Bearer public-read for /api/v1",
+      "anonymous register at /agent/identity"
+    ]
   },
   "errors": {
     "format": "application/json",
-    "shape": { "error": { "code": "string", "message": "string", "status": "integer", "docs": "uri", "auth": "uri" } },
+    "shape": {
+      "error": {
+        "code": "string",
+        "message": "string",
+        "status": "integer",
+        "docs": "uri",
+        "auth": "uri"
+      }
+    },
     "example": "https://life.ayushrai.site/developers/"
   },
   "sdk": {
-    "package": "life-ayushrai",
-    "path": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai",
+    "npm_package": "life-ayushrai",
     "cli": "life-ayushrai",
-    "registry_status": "source in repository; npm publish pending owner auth"
+    "python_package": "life-ayushrai",
+    "repository": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai",
+    "python_path": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life_ayushrai",
+    "homepage": "https://life.ayushrai.site/",
+    "install_js": "npm install life-ayushrai",
+    "install_cli": "npx life-ayushrai ask \"Who is Ayush Rai?\"",
+    "registry_status": "source published in GitHub; npm and PyPI publish require owner registry auth"
   },
   "pricing": "https://life.ayushrai.site/pricing.md",
   "repository": {
@@ -50,22 +96,23 @@
     "agents": "https://github.com/ayushrai-hub/LifeOS/blob/main/AGENTS.md",
     "plugin": "https://github.com/ayushrai-hub/LifeOS/blob/main/plugin.json",
     "site_agents": "https://life.ayushrai.site/AGENTS.md",
-    "site_plugin": "https://life.ayushrai.site/plugin.json"
+    "site_plugin": "https://life.ayushrai.site/plugin.json",
+    "skills": "https://github.com/ayushrai-hub/LifeOS/tree/main/skills"
   },
   "endpoints": {
-    "ask": "https://life.ayushrai.site/ask/",
-    "sandbox": "https://life.ayushrai.site/api/v1/sandbox/",
-    "batch": "https://life.ayushrai.site/api/v1/batch/",
-    "jobs": "https://life.ayushrai.site/api/v1/jobs/",
+    "ask": "https://life.ayushrai.site/ask",
+    "sandbox": "https://life.ayushrai.site/api/v1/sandbox",
+    "batch": "https://life.ayushrai.site/api/v1/batch",
+    "jobs": "https://life.ayushrai.site/api/v1/jobs",
     "openapi": "https://life.ayushrai.site/openapi.json",
     "api_catalog": "https://life.ayushrai.site/.well-known/api-catalog",
     "llms": "https://life.ayushrai.site/llms.txt",
     "auth": "https://life.ayushrai.site/auth.md",
     "developers": "https://life.ayushrai.site/developers/",
     "markdown_home": "https://life.ayushrai.site/index.md",
-    "mcp_product": "https://life.ayushrai.site/mcp/product/",
-    "mcp_knowledge": "https://life.ayushrai.site/mcp/knowledge/",
-    "mcp_docs": "https://life.ayushrai.site/mcp/docs/",
+    "mcp_product": "https://life.ayushrai.site/mcp/product",
+    "mcp_knowledge": "https://life.ayushrai.site/mcp/knowledge",
+    "mcp_docs": "https://life.ayushrai.site/mcp/docs",
     "agent_card": "https://life.ayushrai.site/.well-known/agent-card.json",
     "agent_skills": "https://life.ayushrai.site/.well-known/agent-skills/index.json",
     "ard": "https://life.ayushrai.site/.well-known/ard.json",
