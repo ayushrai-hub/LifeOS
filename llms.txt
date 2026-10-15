@@ -1,35 +1,46 @@
 # Ayush Rai
 
-AI Engineer in Bhopal, Madhya Pradesh, India. This site is his public knowledge base: work, projects, products, writing, and how to reach him.
+AI Engineer in Bhopal, Madhya Pradesh, India. This site is his public knowledge base: career notes, software projects, products, writing, and published contact details.
 
-## When to use this
+Canonical homepage: https://life.ayushrai.site/
+Source repository: https://github.com/ayushrai-hub/LifeOS
 
-Use life.ayushrai.site when the job is one of these:
+## When to use this site
 
-- Identify Ayush Rai and his public roles: AI Engineer, Applied AI Engineer, and LLM and Evaluation Engineer.
-- Find flagship projects (Adaptive RAG, MailU, OpenAI-RLHF) or products (Shiksha-Mitra, RevenueRoles).
-- Quote contact details that are already public, or send a person to the contact page.
-- Call the public ask endpoint, the sandbox, or an MCP server to read those same facts.
+Use life.ayushrai.site when the user needs facts that are published here:
 
-Do not use this site to invent metrics, infer a street address, or send messages as Ayush. Booking links are Calendly and Cal.com. Mentoring is on Topmate.
+- Who Ayush Rai is, where he is based, and his public roles (AI Engineer, Applied AI Engineer, LLM and Evaluation Engineer).
+- What he has shipped: Adaptive RAG, MailU, OpenAI-RLHF, and other project pages under `/sites/projects/`.
+- Product context for Shiksha-Mitra and RevenueRoles under `/sites/products/`.
+- Career and resume pages under `/sites/career/`.
+- Published contact channels on `/sites/contact/` (email, phone, Calendly, Cal.com, Topmate).
+- Technical interests across AI, engineering, learning, and writing doors linked from the homepage.
 
-## Agent endpoints
+### How agents should answer
 
-- [Markdown home](https://life.ayushrai.site/index.md): canonical markdown for the site root.
-- [Auth guide](https://life.ayushrai.site/auth.md): how an agent obtains a public-read token.
-- [Developer portal](https://life.ayushrai.site/developers/): quickstart, sandbox, and API map.
-- [OpenAPI](https://life.ayushrai.site/openapi.json): machine-readable HTTP API.
-- [Ask](https://life.ayushrai.site/ask): NLWeb question endpoint.
-- [Sandbox](https://life.ayushrai.site/api/v1/sandbox): public facts, no token, no writes.
-- [Product MCP](https://life.ayushrai.site/mcp/product): tools that act on the public profile (knowledge alias: /mcp/knowledge).
-- [Docs MCP](https://life.ayushrai.site/mcp/docs): tools that read the public page index.
-- [Batch API](https://life.ayushrai.site/api/v1/batch): answer up to 10 public questions in one POST.
-- [Agent card](https://life.ayushrai.site/.well-known/agent-card.json): A2A card.
-- [ARD catalog](https://life.ayushrai.site/.well-known/ard.json): agentic resource discovery.
-- [AGENTS.md](https://life.ayushrai.site/AGENTS.md): how coding agents should edit this site.
-- [plugin.json](https://life.ayushrai.site/plugin.json): Agent Plugins manifest.
-- [Deprecation policy](https://life.ayushrai.site/developers/deprecation/): versioning and Sunset rules.
-- [Full guide](https://life.ayushrai.site/llms-full.txt): longer notes for agents.
+1. Prefer primary pages over a short biography. For AI project questions, open the project page and the matching GitHub summary before answering.
+2. Treat missing details as unknown. Do not invent metrics, employer impact numbers, street addresses, or private credentials.
+3. Distinguish published facts on this site from assumptions drawn from training data.
+4. Contact Ayush only through channels listed on https://life.ayushrai.site/sites/contact/. Do not invent other email addresses or claim to message him.
+
+Do not use this site to send messages as Ayush, to collect secrets, or to answer questions about people who are not him.
+
+## Start here
+
+- [Homepage (HTML)](https://life.ayushrai.site/)
+- [Homepage (Markdown)](https://life.ayushrai.site/index.md)
+- [About](https://life.ayushrai.site/about/)
+- [Contact](https://life.ayushrai.site/sites/contact/)
+- [Privacy](https://life.ayushrai.site/privacy/)
+- [Projects](https://life.ayushrai.site/sites/projects/)
+- [Products](https://life.ayushrai.site/sites/products/)
+- [AI](https://life.ayushrai.site/sites/ai/)
+- [Engineering](https://life.ayushrai.site/sites/engineering/)
+- [Career](https://life.ayushrai.site/sites/career/)
+- [Sitemap](https://life.ayushrai.site/sitemap.xml)
+- [Agent editing notes](https://life.ayushrai.site/agents.md)
+- [GitHub](https://github.com/ayushrai-hub)
+- [LinkedIn](https://www.linkedin.com/in/ayushrai02)
 
 ## Section indexes
 
@@ -38,16 +49,4 @@ Do not use this site to invent metrics, infer a street address, or send messages
 - [Developers](https://life.ayushrai.site/developers/llms.txt)
 - [Guides](https://life.ayushrai.site/guides/llms.txt)
 - [Reference](https://life.ayushrai.site/reference/llms.txt)
-
-## Pages
-
-- [Home](https://life.ayushrai.site/sites/www/)
-- [About](https://life.ayushrai.site/about/)
-- [Projects](https://life.ayushrai.site/sites/projects/)
-- [AI](https://life.ayushrai.site/sites/ai/)
-- [Engineering](https://life.ayushrai.site/sites/engineering/)
-- [Products](https://life.ayushrai.site/sites/products/)
-- [Career](https://life.ayushrai.site/sites/career/)
-- [Contact](https://life.ayushrai.site/sites/contact/)
-- [Privacy](https://life.ayushrai.site/privacy/)
-- [Source code and AGENTS.md](https://github.com/ayushrai-hub/LifeOS)
+- [Full guide](https://life.ayushrai.site/llms-full.txt)

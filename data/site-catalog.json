@@ -8,7 +8,7 @@
     "linktree": "https://linktr.ee/ayush_rai02",
     "location": "Bhopal, Madhya Pradesh, India",
     "phone": "+91 7440567944",
-    "tagline": "Software Engineer building AI systems, focused on automation and developer tools."
+    "tagline": "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
   },
   "resumes": [
     {
@@ -24,7 +24,7 @@
     {
       "slug": "ai",
       "title": "AI Resume",
-      "intro": "This version focuses on applied AI work: RAG systems, coding-agent evaluation tasks, and audit pipelines where models are used carefully, or refused when determinism is safer."
+      "intro": "This version focuses on production LLM applications, RAG systems, evaluation pipelines, and AI automation, with Python/FastAPI backend work and human-feedback evaluation programs."
     },
     {
       "slug": "research",

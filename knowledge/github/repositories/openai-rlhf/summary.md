@@ -51,15 +51,16 @@ Need structured corpora to evaluate LLM-generated code with tests and compare co
 - README includes a project structure section (treat as author-described layout).
 
 ## Skills demonstrated
-- LLM evaluation
-- dataset curation
-- test-driven eval tasks
-- technical documentation honesty
+- Benchmarking
+- Automated evaluation
+- Preference comparison
+- Python tooling
+- Testing infrastructure
 
 ## Portfolio worthiness
 - **Verdict:** showcase
-- **Why:** Honest README (names the misleading title), large corpus, scripts, docs. Good evidence of eval/data work.
-- **Weaknesses / do-not-claim:** Name is misleading; maturity of individual tasks varies; not a single product.
+- **Why:** Flagship evaluation engineering project (owner-canonical): 1400+ eval files, task generator, test runner, JSONL exporter, validation tooling.
+- **Weaknesses / do-not-claim:** Name can mislead (not an RLHF training pipeline); maturity of individual tasks varies.
 
 ## Status
 - **Entity status:** active

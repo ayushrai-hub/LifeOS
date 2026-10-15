@@ -7,36 +7,42 @@ description: "RLHF-focused Generative AI Engineer; contractual role."
 status: published
 visibility: public
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 company_id: company.outlier
 position: Generative AI Engineer
 start: 2025-08
 end: null
 location: null
 employment_type: contract
-notes: "Source explicitly states: This is a contractual role. LinkedIn duration: 1 year as of source."
+notes: "Contractual role. Part of unified RLHF/evaluation expertise; do not duplicate the full org list here."
 provenance:
-  source: linkedin-resume
+  source: owner-canonical-2026-07-24
+  prior_source: linkedin-resume
   source_file: data/imports/2026-07-23-linkedin-resume.txt
   imported_at: 2026-07-23
 relationships:
-  related_projects: []
+  related_projects:
+    - project.openai-rlhf
   related_skills:
     - skill.rlhf
     - skill.prompt-engineering
     - skill.generative-ai-development
     - skill.data-curation
+    - skill.model-evaluation
   related_technologies:
     - technology.python
     - technology.javascript
   related_companies: [company.outlier]
+  related_expertise: [expertise.rlhf-and-model-evaluation]
   related_events: []
 evidence: []
 ---
 
 # Generative AI Engineer @ Outlier
+
+Contractual role focused on RLHF-style data curation, prompting, and systematic evaluations. Broader program context (Scale AI, Turing, Snorkel AI, Airdawgs Labs) lives in `expertise.rlhf-and-model-evaluation` so it is not repeated on every org page.
 
 ## Responsibilities
 
@@ -50,19 +56,19 @@ evidence: []
 
 ## Achievements
 
-- None listed in source.
+- None listed as quantitative metrics. Prefer project evidence (`project.openai-rlhf`) over invented claims.
 
 ## Leadership
 
-[PLACEHOLDER]
+- Reviewed annotation quality and contributed to reviewer / data-quality workflows where the engagement required it.
 
 ## Impact
 
-[PLACEHOLDER]
+Improved reliability of evaluated model outputs through error analysis and dataset quality work (qualitative; no fabricated numbers).
 
 ## Metrics
 
-[PLACEHOLDER]
+[PLACEHOLDER: none provided]
 
 ## Lessons
 

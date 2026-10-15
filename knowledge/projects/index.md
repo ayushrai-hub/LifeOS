@@ -6,9 +6,9 @@ slug: projects-index
 status: draft
 visibility: private
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Projects index
@@ -17,8 +17,17 @@ Canonical project entities live as `knowledge/projects/<slug>.md` (and optional 
 
 | ID | Title | Status | Visibility | Showcase | Repository |
 |----|-------|--------|------------|----------|------------|
+| `project.openai-rlhf` | OpenAI RLHF Evaluation Repository | published | public | Flagship evaluation | [ayushrai-hub/OpenAI-RLHF](https://github.com/ayushrai-hub/OpenAI-RLHF) |
+| `project.adaptive-rag` | Adaptive RAG | published | public | Agentic RAG platform | [ayushrai-hub/adaptive-rag](https://github.com/ayushrai-hub/adaptive-rag) |
+| `project.mailu` | MailU | published | public | AI email intelligence | [ayushrai-hub/MailU](https://github.com/ayushrai-hub/MailU) |
 | `project.my-learning` | my-learning (Tech-Arsenal / Karm) | draft | public | Curriculum project | [ayushrai-hub/my-learning](https://github.com/ayushrai-hub/my-learning) |
 | `project.graahak` | Graahak (TruthPrice UI) | draft / unfinished prototype | unlisted | Do not feature as finished product | [ayushrai-hub/graahak](https://github.com/ayushrai-hub/graahak) |
+
+## Flagship artifacts
+
+- [adaptive-rag.md](./adaptive-rag.md) · ingest [../github/repositories/adaptive-rag/summary.md](../github/repositories/adaptive-rag/summary.md)
+- [mailu.md](./mailu.md) · ingest [../github/repositories/mailu/summary.md](../github/repositories/mailu/summary.md)
+- [openai-rlhf.md](./openai-rlhf.md) · ingest [../github/repositories/openai-rlhf/summary.md](../github/repositories/openai-rlhf/summary.md)
 
 ## my-learning artifacts
 

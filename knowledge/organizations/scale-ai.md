@@ -3,26 +3,26 @@ id: organization.scale-ai
 type: organization
 title: Scale AI
 slug: scale-ai
-description: "Mentioned in summary as partner-program contribution context; not direct employment."
+description: "RLHF and model-evaluation program context; see expertise.rlhf-and-model-evaluation."
 status: review
 visibility: public
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 url: null
 location: null
-notes: "Do not treat as employer without further evidence."
+notes: "Do not treat as employer without a dedicated experience.* entity. Surfacing: expertise.rlhf-and-model-evaluation."
 provenance:
-  source: linkedin-resume
-  source_file: data/imports/2026-07-23-linkedin-resume.txt
-  imported_at: 2026-07-23
+  source: owner-canonical-2026-07-24
+  prior_source: linkedin-resume
 relationships:
   related_people: [person.owner]
+  related_expertise: [expertise.rlhf-and-model-evaluation]
 ---
 
 # Scale AI
 
 ## Context
 
-Partner-program contribution context from LinkedIn summary.
+Organization associated with RLHF / model-evaluation work. Prefer the unified expertise entity over repeating bullets here.

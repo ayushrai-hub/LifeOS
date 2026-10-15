@@ -39,7 +39,7 @@ Treat `summary.md` as the repository entity file.
 | security-audit | Shell | 0 | ok | showcase | [summary](./repositories/security-audit/summary.md) |
 | chatbot | JavaScript | 0 | ok | showcase | [summary](./repositories/chatbot/summary.md) |
 | kyc-compliance-system | TypeScript | 0 | ok | conditional | [summary](./repositories/kyc-compliance-system/summary.md) |
-| MailU | Python | 0 | ok | conditional | [summary](./repositories/mailu/summary.md) |
+| MailU | Python | 0 | ok | showcase | [summary](./repositories/mailu/summary.md) |
 | hiring_intellgence | Python | 0 | ok | conditional | [summary](./repositories/hiring_intellgence/summary.md) |
 | WeCare | TypeScript | 0 | ok | conditional | [summary](./repositories/wecare/summary.md) |
 | Shiksha-Mitra | TypeScript | 0 | ok | conditional | [summary](./repositories/shiksha-mitra/summary.md) |

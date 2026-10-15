@@ -74,7 +74,7 @@ For every role you want on the site, fill a block (copy as needed).
 Known gaps to clear if true for you:
 
 - FoCDoT: correct title (Software Developer vs Software Engineer)? Dates of “Best Work” recognitions? Artifacts?  
-  >
+  > Resolved 2026-07-24 for title: public role **AI Engineer** (`experience.focdot-software-developer`). Best Work dates/artifacts still open.
 - All India Radio: responsibility bullets?  
   >
 - UiPath Student Developer Champion: bullets, dates, proof link?  

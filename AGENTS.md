@@ -4,7 +4,7 @@ This file is both the public agent note for https://life.ayushrai.site/agents.md
 
 ## Using the public site
 
-Read https://life.ayushrai.site/llms.txt before calling anything. The homepage returns markdown when the request sends `Accept: text/markdown` or comes from a known AI crawler. `?mode=agent` returns JSON with endpoints and authentication. The sandbox is `GET /api/v1/sandbox`. Protected paths return 401 with `WWW-Authenticate` until you follow https://life.ayushrai.site/auth.md.
+Read https://life.ayushrai.site/llms.txt before calling anything. The homepage returns markdown when the request sends `Accept: text/markdown` or comes from a known AI crawler. `?mode=agent` returns JSON with endpoints and authentication. The sandbox is `GET /api/v1/sandbox/`. Prefer trailing slashes on API paths (`/ask/`, `/api/v1/jobs/`). `POST /api/v1/jobs/` returns `202` with a poll `Location`. Protected paths return 401 with `WWW-Authenticate` until you follow https://life.ayushrai.site/auth.md. Local agent checks: `npm run check:agent`. External discovery blockers are listed in `docs/EXTERNAL_DISCOVERY.md`.
 
 ## Editing this repository
 

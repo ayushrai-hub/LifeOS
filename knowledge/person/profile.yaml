@@ -4,15 +4,18 @@ title: Ayush Rai
 slug: owner
 aliases: []
 keywords:
-  - Software Engineer
-  - AI systems
-  - automation
-  - developer tools
+  - AI Engineer
+  - Applied AI Engineer
+  - LLM & Evaluation Engineer
+  - RAG
+  - RLHF
+  - FastAPI
 tags:
   - ai
   - engineering
-description: "Software Engineer building AI systems, focused on automation and developer tools."
-summary: "Software Engineer building AI systems, focused on automation and developer tools."
+  - evaluation
+description: "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
+summary: "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
 status: review
 visibility: public
 priority: 100
@@ -21,16 +24,33 @@ created: 2026-07-23
 updated: 2026-07-24
 last_reviewed: 2026-07-24
 author: person.owner
-version: 0.3.0
+version: 0.4.0
 seo:
   title: Ayush Rai
-  description: "Software Engineer building AI systems, focused on automation and developer tools."
+  description: "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
   canonical_path: /
 preferred_name: Ayush Rai
-headline: "AI Engineer | RLHF | LLM | RAG | Prompt Engineering | AI Product Builder | AI full stack developer | Automation | Agentic AI"
+primary_roles:
+  - AI Engineer
+  - Applied AI Engineer
+  - LLM & Evaluation Engineer
+headline: "AI Engineer · Applied AI · LLM & Evaluation"
 location: "Bhopal, Madhya Pradesh, India"
 location_secondary: "Pune District, Maharashtra, India (historical / work context where applicable)"
 location_notes: "Public headline location is Bhopal, Madhya Pradesh, India. Pune is historical/work only. Do not publish street or residential address."
+capabilities:
+  - Designs and ships production AI systems
+  - LLM applications, RAG, evaluation pipelines, and AI automation
+  - Work with startups, enterprise clients, and frontier AI evaluation programs
+  - Backend engineering with Python and FastAPI
+expertise_domains:
+  - AI Engineering
+  - LLM Applications
+  - Retrieval-Augmented Generation
+  - AI Evaluation
+  - Human Feedback
+  - Backend Engineering
+  - Automation
 languages:
   - skill.english
   - skill.hindi
@@ -38,14 +58,22 @@ provenance:
   source: owner-canonical-2026-07-24
   source_file: docs/OWNER_INTAKE.md
   imported_at: 2026-07-24
+  canonical_experience: owner-prompt-2026-07-24
 relationships:
-  related_projects: []
+  related_projects:
+    - project.adaptive-rag
+    - project.mailu
+    - project.openai-rlhf
   related_skills:
     - skill.mcp
     - skill.generative-ai-development
     - skill.rag
     - skill.rlhf
     - skill.prompt-engineering
+    - skill.fastapi
+    - skill.agentic-ai
+    - skill.llm
+    - skill.model-evaluation
   related_articles: []
   related_books: []
   related_people: []
@@ -53,6 +81,11 @@ relationships:
     - company.focdot-technologies
     - company.outlier
     - company.topmate
+  related_organizations:
+    - organization.scale-ai
+    - organization.turing
+    - organization.snorkel-ai
+    - organization.airdawgs-labs
   related_technologies:
     - technology.python
     - technology.fastapi
@@ -60,6 +93,8 @@ relationships:
     - technology.langchain
     - technology.openai-api
   related_events: []
+  related_expertise:
+    - expertise.rlhf-and-model-evaluation
 narratives:
   - person.biography
   - person.personal-story

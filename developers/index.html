@@ -39,8 +39,11 @@ curl -sS https://life.ayushrai.site/api/v1/sandbox</code></pre>
 
     <section aria-labelledby="api">
       <h2 id="api">API</h2>
-      <p>Documentation for agents starts at <a href="/llms.txt">llms.txt</a> and the <a href="/openapi.json">OpenAPI document</a>. The API catalog is at <a href="/.well-known/api-catalog">/.well-known/api-catalog</a>. <code>GET /ask</code> answers a question. <code>POST /api/v1/batch</code> answers up to ten questions. <code>GET /api</code> and <code>GET /api/v1</code> return <code>401</code> with <code>WWW-Authenticate</code> until you follow <a href="/auth.md">auth.md</a>. List responses accept <code>page</code> and <code>limit</code>. Responses advertise soft <code>RateLimit-*</code> headers (120 per 60 seconds). POST callers may send <code>Idempotency-Key</code>.</p>
-      <p>There is no private API key to provision. Anonymous registration at <code>/agent/identity</code> leads to a non-secret bearer, <code>public-read</code>, which only repeats the public pages. Use the sandbox when you want to skip that handshake. Versioning and Sunset rules are on the <a href="/developers/deprecation/">deprecation policy</a> page.</p>
+      <p>Documentation for agents starts at <a href="/llms.txt">llms.txt</a> and the <a href="/openapi.json">OpenAPI document</a>. The API catalog is at <a href="/.well-known/api-catalog">/.well-known/api-catalog</a>. <code>GET /ask/</code> answers a question. <code>POST /api/v1/batch/</code> answers up to ten questions immediately. <code>POST /api/v1/jobs/</code> returns <code>202 Accepted</code> with a <code>Location</code> poll URL for the same read-only answers. Prefer trailing slashes on API paths. <code>GET /api</code> and <code>GET /api/v1</code> return <code>401</code> with <code>WWW-Authenticate</code> until you follow <a href="/auth.md">auth.md</a>. Errors are JSON with <code>error.code</code>, <code>error.message</code>, and links to docs. List responses accept <code>page</code> and <code>limit</code>. Responses advertise soft <code>RateLimit-*</code> headers (120 per 60 seconds). POST callers may send <code>Idempotency-Key</code>.</p>
+      <p>There is no private API key to provision. Anonymous registration at <code>/agent/identity</code> leads to a non-secret bearer, <code>public-read</code>, which only repeats the public pages. Use the sandbox when you want to skip that handshake. Public pricing is documented in <a href="/pricing.md">pricing.md</a> (everything listed there is free). Versioning and Sunset rules are on the <a href="/developers/deprecation/">deprecation policy</a> page.</p>
+      <pre><code>curl -sS -X POST https://life.ayushrai.site/api/v1/jobs/ \
+  -H 'content-type: application/json' \
+  -d '{"queries":["Who is Ayush Rai?","projects"]}'</code></pre>
     </section>
 
     <section aria-labelledby="mcp">
@@ -54,7 +57,7 @@ curl -sS https://life.ayushrai.site/api/v1/sandbox</code></pre>
 
     <section aria-labelledby="source">
       <h2 id="source">Source</h2>
-      <p>The repository is <a href="https://github.com/ayushrai-hub/LifeOS" rel="noopener noreferrer">ayushrai-hub/LifeOS</a>. Coding agents should read <a href="https://github.com/ayushrai-hub/LifeOS/blob/main/AGENTS.md" rel="noopener noreferrer">AGENTS.md</a> in that repo. A small client lives at <code>packages/life-ayushrai</code> in the same repository; it is not yet published to a package registry.</p>
+      <p>The repository is <a href="https://github.com/ayushrai-hub/LifeOS" rel="noopener noreferrer">ayushrai-hub/LifeOS</a>. Coding agents should read <a href="https://github.com/ayushrai-hub/LifeOS/blob/main/AGENTS.md" rel="noopener noreferrer">AGENTS.md</a> in that repo. A small TypeScript-ready CommonJS client and CLI live at <code>packages/life-ayushrai</code> (<code>life-ayushrai ask</code>, <code>sandbox</code>, <code>job</code>). Package metadata sets <code>homepage</code> to this domain and <code>repository</code> to LifeOS; npm publish still needs owner registry auth.</p>
     </section>
 
     <p class="foot"><a href="/sites/www/">Home</a> · <a href="/auth.md">auth.md</a> · <a href="/llms.txt">llms.txt</a></p>

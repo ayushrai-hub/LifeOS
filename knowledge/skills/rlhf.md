@@ -6,56 +6,49 @@ slug: rlhf
 aliases: []
 keywords: []
 tags: ["Experience"]
-description: "Primary focus in FoCDoT and Outlier roles"
+description: "RLHF, preference ranking, and human feedback pipelines across evaluation programs and production AI work."
 status: review
 visibility: public
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.1.0
-current_level: "4/5 (provisional from LinkedIn prominence; not independently validated)"
+version: 0.2.0
+current_level: null
 level_scale: "1=exposure … 5=expert practitioner"
 future_goals: []
 relationships:
-  related_projects: []
-  related_skills: []
+  related_projects:
+    - project.openai-rlhf
+  related_skills:
+    - skill.model-evaluation
+    - skill.data-curation
   related_technologies: []
   related_articles: []
+  related_expertise:
+    - expertise.rlhf-and-model-evaluation
 evidence: []
 learning_resources: []
 provenance:
-  source: linkedin-resume
-  source_file: data/imports/2026-07-23-linkedin-resume.txt
-  imported_at: 2026-07-23
+  source: owner-canonical-2026-07-24
+  prior_source: linkedin-resume
 ---
 
 # Reinforcement Learning from Human Feedback (RLHF)
 
 ## Description
 
-Primary focus in FoCDoT and Outlier roles
+Human feedback for model improvement and evaluation: preference ranking, pairwise comparison, annotation standards, calibration, and reviewer workflows. Part of the unified expertise area `expertise.rlhf-and-model-evaluation` (Scale AI, Outlier, Turing, Snorkel AI, Airdawgs Labs), plus FoCDoT evaluation pipelines.
 
 ## Experience
 
-Derived from LinkedIn resume/headline/summary/experience mentions. Do not treat level as certified expertise.
+See `knowledge/career/expertise/rlhf-and-model-evaluation.md` and `experience.outlier-generative-ai-engineer`. Do not treat any provisional level as certified expertise.
 
 ## Evidence
 
-- Source: `data/imports/2026-07-23-linkedin-resume.txt`
-- No independent metrics imported in this pass.
+- `expertise.rlhf-and-model-evaluation`
+- `project.openai-rlhf`
+- FoCDoT AI evaluation pipelines (`experience.focdot-software-developer`)
 
 ## Metrics
 
-[PLACEHOLDER: none in source]
-
-## Articles
-
-[PLACEHOLDER]
-
-## Learning Resources
-
-[PLACEHOLDER]
-
-## Future Goals
-
-[PLACEHOLDER]
+Do not invent volume or quality metrics.

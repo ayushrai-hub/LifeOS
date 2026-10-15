@@ -191,6 +191,93 @@
         }
       }
     },
+    "/api/v1/jobs": {
+      "post": {
+        "operationId": "createAskJob",
+        "summary": "Accept a batch of public questions and return a poll URL",
+        "description": "Returns 202 Accepted with a Location header. Poll GET /api/v1/jobs/{job_id} for completed results. Jobs are read-only and encode the query list in the job id so no private store is required.",
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["queries"],
+                "properties": {
+                  "queries": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "items": { "type": "string", "minLength": 1 }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Job accepted",
+            "headers": {
+              "Location": { "schema": { "type": "string", "format": "uri" } }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/JobAccepted" }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid job",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/jobs/{job_id}": {
+      "get": {
+        "operationId": "getAskJob",
+        "summary": "Poll an accepted ask job",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Completed job with per-query answers",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/JobCompleted" }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown job id",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1": {
       "get": {
         "operationId": "readApi",
@@ -328,6 +415,39 @@
         "type": "object",
         "required": ["resource", "count", "results"],
         "properties": {
+          "resource": { "type": "string", "format": "uri" },
+          "count": { "type": "integer" },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "index": { "type": "integer" },
+                "query": { "type": "string" },
+                "answer": { "$ref": "#/components/schemas/AskResponse" },
+                "error": { "$ref": "#/components/schemas/ErrorObject" }
+              }
+            }
+          }
+        }
+      },
+      "JobAccepted": {
+        "type": "object",
+        "required": ["job_id", "status", "resource", "poll"],
+        "properties": {
+          "job_id": { "type": "string" },
+          "status": { "type": "string", "enum": ["accepted"] },
+          "resource": { "type": "string", "format": "uri" },
+          "poll": { "type": "string", "format": "uri" },
+          "message": { "type": "string" }
+        }
+      },
+      "JobCompleted": {
+        "type": "object",
+        "required": ["job_id", "status", "resource", "count", "results"],
+        "properties": {
+          "job_id": { "type": "string" },
+          "status": { "type": "string", "enum": ["completed"] },
           "resource": { "type": "string", "format": "uri" },
           "count": { "type": "integer" },
           "results": {

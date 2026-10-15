@@ -5,7 +5,7 @@
       "@type": "Person",
       "@id": "https://life.ayushrai.site/#person",
       "name": "Ayush Rai",
-      "url": "https://life.ayushrai.site/sites/www/",
+      "url": "https://life.ayushrai.site/",
       "image": "https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg",
       "email": "mailto:ayushrai0211@gmail.com",
       "telephone": "+91-7440567944",
@@ -49,7 +49,7 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://life.ayushrai.site/sites/www/"
+          "item": "https://life.ayushrai.site/"
         }
       ]
     },

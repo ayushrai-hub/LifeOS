@@ -62,8 +62,8 @@ Email search is keyword-bound; cloud AI raises privacy concerns.
 - privacy-minded architecture
 
 ## Portfolio worthiness
-- **Verdict:** conditional
-- **Why:** Solid applied RAG + privacy story; setup docs exist.
+- **Verdict:** showcase
+- **Why:** Owner-canonical AI email intelligence platform; OAuth, local RAG, privacy-first stack with FastAPI/ChromaDB/Ollama.
 - **Weaknesses / do-not-claim:** README has an orphan line (“Wait for explicit confirmation…”); Python 3.14 claim may be aspirational/odd; scale claims (21k emails) are usage notes not verified here.
 
 ## Status

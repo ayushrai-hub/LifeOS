@@ -1,72 +1,97 @@
 ---
 id: experience.focdot-software-developer
 type: experience
-title: "Software Developer @ FoCDoT Technologies"
+title: "AI Engineer @ FoCDoT Technologies"
 slug: focdot-software-developer
-description: "Software Engineer specializing in RLHF at FoCDoT Technology Pvt. Ltd.; AI model optimization and product management."
+description: "Primary long-term engineering role: production LLM applications, RAG, AI evaluation pipelines, and AI product development."
 status: published
 visibility: public
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 company_id: company.focdot-technologies
-position: Software Developer
+position: AI Engineer
 start: 2024-04
 end: null
 location: "Bhopal, Madhya Pradesh, India"
-employment_type: unknown
-notes: "Headline uses Software Developer; narrative says Software Engineer at FoCDoT Technology Pvt. Ltd. LinkedIn duration: 2 years 4 months as of source."
+employment_type: full-time
+notes: "Owner-canonical 2026-07-24. Earlier LinkedIn import used title Software Developer; public positioning is AI Engineer. Keep slug for stable links."
 provenance:
-  source: linkedin-resume
+  source: owner-canonical-2026-07-24
+  prior_source: linkedin-resume
   source_file: data/imports/2026-07-23-linkedin-resume.txt
   imported_at: 2026-07-23
 relationships:
-  related_projects: []
+  related_projects:
+    - project.adaptive-rag
+    - project.mailu
+    - project.openai-rlhf
   related_skills:
     - skill.rlhf
     - skill.prompt-engineering
     - skill.rag
     - skill.generative-ai-development
     - skill.product-management
+    - skill.fastapi
+    - skill.agentic-ai
+    - skill.model-evaluation
   related_technologies:
     - technology.python
     - technology.langchain
     - technology.openai-api
+    - technology.fastapi
   related_companies: [company.focdot-technologies]
   related_events: []
   related_achievements: [achievement.focdot-best-work-twice]
+  related_expertise: [expertise.rlhf-and-model-evaluation]
 evidence: []
 ---
 
-# Software Developer @ FoCDoT Technologies
+# AI Engineer @ FoCDoT Technologies
+
+Primary long-term engineering experience. Focus: production LLM applications, Retrieval-Augmented Generation, AI evaluation pipelines, AI strategy consulting, and AI product development.
 
 ## Responsibilities
 
-- Specialize in Reinforcement Learning from Human Feedback (RLHF) at the intersection of AI model optimization and product management.
-- Contribute to R&D of AI-driven projects in a startup environment.
-- Manage high-priority projects aligning AI solutions with business goals.
-- Develop expertise in prompt engineering, design patterns, RAG techniques, and AI model fine-tuning.
-- Manage high-profile client contract overseeing AI training workflows and quality benchmarks.
-- Lead structured code reviews, debugging, and testing of AI-generated outputs.
-- Engage in product management with full-stack developers, AI engineers, and senior managers.
-- Continuously learn and adapt to new technologies in a dynamic AI ecosystem.
+- Built production AI systems.
+- Designed RAG architectures.
+- Developed backend APIs.
+- Created AI-assisted decision platforms.
+- Performed AI readiness assessments.
+- Worked directly with founders and CXOs.
+- Led solution architecture and implementation.
 
 ## Achievements
 
 - Achieved “Best Work” recognition twice for high-quality AI solutions and critical milestones. (`achievement.focdot-best-work-twice`)
 
-## Leadership
+## Leadership and ownership
 
-Collaborated across technical and business teams; stakeholder presentations mentioned in source.
+- Worked directly with founders and executives.
+- Led AI solution architecture.
+- Owned end-to-end delivery.
+- Mentored contributors where the engagement required it.
 
 ## Impact
 
-[PLACEHOLDER: no quantitative metrics in source]
+Qualitative outcomes only (no fabricated metrics):
+
+- Delivered multiple production AI systems.
+- Contributed to client revenue.
+- Improved reliability of AI outputs.
+
+## Focus areas
+
+- Production LLM applications
+- Retrieval-Augmented Generation
+- AI evaluation pipelines
+- AI strategy consulting
+- AI product development
 
 ## Metrics
 
-[PLACEHOLDER: none provided]
+No quantitative metrics published beyond the qualitative impact above. Do not invent numbers.
 
 ## Lessons
 

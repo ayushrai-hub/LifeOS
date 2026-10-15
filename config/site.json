@@ -5,7 +5,7 @@
     "name": "Ayush Rai",
     "short_name": "Ayush",
     "email": "ayushrai0211@gmail.com",
-    "tagline": "Software Engineer building AI systems, focused on automation and developer tools."
+    "tagline": "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
   },
   "sites": [
     { "id": "www", "title": "Home", "path": "sites/www" },

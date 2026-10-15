@@ -9,8 +9,43 @@ items:
     title: RevenueRoles
     status: draft
     path: knowledge/products/revenueroles.md
+  - id: product.agentic-rag-platform
+    slug: agentic-rag-platform
+    title: Agentic RAG platform
+    status: published
+    path: knowledge/products/agentic-rag-platform.md
+  - id: product.ai-email-intelligence
+    slug: ai-email-intelligence
+    title: AI email intelligence system
+    status: published
+    path: knowledge/products/ai-email-intelligence.md
+  - id: product.llm-evaluation-infrastructure
+    slug: llm-evaluation-infrastructure
+    title: LLM evaluation infrastructure
+    status: published
+    path: knowledge/products/llm-evaluation-infrastructure.md
+  - id: product.ai-assisted-decision-platform
+    slug: ai-assisted-decision-platform
+    title: AI-assisted decision platform
+    status: published
+    path: knowledge/products/ai-assisted-decision-platform.md
+  - id: product.prompt-evaluation-pipeline
+    slug: prompt-evaluation-pipeline
+    title: Prompt evaluation pipeline
+    status: published
+    path: knowledge/products/prompt-evaluation-pipeline.md
+  - id: product.human-feedback-workflow
+    slug: human-feedback-workflow
+    title: Human feedback workflow
+    status: published
+    path: knowledge/products/human-feedback-workflow.md
+  - id: product.ai-readiness-assessment-framework
+    slug: ai-readiness-assessment-framework
+    title: AI readiness assessment framework
+    status: published
+    path: knowledge/products/ai-readiness-assessment-framework.md
 # Machine index for knowledge/products
 # Append: { id, slug, title, status, path }
 domain: products
 title: products
-updated: 2026-07-23
+updated: 2026-07-24

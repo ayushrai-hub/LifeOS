@@ -20,21 +20,23 @@
 - **Size (KB API):** 172
 
 ## Short factual summary
-Agentic RAG system with adaptive query routing (index / general / web search), LangGraph orchestration, Qdrant retrieval, FastAPI + Streamlit.
+Agentic RAG platform with adaptive query routing (retrieval / web search / LLM reasoning), LangGraph orchestration, Qdrant retrieval, FastAPI backend, MongoDB memory.
 
 ## Primary purpose
-Answer user queries with an adaptive retrieval-augmented generation pipeline.
+Intelligent routing between retrieval, web search, and LLM reasoning for production-style RAG applications.
 
 ## Problem solved
-Fixed RAG pipelines fail when queries need documents, general knowledge, or live web search; this repo routes by query type.
+Fixed RAG pipelines fail when queries need documents, general knowledge, or live web search; this system routes by query type with rewriting, relevance grading, and search fallback.
 
 ## Core features
-- Query routing (index/general/search)
-- Document chunking + Qdrant vector search
-- Relevance grading + query rewriting
-- LangGraph multi-node workflow
-- MongoDB chat history
-- FastAPI API + Streamlit UI
+- LangGraph workflow
+- FastAPI backend
+- Qdrant vector search
+- MongoDB memory
+- Query rewriting
+- Relevance grading
+- Search fallback
+- Multi-stage routing
 
 ## Tech stack
 - Python
@@ -49,24 +51,23 @@ Fixed RAG pipelines fail when queries need documents, general knowledge, or live
 - README fetch status: **ok**
 - README size (chars): **18345**
 - Details: see `README-extract.md`
-- Curated notes: Strongest AI systems demo: clear architecture in README, modular src layout, end-to-end product surface.
+- Curated notes: Strongest AI systems demo: clear architecture in README, modular src layout, end-to-end product surface. Owner-canonical project entity: `project.adaptive-rag`.
 
 ## Evidence from code structure
 - Tree API sampling hit rate limits during ingest (403). Structure claims below are **README-stated** unless marked otherwise.
 - README includes a project structure section (treat as author-described layout).
 
 ## Skills demonstrated
-- RAG
-- agentic workflows
+- Agentic AI
 - LangGraph
-- vector search
-- API design
-- LLM application engineering
+- Retrieval
+- Vector databases
+- Production APIs
 
 ## Portfolio worthiness
 - **Verdict:** showcase
-- **Why:** Strongest AI systems demo: clear architecture in README, modular src layout, end-to-end product surface.
-- **Weaknesses / do-not-claim:** README uses marketing tone and unverified performance claims; stars=0; production deployment unverified.
+- **Why:** Owner-canonical agentic RAG platform; clear architecture, modular stack, end-to-end product surface.
+- **Weaknesses / do-not-claim:** README may use marketing tone and unverified performance claims; stars=0; production deployment of this repo specifically unverified.
 
 ## Status
 - **Entity status:** active

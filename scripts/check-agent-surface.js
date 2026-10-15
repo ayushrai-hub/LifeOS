@@ -77,14 +77,25 @@ function invoke(handler, { method = "GET", url = "/", headers = {}, body = "", q
 }
 
 async function main() {
-  const { decide } = await import("../agent/negotiate.mjs");
+  const { decide, prefersMarkdown } = await import("../agent/negotiate.mjs");
 
   check("homepage markdown negotiation", () => {
     assert.equal(decide({ pathname: "/", accept: "text/markdown" }).action, "markdown");
     assert.equal(decide({ pathname: "/sites/www/", accept: "text/html", userAgent: "ClaudeBot/1.0" }).action, "markdown");
     assert.equal(decide({ pathname: "/", mode: "agent", accept: "text/html" }).action, "json");
-    assert.equal(decide({ pathname: "/", accept: "text/html", userAgent: "Mozilla/5.0" }).action, "redirect");
+    assert.equal(decide({ pathname: "/", accept: "text/html", userAgent: "Mozilla/5.0" }).action, "home");
     assert.equal(decide({ pathname: "/sites/www/", accept: "text/html" }).action, "html");
+    assert.equal(decide({ pathname: "/", accept: "text/html,application/xhtml+xml,*/*;q=0.8" }).action, "home");
+    assert.equal(decide({ pathname: "/", accept: "text/markdown;q=0.1, text/html" }).action, "home");
+  });
+
+  check("Accept media-type parsing", () => {
+    assert.equal(prefersMarkdown("text/markdown"), true);
+    assert.equal(prefersMarkdown("text/html"), false);
+    assert.equal(prefersMarkdown("*/*"), false);
+    assert.equal(prefersMarkdown("text/markdown, text/html;q=0.9"), true);
+    assert.equal(prefersMarkdown("text/html, text/markdown;q=0.8"), false);
+    assert.equal(prefersMarkdown(""), false);
   });
 
   check("llms.txt is a real index", () => {
@@ -92,10 +103,26 @@ async function main() {
     assert.ok(text.startsWith("# "));
     assert.ok(text.length >= 100 && text.length < 30000);
     assert.match(text, /\[.+\]\(https?:\/\/.+\)/);
-    assert.match(text, /When to use/i);
+    assert.match(text, /When to use this site/i);
+    assert.match(text, /How agents should answer/i);
+    assert.match(text, /sitemap\.xml/);
     assert.match(text, /\/docs\/llms\.txt/);
     assert.match(text, /\/api\/llms\.txt/);
     assert.match(text, /\/developers\/llms\.txt/);
+  });
+
+  check("sitemap.xml is valid", () => {
+    const xml = read("sitemap.xml");
+    assert.match(xml, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
+    assert.match(xml, /<loc>https:\/\/life\.ayushrai\.site\/<\/loc>/);
+    assert.match(xml, /<loc>https:\/\/life\.ayushrai\.site\/about\/?<\/loc>/);
+    assert.match(xml, /<loc>https:\/\/life\.ayushrai\.site\/sites\/contact\/?<\/loc>/);
+    assert.match(xml, /<loc>https:\/\/life\.ayushrai\.site\/privacy\/?<\/loc>/);
+    assert.match(xml, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
+    const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+    assert.ok(locs.length >= 10);
+    assert.equal(new Set(locs).size, locs.length);
+    assert.ok(locs.every((loc) => loc.startsWith("https://life.ayushrai.site/")));
   });
 
   check("auth.md structure", () => {
@@ -125,6 +152,10 @@ async function main() {
     assert.ok(openapi.components.schemas.ErrorResponse);
     assert.ok(openapi.components.schemas.AskResponse);
     assert.ok(openapi.paths["/api/v1/batch"]);
+    assert.ok(openapi.paths["/api/v1/jobs"]);
+    assert.ok(openapi.paths["/api/v1/jobs/{job_id}"]);
+    assert.ok(openapi.components.schemas.JobAccepted);
+    assert.ok(openapi.components.schemas.JobCompleted);
     const skills = json(".well-known/agent-skills/index.json");
     assert.ok(skills.skills.every((skill) => skill.name && skill.description && skill.type === "skill-md" && skill.digest.startsWith("sha256:")));
     assert.match(read("auth.md"), /^# Authentication\r?\n/);
@@ -149,8 +180,10 @@ async function main() {
     assert.match(read("sitemap.xml"), /<lastmod>2026-10-16<\/lastmod>/);
     assert.match(read("index.md"), /^# /m);
     const home = read("sites/www/index.html");
-    assert.match(home, /rel="canonical"/);
-    assert.match(home, /property="og:image"/);
+    assert.match(home, /rel="canonical" href="https:\/\/life\.ayushrai\.site\/"/);
+    assert.match(home, /property="og:image" content="https:\/\/life\.ayushrai\.site\/assets\//);
+    assert.match(home, /property="og:type" content="website"/);
+    assert.match(home, /<html lang="en">/);
     assert.match(home, /type="text\/markdown"/);
     assert.match(home, /toolname="ask_ayush_rai"/);
     assert.match(home, /FAQPage/);
@@ -163,6 +196,28 @@ async function main() {
       const text = read(rel).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
       assert.ok(text.length >= 500, `${rel} has ${text.length} characters`);
     }
+    for (const rel of ["about/index.md", "privacy/index.md", "pricing.md"]) {
+      const text = read(rel).trim();
+      assert.ok(text.length >= 500, `${rel} has ${text.length} characters`);
+      assert.match(text, /^# /m);
+    }
+  });
+
+  check("agent mode document is machine-readable", () => {
+    const mode = json("agent/mode.json");
+    assert.equal(mode.mode, "agent");
+    assert.ok(mode.endpoints.ask && mode.endpoints.jobs && mode.endpoints.openapi);
+    assert.ok(mode.authentication.auth_guide);
+    assert.ok(mode.sdk && mode.sdk.package === "life-ayushrai");
+    assert.ok(Array.isArray(mode.capabilities) && mode.capabilities.length >= 6);
+  });
+
+  check("SDK package metadata", () => {
+    const pkg = json("packages/life-ayushrai/package.json");
+    assert.equal(pkg.name, "life-ayushrai");
+    assert.equal(pkg.homepage, "https://life.ayushrai.site/");
+    assert.match(pkg.repository.url, /LifeOS/);
+    assert.ok(pkg.bin["life-ayushrai"]);
   });
 
   const ask = require("../api/ask");
@@ -224,6 +279,44 @@ async function main() {
     assert.equal(JSON.parse(batchRes.body).count, 2);
   });
 
+  const jobs = require("../api/jobs");
+  const jobCreate = await invoke(jobs, {
+    method: "POST",
+    url: "/api/jobs",
+    headers: { "content-type": "application/json", "idempotency-key": "job-1" },
+    body: JSON.stringify({ queries: ["Ayush", "projects"] }),
+  });
+  check("async job accept", () => {
+    assert.equal(jobCreate.statusCode, 202);
+    assert.ok(jobCreate.headers.location);
+    const payload = JSON.parse(jobCreate.body);
+    assert.equal(payload.status, "accepted");
+    assert.ok(payload.job_id);
+    assert.match(payload.poll, /\/api\/v1\/jobs\//);
+  });
+  const accepted = JSON.parse(jobCreate.body);
+  const jobGet = await invoke(jobs, {
+    method: "GET",
+    url: `/api/jobs?id=${encodeURIComponent(accepted.job_id)}`,
+    query: { id: accepted.job_id },
+  });
+  check("async job poll", () => {
+    assert.equal(jobGet.statusCode, 200);
+    const payload = JSON.parse(jobGet.body);
+    assert.equal(payload.status, "completed");
+    assert.equal(payload.count, 2);
+    assert.ok(payload.results[0].answer || payload.results[0].error);
+  });
+  const jobBad = await invoke(jobs, {
+    method: "GET",
+    url: "/api/jobs?id=not-a-job",
+    query: { id: "not-a-job" },
+  });
+  check("async job unknown id", () => {
+    assert.equal(jobBad.statusCode, 404);
+    assert.equal(JSON.parse(jobBad.body).error.code, "job_not_found");
+  });
+
   const preflight = await invoke(agent, { method: "OPTIONS", url: "/api/agent?op=identity", query: { op: "identity" } });
   check("agent identity OPTIONS", () => {
     assert.equal(preflight.statusCode, 204);
@@ -259,6 +352,19 @@ async function main() {
     assert.match(missing.body, /^# Not found/);
     assert.ok(missing.body.length > 20);
     assert.match(missing.body, /llms\.txt/);
+    assert.match(missing.body, /sitemap\.xml/);
+  });
+
+  const missingHtml = await invoke(notFound, {
+    url: "/api/not-found?path=__missing_html",
+    query: { path: "__missing_html" },
+    headers: { accept: "text/html" },
+  });
+  check("html 404", () => {
+    assert.equal(missingHtml.statusCode, 404);
+    assert.match(missingHtml.headers["content-type"], /text\/html/);
+    assert.match(missingHtml.body, /Not found/);
+    assert.match(missingHtml.body, /llms\.txt/);
   });
 
   if (failed) process.exit(1);

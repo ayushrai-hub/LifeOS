@@ -7,13 +7,21 @@ description: "Building systems that use models under real constraints: retrieval
 status: draft
 visibility: private
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 activity: active
 relationships:
-  related_projects: []
-  related_skills: []
+  related_projects:
+    - project.adaptive-rag
+    - project.mailu
+    - project.openai-rlhf
+  related_skills:
+    - skill.rag
+    - skill.rlhf
+    - skill.model-evaluation
+    - skill.agentic-ai
+    - skill.fastapi
   related_technologies: []
   related_books: []
   related_articles: []
@@ -21,6 +29,8 @@ relationships:
   related_learning_domains:
     - learning.domain.rag-and-agentic-systems
     - learning.domain.ai-coding-agent-evaluation
+  related_expertise:
+    - expertise.rlhf-and-model-evaluation
 ---
 
 # Artificial Intelligence
@@ -35,11 +45,13 @@ AI is becoming infrastructure. I want judgment about when it helps and when it l
 
 ## Current understanding
 
-Comfortable assembling LLM apps (RAG, agents, evaluation harnesses) at project scale. Not claiming research-lab or production-at-scale expertise until evidenced.
+Designs and ships production AI systems: LLM applications, RAG, evaluation pipelines, and AI automation. Backend foundation in Python and FastAPI. Evaluation and human-feedback work is collected under `expertise.rlhf-and-model-evaluation`.
 
 ## Projects
 
-Link `project.*` ids as case studies mature. GitHub evidence already points at adaptive-rag, MailU, IAS-system, and related work.
+- `project.adaptive-rag`; agentic RAG platform
+- `project.mailu`; AI email intelligence
+- `project.openai-rlhf`; LLM evaluation infrastructure
 
 ## Books / papers / articles
 
@@ -47,7 +59,7 @@ Add as read or written. Field anchors live on linked learning domains.
 
 ## Technologies
 
-Add `technology.*` ids (LangGraph, vector DBs, FastAPI, etc.) as entities exist.
+Python, FastAPI, LangGraph / LangChain, OpenAI and Anthropic APIs, Qdrant, ChromaDB, MongoDB, Ollama, Docker; link `technology.*` ids as entities exist.
 
 ## Experiments
 

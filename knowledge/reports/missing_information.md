@@ -10,8 +10,9 @@ Import sources: `data/imports/2026-07-23-linkedin-resume.txt`, `data/imports/202
 |------|----------------|-------------------|
 | Certification issuers | Provider, issue date, credential ID/URL | All `cert.*` |
 | Award detail | Issuer, date, event for open mic performer | `award.open-mic-performer` |
+| FoCDoT title | Resolved 2026-07-24: public role AI Engineer (slug kept as focdot-software-developer) | `experience.focdot-software-developer` |
 | FoCDoT Best Work | Dates, artifacts | `achievement.focdot-best-work-twice` |
-| Role metrics | Quantitative impact | Most `experience.*` |
+| Role metrics | Quantitative impact (qualitative FoCDoT outcomes recorded; no fabricated numbers) | Most `experience.*` |
 | Company URLs | Official websites | Most `company.*` / `organization.*` |
 | All India Radio / UiPath | Responsibility bullets | respective experience entities |
 | Location | Resolved 2026-07-24: public Bhopal city only; Pune historical/work; street not published | `person.owner` |

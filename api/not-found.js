@@ -10,10 +10,10 @@ module.exports = function notFound(req, res) {
     '</sitemap.xml>; rel="sitemap", </llms.txt>; rel="describedby", </index.md>; rel="alternate"; type="text/markdown"'
   );
 
-  if (accept.includes("text/markdown")) {
+  if (/\btext\/markdown\b/i.test(accept)) {
     res.setHeader("Content-Type", "text/markdown; charset=utf-8");
     res.status(404).send(
-      `# Not found\n\n${missing} is not a page on this site.\n\nSee the [sitemap](${ORIGIN}/sitemap.xml), the [agent index](${ORIGIN}/llms.txt), or the [developer portal](${ORIGIN}/developers/).\n`
+      `# Not found\n\nThe page \`${missing}\` could not be found on this site.\n\nTry the [homepage](${ORIGIN}/), the [agent index](${ORIGIN}/llms.txt), or the [sitemap](${ORIGIN}/sitemap.xml).\n`
     );
     return;
   }
@@ -24,14 +24,16 @@ module.exports = function notFound(req, res) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Not found</title>
-  <link rel="canonical" href="${ORIGIN}/">
+  <title>Not found; Ayush Rai</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="${ORIGIN}${missing.startsWith("/") ? missing : "/" + missing}">
+  <link rel="stylesheet" href="/styles/site.css?v=20261016">
 </head>
 <body>
-  <main>
+  <main class="page knowledge-page">
     <h1>Not found</h1>
-    <p>${missing} is not a page on this site.</p>
-    <p><a href="${ORIGIN}/sites/www/">Home</a> · <a href="${ORIGIN}/sitemap.xml">Sitemap</a> · <a href="${ORIGIN}/llms.txt">llms.txt</a></p>
+    <p>The page <code>${missing}</code> could not be found on this site.</p>
+    <p><a href="${ORIGIN}/">Home</a> · <a href="${ORIGIN}/llms.txt">llms.txt</a> · <a href="${ORIGIN}/sitemap.xml">Sitemap</a></p>
   </main>
 </body>
 </html>`);

@@ -3,14 +3,39 @@
   "version": "1.0.0",
   "description": "Read Ayush Rai's public knowledge site from scripts and agents.",
   "homepage": "https://life.ayushrai.site/",
+  "bugs": {
+    "url": "https://github.com/ayushrai-hub/LifeOS/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ayushrai-hub/LifeOS.git"
+    "url": "git+https://github.com/ayushrai-hub/LifeOS.git",
+    "directory": "packages/life-ayushrai"
   },
+  "author": {
+    "name": "Ayush Rai",
+    "url": "https://life.ayushrai.site/"
+  },
+  "keywords": [
+    "ayush-rai",
+    "life.ayushrai.site",
+    "nlweb",
+    "mcp",
+    "cli"
+  ],
   "bin": {
     "life-ayushrai": "./bin/life.js"
   },
+  "main": "index.js",
   "license": "MIT",
   "type": "commonjs",
-  "files": ["index.js", "bin"]
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "index.js",
+    "bin"
+  ],
+  "scripts": {
+    "test": "node --test test.js"
+  }
 }

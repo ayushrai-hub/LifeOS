@@ -4,7 +4,7 @@
   "installCommand": "npm install",
   "buildCommand": "",
   "cleanUrls": true,
-  "trailingSlash": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
@@ -76,20 +76,6 @@
     }
   ],
   "redirects": [
-    {
-      "source": "/",
-      "missing": [
-        { "type": "header", "key": "accept", "value": "text/markdown" },
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": "GPTBot|ClaudeBot|ChatGPT-User|PerplexityBot|Google-Extended|Applebot-Extended|ora-agent|DeepSeekBot"
-        },
-        { "type": "query", "key": "mode", "value": "agent" }
-      ],
-      "destination": "/sites/www/",
-      "permanent": false
-    },
     { "source": "/contact", "destination": "/sites/contact/", "permanent": false },
     { "source": "/contact/", "destination": "/sites/contact/", "permanent": false }
   ],
@@ -134,6 +120,14 @@
     { "source": "/api/v1/batch/", "destination": "/api/batch" },
     { "source": "/v1/batch", "destination": "/api/batch" },
     { "source": "/v1/batch/", "destination": "/api/batch" },
+    { "source": "/api/v1/jobs", "destination": "/api/jobs" },
+    { "source": "/api/v1/jobs/", "destination": "/api/jobs" },
+    { "source": "/api/v1/jobs/:id", "destination": "/api/jobs?id=:id" },
+    { "source": "/api/v1/jobs/:id/", "destination": "/api/jobs?id=:id" },
+    { "source": "/v1/jobs", "destination": "/api/jobs" },
+    { "source": "/v1/jobs/", "destination": "/api/jobs" },
+    { "source": "/v1/jobs/:id", "destination": "/api/jobs?id=:id" },
+    { "source": "/v1/jobs/:id/", "destination": "/api/jobs?id=:id" },
     { "source": "/api", "destination": "/api/guard" },
     { "source": "/api/", "destination": "/api/guard" },
     { "source": "/api/v1", "destination": "/api/guard" },

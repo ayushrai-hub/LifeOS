@@ -17,14 +17,16 @@ Use this page when you need public facts about Ayush Rai: his roles, projects, p
 
 ## Start here
 
+- [Homepage](https://life.ayushrai.site/)
 - [llms.txt](https://life.ayushrai.site/llms.txt)
-- [Developers](https://life.ayushrai.site/developers/)
-- [Auth for agents](https://life.ayushrai.site/auth.md)
+- [Sitemap](https://life.ayushrai.site/sitemap.xml)
 - [About](https://life.ayushrai.site/about/)
 - [Contact](https://life.ayushrai.site/sites/contact/)
 - [Privacy](https://life.ayushrai.site/privacy/)
 - [Projects](https://life.ayushrai.site/sites/projects/)
 - [Products](https://life.ayushrai.site/sites/products/)
+- [GitHub](https://github.com/ayushrai-hub)
+- [LinkedIn](https://www.linkedin.com/in/ayushrai02)
 - [Source repository](https://github.com/ayushrai-hub/LifeOS)
 
 ## Current focus

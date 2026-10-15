@@ -6,56 +6,49 @@ slug: rag
 aliases: []
 keywords: []
 tags: ["Top Skills"]
-description: "Top skill on LinkedIn"
+description: "Production and experimental RAG: routing, retrieval, vector search, and local-first email RAG."
 status: review
 visibility: public
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 author: person.owner
-version: 0.1.0
-current_level: "5/5 (provisional from LinkedIn prominence; not independently validated)"
+version: 0.2.0
+current_level: null
 level_scale: "1=exposure … 5=expert practitioner"
 future_goals: []
 relationships:
-  related_projects: []
-  related_skills: []
+  related_projects:
+    - project.adaptive-rag
+    - project.mailu
+  related_skills:
+    - skill.agentic-ai
+    - skill.fastapi
+    - skill.llm
   related_technologies: []
   related_articles: []
 evidence: []
 learning_resources: []
 provenance:
-  source: linkedin-resume
-  source_file: data/imports/2026-07-23-linkedin-resume.txt
-  imported_at: 2026-07-23
+  source: owner-canonical-2026-07-24
+  prior_source: linkedin-resume
 ---
 
 # Retrieval-Augmented Generation (RAG)
 
 ## Description
 
-Top skill on LinkedIn
+Designing and shipping RAG architectures: adaptive routing, relevance grading, query rewriting, vector databases (Qdrant, ChromaDB), and local-first retrieval. Flagship evidence: Adaptive RAG and MailU.
 
 ## Experience
 
-Derived from LinkedIn resume/headline/summary/experience mentions. Do not treat level as certified expertise.
+FoCDoT production RAG architectures; personal/portfolio systems in `project.adaptive-rag` and `project.mailu`.
 
 ## Evidence
 
-- Source: `data/imports/2026-07-23-linkedin-resume.txt`
-- No independent metrics imported in this pass.
+- `project.adaptive-rag`
+- `project.mailu`
+- `experience.focdot-software-developer`
 
 ## Metrics
 
-[PLACEHOLDER: none in source]
-
-## Articles
-
-[PLACEHOLDER]
-
-## Learning Resources
-
-[PLACEHOLDER]
-
-## Future Goals
-
-[PLACEHOLDER]
+Do not invent retrieval quality scores unless published with evidence.

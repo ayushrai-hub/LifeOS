@@ -9,16 +9,16 @@ visibility: private
 created: 2026-07-23
 updated: 2026-07-24
 author: person.owner
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Personal Story
 
-I am Ayush Rai, based in Bhopal, Madhya Pradesh, India. I am a software engineer building AI systems, focused on automation and developer tools.
+I am Ayush Rai, based in Bhopal, Madhya Pradesh, India. I work as an AI Engineer (also Applied AI / LLM & Evaluation): shipping production LLM applications, RAG systems, evaluation pipelines, and AI automation, with a Python and FastAPI backend foundation.
 
 ## Arc so far (honest, short)
 
-Public work already shows a pull toward AI applications (RAG, agents), evaluation of coding agents, compliance/audit-shaped systems, and product UIs in TypeScript/React. Parallel to the code, I am deliberately training the human crafts: speaking, storytelling, market sense, and a sober reading of geopolitics; because builders who only touch keyboards miss the world their tools inhabit.
+Public work centers on production AI systems (Adaptive RAG, MailU), evaluation infrastructure (OpenAI-RLHF and related programs), coding-agent evaluation, compliance/audit-shaped systems, and product UIs in TypeScript/React. Parallel to the code, I am deliberately training the human crafts: speaking, storytelling, market sense, and a sober reading of geopolitics; because builders who only touch keyboards miss the world their tools inhabit.
 
 ## What this system is for
 

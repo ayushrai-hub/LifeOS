@@ -2,10 +2,14 @@
 
 HTTP surface for life.ayushrai.site. The OpenAPI document is https://life.ayushrai.site/openapi.json.
 
-- `GET` or `POST` https://life.ayushrai.site/ask for a natural-language question. No token.
-- `GET` https://life.ayushrai.site/api/v1/sandbox for the sandbox. No token. No writes.
+- `GET` or `POST` https://life.ayushrai.site/ask/ for a natural-language question. No token.
+- `GET` https://life.ayushrai.site/api/v1/sandbox/ for the sandbox. No token. No writes.
+- `POST` https://life.ayushrai.site/api/v1/batch/ for up to 10 immediate answers.
+- `POST` https://life.ayushrai.site/api/v1/jobs/ for async jobs (`202` + `Location` poll URL).
 - `GET` https://life.ayushrai.site/api/v1 returns 401 until you send `Authorization: Bearer public-read`. See https://life.ayushrai.site/auth.md.
-- Knowledge MCP: https://life.ayushrai.site/mcp/knowledge
-- Docs MCP: https://life.ayushrai.site/mcp/docs
+- Product MCP: https://life.ayushrai.site/mcp/product/
+- Knowledge MCP alias: https://life.ayushrai.site/mcp/knowledge/
+- Docs MCP: https://life.ayushrai.site/mcp/docs/
+- Pricing: https://life.ayushrai.site/pricing.md
 
 Protected-resource metadata: https://life.ayushrai.site/.well-known/oauth-protected-resource
