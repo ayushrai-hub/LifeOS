@@ -120,6 +120,8 @@
     { "source": "/.well-known/api-catalog/", "destination": "/api/linkset" },
     { "source": "/api/llms.txt.md", "destination": "/section-llms/api.md" },
     { "source": "/developers/llms.txt.md", "destination": "/developers/llms.md" },
+    { "source": "/developers/deprecation.md", "destination": "/developers/deprecation/index.md" },
+    { "source": "/developers/deprecation/.md", "destination": "/developers/deprecation/index.md" },
     { "source": "/agents.md", "destination": "/AGENTS.md" },
     { "source": "/api/llms.txt", "destination": "/section-llms/api.txt" },
     { "source": "/ask", "destination": "/api/ask" },

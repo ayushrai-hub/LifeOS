@@ -62,12 +62,16 @@ module.exports = async function ask(req, res) {
   if (idempotency) res.setHeader("Idempotency-Key", String(idempotency));
 
   const query = queryOf(req, body);
-  if (!query.trim()) {
-    res.status(400).json(errorBody("invalid_query", "Provide a non-empty query string.", 400));
-    return;
-  }
-
-  const payload = nlweb(query);
+  // Bare GET /ask must resolve for discovery probes. Empty query returns an empty result set
+  // plus usage, not a hard error.
+  const payload = query.trim()
+    ? nlweb(query)
+    : {
+        _meta: { response_type: "item_list", version: "0.1" },
+        query: "",
+        results: [],
+        usage: "Pass query as ?query= or JSON {\"query\":\"...\"}. See https://life.ayushrai.site/developers/",
+      };
 
   if (!wantsStream(req, body)) {
     res.setHeader("Content-Type", "application/json; charset=utf-8");
