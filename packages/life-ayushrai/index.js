@@ -31,17 +31,31 @@ async function sandbox(options) {
 
 async function createJob(queries, options) {
   const origin = base(options);
-  const response = await fetch(`${origin}/api/v1/jobs/`, {
+  const response = await fetch(`${origin}/api/v1/jobs`, {
     method: "POST",
     headers: { "content-type": "application/json", accept: "application/json" },
     body: JSON.stringify({ queries }),
+    redirect: "follow",
   });
-  return readJson(response, "createJob");
+  if (response.status !== 202) {
+    let detail = "";
+    try {
+      detail = await response.text();
+    } catch (err) {
+      detail = "";
+    }
+    throw new Error(
+      `createJob failed: expected 202, got ${response.status}${detail ? ` ${detail.slice(0, 200)}` : ""}`
+    );
+  }
+  return response.json();
 }
 
 async function getJob(jobId, options) {
   const origin = base(options);
-  const response = await fetch(`${origin}/api/v1/jobs/${encodeURIComponent(jobId)}/`);
+  const response = await fetch(`${origin}/api/v1/jobs/${encodeURIComponent(jobId)}`, {
+    redirect: "follow",
+  });
   return readJson(response, "getJob");
 }
 

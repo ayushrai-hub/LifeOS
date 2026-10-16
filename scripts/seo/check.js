@@ -8,7 +8,7 @@ const path = require("path");
 const crypto = require("crypto");
 const assert = require("assert");
 
-const ROOT = path.resolve(__dirname, "..");
+const ROOT = path.resolve(__dirname, "../..");
 const CONFIG = JSON.parse(
   fs.readFileSync(path.join(ROOT, "config/seo-pages.json"), "utf8")
 );

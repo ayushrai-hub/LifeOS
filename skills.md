@@ -7,7 +7,10 @@ last-updated: 2026-10-16
 
 # Skills
 
-Official skills ship from https://github.com/ayushrai-hub/LifeOS under `skills/`.
+Official skills for life.ayushrai.site:
+
+- Listing: https://skills.sh/ayushrai-hub/LifeOS
+- Source: https://github.com/ayushrai-hub/LifeOS/tree/main/skills
 
 Install:
 

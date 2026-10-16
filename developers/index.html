@@ -58,14 +58,15 @@ curl -sS https://life.ayushrai.site/api/v1/sandbox</code></pre>
 
     <section aria-labelledby="skills">
       <h2 id="skills">Skills</h2>
-      <p>Official skills ship from the GitHub repository. Install with <code>npx skills add ayushrai-hub/LifeOS</code>. Details live in <a href="https://github.com/ayushrai-hub/LifeOS/tree/main/skills">skills/</a> and <a href="/skills.md">skills.md</a>.</p>
+      <p>Official skills for this domain are listed on <a href="https://skills.sh/ayushrai-hub/LifeOS" rel="noopener noreferrer">skills.sh/ayushrai-hub/LifeOS</a>. Install with <code>npx skills add ayushrai-hub/LifeOS</code>. Source: <a href="https://github.com/ayushrai-hub/LifeOS/tree/main/skills">skills/</a> and <a href="/skills.md">skills.md</a>.</p>
     </section>
 
     <section aria-labelledby="sdk">
       <h2 id="sdk">SDK and CLI</h2>
-      <p>JavaScript/TypeScript package and CLI: <code>packages/life-ayushrai</code> (<code>life-ayushrai ask</code>, <code>sandbox</code>, <code>job</code>). Python package: <code>packages/life_ayushrai</code>. Both set homepage to this domain. Publishing to npm and PyPI needs owner registry login.</p>
+      <p>Official CLI and dual-language SDK live under <a href="https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai">packages/life-ayushrai</a> (npm + <code>life-ayushrai</code> CLI) and <a href="https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life_ayushrai">packages/life_ayushrai</a> (PyPI). Both set <code>homepage</code> to <code>https://life.ayushrai.site/</code>. Publish via the GitHub Action <code>Publish SDK packages</code> after setting repository secrets <code>NPM_TOKEN</code> and <code>PYPI_TOKEN</code>.</p>
       <pre><code>npm install life-ayushrai
 npx life-ayushrai ask "Who is Ayush Rai?"
+npx life-ayushrai job "Who is Ayush Rai?" projects
 pip install life-ayushrai
 life-ayushrai sandbox</code></pre>
     </section>
@@ -75,7 +76,7 @@ life-ayushrai sandbox</code></pre>
       <p>The repository is <a href="https://github.com/ayushrai-hub/LifeOS" rel="noopener noreferrer">ayushrai-hub/LifeOS</a>. Coding agents should read <a href="https://github.com/ayushrai-hub/LifeOS/blob/main/AGENTS.md" rel="noopener noreferrer">AGENTS.md</a>. Agent mode JSON is at <a href="/?mode=agent"><code>/?mode=agent</code></a>.</p>
     </section>
 
-    <p class="foot"><a href="/sites/www/">Home</a> · <a href="/auth.md">auth.md</a> · <a href="/llms.txt">llms.txt</a></p>
+    <p class="foot"><a href="/">Home</a> · <a href="/auth.md">auth.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/api/v1/jobs">Jobs</a></p>
   </main>
   <script src="/scripts/site-chrome.js" defer></script>
 </body>

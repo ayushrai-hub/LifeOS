@@ -4,14 +4,14 @@
  * Touches <head> only. Never modifies <main> / body content.
  *
  * Usage:
- *   node scripts/apply-seo-meta.js
- *   node scripts/apply-seo-meta.js --check
+ *   node scripts/seo/apply-meta.js
+ *   node scripts/seo/apply-meta.js --check
  */
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const ROOT = path.resolve(__dirname, "..");
+const ROOT = path.resolve(__dirname, "../..");
 const CONFIG = path.join(ROOT, "config/seo-pages.json");
 const checkOnly = process.argv.includes("--check");
 

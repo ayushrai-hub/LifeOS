@@ -154,6 +154,9 @@ async function main() {
     assert.ok(openapi.components.schemas.AskResponse);
     assert.ok(openapi.paths["/api/v1/batch"]);
     assert.ok(openapi.paths["/api/v1/jobs"]);
+    assert.ok(openapi.paths["/api/v1/jobs"].post);
+    assert.ok(openapi.paths["/api/v1/jobs"].get);
+    assert.ok(openapi.paths["/api/v1/jobs"].post.responses["202"]);
     assert.ok(openapi.paths["/api/v1/jobs/{job_id}"]);
     assert.ok(openapi.components.schemas.JobAccepted);
     assert.ok(openapi.components.schemas.JobCompleted);
@@ -310,7 +313,8 @@ async function main() {
     assert.equal(jobCreate.statusCode, 202);
     assert.ok(jobCreate.headers.location);
     const payload = JSON.parse(jobCreate.body);
-    assert.equal(payload.status, "accepted");
+    assert.equal(payload.status, "pending");
+    assert.ok(payload.poll || payload.status_url);
     assert.ok(payload.job_id);
     assert.match(payload.poll, /\/api\/v1\/jobs\//);
   });

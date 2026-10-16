@@ -23,7 +23,12 @@
 | `npm run build:seo` | Apply section meta, rebuild reading + home, regenerate sitemap + research integrity hashes |
 | `npm run check:seo` | Unique titles, canonicals, sitemap coverage, robots, research `<main>` integrity |
 
-Config: `config/seo-pages.json`. Integrity baseline: `data/seo/research-integrity.json` (hashes `<main>` only).
+| Path | Role |
+|------|------|
+| `config/seo-pages.json` | Editorial titles, descriptions, sitemap membership |
+| `scripts/seo/` | Apply meta, build sitemap, check, write integrity |
+| `data/seo/research-integrity.json` | Generated `<main>` hashes (do not hand-edit) |
+| `sitemap.xml` | Generated public sitemap |
 
 ## Canonical URL policy
 

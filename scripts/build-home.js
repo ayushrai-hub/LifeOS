@@ -669,6 +669,10 @@ ${recentHtml || '          <li class="muted">Nothing published yet.</li>'}
       ·
       <a href="/llms.txt">llms.txt</a>
       ·
+      <a href="/api/v1/jobs">Jobs API</a>
+      ·
+      <a href="https://skills.sh/ayushrai-hub/LifeOS" rel="noopener noreferrer">skills.sh</a>
+      ·
       <a href="https://github.com/ayushrai-hub/LifeOS" rel="noopener noreferrer">Site source</a>
     </p>
   </main>

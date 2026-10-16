@@ -1,109 +1,100 @@
-# Secrets & credentials
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-*.p12
-*.pfx
-*credentials*.json
-*credentials*.yaml
-*credentials*.yml
-*credentials*.txt
-auth.json
-secrets/
-.secrets/
 
+!.env.example
+!knowledge/assets/documents/.gitkeep
+!knowledge/assets/exports/.gitkeep
+# Cursor / agent local state
+# Dependencies
 # Deploy / local tooling
-.vercel
-.vercel/
-.netlify/
-.turbo/
-.cache/
-dist/
-build/
-coverage/
-tmp/
-temp/
+# Editors
+# Local clone of the Expert-O repo (nested .git, node_modules, .env.local). Never commit it.
+# Local private scratch (optional drop zone)
+# Logs & OS
+# OpenMemory - IDE/Assistant specific rules
+# PDFs and loose media at repo root only (site/knowledge media stays tracked)
+# Personal / sensitive local artifacts (do not publish)
+# Personal documents under knowledge assets (keep folder via .gitkeep)
+# Phone / private contact channels (do not publish to public GitHub)
+# Raw identity intake (phone, full profile dump provenance)
+# Secrets & credentials
+*.key
 *.local
 *.local.*
-
-# Dependencies
-node_modules/
-.node_modules/
-__pycache__/
-*.pyc
-.Python
-.venv/
-venv/
-.env/
-
-# Logs & OS
 *.log
-npm-debug.log*
-.DS_Store
-Thumbs.db
-Desktop.ini
-
-# Editors
-.idea/
-.vscode/
-*.swp
+*.p12
+*.pem
+*.pfx
+*.pyc
 *.swo
+*.swp
+*.tgz
+*credentials*.json
+*credentials*.txt
+*credentials*.yaml
+*credentials*.yml
 *~
-
-# Personal / sensitive local artifacts (do not publish)
-# PDFs and loose media at repo root only (site/knowledge media stays tracked)
-/*.pdf
-/*.PDF
-/*.jpg
-/*.jpeg
-/*.JPG
+.DS_Store
+.Python
+.agents/
+.cache/
+.cursor/
+.cursor/rules/openmemory.mdc
+.cursor/rules/openmemory.mdc
+.env
+.env.*
+.env/
+.idea/
+.local/
+.netlify/
+.node_modules/
+.secrets/
+.turbo/
+.venv/
+.vercel
+.vercel/
+.vscode/
 /*.JPEG
-/*.png
+/*.JPG
+/*.PDF
 /*.PNG
-/*.webp
 /*.heic
+/*.jpeg
+/*.jpg
 /*.mov
 /*.mp4
+/*.pdf
+/*.png
+/*.webp
 /*.zip
-# Personal documents under knowledge assets (keep folder via .gitkeep)
-knowledge/assets/documents/**
-!knowledge/assets/documents/.gitkeep
-knowledge/assets/exports/**
-!knowledge/assets/exports/.gitkeep
-
-# Raw identity intake (phone, full profile dump provenance)
+Desktop.ini
+Thumbs.db
+__pycache__/
+agent-transcripts/
+auth.json
+build/
+coverage/
 data/imports/*-identity-*.csv
 data/imports/*-identity-*.txt
-data/imports/*-identity-*.xlsx
 data/imports/*-identity-*.xls
-
-# Phone / private contact channels (do not publish to public GitHub)
-knowledge/contact/whatsapp.yaml
-knowledge/contact/postal-address-bhopal.yaml
-knowledge/inbox/
-knowledge/media/photos/sources/
-scripts/knowledge/identity-links.json
-scripts/knowledge/identity-links-source.txt
+data/imports/*-identity-*.xlsx
 data/imports/*linkedin-resume*
 data/imports/ayushrai-site-crawl/index-bundle-excerpt.txt
-scripts/knowledge/import_linkedin_resume.py
-
-# Local clone of the Expert-O repo (nested .git, node_modules, .env.local). Never commit it.
-knowledge/github/repositories/expert-o/
-
-# Local private scratch (optional drop zone)
-private/
-.local/
+dist/
 inbox-private/
-
-# Cursor / agent local state
-.cursor/
-agent-transcripts/
-
-# OpenMemory - IDE/Assistant specific rules
-.cursor/rules/openmemory.mdc
-.cursor/rules/openmemory.mdc
-.cursor/rules/openmemory.mdc
-*.tgz
+knowledge/assets/documents/**
+knowledge/assets/exports/**
+knowledge/contact/postal-address-bhopal.yaml
+knowledge/contact/whatsapp.yaml
+knowledge/github/repositories/expert-o/
+knowledge/inbox/
+knowledge/media/photos/sources/
+node_modules/
+npm-debug.log*
+private/
+scripts/knowledge/identity-links-source.txt
+scripts/knowledge/identity-links.json
+scripts/knowledge/import_linkedin_resume.py
+secrets/
+skills-lock.json
+temp/
+tmp/
+venv/

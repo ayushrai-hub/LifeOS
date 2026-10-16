@@ -68,9 +68,25 @@ module.exports = async function jobs(req, res) {
 
   if (req.method === "GET") {
     if (!id) {
-      res.status(400).json(
-        errorBody("missing_job_id", "GET /api/v1/jobs/{id} requires a job id from POST /api/v1/jobs.", 400)
-      );
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.status(200).json({
+        name: "ask jobs",
+        pattern: "async",
+        create: {
+          method: "POST",
+          url: `${ORIGIN}/api/v1/jobs`,
+          accepts: "application/json",
+          body: { queries: ["Who is Ayush Rai?"] },
+          response: "202 Accepted with Location and job_id",
+        },
+        poll: {
+          method: "GET",
+          url_template: `${ORIGIN}/api/v1/jobs/{job_id}`,
+          response: "200 with status completed and results",
+        },
+        openapi: `${ORIGIN}/openapi.json`,
+        docs: `${ORIGIN}/developers/`,
+      });
       return;
     }
     const queries = decodeJob(id);
@@ -123,11 +139,14 @@ module.exports = async function jobs(req, res) {
   const location = jobUrl(jobId);
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("Location", location);
+  res.setHeader("Retry-After", "1");
   res.status(202).json({
     job_id: jobId,
-    status: "accepted",
+    id: jobId,
+    status: "pending",
     resource: location,
     poll: location,
+    status_url: location,
     message: "Poll the Location URL for completed results. Jobs are read-only public answers.",
   });
 };

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
  * Snapshot SHA-256 hashes of <main> bodies for research-related HTML pages.
- * Used by check-seo.js to prove research text was not rewritten.
+ * Used by scripts/seo/check.js to prove research text was not rewritten.
  */
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const ROOT = path.resolve(__dirname, "..");
+const ROOT = path.resolve(__dirname, "../..");
 const CONFIG = JSON.parse(
   fs.readFileSync(path.join(ROOT, "config/seo-pages.json"), "utf8")
 );

@@ -4,14 +4,19 @@
     "title": "Ayush Rai public site API",
     "version": "1.0.0",
     "summary": "Read-only questions, sandbox, batch lookup, and a public-read token for the same facts.",
-    "description": "Public knowledge API for life.ayushrai.site. Sandbox and /ask need no token. /api/v1 returns 401 until you follow auth.md. Soft rate limit: 120 requests per 60 seconds per client. See /developers/deprecation/ for versioning.",
+    "description": "Public knowledge API for life.ayushrai.site. Sandbox and /ask need no token. POST /api/v1/jobs returns HTTP 202 Accepted with a Location poll URL (async job pattern). /api/v1 returns 401 until you follow auth.md. Soft rate limit: 120 requests per 60 seconds per client. See /developers/deprecation/ for versioning.",
     "contact": {
       "name": "Ayush Rai",
-      "url": "https://life.ayushrai.site/sites/contact/"
+      "url": "https://life.ayushrai.site/sites/contact"
     }
   },
   "servers": [
     { "url": "https://life.ayushrai.site" }
+  ],
+  "tags": [
+    { "name": "ask", "description": "Synchronous public questions" },
+    { "name": "jobs", "description": "Async job pattern: POST returns 202 Accepted + Location; GET polls status" },
+    { "name": "sandbox", "description": "Zero-auth public catalog" }
   ],
   "paths": {
     "/ask": {
@@ -192,10 +197,27 @@
       }
     },
     "/api/v1/jobs": {
+      "get": {
+        "tags": ["jobs"],
+        "operationId": "describeAskJobs",
+        "summary": "Describe the async job pattern",
+        "description": "Machine-readable description of POST 202 Accepted + Location polling for /api/v1/jobs/{job_id}.",
+        "responses": {
+          "200": {
+            "description": "Job API map",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/JobsIndex" }
+              }
+            }
+          }
+        }
+      },
       "post": {
+        "tags": ["jobs"],
         "operationId": "createAskJob",
         "summary": "Accept a batch of public questions and return a poll URL",
-        "description": "Returns 202 Accepted with a Location header. Poll GET /api/v1/jobs/{job_id} for completed results. Jobs are read-only and encode the query list in the job id so no private store is required.",
+        "description": "Async job pattern: returns HTTP 202 Accepted with a Location header and a JSON body containing job_id, status=pending, and poll/status_url. Poll GET /api/v1/jobs/{job_id} until status=completed. Jobs are read-only and encode the query list in the job id so no private store is required.",
         "parameters": [
           {
             "name": "Idempotency-Key",
@@ -225,9 +247,17 @@
         },
         "responses": {
           "202": {
-            "description": "Job accepted",
+            "description": "Job accepted; poll Location",
             "headers": {
-              "Location": { "schema": { "type": "string", "format": "uri" } }
+              "Location": {
+                "description": "Absolute URL to poll for job completion",
+                "schema": { "type": "string", "format": "uri" },
+                "required": true
+              },
+              "Retry-After": {
+                "description": "Suggested seconds before first poll",
+                "schema": { "type": "integer" }
+              }
             },
             "content": {
               "application/json": {
@@ -248,8 +278,10 @@
     },
     "/api/v1/jobs/{job_id}": {
       "get": {
+        "tags": ["jobs"],
         "operationId": "getAskJob",
-        "summary": "Poll an accepted ask job",
+        "summary": "Poll an async ask job",
+        "description": "Returns status=completed with results when the job id is valid. Use the Location URL from the 202 response.",
         "parameters": [
           {
             "name": "job_id",
@@ -431,14 +463,28 @@
           }
         }
       },
+      "JobsIndex": {
+        "type": "object",
+        "required": ["pattern", "create", "poll"],
+        "properties": {
+          "name": { "type": "string" },
+          "pattern": { "type": "string", "enum": ["async"] },
+          "create": { "type": "object" },
+          "poll": { "type": "object" },
+          "openapi": { "type": "string", "format": "uri" },
+          "docs": { "type": "string", "format": "uri" }
+        }
+      },
       "JobAccepted": {
         "type": "object",
-        "required": ["job_id", "status", "resource", "poll"],
+        "required": ["job_id", "id", "status", "resource", "poll", "status_url"],
         "properties": {
           "job_id": { "type": "string" },
-          "status": { "type": "string", "enum": ["accepted"] },
+          "id": { "type": "string" },
+          "status": { "type": "string", "enum": ["pending"] },
           "resource": { "type": "string", "format": "uri" },
           "poll": { "type": "string", "format": "uri" },
+          "status_url": { "type": "string", "format": "uri" },
           "message": { "type": "string" }
         }
       },

@@ -47,11 +47,30 @@
   "skills": {
     "index": "https://life.ayushrai.site/.well-known/agent-skills/index.json",
     "install": "npx skills add ayushrai-hub/LifeOS",
+    "skills_sh": "https://skills.sh/ayushrai-hub/LifeOS",
+    "official": true,
     "names": [
       "lookup-ayush-rai",
       "find-projects-and-products",
       "contact-ayush-rai"
     ]
+  },
+  "cli": {
+    "name": "life-ayushrai",
+    "install": "npm install -g life-ayushrai",
+    "run": "npx life-ayushrai ask \"Who is Ayush Rai?\"",
+    "commands": ["ask", "sandbox", "job"],
+    "source": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai"
+  },
+  "async_jobs": {
+    "create": "https://life.ayushrai.site/api/v1/jobs",
+    "method": "POST",
+    "accepted": 202,
+    "poll_header": "Location",
+    "status_field": "status",
+    "pending": "pending",
+    "completed": "completed",
+    "openapi": "https://life.ayushrai.site/openapi.json#/paths/~1api~1v1~1jobs"
   },
   "authentication": {
     "public_reads": "No token for /ask, /llms.txt, markdown pages, /api/v1/sandbox, /api/v1/batch, or /api/v1/jobs.",
@@ -87,8 +106,11 @@
     "python_path": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life_ayushrai",
     "homepage": "https://life.ayushrai.site/",
     "install_js": "npm install life-ayushrai",
+    "install_python": "pip install life-ayushrai",
     "install_cli": "npx life-ayushrai ask \"Who is Ayush Rai?\"",
-    "registry_status": "source published in GitHub; npm and PyPI publish require owner registry auth"
+    "npm_url": "https://www.npmjs.com/package/life-ayushrai",
+    "pypi_url": "https://pypi.org/project/life-ayushrai/",
+    "registry_status": "source ready in GitHub; npm/PyPI publish needs NPM_TOKEN and PYPI_TOKEN on the Publish SDK packages workflow"
   },
   "pricing": "https://life.ayushrai.site/pricing.md",
   "repository": {
@@ -115,6 +137,9 @@
     "mcp_docs": "https://life.ayushrai.site/mcp/docs",
     "agent_card": "https://life.ayushrai.site/.well-known/agent-card.json",
     "agent_skills": "https://life.ayushrai.site/.well-known/agent-skills/index.json",
+    "skills_sh": "https://skills.sh/ayushrai-hub/LifeOS",
+    "cli": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai",
+    "sdk": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai",
     "ard": "https://life.ayushrai.site/.well-known/ard.json",
     "sitemap": "https://life.ayushrai.site/sitemap.xml",
     "pricing": "https://life.ayushrai.site/pricing.md",
