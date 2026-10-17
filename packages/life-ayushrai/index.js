@@ -1,62 +1,93 @@
 const ORIGIN = "https://life.ayushrai.site";
+const VERSION = require("./package.json").version;
+const DEFAULT_TIMEOUT_MS = 15000;
 
-function base(options) {
-  return String((options && options.origin) || ORIGIN).replace(/\/$/, "");
-}
-
-async function readJson(response, label) {
-  if (!response.ok) {
-    let detail = "";
-    try {
-      detail = await response.text();
-    } catch (err) {
-      detail = "";
-    }
-    throw new Error(`${label} failed: ${response.status}${detail ? ` ${detail.slice(0, 200)}` : ""}`);
+class LifeApiError extends Error {
+  constructor(status, body, fallback) {
+    const error = body && body.error && typeof body.error === "object" ? body.error : {};
+    super(error.message || fallback || `Request failed with HTTP ${status}`);
+    this.name = "LifeApiError";
+    this.status = status;
+    this.code = error.code || "unexpected_status";
+    this.hint = error.hint || "";
+    this.docs = error.docs || `${ORIGIN}/developers`;
   }
-  return response.json();
 }
 
-async function ask(query, options) {
-  const origin = base(options);
-  const response = await fetch(`${origin}/ask/?query=${encodeURIComponent(query || "")}`);
-  return readJson(response, "ask");
+function resolveOrigin(options) {
+  const configured = (options && options.origin) || process.env.LIFE_API_BASE_URL || ORIGIN;
+  return String(configured).replace(/\/+$/, "");
 }
 
-async function sandbox(options) {
-  const origin = base(options);
-  const response = await fetch(`${origin}/api/v1/sandbox/`);
-  return readJson(response, "sandbox");
-}
-
-async function createJob(queries, options) {
-  const origin = base(options);
-  const response = await fetch(`${origin}/api/v1/jobs`, {
-    method: "POST",
-    headers: { "content-type": "application/json", accept: "application/json" },
-    body: JSON.stringify({ queries }),
-    redirect: "follow",
-  });
-  if (response.status !== 202) {
-    let detail = "";
-    try {
-      detail = await response.text();
-    } catch (err) {
-      detail = "";
-    }
-    throw new Error(
-      `createJob failed: expected 202, got ${response.status}${detail ? ` ${detail.slice(0, 200)}` : ""}`
-    );
+class LifeAyushRaiClient {
+  constructor(options = {}) {
+    this.origin = resolveOrigin(options);
+    this.timeoutMs = options.timeoutMs || DEFAULT_TIMEOUT_MS;
+    this.fetch = options.fetch || globalThis.fetch;
   }
-  return response.json();
+
+  async request(method, path, { body, expect = 200 } = {}) {
+    const response = await this.fetch(`${this.origin}${path}`, {
+      method,
+      headers: {
+        accept: "application/json",
+        "user-agent": `life-ayushrai-js/${VERSION}`,
+        ...(body ? { "content-type": "application/json" } : {}),
+      },
+      body: body ? JSON.stringify(body) : undefined,
+      redirect: "follow",
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+    const text = await response.text();
+    let payload = null;
+    try {
+      payload = text ? JSON.parse(text) : null;
+    } catch (err) {
+      payload = null;
+    }
+    if (response.status !== expect) {
+      throw new LifeApiError(response.status, payload, `${method} ${path} returned HTTP ${response.status}`);
+    }
+    return payload;
+  }
+
+  /** GET /ask: answer one public question. */
+  ask(query) {
+    return this.request("GET", `/ask?query=${encodeURIComponent(query || "")}`);
+  }
+
+  /** GET /api/v1/sandbox: zero-auth public catalog. */
+  sandbox() {
+    return this.request("GET", "/api/v1/sandbox");
+  }
+
+  /** POST /api/v1/batch: answer 1 to 10 queries at once. */
+  batch(queries) {
+    return this.request("POST", "/api/v1/batch", { body: { queries } });
+  }
+
+  /** POST /api/v1/jobs: start an async job (HTTP 202). */
+  createJob(queries) {
+    return this.request("POST", "/api/v1/jobs", { body: { queries }, expect: 202 });
+  }
+
+  /** GET /api/v1/jobs/{id}: poll an async job. */
+  getJob(jobId) {
+    if (!jobId) return Promise.reject(new TypeError("jobId is required"));
+    return this.request("GET", `/api/v1/jobs/${encodeURIComponent(jobId)}`);
+  }
 }
 
-async function getJob(jobId, options) {
-  const origin = base(options);
-  const response = await fetch(`${origin}/api/v1/jobs/${encodeURIComponent(jobId)}`, {
-    redirect: "follow",
-  });
-  return readJson(response, "getJob");
-}
+const client = (options) => new LifeAyushRaiClient(options);
 
-module.exports = { ORIGIN, ask, sandbox, createJob, getJob };
+module.exports = {
+  ORIGIN,
+  VERSION,
+  LifeAyushRaiClient,
+  LifeApiError,
+  ask: (query, options) => client(options).ask(query),
+  sandbox: (options) => client(options).sandbox(),
+  batch: (queries, options) => client(options).batch(queries),
+  createJob: (queries, options) => client(options).createJob(queries),
+  getJob: (jobId, options) => client(options).getJob(jobId),
+};

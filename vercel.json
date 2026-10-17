@@ -43,6 +43,10 @@
       ]
     },
     {
+      "source": "/.well-known/mcp-registry-auth",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
       "source": "/.well-known/oauth-protected-resource",
       "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }]
     },
@@ -91,7 +95,7 @@
     {
       "source": "/",
       "has": [{ "type": "query", "key": "mode", "value": "agent" }],
-      "destination": "/agent/mode.json"
+      "destination": "/agent/mode.html"
     },
     {
       "source": "/",
@@ -177,6 +181,8 @@
     { "source": "/oauth/revoke/", "destination": "/api/agent?op=revoke" },
     { "source": "/oauth/authorize", "destination": "/api/agent?op=authorize" },
     { "source": "/oauth/authorize/", "destination": "/api/agent?op=authorize" },
+    { "source": "/sdk/go", "destination": "/packages/life-go/vanity.html" },
+    { "source": "/sdk/go/:path*", "destination": "/packages/life-go/vanity.html" },
     { "source": "/mcp", "destination": "/mcp.json" },
     { "source": "/mcp/", "destination": "/mcp.json" },
     { "source": "/mcp/product", "destination": "/api/mcp?surface=product" },

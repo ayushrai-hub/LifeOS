@@ -38,7 +38,7 @@ function json404(pathname) {
   });
 }
 
-function prefersJson(accept) {
+function wantsJsonError(accept) {
   return /application\/(json|problem\+json)/i.test(accept) && !/text\/html/i.test(accept);
 }
 
@@ -179,9 +179,24 @@ export default async function middleware(request) {
     accept,
     userAgent: request.headers.get("user-agent") || "",
     mode: url.searchParams.get("mode") || "",
+    format: url.searchParams.get("format") || "",
   }).action;
 
-  if (action === "json") {
+  if (action === "agent-view") {
+    const body = await load(request, "/agent/mode.html", null);
+    if (body) {
+      return new Response(body, {
+        status: 200,
+        headers: {
+          "content-type": "text/html; charset=utf-8",
+          vary: "Accept, User-Agent",
+          link: `${LINK}, </agent/mode.json>; rel="alternate"; type="application/json"`,
+        },
+      });
+    }
+  }
+
+  if (action === "json" || action === "agent-view") {
     const body = await load(request, "/agent/mode.json", '{"name":"Ayush Rai","mode":"agent"}');
     return new Response(body, {
       status: 200,
@@ -240,7 +255,7 @@ export default async function middleware(request) {
 
   if (status !== 404) return next();
 
-  if (API_PATH.test(url.pathname) || prefersJson(accept)) {
+  if (API_PATH.test(url.pathname) || wantsJsonError(accept)) {
     return new Response(json404(url.pathname), {
       status: 404,
       headers: {

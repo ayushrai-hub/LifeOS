@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "site.ayushrai.life/docs",
+  "title": "life.ayushrai.site docs MCP",
+  "description": "Read-only index of the public documentation and section pages on life.ayushrai.site.",
+  "version": "1.0.0",
+  "websiteUrl": "https://life.ayushrai.site/developers",
+  "repository": {
+    "url": "https://github.com/ayushrai-hub/LifeOS",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://life.ayushrai.site/mcp/docs"
+    }
+  ]
+}

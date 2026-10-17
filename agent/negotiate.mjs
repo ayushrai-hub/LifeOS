@@ -38,10 +38,11 @@ function bare(pathname) {
   return pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
 }
 
-/** Prefer text/markdown only when Accept ranks it at least as high as text/html. */
-export function prefersMarkdown(acceptHeader) {
+/** Highest q-value Accept assigns to each of markdown, html, and json (explicit types only). */
+function qualities(acceptHeader) {
   const accept = String(acceptHeader || "").trim();
-  if (!accept) return false;
+  const ranks = { markdown: 0, html: 0, json: 0 };
+  if (!accept) return ranks;
 
   const parts = accept.split(",").map((raw) => {
     const segments = raw
@@ -64,24 +65,36 @@ export function prefersMarkdown(acceptHeader) {
     return { type, q };
   });
 
-  let markdown = 0;
-  let html = 0;
   for (const { type, q } of parts) {
     if (q <= 0 || !type) continue;
-    if (type === "text/markdown") markdown = Math.max(markdown, q);
-    if (type === "text/html" || type === "application/xhtml+xml") html = Math.max(html, q);
+    if (type === "text/markdown") ranks.markdown = Math.max(ranks.markdown, q);
+    if (type === "text/html" || type === "application/xhtml+xml") ranks.html = Math.max(ranks.html, q);
+    if (type === "application/json") ranks.json = Math.max(ranks.json, q);
   }
+  return ranks;
+}
 
+/** Prefer text/markdown only when Accept ranks it at least as high as text/html. */
+export function prefersMarkdown(acceptHeader) {
+  const { markdown, html } = qualities(acceptHeader);
   if (markdown <= 0) return false;
   if (html <= 0) return true;
   return markdown >= html;
 }
 
-export function decide({ pathname, accept = "", userAgent = "", mode = "" }) {
+/** Prefer JSON only when Accept names application/json at least as high as text/html. */
+export function prefersJson(acceptHeader) {
+  const { json, html } = qualities(acceptHeader);
+  return json > 0 && json >= html;
+}
+
+export function decide({ pathname, accept = "", userAgent = "", mode = "", format = "" }) {
   const path = bare(pathname);
   const home = path === "/" || path === "/index.html";
   if (!home) return { action: "ignore" };
-  if (mode === "agent") return { action: "json" };
+  if (mode === "agent") {
+    return { action: format === "json" || prefersJson(accept) ? "json" : "agent-view" };
+  }
   if (prefersMarkdown(accept)) return { action: "markdown" };
   if (BOT_UA.test(String(userAgent))) return { action: "markdown" };
   // Serve homepage HTML at / via rewrite so the public URL stays canonical.

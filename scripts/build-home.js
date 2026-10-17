@@ -563,11 +563,12 @@ function renderHtml(home) {
           "@type": "ListItem",
           position: index + 1,
           item: {
-            "@type": isRepo ? "SoftwareSourceCode" : "WebApplication",
+            // Non-repository Latest Work entries are Ayush's live products (e.g. RevenueRoles).
+            "@type": isRepo ? "SoftwareSourceCode" : "Product",
             name: item.title,
             description: item.summary || undefined,
             url: item.href,
-            ...(isRepo ? { codeRepository: item.href } : {}),
+            ...(isRepo ? { codeRepository: item.href } : { category: "Software" }),
             ...(item.date ? { dateModified: item.date } : {}),
             creator: { "@id": "https://life.ayushrai.site/#person" },
           },

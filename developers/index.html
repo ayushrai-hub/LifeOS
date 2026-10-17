@@ -64,7 +64,9 @@ curl -sS https://life.ayushrai.site/api/v1/sandbox</code></pre>
     <section aria-labelledby="sdk">
       <h2 id="sdk">SDK and CLI</h2>
       <p>Official CLI and dual-language SDK live under <a href="https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai">packages/life-ayushrai</a> (npm + <code>life-ayushrai</code> CLI) and <a href="https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life_ayushrai">packages/life_ayushrai</a> (PyPI). Both set <code>homepage</code> to <code>https://life.ayushrai.site/</code>. Publish via the GitHub Action <code>Publish SDK packages</code> after setting repository secrets <code>NPM_TOKEN</code> and <code>PYPI_TOKEN</code>.</p>
-      <pre><code>npm install life-ayushrai
+      <p>The Go SDK is published as a Go module at <a href="/sdk/go"><code>life.ayushrai.site/sdk/go</code></a> (<a href="https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-go">source</a>). The npm and PyPI packages are built and tested in the repository and are published once registry credentials are configured.</p>
+      <pre><code>go get life.ayushrai.site/sdk/go
+npm install life-ayushrai
 npx life-ayushrai ask "Who is Ayush Rai?"
 npx life-ayushrai job "Who is Ayush Rai?" projects
 pip install life-ayushrai

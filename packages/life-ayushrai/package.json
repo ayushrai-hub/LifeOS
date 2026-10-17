@@ -1,7 +1,7 @@
 {
   "name": "life-ayushrai",
-  "version": "1.0.0",
-  "description": "Read Ayush Rai's public knowledge site from scripts and agents.",
+  "version": "1.1.0",
+  "description": "Official SDK and CLI for the free, read-only life.ayushrai.site API (Ayush Rai).",
   "homepage": "https://life.ayushrai.site/",
   "bugs": {
     "url": "https://github.com/ayushrai-hub/LifeOS/issues"
@@ -20,7 +20,10 @@
     "life.ayushrai.site",
     "nlweb",
     "mcp",
-    "cli"
+    "cli",
+    "sdk",
+    "api-client",
+    "typescript"
   ],
   "bin": {
     "life-ayushrai": "./bin/life.js"
@@ -29,10 +32,11 @@
   "license": "MIT",
   "type": "commonjs",
   "engines": {
-    "node": ">=18"
+    "node": ">=18.17"
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "bin",
     "README.md"
   ],
@@ -41,5 +45,14 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.js",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
   }
 }

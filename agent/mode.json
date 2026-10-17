@@ -5,17 +5,23 @@
   "url": "https://life.ayushrai.site/",
   "description": "Public knowledge site for an AI Engineer in Bhopal. Machine-readable agent view of profile, projects, products, contact, API, MCP, sandbox, SDK, and CLI.",
   "when_to_use": "Identify Ayush Rai, quote public projects and products, fetch published contact details, call the ask endpoint, sandbox, jobs API, product MCP, or docs MCP. Do not invent metrics or send messages as him.",
+  "formats": {
+    "html": "https://life.ayushrai.site/?mode=agent",
+    "json": "https://life.ayushrai.site/?mode=agent&format=json",
+    "json_static": "https://life.ayushrai.site/agent/mode.json",
+    "negotiation": "Accept: application/json returns this JSON; browsers and other clients get the HTML agent view"
+  },
   "quickstart": {
-    "docs": "https://life.ayushrai.site/developers/",
+    "docs": "https://life.ayushrai.site/developers",
     "llms_txt": "https://life.ayushrai.site/llms.txt",
     "openapi": "https://life.ayushrai.site/openapi.json",
     "first_call": "curl https://life.ayushrai.site/api/v1/sandbox",
-    "auth": "none for public reads; optional Bearer public-read via /auth.md",
+    "auth": "none for public reads; optional Bearer public-read via POST /oauth/register then POST /oauth/token",
     "pricing": "free; no signup, no API key required",
     "rate_limit": "120 requests per 60 seconds (RateLimit-* headers)",
-    "versioning": "URL path /api/v1; deprecation policy https://life.ayushrai.site/developers/deprecation/",
+    "versioning": "URL path /api/v1; deprecation policy https://life.ayushrai.site/developers/deprecation",
     "cli": "npx life-ayushrai ask \"Who is Ayush Rai?\"",
-    "sdk": "npm install life-ayushrai | pip install life-ayushrai",
+    "sdk": "npm install life-ayushrai | pip install life-ayushrai | go get life.ayushrai.site/sdk/go",
     "skills": "npx skills add ayushrai-hub/LifeOS",
     "mcp": "https://life.ayushrai.site/mcp/product",
     "async_jobs": "POST https://life.ayushrai.site/api/v1/jobs -> 202 Accepted + Location"
@@ -29,9 +35,12 @@
     "sandbox": "https://life.ayushrai.site/api/v1/sandbox",
     "methods": [
       "none for public reads",
-      "Bearer public-read for /api/v1",
+      "self-serve registration: POST /oauth/register (RFC 7591)",
+      "Bearer public-read from POST /oauth/token for /api/v1",
       "anonymous register at /agent/identity"
-    ]
+    ],
+    "registration_endpoint": "https://life.ayushrai.site/oauth/register",
+    "token_endpoint": "https://life.ayushrai.site/oauth/token"
   },
   "pricing": {
     "url": "https://life.ayushrai.site/pricing.md",
@@ -51,7 +60,7 @@
   "versioning": {
     "scheme": "url-path",
     "current": "v1",
-    "deprecation_policy": "https://life.ayushrai.site/developers/deprecation/",
+    "deprecation_policy": "https://life.ayushrai.site/developers/deprecation",
     "signals": [
       "Deprecation",
       "Sunset"
@@ -64,13 +73,14 @@
         "code": "string",
         "message": "string",
         "status": "integer",
+        "hint": "string",
         "docs": "uri",
         "auth": "uri"
       }
     },
-    "example": "https://life.ayushrai.site/developers/"
+    "example": "https://life.ayushrai.site/developers"
   },
-  "developer_portal": "https://life.ayushrai.site/developers/",
+  "developer_portal": "https://life.ayushrai.site/developers",
   "llms_txt": "https://life.ayushrai.site/llms.txt",
   "openapi": "https://life.ayushrai.site/openapi.json",
   "content_types": [
@@ -117,7 +127,8 @@
     "product": "https://life.ayushrai.site/mcp/product",
     "knowledge": "https://life.ayushrai.site/mcp/knowledge",
     "docs": "https://life.ayushrai.site/mcp/docs",
-    "server_card": "https://life.ayushrai.site/mcp/product/server-card"
+    "server_card": "https://life.ayushrai.site/mcp/product/server-card",
+    "index": "https://life.ayushrai.site/mcp"
   },
   "cli": {
     "name": "life-ayushrai",
@@ -142,7 +153,10 @@
     "install_cli": "npx life-ayushrai ask \"Who is Ayush Rai?\"",
     "npm_url": "https://www.npmjs.com/package/life-ayushrai",
     "pypi_url": "https://pypi.org/project/life-ayushrai/",
-    "registry_status": "source ready in GitHub; npm/PyPI publish needs NPM_TOKEN and PYPI_TOKEN on the Publish SDK packages workflow"
+    "registry_status": "Go module published via proxy.golang.org; npm and PyPI packages are built in-repo and await owner registry credentials",
+    "go_module": "life.ayushrai.site/sdk/go",
+    "install_go": "go get life.ayushrai.site/sdk/go",
+    "go_path": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-go"
   },
   "skills": {
     "index": "https://life.ayushrai.site/.well-known/agent-skills/index.json",
@@ -172,7 +186,7 @@
     "api_catalog": "https://life.ayushrai.site/.well-known/api-catalog",
     "llms": "https://life.ayushrai.site/llms.txt",
     "auth": "https://life.ayushrai.site/auth.md",
-    "developers": "https://life.ayushrai.site/developers/",
+    "developers": "https://life.ayushrai.site/developers",
     "markdown_home": "https://life.ayushrai.site/index.md",
     "mcp_product": "https://life.ayushrai.site/mcp/product",
     "mcp_knowledge": "https://life.ayushrai.site/mcp/knowledge",
@@ -185,6 +199,9 @@
     "ard": "https://life.ayushrai.site/.well-known/ard.json",
     "sitemap": "https://life.ayushrai.site/sitemap.xml",
     "pricing": "https://life.ayushrai.site/pricing.md",
-    "deprecation": "https://life.ayushrai.site/developers/deprecation/"
+    "deprecation": "https://life.ayushrai.site/developers/deprecation",
+    "register": "https://life.ayushrai.site/oauth/register",
+    "token": "https://life.ayushrai.site/oauth/token",
+    "agent_view": "https://life.ayushrai.site/?mode=agent"
   }
 }

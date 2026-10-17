@@ -82,7 +82,13 @@ async function main() {
   check("homepage markdown negotiation", () => {
     assert.equal(decide({ pathname: "/", accept: "text/markdown" }).action, "markdown");
     assert.equal(decide({ pathname: "/", accept: "text/html", userAgent: "ClaudeBot/1.0" }).action, "markdown");
-    assert.equal(decide({ pathname: "/", mode: "agent", accept: "text/html" }).action, "json");
+    assert.equal(decide({ pathname: "/", mode: "agent", accept: "text/html" }).action, "agent-view");
+    assert.equal(decide({ pathname: "/", mode: "agent", accept: "*/*" }).action, "agent-view");
+    assert.equal(decide({ pathname: "/", mode: "agent", accept: "" }).action, "agent-view");
+    assert.equal(decide({ pathname: "/", mode: "agent", accept: "application/json" }).action, "json");
+    assert.equal(decide({ pathname: "/", mode: "agent", accept: "application/json, text/plain, */*" }).action, "json");
+    assert.equal(decide({ pathname: "/", mode: "agent", accept: "text/html", format: "json" }).action, "json");
+    assert.equal(decide({ pathname: "/", mode: "agent", accept: "text/html,application/json;q=0.9" }).action, "agent-view");
     assert.equal(decide({ pathname: "/", accept: "text/html", userAgent: "Mozilla/5.0" }).action, "home");
     // /sites/www is redirected in middleware; negotiate treats it as non-home.
     assert.equal(decide({ pathname: "/sites/www/", accept: "text/html" }).action, "ignore");
@@ -601,6 +607,43 @@ async function main() {
       assert.ok(redirect(src), `missing redirect ${src}`);
     }
     assert.ok(read("developers/deprecation/index.html").includes("Deprecation: @1792195200"));
+  });
+
+  check("HTML agent view is generated, current, and link-rich", () => {
+    const { execFileSync } = require("child_process");
+    execFileSync(process.execPath, [path.join(ROOT, "scripts/build-agent-view.js"), "--check"], { stdio: "pipe" });
+    const html = read("agent/mode.html");
+    const anchors = html.match(/<a href="[^"]+">/g) || [];
+    assert.ok(anchors.length >= 20, `only ${anchors.length} navigation links`);
+    assert.match(html, /<nav aria-label="Agent navigation">/);
+    for (const href of ["/llms.txt", "/openapi.json", "/auth.md", "/api/v1/sandbox", "/mcp", "/developers"]) {
+      assert.ok(html.includes(`href="https://life.ayushrai.site${href}"`), `agent view missing link ${href}`);
+    }
+    assert.match(html, /<link rel="alternate" type="application\/json"/);
+    assert.match(html, /rel="canonical" href="https:\/\/life\.ayushrai\.site\/"/);
+    const openapi = json("discovery/openapi.json");
+    for (const route of Object.keys(openapi.paths)) {
+      assert.ok(html.includes(route.replace(/[{}]/g, (c) => c)), `agent view missing endpoint ${route}`);
+    }
+    const mode = json("agent/mode.json");
+    assert.equal(mode.formats.json, "https://life.ayushrai.site/?mode=agent&format=json");
+    assert.equal(mode.authentication.registration_endpoint, "https://life.ayushrai.site/oauth/register");
+  });
+
+  check("Go SDK vanity import and MCP registry metadata", () => {
+    const config = json("vercel.json");
+    const vanity = config.rewrites.find((item) => item.source === "/sdk/go");
+    assert.equal(vanity.destination, "/packages/life-go/vanity.html");
+    const page = read("packages/life-go/vanity.html");
+    assert.match(page, /<meta name="go-import" content="life\.ayushrai\.site\/sdk\/go git https:\/\/github\.com\/ayushrai-hub\/LifeOS packages\/life-go">/);
+    assert.match(read("packages/life-go/go.mod"), /^module life\.ayushrai\.site\/sdk\/go$/m);
+    assert.match(read(".well-known/mcp-registry-auth"), /^v=MCPv1; k=ed25519; p=[A-Za-z0-9+/]{43}=\n$/);
+    for (const surface of ["product", "docs"]) {
+      const server = json(`mcp/registry/${surface}.server.json`);
+      assert.equal(server.name, `site.ayushrai.life/${surface}`);
+      assert.equal(server.remotes[0].url, `https://life.ayushrai.site/mcp/${surface}`);
+      assert.equal(server.remotes[0].type, "streamable-http");
+    }
   });
 
   check("alias host redirect rules", () => {
