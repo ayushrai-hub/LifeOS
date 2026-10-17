@@ -553,27 +553,30 @@ function renderHtml(home) {
     : null;
   if (personSchema && home.latest_work.length) {
     // Mirrors the visible Latest Work panel; keep it derived from the same list.
-    personSchema["@graph"].push({
+    const products = [];
+    const itemListElement = home.latest_work.map((item, index) => {
+      const isRepo = /^https:\/\/github\.com\//.test(item.href);
+      const node = {
+        // Non-repository Latest Work entries are Ayush's live products (e.g. RevenueRoles).
+        "@type": isRepo ? "SoftwareSourceCode" : "Product",
+        name: item.title,
+        description: item.summary || undefined,
+        url: item.href,
+        ...(isRepo ? { codeRepository: item.href } : { category: "Software" }),
+        ...(item.date ? { dateModified: item.date } : {}),
+        creator: { "@id": "https://life.ayushrai.site/#person" },
+      };
+      if (!isRepo) {
+        node["@id"] = `https://life.ayushrai.site/#product-${item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+        products.push(node);
+      }
+      return { "@type": "ListItem", position: index + 1, item: isRepo ? node : { "@id": node["@id"] } };
+    });
+    personSchema["@graph"].push(...products, {
       "@type": "ItemList",
       "@id": "https://life.ayushrai.site/#latest-work",
       name: "Latest Work",
-      itemListElement: home.latest_work.map((item, index) => {
-        const isRepo = /^https:\/\/github\.com\//.test(item.href);
-        return {
-          "@type": "ListItem",
-          position: index + 1,
-          item: {
-            // Non-repository Latest Work entries are Ayush's live products (e.g. RevenueRoles).
-            "@type": isRepo ? "SoftwareSourceCode" : "Product",
-            name: item.title,
-            description: item.summary || undefined,
-            url: item.href,
-            ...(isRepo ? { codeRepository: item.href } : { category: "Software" }),
-            ...(item.date ? { dateModified: item.date } : {}),
-            creator: { "@id": "https://life.ayushrai.site/#person" },
-          },
-        };
-      }),
+      itemListElement,
     });
   }
   const schemaHtml = personSchema

@@ -22,8 +22,8 @@ npx @smithery/cli mcp publish https://life.ayushrai.site/mcp/product -n <your-or
 ```
 
 - [x] Official MCP Registry: `site.ayushrai.life/product` and `site.ayushrai.life/docs` published 2026-10-17 via HTTP domain verification (`/.well-known/mcp-registry-auth`; signing key kept outside the repo at `~/.config/mcp-registry/`). Linked from `/developers`, `/llms.txt`, and `/?mode=agent`.
-- [ ] Smithery or mcp.so listing (the registries Ora checks): needs the owner to sign in (Smithery: `npx @smithery/cli auth login`; mcp.so: GitHub sign-in on the submit form).
-- [ ] Status: Smithery/mcp.so **blocked** on owner sign-in.
+- [x] Smithery: `ayushrai0211/life-ayushrai` published 2026-10-17 (https://smithery.ai/servers/ayushrai0211/life-ayushrai), linked from `/developers`, `/llms.txt`, and `/?mode=agent`.
+- [ ] mcp.so: optional; needs GitHub sign-in on the submit form.
 
 ## npm + PyPI SDK/CLI (Discovery −1, Usability −3/−3)
 
@@ -47,6 +47,7 @@ curl -sI https://registry.npmjs.org/life-ayushrai
 curl -sI https://pypi.org/pypi/life-ayushrai/json
 ```
 
+- [ ] npm: owner logged in as `ayushrai02` on 2026-10-17, but publishing returned E403 because the account has no two-factor authentication. Enable 2FA on npmjs.com, then publish.
 - [ ] Add `NPM_TOKEN` and `PYPI_TOKEN` secrets
 - [ ] Run Publish SDK packages
 - [ ] Confirm package pages resolve and homepage/repository point at life.ayushrai.site / LifeOS

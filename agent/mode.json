@@ -133,7 +133,8 @@
     "registry_names": [
       "site.ayushrai.life/product",
       "site.ayushrai.life/docs"
-    ]
+    ],
+    "smithery": "https://smithery.ai/servers/ayushrai0211/life-ayushrai"
   },
   "cli": {
     "name": "life-ayushrai",
@@ -208,6 +209,7 @@
     "deprecation": "https://life.ayushrai.site/developers/deprecation",
     "register": "https://life.ayushrai.site/oauth/register",
     "token": "https://life.ayushrai.site/oauth/token",
-    "agent_view": "https://life.ayushrai.site/?mode=agent"
+    "agent_view": "https://life.ayushrai.site/?mode=agent",
+    "smithery": "https://smithery.ai/servers/ayushrai0211/life-ayushrai"
   }
 }

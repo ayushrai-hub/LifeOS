@@ -26,7 +26,7 @@
     "typescript"
   ],
   "bin": {
-    "life-ayushrai": "./bin/life.js"
+    "life-ayushrai": "bin/life.js"
   },
   "main": "index.js",
   "license": "MIT",
