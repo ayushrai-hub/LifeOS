@@ -1,30 +1,6 @@
 const { nlweb, ORIGIN } = require("../agent/answers");
-const { rateLimitHeaders, cors, errorBody } = require("../agent/http");
+const { rateLimitHeaders, cors, errorBody, readJson, INVALID_JSON } = require("../agent/http");
 
-function readBody(req) {
-  if (req.body && typeof req.body === "object") return Promise.resolve(req.body);
-  if (typeof req.body === "string" && req.body) {
-    try {
-      return Promise.resolve(JSON.parse(req.body));
-    } catch (err) {
-      return Promise.resolve({});
-    }
-  }
-  return new Promise((resolve) => {
-    const chunks = [];
-    req.on("data", (chunk) => chunks.push(chunk));
-    req.on("end", () => {
-      const raw = Buffer.concat(chunks).toString("utf8");
-      if (!raw) return resolve({});
-      try {
-        resolve(JSON.parse(raw));
-      } catch (err) {
-        resolve({});
-      }
-    });
-    req.on("error", () => resolve({}));
-  });
-}
 
 module.exports = async function batch(req, res) {
   cors(res, "POST, OPTIONS", "Content-Type, Accept, Idempotency-Key");
@@ -44,7 +20,11 @@ module.exports = async function batch(req, res) {
   const idempotency = req.headers["idempotency-key"];
   if (idempotency) res.setHeader("Idempotency-Key", String(idempotency));
 
-  const body = await readBody(req);
+  const body = await readJson(req);
+  if (body === INVALID_JSON) {
+    res.status(400).json(errorBody("invalid_json", "Request body is not valid JSON.", 400));
+    return;
+  }
   const queries = Array.isArray(body.queries) ? body.queries : null;
   if (!queries || !queries.length) {
     res.status(400).json(errorBody("invalid_batch", "Provide queries as a non-empty string array.", 400));

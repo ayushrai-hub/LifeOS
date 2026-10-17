@@ -1,4 +1,6 @@
-# Ayush Rai
+# Ayush Rai (life.ayushrai.site)
+
+> Personal website and public knowledge base of Ayush Rai, AI Engineer in Bhopal. Includes a free, read-only life.ayushrai.site API with an OpenAPI spec, MCP servers, and an SDK/CLI.
 
 AI Engineer in Bhopal, Madhya Pradesh, India. This site is his public knowledge base: career notes, software projects, products, writing, and published contact details.
 
@@ -50,6 +52,18 @@ Do not use this site to send messages as Ayush, to collect secrets, or to answer
 - [Agent editing notes](https://life.ayushrai.site/agents.md)
 - [GitHub](https://github.com/ayushrai-hub)
 - [LinkedIn](https://www.linkedin.com/in/ayushrai02)
+
+## Developer resources for life.ayushrai.site
+
+- [life.ayushrai.site developer portal](https://life.ayushrai.site/developers): quickstart, sandbox, SDK and CLI
+- [life.ayushrai.site OpenAPI spec](https://life.ayushrai.site/openapi.json): machine-readable API contract
+- [life.ayushrai.site auth guide](https://life.ayushrai.site/auth.md): public-read bearer flow
+- [Self-serve client registration](https://life.ayushrai.site/oauth/register): POST JSON (RFC 7591), free and instant
+- [API sandbox](https://life.ayushrai.site/api/v1/sandbox.md): zero-auth endpoint docs
+- [Async jobs API](https://life.ayushrai.site/api/v1/jobs.md): 202 Accepted + Location polling
+- [MCP servers](https://life.ayushrai.site/mcp): product and docs MCP endpoints
+- [Versioning and deprecation policy](https://life.ayushrai.site/developers/deprecation)
+- [Pricing](https://life.ayushrai.site/pricing.md): all public reads are free
 
 ## Section indexes
 

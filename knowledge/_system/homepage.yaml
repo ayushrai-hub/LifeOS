@@ -16,11 +16,11 @@ version: 0.4.0
 name: Ayush Rai
 
 # Search / social title (visible H1 stays `name`).
-seo_title: "Ayush Rai; AI Engineer in Bhopal"
+seo_title: "Ayush Rai; personal website of an AI Engineer in Bhopal"
 
 tagline: "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
 
-seo_description: "Public knowledge site of Ayush Rai, AI Engineer in Bhopal: LLM applications, RAG systems, evaluation pipelines, projects, products, and career notes."
+seo_description: "life.ayushrai.site is the personal website of Ayush Rai, AI Engineer in Bhopal: LLM applications, RAG systems, evaluation pipelines, projects, and career notes."
 
 intro:
   - "Personal knowledge system: what I ship, what broke, and what I would do differently. Evidence lives in the pages below. Start wherever curiosity points."

@@ -77,6 +77,13 @@ Implemented and live-verified:
 
 Force-rescan after deploy; cached Ora results may still show fail until the daily force quota resets.
 
+## Onboarding, errors, versioning (implemented 2026-10-17)
+
+- Self-serve keys: `POST /oauth/register` (RFC 7591, public clients only) advertised as `registration_endpoint`; then `POST /oauth/token`.
+- JSON errors: every API handler answers malformed JSON with a structured 400 (`invalid_json` with `hint`, OAuth `invalid_request`, or JSON-RPC `-32700` for MCP and A2A). Unknown API paths return JSON 404s.
+- Deprecation: `/v1/*` short aliases send RFC 9745 `Deprecation` plus `Link` `rel="deprecation"` and `rel="successor-version"`. No `Sunset` is scheduled; adding one is a product decision.
+- Brand and dev-resource discoverability: product name in developer page titles, slashless canonicals, `/developer`, `/api-docs`, `/docs/api`, `/sdk`, `/cli`, `/versioning`, `/mcp` routes, and 308 redirects from old `*.vercel.app` production aliases. Search rank itself depends on external indexing.
+
 ## Agent mode (Access warning)
 
 `/?mode=agent` returns structured JSON including api, mcp, skills, skills_sh, cli, sdk, async_jobs, authentication, and endpoints. Redeploy and rescans should raise signal count.

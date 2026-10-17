@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Ayush Rai public site API",
+    "title": "life.ayushrai.site API (Ayush Rai)",
     "version": "1.0.0",
     "summary": "Read-only questions, sandbox, batch lookup, and a public-read token for the same facts.",
     "description": "Public knowledge API for life.ayushrai.site. Sandbox and /ask need no token. POST /api/v1/jobs returns HTTP 202 Accepted with a Location poll URL (async job pattern). /api/v1 returns 401 until you follow auth.md. Soft rate limit: 120 requests per 60 seconds per client. See /developers/deprecation/ for versioning.",
@@ -11,7 +11,14 @@
     },
     "x-api-versioning": "url-path (/api/v1)",
     "x-deprecation-policy": "https://life.ayushrai.site/developers/deprecation/",
-    "x-sunset-policy": "Breaking changes ship with Deprecation: true and a Sunset date at least 30 days out on the retiring path."
+    "x-sunset-policy": "Breaking changes ship with a Deprecation header and a Sunset date at least 30 days out on the retiring path.",
+    "x-pricing": {
+      "model": "free",
+      "free_tier": true,
+      "signup_required": false,
+      "self_serve_registration": "https://life.ayushrai.site/oauth/register",
+      "url": "https://life.ayushrai.site/pricing.md"
+    }
   },
   "externalDocs": {
     "description": "Versioning and deprecation policy",
@@ -23,7 +30,8 @@
   "tags": [
     { "name": "ask", "description": "Synchronous public questions" },
     { "name": "jobs", "description": "Async job pattern: POST returns 202 Accepted + Location; GET polls status" },
-    { "name": "sandbox", "description": "Zero-auth public catalog" }
+    { "name": "sandbox", "description": "Zero-auth public catalog" },
+    { "name": "auth", "description": "Free self-serve registration and the public-read bearer token" }
   ],
   "paths": {
     "/ask": {
@@ -203,6 +211,80 @@
         }
       }
     },
+    "/oauth/register": {
+      "post": {
+        "tags": ["auth"],
+        "operationId": "registerClient",
+        "summary": "Self-serve public client registration (RFC 7591)",
+        "description": "Free, instant dynamic client registration. Issues a public client_id (token_endpoint_auth_method none, no secret). Exchange at /oauth/token for the public-read bearer.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ClientMetadata" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Client registered",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ClientRegistration" }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid_client_metadata or invalid_redirect_uri",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/OAuthError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/oauth/token": {
+      "post": {
+        "tags": ["auth"],
+        "operationId": "issueToken",
+        "summary": "Exchange for the public-read bearer token",
+        "description": "Returns the non-secret Bearer public-read token (scope knowledge:read). Free; no credentials required.",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "grant_type": { "type": "string", "default": "public" },
+                  "client_id": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Access token",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/TokenResponse" }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid_grant",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/OAuthError" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/jobs": {
       "get": {
         "tags": ["jobs"],
@@ -374,6 +456,7 @@
           "code": { "type": "string" },
           "message": { "type": "string" },
           "status": { "type": "integer" },
+          "hint": { "type": "string", "description": "How to resolve the error" },
           "docs": { "type": "string", "format": "uri" },
           "auth": { "type": "string", "format": "uri" }
         }
@@ -468,6 +551,52 @@
               }
             }
           }
+        }
+      },
+      "ClientMetadata": {
+        "type": "object",
+        "properties": {
+          "client_name": { "type": "string" },
+          "client_uri": { "type": "string", "format": "uri" },
+          "redirect_uris": { "type": "array", "items": { "type": "string", "format": "uri" } },
+          "grant_types": {
+            "type": "array",
+            "items": { "type": "string", "enum": ["public", "urn:ietf:params:oauth:grant-type:jwt-bearer"] }
+          },
+          "token_endpoint_auth_method": { "type": "string", "enum": ["none"] },
+          "contacts": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "ClientRegistration": {
+        "type": "object",
+        "required": ["client_id", "client_id_issued_at", "token_endpoint_auth_method", "grant_types"],
+        "properties": {
+          "client_id": { "type": "string" },
+          "client_id_issued_at": { "type": "integer" },
+          "token_endpoint_auth_method": { "type": "string", "enum": ["none"] },
+          "grant_types": { "type": "array", "items": { "type": "string" } },
+          "response_types": { "type": "array", "items": { "type": "string" } },
+          "scope": { "type": "string" },
+          "client_name": { "type": "string" },
+          "token_endpoint": { "type": "string", "format": "uri" }
+        }
+      },
+      "TokenResponse": {
+        "type": "object",
+        "required": ["access_token", "token_type"],
+        "properties": {
+          "access_token": { "type": "string" },
+          "token_type": { "type": "string", "enum": ["Bearer"] },
+          "scope": { "type": "string" },
+          "expires_in": { "type": "integer" }
+        }
+      },
+      "OAuthError": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": { "type": "string" },
+          "error_description": { "type": "string" }
         }
       },
       "JobsIndex": {

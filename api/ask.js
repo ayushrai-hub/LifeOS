@@ -1,30 +1,6 @@
-const { rateLimitHeaders, cors, errorBody } = require("../agent/http");
+const { rateLimitHeaders, cors, errorBody, readJson, INVALID_JSON } = require("../agent/http");
 const { nlweb } = require("../agent/answers");
 
-function readBody(req) {
-  if (req.body && typeof req.body === "object") return Promise.resolve(req.body);
-  if (typeof req.body === "string" && req.body) {
-    try {
-      return Promise.resolve(JSON.parse(req.body));
-    } catch (err) {
-      return Promise.resolve({});
-    }
-  }
-  return new Promise((resolve) => {
-    const chunks = [];
-    req.on("data", (chunk) => chunks.push(chunk));
-    req.on("end", () => {
-      const raw = Buffer.concat(chunks).toString("utf8");
-      if (!raw) return resolve({});
-      try {
-        resolve(JSON.parse(raw));
-      } catch (err) {
-        resolve({});
-      }
-    });
-    req.on("error", () => resolve({}));
-  });
-}
 
 function wantsStream(req, body) {
   const query = req.query || {};
@@ -57,7 +33,11 @@ module.exports = async function ask(req, res) {
     return;
   }
 
-  const body = req.method === "POST" ? await readBody(req) : {};
+  const body = req.method === "POST" ? await readJson(req) : {};
+  if (body === INVALID_JSON) {
+    res.status(400).json(errorBody("invalid_json", "Request body is not valid JSON.", 400));
+    return;
+  }
   const idempotency = req.headers["idempotency-key"];
   if (idempotency) res.setHeader("Idempotency-Key", String(idempotency));
 

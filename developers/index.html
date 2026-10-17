@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Developers; Ayush Rai</title>
+  <title>life.ayushrai.site API and developer portal; Ayush Rai</title>
   <meta name="description" content="Developer portal for life.ayushrai.site: quickstart, sandbox, OpenAPI, and auth.">
   <meta name="author" content="Ayush Rai">
   <meta name="theme-color" content="#ffffff">
-  <meta property="og:title" content="Developers; Ayush Rai">
+  <meta property="og:title" content="life.ayushrai.site API and developer portal; Ayush Rai">
   <meta property="og:description" content="Quickstart, sandbox, and API map for Ayush Rai's public site.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://life.ayushrai.site/developers/">
+  <meta property="og:url" content="https://life.ayushrai.site/developers">
   <meta property="og:image" content="https://life.ayushrai.site/assets/images/portraits/ayush-rai--workspace-2024.jpg">
-  <link rel="canonical" href="https://life.ayushrai.site/developers/">
+  <link rel="canonical" href="https://life.ayushrai.site/developers">
   <link rel="alternate" type="text/markdown" href="https://life.ayushrai.site/developers/index.md">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles/site.css?v=20261016">
@@ -20,7 +20,7 @@
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
   <main id="content" class="page knowledge-page">
-    <h1>Developers</h1>
+    <h1>life.ayushrai.site developer portal</h1>
     <p class="tagline">Read the public site from a script. Nothing here writes data.</p>
 
     <section aria-labelledby="quickstart">
@@ -40,7 +40,7 @@ curl -sS https://life.ayushrai.site/api/v1/sandbox</code></pre>
     <section aria-labelledby="api">
       <h2 id="api">API</h2>
       <p>Documentation for agents starts at <a href="/llms.txt">llms.txt</a> and the <a href="/openapi.json">OpenAPI document</a>. The API catalog is at <a href="/.well-known/api-catalog">/.well-known/api-catalog</a>. <code>GET /ask/</code> answers a question. <code>POST /api/v1/batch/</code> answers up to ten questions immediately. <code>POST /api/v1/jobs/</code> returns <code>202 Accepted</code> with a <code>Location</code> poll URL for the same read-only answers. Directory URLs may omit a trailing slash. <code>GET /api</code> and <code>GET /api/v1</code> return <code>401</code> with <code>WWW-Authenticate</code> until you follow <a href="/auth.md">auth.md</a>. Errors are JSON with <code>error.code</code>, <code>error.message</code>, and links to docs. List responses accept <code>page</code> and <code>limit</code>. Responses advertise soft <code>RateLimit-*</code> headers (120 per 60 seconds). POST callers may send <code>Idempotency-Key</code>.</p>
-      <p>There is no private API key to provision. Anonymous registration at <code>/agent/identity</code> leads to a non-secret bearer, <code>public-read</code>, which only repeats the public pages. Use the sandbox when you want to skip that handshake. Public pricing is documented in <a href="/pricing.md">pricing.md</a> (everything listed there is free). Versioning and Sunset rules are on the <a href="/developers/deprecation/">deprecation policy</a> page.</p>
+      <p>There is no private API key to provision. Self-serve registration is free and instant: <code>POST /oauth/register</code> (RFC 7591 dynamic client registration) returns a public <code>client_id</code>, and <code>POST /oauth/token</code> returns the non-secret bearer <code>public-read</code>, which only repeats the public pages. Anonymous registration at <code>/agent/identity</code> works too. Use the sandbox when you want to skip that handshake. Public pricing is documented in <a href="/pricing.md">pricing.md</a> (everything listed there is free). Versioning and Sunset rules are on the <a href="/developers/deprecation/">deprecation policy</a> page.</p>
       <pre><code>curl -sS -X POST https://life.ayushrai.site/api/v1/jobs/ \
   -H 'content-type: application/json' \
   -d '{"queries":["Who is Ayush Rai?","projects"]}'</code></pre>

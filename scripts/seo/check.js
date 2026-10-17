@@ -63,6 +63,33 @@ function main() {
       "homepage must use root-absolute /sites/ links"
     );
     assert.ok(!html.includes('href="../projects/'), "homepage must not use ../projects relative links");
+    assert.ok(title.length <= 60, `title too long for search results: ${title.length}`);
+    assert.match(title, /personal website/i, "title names the site type for brand searches");
+    assert.match(desc, /life\.ayushrai\.site/, "description names the domain");
+    assert.match(html, /property="og:site_name" content="life\.ayushrai\.site"/);
+    assert.match(html, /<h1[^>]*>Ayush Rai<\/h1>/, "visible H1 unchanged");
+  });
+
+  check("developer pages name the product and use slashless canonicals", () => {
+    const pages = {
+      "developers/index.html": "/developers",
+      "developers/deprecation/index.html": "/developers/deprecation",
+      "reference/index.html": "/reference",
+      "docs/index.html": "/docs",
+      "guides/index.html": "/guides",
+      "sandbox/index.html": "/sandbox",
+      "about/index.html": "/about",
+      "privacy/index.html": "/privacy",
+    };
+    for (const [rel, urlPath] of Object.entries(pages)) {
+      const html = read(rel);
+      assert.strictEqual(extract(html, /rel="canonical"\s+href="([^"]+)"/i), `${origin}${urlPath}`, rel);
+      const ogUrl = extract(html, /property="og:url"\s+content="([^"]+)"/i);
+      if (ogUrl) assert.strictEqual(ogUrl, `${origin}${urlPath}`, `${rel} og:url`);
+      if (!["about/index.html", "privacy/index.html"].includes(rel)) {
+        assert.match(extract(html, /<title>([^<]*)<\/title>/i), /life\.ayushrai\.site/, `${rel} title`);
+      }
+    }
   });
 
   check("currently-reading canonical uses life.ayushrai.site", () => {

@@ -79,7 +79,13 @@
     { "source": "/contact", "destination": "/sites/contact", "permanent": false },
     { "source": "/contact/", "destination": "/sites/contact", "permanent": false },
     { "source": "/deprecation", "destination": "/developers/deprecation", "permanent": false },
-    { "source": "/docs/deprecation", "destination": "/developers/deprecation", "permanent": false }
+    { "source": "/docs/deprecation", "destination": "/developers/deprecation", "permanent": false },
+    { "source": "/versioning", "destination": "/developers/deprecation", "permanent": false },
+    { "source": "/developer", "destination": "/developers", "permanent": true },
+    { "source": "/api-docs", "destination": "/developers", "permanent": false },
+    { "source": "/docs/api", "destination": "/developers", "permanent": false },
+    { "source": "/sdk", "destination": "/developers#sdk", "permanent": false },
+    { "source": "/cli", "destination": "/developers#sdk", "permanent": false }
   ],
   "rewrites": [
     {
@@ -163,12 +169,16 @@
     { "source": "/agent/identity/claim/", "destination": "/api/agent?op=claim" },
     { "source": "/agent/events", "destination": "/api/agent?op=events" },
     { "source": "/agent/events/", "destination": "/api/agent?op=events" },
+    { "source": "/oauth/register", "destination": "/api/agent?op=register" },
+    { "source": "/oauth/register/", "destination": "/api/agent?op=register" },
     { "source": "/oauth/token", "destination": "/api/agent?op=token" },
     { "source": "/oauth/token/", "destination": "/api/agent?op=token" },
     { "source": "/oauth/revoke", "destination": "/api/agent?op=revoke" },
     { "source": "/oauth/revoke/", "destination": "/api/agent?op=revoke" },
     { "source": "/oauth/authorize", "destination": "/api/agent?op=authorize" },
     { "source": "/oauth/authorize/", "destination": "/api/agent?op=authorize" },
+    { "source": "/mcp", "destination": "/mcp.json" },
+    { "source": "/mcp/", "destination": "/mcp.json" },
     { "source": "/mcp/product", "destination": "/api/mcp?surface=product" },
     { "source": "/mcp/product/", "destination": "/api/mcp?surface=product" },
     { "source": "/mcp/knowledge", "destination": "/api/mcp?surface=product" },

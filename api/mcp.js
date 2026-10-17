@@ -1,5 +1,5 @@
 const { toolResult, ORIGIN } = require("../agent/answers");
-const { rateLimitHeaders, cors } = require("../agent/http");
+const { rateLimitHeaders, cors, readJson, INVALID_JSON } = require("../agent/http");
 
 const PRODUCT = {
   name: "site.ayushrai.life/product",
@@ -107,33 +107,23 @@ const SERVERS = {
   docs: DOCS,
 };
 
-function readBody(req) {
-  if (req.body && typeof req.body === "object") return Promise.resolve(req.body);
-  if (typeof req.body === "string" && req.body) {
-    try {
-      return Promise.resolve(JSON.parse(req.body));
-    } catch (err) {
-      return Promise.resolve({});
-    }
-  }
-  return new Promise((resolve) => {
-    const chunks = [];
-    req.on("data", (chunk) => chunks.push(chunk));
-    req.on("end", () => {
-      const raw = Buffer.concat(chunks).toString("utf8");
-      if (!raw) return resolve({});
-      try {
-        resolve(JSON.parse(raw));
-      } catch (err) {
-        resolve({});
-      }
-    });
-    req.on("error", () => resolve({}));
-  });
-}
-
 function rpcResult(id, result) {
   return { jsonrpc: "2.0", id, result };
+}
+
+function rpcError(id, code, message, data) {
+  return { jsonrpc: "2.0", id, error: data ? { code, message, data } : { code, message } };
+}
+
+const RPC_HINT = { docs: `${ORIGIN}/developers/`, serverCard: `${ORIGIN}/mcp/product/server-card` };
+
+/** A client response (result or error with an id) needs no reply; anything else without a method is invalid. */
+function isClientResponse(message) {
+  return (
+    Object.prototype.hasOwnProperty.call(message, "id") &&
+    (Object.prototype.hasOwnProperty.call(message, "result") ||
+      Object.prototype.hasOwnProperty.call(message, "error"))
+  );
 }
 
 function resolveSurface(name) {
@@ -142,9 +132,16 @@ function resolveSurface(name) {
 }
 
 function handleMessage(surface, message) {
+  if (!message || typeof message !== "object" || Array.isArray(message)) {
+    return rpcError(null, -32600, "Invalid Request: expected a JSON-RPC 2.0 object.", RPC_HINT);
+  }
+  if (isClientResponse(message)) return null;
   const server = SERVERS[resolveSurface(surface)];
   const id = Object.prototype.hasOwnProperty.call(message, "id") ? message.id : null;
   const method = message.method;
+  if (message.jsonrpc !== "2.0" || typeof method !== "string" || !method) {
+    return rpcError(id, -32600, "Invalid Request: send jsonrpc \"2.0\" and a string method.", RPC_HINT);
+  }
   if (method === "initialize") {
     return rpcResult(id, {
       protocolVersion: "2025-06-18",
@@ -218,17 +215,26 @@ module.exports = async function mcp(req, res) {
 
   if (req.method !== "POST") {
     res.setHeader("Allow", "GET, POST, OPTIONS");
-    res.status(405).json({ error: "method_not_allowed" });
+    res.status(405).json(rpcError(null, -32600, "Use POST for JSON-RPC messages or GET for server info.", RPC_HINT));
     return;
   }
 
-  const body = await readBody(req);
+  const body = await readJson(req);
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  if (body === INVALID_JSON) {
+    res.status(400).json(rpcError(null, -32700, "Parse error: request body is not valid JSON.", RPC_HINT));
+    return;
+  }
+  if (Array.isArray(body) && !body.length) {
+    res.status(400).json(rpcError(null, -32600, "Invalid Request: empty batch.", RPC_HINT));
+    return;
+  }
   const messages = Array.isArray(body) ? body : [body];
   const responses = messages.map((message) => handleMessage(surface, message)).filter(Boolean);
-  res.setHeader("Content-Type", "application/json; charset=utf-8");
   if (!responses.length) {
     res.status(202).end();
     return;
   }
-  res.status(200).json(Array.isArray(body) ? responses : responses[0]);
+  const allInvalid = responses.every((item) => item.error && item.error.code === -32600);
+  res.status(allInvalid ? 400 : 200).json(Array.isArray(body) ? responses : responses[0]);
 };

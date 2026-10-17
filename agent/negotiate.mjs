@@ -1,3 +1,35 @@
+export const CANONICAL_HOST = "life.ayushrai.site";
+
+// Production aliases that serve the same site; preview and branch URLs stay reachable.
+export const ALIAS_HOSTS = new Set([
+  "thelifeofayush.vercel.app",
+  "life-os-psi-lyart.vercel.app",
+  "life-os-ayush-rais-work22.vercel.app",
+]);
+
+/** Absolute canonical URL for requests on a production alias host, else null. */
+export function aliasRedirect(href) {
+  const url = new URL(href);
+  if (!ALIAS_HOSTS.has(url.hostname.toLowerCase())) return null;
+  url.protocol = "https:";
+  url.hostname = CANONICAL_HOST;
+  url.port = "";
+  return url.href;
+}
+
+// RFC 9745 structured date (2026-10-17T00:00:00Z) when the /v1 short aliases were deprecated.
+export const V1_ALIAS_DEPRECATED_AT = "@1792195200";
+
+/** RFC 9745 Deprecation + Link headers for the deprecated /v1/* short aliases, else null. */
+export function deprecationHeaders(pathname) {
+  if (!/^\/v1(\/|$)/.test(pathname)) return null;
+  const successor = `/api${pathname.replace(/\/+$/, "") || "/v1"}`;
+  return {
+    deprecation: V1_ALIAS_DEPRECATED_AT,
+    link: `<https://${CANONICAL_HOST}/developers/deprecation>; rel="deprecation"; type="text/html", <https://${CANONICAL_HOST}${successor}>; rel="successor-version"`,
+  };
+}
+
 export const BOT_UA =
   /GPTBot|ClaudeBot|ChatGPT-User|PerplexityBot|Google-Extended|Applebot-Extended|ora-agent|DeepSeekBot/i;
 

@@ -1,30 +1,60 @@
+const crypto = require("crypto");
 const { ORIGIN } = require("../agent/answers");
+const { readJson, INVALID_JSON } = require("../agent/http");
 
 const METADATA = `${ORIGIN}/.well-known/oauth-protected-resource`;
+const REGISTRABLE_GRANTS = ["public", "urn:ietf:params:oauth:grant-type:jwt-bearer"];
 
-function readBody(req) {
-  if (req.body && typeof req.body === "object") return Promise.resolve(req.body);
-  if (typeof req.body === "string" && req.body) {
-    try {
-      return Promise.resolve(JSON.parse(req.body));
-    } catch (err) {
-      return Promise.resolve({});
-    }
+function isAbsoluteUrl(value) {
+  try {
+    return Boolean(new URL(value).protocol);
+  } catch (err) {
+    return false;
   }
-  return new Promise((resolve) => {
-    const chunks = [];
-    req.on("data", (chunk) => chunks.push(chunk));
-    req.on("end", () => {
-      const raw = Buffer.concat(chunks).toString("utf8");
-      if (!raw) return resolve({});
-      try {
-        resolve(JSON.parse(raw));
-      } catch (err) {
-        resolve({});
-      }
-    });
-    req.on("error", () => resolve({}));
-  });
+}
+
+/** RFC 7591 dynamic client registration for public (no-secret) clients. */
+function register(body, res) {
+  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Pragma", "no-cache");
+  const invalid = (error, description) =>
+    res.status(400).json({ error, error_description: description });
+
+  if (body === INVALID_JSON || !body || typeof body !== "object" || Array.isArray(body)) {
+    return invalid("invalid_client_metadata", "Send client metadata as a JSON object.");
+  }
+  const authMethod = body.token_endpoint_auth_method || "none";
+  if (authMethod !== "none") {
+    return invalid("invalid_client_metadata", "Only token_endpoint_auth_method \"none\" is supported; no client secrets are issued.");
+  }
+  const grants = body.grant_types === undefined ? ["public"] : body.grant_types;
+  if (!Array.isArray(grants) || !grants.length || grants.some((grant) => !REGISTRABLE_GRANTS.includes(grant))) {
+    return invalid("invalid_client_metadata", `grant_types must be a subset of: ${REGISTRABLE_GRANTS.join(", ")}.`);
+  }
+  if (body.response_types !== undefined && (!Array.isArray(body.response_types) || body.response_types.length)) {
+    return invalid("invalid_client_metadata", "response_types must be empty; this server has no interactive authorization flow.");
+  }
+  if (
+    body.redirect_uris !== undefined &&
+    (!Array.isArray(body.redirect_uris) || body.redirect_uris.some((uri) => typeof uri !== "string" || !isAbsoluteUrl(uri)))
+  ) {
+    return invalid("invalid_redirect_uri", "redirect_uris must be an array of absolute URLs.");
+  }
+
+  const registered = {
+    client_id: `public-${crypto.randomUUID()}`,
+    client_id_issued_at: Math.floor(Date.now() / 1000),
+    token_endpoint_auth_method: "none",
+    grant_types: grants,
+    response_types: [],
+    scope: "knowledge:read",
+  };
+  if (typeof body.client_name === "string" && body.client_name) registered.client_name = body.client_name;
+  if (typeof body.client_uri === "string" && isAbsoluteUrl(body.client_uri)) registered.client_uri = body.client_uri;
+  if (Array.isArray(body.redirect_uris)) registered.redirect_uris = body.redirect_uris;
+  if (Array.isArray(body.contacts)) registered.contacts = body.contacts.filter((item) => typeof item === "string");
+  registered.token_endpoint = `${ORIGIN}/oauth/token`;
+  return res.status(201).json(registered);
 }
 
 function opOf(req) {
@@ -49,6 +79,16 @@ module.exports = async function agent(req, res) {
     return;
   }
 
+  if (op === "register" && req.method !== "POST") {
+    res.setHeader("Allow", "POST, OPTIONS");
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.status(405).json({
+      error: "invalid_request",
+      error_description: "POST JSON client metadata (RFC 7591) to register a public client.",
+    });
+    return;
+  }
+
   if (req.method === "GET" || req.method === "HEAD") {
     res.setHeader("WWW-Authenticate", `Bearer resource_metadata="${METADATA}"`);
     res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -62,12 +102,26 @@ module.exports = async function agent(req, res) {
 
   if (req.method !== "POST") {
     res.setHeader("Allow", "GET, POST, OPTIONS");
-    res.status(405).json({ error: "method_not_allowed" });
+    res.status(405).json({ error: "method_not_allowed", error_description: "Use POST." });
     return;
   }
 
-  const body = await readBody(req);
+  const parsed = await readJson(req);
   res.setHeader("Content-Type", "application/json; charset=utf-8");
+
+  if (op === "register") {
+    register(parsed, res);
+    return;
+  }
+
+  if (parsed === INVALID_JSON) {
+    res.status(400).json({
+      error: "invalid_request",
+      error_description: "Request body is not valid JSON. Send application/json, for example {\"grant_type\":\"public\"}.",
+    });
+    return;
+  }
+  const body = parsed && typeof parsed === "object" ? parsed : {};
 
   if (op === "token") {
     const grant = body.grant_type || "public";

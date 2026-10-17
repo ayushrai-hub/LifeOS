@@ -39,8 +39,8 @@
     {
       "@type": "WebSite",
       "@id": "https://life.ayushrai.site/#website",
-      "name": "Ayush Rai; life.ayushrai.site",
-      "alternateName": "LifeOS",
+      "name": "life.ayushrai.site",
+      "alternateName": ["Ayush Rai personal website", "Ayush Rai", "LifeOS"],
       "url": "https://life.ayushrai.site/",
       "description": "Public knowledge site of Ayush Rai: LLM applications, RAG systems, evaluation pipelines, projects, products, and career notes.",
       "publisher": { "@id": "https://life.ayushrai.site/#person" },
@@ -55,7 +55,7 @@
       "@type": "ProfilePage",
       "@id": "https://life.ayushrai.site/#profilepage",
       "url": "https://life.ayushrai.site/",
-      "name": "Ayush Rai; AI Engineer in Bhopal",
+      "name": "Ayush Rai; personal website of an AI Engineer in Bhopal",
       "isPartOf": { "@id": "https://life.ayushrai.site/#website" },
       "mainEntity": { "@id": "https://life.ayushrai.site/#person" },
       "about": { "@id": "https://life.ayushrai.site/#person" }

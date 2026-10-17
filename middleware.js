@@ -1,5 +1,5 @@
 import { next, rewrite } from "@vercel/functions";
-import { decide, prefersMarkdown } from "./agent/negotiate.mjs";
+import { aliasRedirect, decide, deprecationHeaders, prefersMarkdown } from "./agent/negotiate.mjs";
 
 const ORIGIN = "https://life.ayushrai.site";
 const LINK = [
@@ -31,6 +31,7 @@ function json404(pathname) {
       code: "not_found",
       message: `No API resource at ${pathname}.`,
       status: 404,
+      hint: "Check the path against https://life.ayushrai.site/openapi.json. API routes live under /api/v1.",
       docs: `${ORIGIN}/developers/`,
       openapi: `${ORIGIN}/openapi.json`,
     },
@@ -149,7 +150,13 @@ async function probeStatus(request) {
 export default async function middleware(request) {
   if (request.headers.get("x-agent-probe") === "1") return next();
 
+  const canonical = aliasRedirect(request.url);
+  if (canonical) return Response.redirect(canonical, 308);
+
   const url = new URL(request.url);
+
+  const deprecated = deprecationHeaders(url.pathname);
+  if (deprecated) return next({ headers: deprecated });
 
   // Collapse the filesystem homepage path onto the canonical public URL.
   const barePath = url.pathname.replace(/\/+$/, "") || "/";

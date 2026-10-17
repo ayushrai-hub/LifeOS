@@ -402,6 +402,216 @@ async function main() {
     const payload = JSON.parse(missingApi.body);
     assert.equal(payload.error.code, "not_found");
     assert.equal(payload.error.status, 404);
+    assert.ok(payload.error.hint, "JSON errors carry a resolution hint");
+  });
+
+  check("JSON error bodies include resolution hints", () => {
+    const { errorBody } = require("../agent/http");
+    for (const code of ["not_found", "method_not_allowed", "invalid_batch", "batch_too_large", "job_not_found", "unknown_code"]) {
+      const body = errorBody(code, "msg", 400);
+      assert.ok(body.error.hint && body.error.hint.length > 10, `${code} missing hint`);
+      assert.ok(body.error.docs.startsWith("https://"));
+    }
+  });
+
+  const mcp = require("../api/mcp");
+  const mcpCall = (body) =>
+    invoke(mcp, {
+      method: "POST",
+      url: "/api/mcp?surface=product",
+      query: { surface: "product" },
+      headers: { "content-type": "application/json" },
+      body,
+    });
+  const mcpParse = await mcpCall("{not json");
+  check("MCP parse error is JSON-RPC -32700 with HTTP 400", () => {
+    assert.equal(mcpParse.statusCode, 400);
+    const payload = JSON.parse(mcpParse.body);
+    assert.equal(payload.jsonrpc, "2.0");
+    assert.equal(payload.id, null);
+    assert.equal(payload.error.code, -32700);
+  });
+  const mcpInvalid = await mcpCall("{}");
+  check("MCP invalid request is JSON-RPC -32600 with HTTP 400", () => {
+    assert.equal(mcpInvalid.statusCode, 400);
+    assert.equal(JSON.parse(mcpInvalid.body).error.code, -32600);
+  });
+  const mcpEmptyBatch = await mcpCall("[]");
+  check("MCP empty batch is -32600", () => {
+    assert.equal(mcpEmptyBatch.statusCode, 400);
+    assert.equal(JSON.parse(mcpEmptyBatch.body).error.code, -32600);
+  });
+  const mcpNotification = await mcpCall(JSON.stringify({ jsonrpc: "2.0", method: "notifications/initialized" }));
+  check("MCP notification still returns 202 with no body", () => {
+    assert.equal(mcpNotification.statusCode, 202);
+    assert.equal(mcpNotification.body, "");
+  });
+  const mcpClientResponse = await mcpCall(JSON.stringify({ jsonrpc: "2.0", id: 7, result: {} }));
+  check("MCP client response is accepted with 202", () => {
+    assert.equal(mcpClientResponse.statusCode, 202);
+  });
+  const mcpList = await mcpCall(JSON.stringify({ jsonrpc: "2.0", id: 1, method: "tools/list" }));
+  check("MCP tools/list unchanged", () => {
+    assert.equal(mcpList.statusCode, 200);
+    assert.ok(JSON.parse(mcpList.body).result.tools.length >= 4);
+  });
+  const mcpUnknown = await mcpCall(JSON.stringify({ jsonrpc: "2.0", id: 2, method: "nope" }));
+  check("MCP unknown method is -32601 with HTTP 200", () => {
+    assert.equal(mcpUnknown.statusCode, 200);
+    assert.equal(JSON.parse(mcpUnknown.body).error.code, -32601);
+  });
+
+  const registerCall = (body, method = "POST") =>
+    invoke(agent, {
+      method,
+      url: "/api/agent?op=register",
+      query: { op: "register" },
+      headers: { "content-type": "application/json" },
+      body,
+    });
+  const registered = await registerCall(JSON.stringify({ client_name: "check-agent", grant_types: ["public"] }));
+  check("RFC 7591 registration returns 201 public client", () => {
+    assert.equal(registered.statusCode, 201);
+    assert.equal(registered.headers["cache-control"], "no-store");
+    const payload = JSON.parse(registered.body);
+    assert.match(payload.client_id, /^public-[0-9a-f-]{36}$/);
+    assert.equal(typeof payload.client_id_issued_at, "number");
+    assert.equal(payload.token_endpoint_auth_method, "none");
+    assert.deepEqual(payload.grant_types, ["public"]);
+    assert.equal(payload.client_name, "check-agent");
+    assert.equal(payload.client_secret, undefined);
+  });
+  const registerDefaults = await registerCall("{}");
+  check("RFC 7591 registration defaults grant_types to public", () => {
+    assert.equal(registerDefaults.statusCode, 201);
+    assert.deepEqual(JSON.parse(registerDefaults.body).grant_types, ["public"]);
+  });
+  const registerSecret = await registerCall(JSON.stringify({ token_endpoint_auth_method: "client_secret_basic" }));
+  check("RFC 7591 rejects secret-based clients", () => {
+    assert.equal(registerSecret.statusCode, 400);
+    assert.equal(JSON.parse(registerSecret.body).error, "invalid_client_metadata");
+  });
+  const registerCode = await registerCall(JSON.stringify({ grant_types: ["authorization_code"] }));
+  check("RFC 7591 rejects unsupported grant types", () => {
+    assert.equal(registerCode.statusCode, 400);
+    assert.equal(JSON.parse(registerCode.body).error, "invalid_client_metadata");
+  });
+  const registerRedirect = await registerCall(JSON.stringify({ redirect_uris: ["not a url"] }));
+  check("RFC 7591 rejects invalid redirect URIs", () => {
+    assert.equal(registerRedirect.statusCode, 400);
+    assert.equal(JSON.parse(registerRedirect.body).error, "invalid_redirect_uri");
+  });
+  const registerBadJson = await registerCall("{nope");
+  check("RFC 7591 rejects malformed JSON", () => {
+    assert.equal(registerBadJson.statusCode, 400);
+    assert.equal(JSON.parse(registerBadJson.body).error, "invalid_client_metadata");
+  });
+  const registerGet = await registerCall("", "GET");
+  check("registration endpoint answers GET with 405", () => {
+    assert.equal(registerGet.statusCode, 405);
+    assert.match(registerGet.headers.allow, /POST/);
+  });
+  const tokenBadJson = await invoke(agent, {
+    method: "POST",
+    url: "/api/agent?op=token",
+    query: { op: "token" },
+    body: "{nope",
+  });
+  check("token endpoint answers malformed JSON with OAuth invalid_request", () => {
+    assert.equal(tokenBadJson.statusCode, 400);
+    assert.equal(JSON.parse(tokenBadJson.body).error, "invalid_request");
+  });
+  const tokenEmpty = await invoke(agent, { method: "POST", url: "/api/agent?op=token", query: { op: "token" } });
+  check("token endpoint still issues public-read for an empty body", () => {
+    assert.equal(tokenEmpty.statusCode, 200);
+    assert.equal(JSON.parse(tokenEmpty.body).access_token, "public-read");
+  });
+
+  for (const [name, handler, url] of [
+    ["ask", ask, "/api/ask"],
+    ["batch", batch, "/api/batch"],
+    ["jobs", jobs, "/api/jobs"],
+  ]) {
+    const bad = await invoke(handler, { method: "POST", url, headers: { "content-type": "application/json" }, body: "{nope" });
+    check(`${name} answers malformed JSON with a structured 400`, () => {
+      assert.equal(bad.statusCode, 400);
+      const payload = JSON.parse(bad.body);
+      assert.equal(payload.error.code, "invalid_json");
+      assert.ok(payload.error.hint);
+    });
+  }
+
+  const { readJson, INVALID_JSON } = require("../agent/http");
+  const guarded = await readJson({
+    get body() {
+      throw new Error("Invalid JSON");
+    },
+  });
+  check("readJson returns INVALID_JSON when req.body throws", () => {
+    assert.equal(guarded, INVALID_JSON);
+  });
+
+  const a2a = require("../api/a2a");
+  const a2aBad = await invoke(a2a, { method: "POST", url: "/api/a2a", body: "{nope" });
+  check("A2A malformed JSON is JSON-RPC -32700", () => {
+    assert.equal(a2aBad.statusCode, 400);
+    assert.equal(JSON.parse(a2aBad.body).error.code, -32700);
+  });
+  const a2aOk = await invoke(a2a, { method: "POST", url: "/api/a2a", body: JSON.stringify({ jsonrpc: "2.0", id: 9 }) });
+  check("A2A valid request unchanged", () => {
+    assert.equal(a2aOk.statusCode, 200);
+    assert.equal(JSON.parse(a2aOk.body).id, 9);
+  });
+
+  check("auth metadata, OpenAPI, and llms.txt advertise self-serve registration", () => {
+    const as = json(".well-known/oauth-authorization-server");
+    assert.equal(as.registration_endpoint, "https://life.ayushrai.site/oauth/register");
+    const openapi = json("discovery/openapi.json");
+    assert.equal(openapi.paths["/oauth/register"].post.responses["201"] !== undefined, true);
+    assert.equal(openapi.info["x-pricing"].free_tier, true);
+    assert.ok(openapi.components.schemas.ErrorObject.properties.hint);
+    assert.match(openapi.info.title, /life\.ayushrai\.site/);
+    const llms = read("llms.txt");
+    assert.match(llms, /^# .+\r?\n\r?\n> .+/);
+    assert.match(llms, /## Developer resources for life\.ayushrai\.site/);
+    assert.match(llms, /oauth\/register/);
+  });
+
+  const { aliasRedirect, deprecationHeaders } = await import("../agent/negotiate.mjs");
+  check("RFC 9745 deprecation headers on /v1 short aliases", () => {
+    const headers = deprecationHeaders("/v1/sandbox");
+    assert.match(headers.deprecation, /^@\d+$/, "RFC 9745 Deprecation is an @epoch structured date");
+    assert.match(headers.link, /<https:\/\/life\.ayushrai\.site\/developers\/deprecation>; rel="deprecation"/);
+    assert.match(headers.link, /<https:\/\/life\.ayushrai\.site\/api\/v1\/sandbox>; rel="successor-version"/);
+    assert.match(deprecationHeaders("/v1/jobs/abc/").link, /\/api\/v1\/jobs\/abc>; rel="successor-version"/);
+    assert.match(deprecationHeaders("/v1").link, /\/api\/v1>; rel="successor-version"/);
+    assert.equal(deprecationHeaders("/api/v1/sandbox"), null, "documented paths are not deprecated");
+    assert.equal(deprecationHeaders("/v10"), null);
+  });
+
+  check("vercel.json routes", () => {
+    const config = json("vercel.json");
+    const rewrite = (src) => config.rewrites.find((item) => item.source === src);
+    assert.equal(rewrite("/oauth/register").destination, "/api/agent?op=register");
+    assert.equal(rewrite("/mcp").destination, "/mcp.json");
+    const catchAll = config.rewrites[config.rewrites.length - 1];
+    assert.equal(catchAll.source, "/:path(.*)");
+    const redirect = (src) => config.redirects.find((item) => item.source === src);
+    for (const src of ["/developer", "/api-docs", "/docs/api", "/sdk", "/cli", "/deprecation", "/versioning"]) {
+      assert.ok(redirect(src), `missing redirect ${src}`);
+    }
+    assert.ok(read("developers/deprecation/index.html").includes("Deprecation: @1792195200"));
+  });
+
+  check("alias host redirect rules", () => {
+    assert.equal(
+      aliasRedirect("https://thelifeofayush.vercel.app/sites/projects?x=1"),
+      "https://life.ayushrai.site/sites/projects?x=1"
+    );
+    assert.equal(aliasRedirect("https://life-os-psi-lyart.vercel.app/"), "https://life.ayushrai.site/");
+    assert.equal(aliasRedirect("https://life.ayushrai.site/"), null);
+    assert.equal(aliasRedirect("https://life-abc123-ayush-rais-work22.vercel.app/"), null, "previews stay reachable");
+    assert.equal(aliasRedirect("http://localhost:3000/"), null);
   });
 
   if (failed) process.exit(1);
