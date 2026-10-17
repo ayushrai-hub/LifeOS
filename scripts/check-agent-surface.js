@@ -633,7 +633,7 @@ async function main() {
   check("Go SDK vanity import and MCP registry metadata", () => {
     const config = json("vercel.json");
     const vanity = config.rewrites.find((item) => item.source === "/sdk/go");
-    assert.equal(vanity.destination, "/packages/life-go/vanity.html");
+    assert.equal(vanity.destination, "/packages/life-go/vanity", "cleanUrls requires extensionless rewrite targets");
     const page = read("packages/life-go/vanity.html");
     assert.match(page, /<meta name="go-import" content="life\.ayushrai\.site\/sdk\/go git https:\/\/github\.com\/ayushrai-hub\/LifeOS packages\/life-go">/);
     assert.match(read("packages/life-go/go.mod"), /^module life\.ayushrai\.site\/sdk\/go$/m);
