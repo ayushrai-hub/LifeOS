@@ -1080,7 +1080,7 @@
           "status": "pass",
           "score": 2,
           "maxScore": 2,
-          "details": "The llms.txt is well-formatted: 64 lines with markdown links, 5,117 characters in total.",
+          "details": "The llms.txt is well-formatted: 65 lines with markdown links, 5,149 characters in total.",
           "recommendation": "Format your llms.txt as a navigation index: start with a markdown heading, include markdown links to deeper resources, and keep it under 30,000 characters. If you have more to say, move long-form content into /llms-full.txt or per-section files (e.g. /docs/llms.txt, /api/llms.txt) and link to them from the main index.",
           "maturity": "verified",
           "tier": "recommended"
@@ -2631,8 +2631,8 @@
       "maxScore": 0
     }
   ],
-  "scannedAt": "2026-10-17T15:09:44.940Z",
-  "durationMs": 6254,
+  "scannedAt": "2026-10-17T15:24:11.015Z",
+  "durationMs": 6630,
   "urlKind": "domain",
   "mcpDetections": {
     "primary": {
