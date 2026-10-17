@@ -87,6 +87,7 @@ function Write-Page {
   </script>
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="$(Esc $css)?v=20260724b">
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>

@@ -624,6 +624,7 @@ function renderHtml(home) {
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles/site.css?v=20260724c">
 ${schemaHtml}
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>

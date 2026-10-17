@@ -63,7 +63,7 @@ async function markdownTwin(request, pathname) {
 }
 
 export const config = {
-  matcher: ["/((?!assets/|styles/|scripts/).*)"],
+  matcher: ["/((?!assets/|styles/|scripts/|_vercel/).*)"],
 };
 
 async function load(request, path, fallback) {

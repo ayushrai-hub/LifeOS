@@ -19,6 +19,8 @@
     "qa": "node scripts/qa-site.js",
     "check:agent": "node scripts/check-agent-surface.js",
     "build:markdown": "node scripts/build-markdown-twins.js",
+    "build:analytics": "node scripts/add-analytics.js",
+    "check:analytics": "node scripts/add-analytics.js --check",
     "local": "vercel dev --listen 3000",
     "start": "python3 -m http.server 3000"
   },
@@ -26,6 +28,7 @@
     "node": "24.x"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "@vercel/functions": "^3.10.1"
   }
 }
