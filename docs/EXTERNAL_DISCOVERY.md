@@ -21,9 +21,9 @@ npx @smithery/cli auth login
 npx @smithery/cli mcp publish https://life.ayushrai.site/mcp/product -n <your-org>/life-product
 ```
 
-- [ ] Publish product MCP on Smithery (or mcp.so) with homepage/repo pointing at life.ayushrai.site.
-- [ ] Paste the live registry URL into `/developers/` MCP section (replace the publish instructions) for bi-directional verification.
-- [ ] Status: **blocked** on Smithery login / API key in this environment.
+- [x] Official MCP Registry: `site.ayushrai.life/product` and `site.ayushrai.life/docs` published 2026-10-17 via HTTP domain verification (`/.well-known/mcp-registry-auth`; signing key kept outside the repo at `~/.config/mcp-registry/`). Linked from `/developers`, `/llms.txt`, and `/?mode=agent`.
+- [ ] Smithery or mcp.so listing (the registries Ora checks): needs the owner to sign in (Smithery: `npx @smithery/cli auth login`; mcp.so: GitHub sign-in on the submit form).
+- [ ] Status: Smithery/mcp.so **blocked** on owner sign-in.
 
 ## npm + PyPI SDK/CLI (Discovery −1, Usability −3/−3)
 
@@ -51,6 +51,10 @@ curl -sI https://pypi.org/pypi/life-ayushrai/json
 - [ ] Run Publish SDK packages
 - [ ] Confirm package pages resolve and homepage/repository point at life.ayushrai.site / LifeOS
 - [ ] Status: **blocked** on registry secrets (local `npm whoami` and Actions publish both unauthenticated).
+
+## Go module (Usability multi-language SDK)
+
+- [x] `life.ayushrai.site/sdk/go` v0.1.0 published 2026-10-17 (tag `packages/life-go/v0.1.0`, vanity import served at `/sdk/go`). Verified on proxy.golang.org, sum.golang.org, and pkg.go.dev.
 
 ## skills.sh (Access −1/−2)
 

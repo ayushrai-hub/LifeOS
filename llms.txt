@@ -62,6 +62,7 @@ Do not use this site to send messages as Ayush, to collect secrets, or to answer
 - [API sandbox](https://life.ayushrai.site/api/v1/sandbox.md): zero-auth endpoint docs
 - [Async jobs API](https://life.ayushrai.site/api/v1/jobs.md): 202 Accepted + Location polling
 - [MCP servers](https://life.ayushrai.site/mcp): product and docs MCP endpoints
+- [Official MCP Registry listing](https://registry.modelcontextprotocol.io/v0/servers?search=site.ayushrai.life): `site.ayushrai.life/product`, `site.ayushrai.life/docs`
 - [Agent view](https://life.ayushrai.site/?mode=agent): HTML index of endpoints and auth (`&format=json` for JSON)
 - [Go SDK](https://life.ayushrai.site/sdk/go): `go get life.ayushrai.site/sdk/go`
 - [JavaScript SDK and CLI source](https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai): `life-ayushrai` (npm publish pending registry credentials)

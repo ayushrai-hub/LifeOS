@@ -128,7 +128,12 @@
     "knowledge": "https://life.ayushrai.site/mcp/knowledge",
     "docs": "https://life.ayushrai.site/mcp/docs",
     "server_card": "https://life.ayushrai.site/mcp/product/server-card",
-    "index": "https://life.ayushrai.site/mcp"
+    "index": "https://life.ayushrai.site/mcp",
+    "registry": "https://registry.modelcontextprotocol.io/v0/servers?search=site.ayushrai.life",
+    "registry_names": [
+      "site.ayushrai.life/product",
+      "site.ayushrai.life/docs"
+    ]
   },
   "cli": {
     "name": "life-ayushrai",
@@ -156,7 +161,8 @@
     "registry_status": "Go module published via proxy.golang.org; npm and PyPI packages are built in-repo and await owner registry credentials",
     "go_module": "life.ayushrai.site/sdk/go",
     "install_go": "go get life.ayushrai.site/sdk/go",
-    "go_path": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-go"
+    "go_path": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-go",
+    "go_docs": "https://pkg.go.dev/life.ayushrai.site/sdk/go"
   },
   "skills": {
     "index": "https://life.ayushrai.site/.well-known/agent-skills/index.json",
