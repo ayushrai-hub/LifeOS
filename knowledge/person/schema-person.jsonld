@@ -17,6 +17,14 @@
         "addressRegion": "Madhya Pradesh",
         "addressCountry": "IN"
       },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "professional inquiries",
+        "email": "ayushrai0211@gmail.com",
+        "telephone": "+91-7440567944",
+        "url": "https://life.ayushrai.site/sites/contact",
+        "availableLanguage": ["English", "Hindi"]
+      },
       "sameAs": [
         "https://github.com/ayushrai-hub",
         "https://github.com/ayushrai-hub/LifeOS",

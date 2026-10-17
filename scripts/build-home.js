@@ -549,10 +549,34 @@ function renderHtml(home) {
 
   const personSchemaPath = path.join(KNOWLEDGE, "person/schema-person.jsonld");
   const personSchema = fs.existsSync(personSchemaPath)
-    ? read(personSchemaPath).trim()
-    : "";
+    ? JSON.parse(read(personSchemaPath))
+    : null;
+  if (personSchema && home.latest_work.length) {
+    // Mirrors the visible Latest Work panel; keep it derived from the same list.
+    personSchema["@graph"].push({
+      "@type": "ItemList",
+      "@id": "https://life.ayushrai.site/#latest-work",
+      name: "Latest Work",
+      itemListElement: home.latest_work.map((item, index) => {
+        const isRepo = /^https:\/\/github\.com\//.test(item.href);
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": isRepo ? "SoftwareSourceCode" : "WebApplication",
+            name: item.title,
+            description: item.summary || undefined,
+            url: item.href,
+            ...(isRepo ? { codeRepository: item.href } : {}),
+            ...(item.date ? { dateModified: item.date } : {}),
+            creator: { "@id": "https://life.ayushrai.site/#person" },
+          },
+        };
+      }),
+    });
+  }
   const schemaHtml = personSchema
-    ? `  <script type="application/ld+json">\n${personSchema}\n  </script>`
+    ? `  <script type="application/ld+json">\n${JSON.stringify(personSchema, null, 2)}\n  </script>`
     : "";
 
   const pageTitle = home.seo_title || `${home.name}; AI Engineer in Bhopal`;
@@ -820,9 +844,8 @@ function main() {
   write(path.join(ROOT, "data/home.json"), JSON.stringify(home, null, 2) + "\n");
   write(path.join(ROOT, "sites/www/index.html"), renderHtml(home));
   const markdown = renderMarkdown(home);
-  write(path.join(ROOT, "index.md"), markdown);
   write(path.join(ROOT, "sites/www/index.md"), markdown);
-  console.log("Wrote data/home.json, sites/www/index.html, and index.md");
+  console.log("Wrote data/home.json, sites/www/index.html, and sites/www/index.md");
 }
 
 main();

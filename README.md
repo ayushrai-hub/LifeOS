@@ -19,6 +19,8 @@ This repository is a **long-term personal knowledge system**. The website is one
 | `/data/imports` | Original spreadsheets/exports (provenance) |
 | `/scripts/knowledge` | Validate + import |
 | `/sites` | Website consumer (presentation only) |
+| `/discovery` | Agent docs served at root URLs via `vercel.json` rewrites (`/auth.md`, `/openapi.json`, `/pricing.md`, ...) |
+| `/api`, `/agent`, `middleware.js` | Serverless endpoints, negotiation, agent mode |
 
 ## Principles
 
@@ -34,11 +36,12 @@ npm run validate       # knowledge validation (Node)
 npm run build:site     # generate resumes, portfolios, domains from data/site-catalog.json
 npm run qa             # static QA (em dashes, viewport, catalog coverage); exits 1 on failure
 npm run check:agent    # agent surface checks (negotiation, discovery, jobs, trust pages)
-npm start              # local static preview on http://localhost:3000 (Python http.server)
+npm run local            # full local site on http://localhost:3000 (vercel dev: middleware, rewrites, api/)
+npm start              # static-only preview (Python http.server; no rewrites or api/)
 node scripts/build-home.js   # regenerate homepage from knowledge/_system/homepage.yaml
 ```
 
-Browse the homepage at `/sites/www/` or `/` under the local server. Public site: https://life.ayushrai.site/. Developer portal: https://life.ayushrai.site/developers/.
+Browse the homepage at `/` under `npm run local`. Public site: https://life.ayushrai.site/. Developer portal: https://life.ayushrai.site/developers/.
 
 ## Agent skills (skills.sh)
 
@@ -61,7 +64,8 @@ The site is a knowledge graph in HTML: no mega-menu, inline blue links, multiple
 
 ## Deploy (Vercel)
 
-- Root `vercel.json` rewrites `/` → `sites/www/index.html`
+- `middleware.js` rewrites `/` → `sites/www/` and 308s `/sites/www` → `/`
+- `vercel.json` maps root agent URLs to files in `discovery/`
 - Content chronology lives in knowledge entities + `knowledge/_system/site-status.yaml`
 
 ```bash

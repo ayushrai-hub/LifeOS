@@ -127,7 +127,7 @@ async function main() {
   });
 
   check("auth.md structure", () => {
-    const text = read("auth.md");
+    const text = read("discovery/auth.md");
     assert.match(text, /^# Authentication$/m);
     assert.ok(text.length > 200);
     for (const heading of ["Discover", "Pick a method", "Register", "Claim", "Exchange", "Use the access_token", "Errors", "Revocation"]) {
@@ -149,7 +149,7 @@ async function main() {
     assert.ok(card.description.length <= 100);
     assert.ok(card.remotes[0].url.startsWith("https://life.ayushrai.site/mcp/"));
     assert.equal(card.tools, undefined);
-    const openapi = json("openapi.json");
+    const openapi = json("discovery/openapi.json");
     assert.ok(openapi.components.schemas.ErrorResponse);
     assert.ok(openapi.components.schemas.AskResponse);
     assert.ok(openapi.paths["/api/v1/batch"]);
@@ -162,7 +162,7 @@ async function main() {
     assert.ok(openapi.components.schemas.JobCompleted);
     const skills = json(".well-known/agent-skills/index.json");
     assert.ok(skills.skills.every((skill) => skill.name && skill.description && skill.type === "skill-md" && skill.digest.startsWith("sha256:")));
-    assert.match(read("auth.md"), /^# Authentication\r?\n/);
+    assert.match(read("discovery/auth.md"), /^# Authentication\r?\n/);
     assert.match(skills.when_to_use, /When to use this/);
     const aiCatalog = json(".well-known/ai-catalog.json");
     assert.ok(Array.isArray(aiCatalog.entries));
@@ -182,7 +182,7 @@ async function main() {
     assert.ok(plugin.name);
     assert.match(read("robots.txt"), /^schemamap:\s+https:\/\/life\.ayushrai\.site\/schemamap\.xml/m);
     assert.match(read("sitemap.xml"), /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
-    assert.match(read("index.md"), /^# /m);
+    assert.match(read("sites/www/index.md"), /^# /m);
     const home = read("sites/www/index.html");
     assert.match(home, /rel="canonical" href="https:\/\/life\.ayushrai\.site\/"/);
     assert.match(home, /property="og:image" content="https:\/\/life\.ayushrai\.site\/assets\//);
@@ -202,7 +202,7 @@ async function main() {
       const text = read(rel).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
       assert.ok(text.length >= 500, `${rel} has ${text.length} characters`);
     }
-    for (const rel of ["about/index.md", "privacy/index.md", "pricing.md"]) {
+    for (const rel of ["about/index.md", "privacy/index.md", "discovery/pricing.md"]) {
       const text = read(rel).trim();
       assert.ok(text.length >= 500, `${rel} has ${text.length} characters`);
       assert.match(text, /^# /m);
@@ -389,6 +389,19 @@ async function main() {
     assert.match(missingHtml.headers["content-type"], /text\/html/);
     assert.match(missingHtml.body, /Not found/);
     assert.match(missingHtml.body, /llms\.txt/);
+  });
+
+  const missingApi = await invoke(notFound, {
+    url: "/api/not-found?path=api/v1/nonexistent",
+    query: { path: "api/v1/nonexistent" },
+    headers: { accept: "text/html" },
+  });
+  check("json 404 on API paths", () => {
+    assert.equal(missingApi.statusCode, 404);
+    assert.match(missingApi.headers["content-type"], /application\/json/);
+    const payload = JSON.parse(missingApi.body);
+    assert.equal(payload.error.code, "not_found");
+    assert.equal(payload.error.status, 404);
   });
 
   if (failed) process.exit(1);

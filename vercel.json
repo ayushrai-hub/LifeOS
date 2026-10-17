@@ -77,7 +77,9 @@
   ],
   "redirects": [
     { "source": "/contact", "destination": "/sites/contact", "permanent": false },
-    { "source": "/contact/", "destination": "/sites/contact", "permanent": false }
+    { "source": "/contact/", "destination": "/sites/contact", "permanent": false },
+    { "source": "/deprecation", "destination": "/developers/deprecation", "permanent": false },
+    { "source": "/docs/deprecation", "destination": "/developers/deprecation", "permanent": false }
   ],
   "rewrites": [
     {
@@ -88,7 +90,7 @@
     {
       "source": "/",
       "has": [{ "type": "header", "key": "accept", "value": "text/markdown" }],
-      "destination": "/index.md"
+      "destination": "/sites/www/index.md"
     },
     {
       "source": "/",
@@ -99,8 +101,23 @@
           "value": "GPTBot|ClaudeBot|ChatGPT-User|PerplexityBot|Google-Extended|Applebot-Extended|ora-agent|DeepSeekBot"
         }
       ],
-      "destination": "/index.md"
+      "destination": "/sites/www/index.md"
     },
+    { "source": "/index.md", "destination": "/sites/www/index.md" },
+    { "source": "/favicon.svg", "destination": "/assets/icons/favicon.svg" },
+    { "source": "/auth.md", "destination": "/discovery/auth.md" },
+    { "source": "/pricing.md", "destination": "/discovery/pricing.md" },
+    { "source": "/skills.md", "destination": "/discovery/skills.md" },
+    { "source": "/agent.md", "destination": "/discovery/agent.md" },
+    { "source": "/api.md", "destination": "/discovery/api.md" },
+    { "source": "/developer.md", "destination": "/discovery/developer.md" },
+    { "source": "/developers.md", "destination": "/discovery/developers.md" },
+    { "source": "/llms.md", "destination": "/discovery/llms.md" },
+    { "source": "/llms-full.txt", "destination": "/discovery/llms-full.txt" },
+    { "source": "/openapi.json", "destination": "/discovery/openapi.json" },
+    { "source": "/schemamap.xml", "destination": "/discovery/schemamap.xml" },
+    { "source": "/api/v1/jobs.md", "destination": "/discovery/jobs.md" },
+    { "source": "/api/v1/sandbox.md", "destination": "/discovery/sandbox.md" },
     { "source": "/.well-known/llms.txt", "destination": "/llms.txt" },
     { "source": "/.well-known/api-catalog", "destination": "/api/linkset" },
     { "source": "/.well-known/api-catalog/", "destination": "/api/linkset" },
@@ -160,6 +177,6 @@
     { "source": "/mcp/docs/", "destination": "/api/mcp?surface=docs" },
     { "source": "/a2a", "destination": "/api/a2a" },
     { "source": "/a2a/", "destination": "/api/a2a" },
-    { "source": "/:path*", "destination": "/api/not-found?path=:path*" }
+    { "source": "/:path(.*)", "destination": "/api/not-found?path=:path" }
   ]
 }

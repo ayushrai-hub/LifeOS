@@ -1,4 +1,7 @@
 const { ORIGIN } = require("../agent/answers");
+const { errorBody } = require("../agent/http");
+
+const API_PATH = /^\/(api|v1|v2|mcp|oauth|agent|a2a)(\/|$)/;
 
 module.exports = function notFound(req, res) {
   const extra = req.query && req.query.path ? String(req.query.path) : "";
@@ -10,7 +13,14 @@ module.exports = function notFound(req, res) {
     '</sitemap.xml>; rel="sitemap", </llms.txt>; rel="describedby", </index.md>; rel="alternate"; type="text/markdown"'
   );
 
-  if (/\btext\/markdown\b/i.test(accept)) {
+  const wantsJson = /application\/(json|problem\+json)/i.test(accept) && !/text\/html/i.test(accept);
+  if (API_PATH.test(missing) || wantsJson) {
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.status(404).json(errorBody("not_found", `No API resource at ${missing}.`, 404));
+    return;
+  }
+
+  if (/\btext\/markdown\b/i.test(accept) || /\.md$/i.test(missing)) {
     res.setHeader("Content-Type", "text/markdown; charset=utf-8");
     res.status(404).send(
       `# Not found\n\nThe page \`${missing}\` could not be found on this site.\n\nTry the [homepage](${ORIGIN}/), the [agent index](${ORIGIN}/llms.txt), or the [sitemap](${ORIGIN}/sitemap.xml).\n`

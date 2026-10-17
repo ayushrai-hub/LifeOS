@@ -23,6 +23,43 @@ AI Engineer in Bhopal. Public knowledge site for projects, products, and contact
 `;
 
 const STATIC_FILE = /\.(md|txt|json|xml|css|js|svg|png|jpe?g|webp|gif|ico|woff2?)$/i;
+const API_PATH = /^\/(api|v1|v2|mcp|oauth|agent|a2a)(\/|$)/;
+
+function json404(pathname) {
+  return JSON.stringify({
+    error: {
+      code: "not_found",
+      message: `No API resource at ${pathname}.`,
+      status: 404,
+      docs: `${ORIGIN}/developers/`,
+      openapi: `${ORIGIN}/openapi.json`,
+    },
+  });
+}
+
+function prefersJson(accept) {
+  return /application\/(json|problem\+json)/i.test(accept) && !/text\/html/i.test(accept);
+}
+
+async function exists(request, path) {
+  try {
+    const res = await fetch(new URL(path, request.url), {
+      method: "HEAD",
+      headers: { "x-agent-probe": "1" },
+    });
+    return res.ok;
+  } catch (err) {
+    return false;
+  }
+}
+
+/** Map /section.md to /section/index.md when only the directory twin exists. */
+async function markdownTwin(request, pathname) {
+  if (!/\.md$/i.test(pathname) || /\/index\.md$/i.test(pathname)) return null;
+  if (await exists(request, pathname)) return null;
+  const twin = `${pathname.slice(0, -3)}/index.md`;
+  return (await exists(request, twin)) ? twin : null;
+}
 
 export const config = {
   matcher: ["/((?!assets/|styles/|scripts/).*)"],
@@ -150,7 +187,7 @@ export default async function middleware(request) {
   }
 
   if (action === "markdown") {
-    const body = await load(request, "/index.md", FALLBACK_MD);
+    const body = await load(request, "/sites/www/index.md", FALLBACK_MD);
     return new Response(body, {
       status: 200,
       headers: {
@@ -162,7 +199,7 @@ export default async function middleware(request) {
   }
 
   if (action === "home") {
-    return rewrite(new URL("/sites/www/", request.url), {
+    return rewrite(new URL("/sites/www", request.url), {
       headers: {
         vary: "Accept, User-Agent",
         link: LINK,
@@ -180,6 +217,10 @@ export default async function middleware(request) {
   }
 
   if (STATIC_FILE.test(url.pathname)) {
+    const twin = await markdownTwin(request, url.pathname);
+    if (twin) {
+      return rewrite(new URL(twin, request.url), { headers: { vary: "Accept" } });
+    }
     return next();
   }
 
@@ -191,6 +232,17 @@ export default async function middleware(request) {
   }
 
   if (status !== 404) return next();
+
+  if (API_PATH.test(url.pathname) || prefersJson(accept)) {
+    return new Response(json404(url.pathname), {
+      status: 404,
+      headers: {
+        "content-type": "application/json; charset=utf-8",
+        vary: "Accept",
+        link: LINK,
+      },
+    });
+  }
 
   const pathname = url.pathname.endsWith("/") || url.pathname === "/" ? url.pathname : `${url.pathname}/`;
 

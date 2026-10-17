@@ -16,6 +16,7 @@
     "qa": "node scripts/qa-site.js",
     "check:agent": "node scripts/check-agent-surface.js",
     "build:markdown": "node scripts/build-markdown-twins.js",
+    "local": "vercel dev --listen 3000",
     "start": "python3 -m http.server 3000"
   },
   "engines": {

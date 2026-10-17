@@ -5,6 +5,71 @@
   "url": "https://life.ayushrai.site/",
   "description": "Public knowledge site for an AI Engineer in Bhopal. Machine-readable agent view of profile, projects, products, contact, API, MCP, sandbox, SDK, and CLI.",
   "when_to_use": "Identify Ayush Rai, quote public projects and products, fetch published contact details, call the ask endpoint, sandbox, jobs API, product MCP, or docs MCP. Do not invent metrics or send messages as him.",
+  "quickstart": {
+    "docs": "https://life.ayushrai.site/developers/",
+    "llms_txt": "https://life.ayushrai.site/llms.txt",
+    "openapi": "https://life.ayushrai.site/openapi.json",
+    "first_call": "curl https://life.ayushrai.site/api/v1/sandbox",
+    "auth": "none for public reads; optional Bearer public-read via /auth.md",
+    "pricing": "free; no signup, no API key required",
+    "rate_limit": "120 requests per 60 seconds (RateLimit-* headers)",
+    "versioning": "URL path /api/v1; deprecation policy https://life.ayushrai.site/developers/deprecation/",
+    "cli": "npx life-ayushrai ask \"Who is Ayush Rai?\"",
+    "sdk": "npm install life-ayushrai | pip install life-ayushrai",
+    "skills": "npx skills add ayushrai-hub/LifeOS",
+    "mcp": "https://life.ayushrai.site/mcp/product",
+    "async_jobs": "POST https://life.ayushrai.site/api/v1/jobs -> 202 Accepted + Location"
+  },
+  "authentication": {
+    "public_reads": "No token for /ask, /llms.txt, markdown pages, /api/v1/sandbox, /api/v1/batch, or /api/v1/jobs.",
+    "protected_resource_metadata": "https://life.ayushrai.site/.well-known/oauth-protected-resource",
+    "authorization_server": "https://life.ayushrai.site/.well-known/oauth-authorization-server",
+    "auth_guide": "https://life.ayushrai.site/auth.md",
+    "www_authenticate": "Bearer resource_metadata=\"https://life.ayushrai.site/.well-known/oauth-protected-resource\"",
+    "sandbox": "https://life.ayushrai.site/api/v1/sandbox",
+    "methods": [
+      "none for public reads",
+      "Bearer public-read for /api/v1",
+      "anonymous register at /agent/identity"
+    ]
+  },
+  "pricing": {
+    "url": "https://life.ayushrai.site/pricing.md",
+    "model": "free",
+    "free_tier": true,
+    "signup_required": false
+  },
+  "rate_limits": {
+    "limit": 120,
+    "window": "60s",
+    "headers": [
+      "RateLimit-Limit",
+      "RateLimit-Remaining",
+      "RateLimit-Reset"
+    ]
+  },
+  "versioning": {
+    "scheme": "url-path",
+    "current": "v1",
+    "deprecation_policy": "https://life.ayushrai.site/developers/deprecation/",
+    "signals": [
+      "Deprecation",
+      "Sunset"
+    ]
+  },
+  "errors": {
+    "format": "application/json",
+    "shape": {
+      "error": {
+        "code": "string",
+        "message": "string",
+        "status": "integer",
+        "docs": "uri",
+        "auth": "uri"
+      }
+    },
+    "example": "https://life.ayushrai.site/developers/"
+  },
   "developer_portal": "https://life.ayushrai.site/developers/",
   "llms_txt": "https://life.ayushrai.site/llms.txt",
   "openapi": "https://life.ayushrai.site/openapi.json",
@@ -38,30 +103,6 @@
     "openapi": "https://life.ayushrai.site/openapi.json",
     "catalog": "https://life.ayushrai.site/.well-known/api-catalog"
   },
-  "mcp": {
-    "product": "https://life.ayushrai.site/mcp/product",
-    "knowledge": "https://life.ayushrai.site/mcp/knowledge",
-    "docs": "https://life.ayushrai.site/mcp/docs",
-    "server_card": "https://life.ayushrai.site/mcp/product/server-card"
-  },
-  "skills": {
-    "index": "https://life.ayushrai.site/.well-known/agent-skills/index.json",
-    "install": "npx skills add ayushrai-hub/LifeOS",
-    "skills_sh": "https://skills.sh/ayushrai-hub/LifeOS",
-    "official": true,
-    "names": [
-      "lookup-ayush-rai",
-      "find-projects-and-products",
-      "contact-ayush-rai"
-    ]
-  },
-  "cli": {
-    "name": "life-ayushrai",
-    "install": "npm install -g life-ayushrai",
-    "run": "npx life-ayushrai ask \"Who is Ayush Rai?\"",
-    "commands": ["ask", "sandbox", "job"],
-    "source": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai"
-  },
   "async_jobs": {
     "create": "https://life.ayushrai.site/api/v1/jobs",
     "method": "POST",
@@ -72,31 +113,22 @@
     "completed": "completed",
     "openapi": "https://life.ayushrai.site/openapi.json#/paths/~1api~1v1~1jobs"
   },
-  "authentication": {
-    "public_reads": "No token for /ask, /llms.txt, markdown pages, /api/v1/sandbox, /api/v1/batch, or /api/v1/jobs.",
-    "protected_resource_metadata": "https://life.ayushrai.site/.well-known/oauth-protected-resource",
-    "authorization_server": "https://life.ayushrai.site/.well-known/oauth-authorization-server",
-    "auth_guide": "https://life.ayushrai.site/auth.md",
-    "www_authenticate": "Bearer resource_metadata=\"https://life.ayushrai.site/.well-known/oauth-protected-resource\"",
-    "sandbox": "https://life.ayushrai.site/api/v1/sandbox",
-    "methods": [
-      "none for public reads",
-      "Bearer public-read for /api/v1",
-      "anonymous register at /agent/identity"
-    ]
+  "mcp": {
+    "product": "https://life.ayushrai.site/mcp/product",
+    "knowledge": "https://life.ayushrai.site/mcp/knowledge",
+    "docs": "https://life.ayushrai.site/mcp/docs",
+    "server_card": "https://life.ayushrai.site/mcp/product/server-card"
   },
-  "errors": {
-    "format": "application/json",
-    "shape": {
-      "error": {
-        "code": "string",
-        "message": "string",
-        "status": "integer",
-        "docs": "uri",
-        "auth": "uri"
-      }
-    },
-    "example": "https://life.ayushrai.site/developers/"
+  "cli": {
+    "name": "life-ayushrai",
+    "install": "npm install -g life-ayushrai",
+    "run": "npx life-ayushrai ask \"Who is Ayush Rai?\"",
+    "commands": [
+      "ask",
+      "sandbox",
+      "job"
+    ],
+    "source": "https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai"
   },
   "sdk": {
     "npm_package": "life-ayushrai",
@@ -112,7 +144,17 @@
     "pypi_url": "https://pypi.org/project/life-ayushrai/",
     "registry_status": "source ready in GitHub; npm/PyPI publish needs NPM_TOKEN and PYPI_TOKEN on the Publish SDK packages workflow"
   },
-  "pricing": "https://life.ayushrai.site/pricing.md",
+  "skills": {
+    "index": "https://life.ayushrai.site/.well-known/agent-skills/index.json",
+    "install": "npx skills add ayushrai-hub/LifeOS",
+    "skills_sh": "https://skills.sh/ayushrai-hub/LifeOS",
+    "official": true,
+    "names": [
+      "lookup-ayush-rai",
+      "find-projects-and-products",
+      "contact-ayush-rai"
+    ]
+  },
   "repository": {
     "url": "https://github.com/ayushrai-hub/LifeOS",
     "agents": "https://github.com/ayushrai-hub/LifeOS/blob/main/AGENTS.md",

@@ -8,7 +8,14 @@
     "contact": {
       "name": "Ayush Rai",
       "url": "https://life.ayushrai.site/sites/contact"
-    }
+    },
+    "x-api-versioning": "url-path (/api/v1)",
+    "x-deprecation-policy": "https://life.ayushrai.site/developers/deprecation/",
+    "x-sunset-policy": "Breaking changes ship with Deprecation: true and a Sunset date at least 30 days out on the retiring path."
+  },
+  "externalDocs": {
+    "description": "Versioning and deprecation policy",
+    "url": "https://life.ayushrai.site/developers/deprecation/"
   },
   "servers": [
     { "url": "https://life.ayushrai.site" }
