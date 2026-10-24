@@ -1,0 +1,243 @@
+{
+  "id": "work.index",
+  "type": "work_index",
+  "title": "Work",
+  "slug": "work",
+  "status": "published",
+  "visibility": "public",
+  "created": "2026-10-25",
+  "updated": "2026-10-25",
+  "author": "person.owner",
+  "version": "1.0.0",
+  "schema": "knowledge/work/README.md",
+  "intro": "Each entry links to the page that holds the evidence, here or on [ayushrai.site](https://www.ayushrai.site/work), instead of copying it. Labels say how far each piece got.",
+  "statuses": {
+    "live": "A public URL serves it today.",
+    "public-code": "Code is in a public repository. No hosted deployment is claimed.",
+    "synthetic-demo": "Runs end to end on fictional data.",
+    "completed": "Finished. The page says what was produced and what was not.",
+    "in-progress": "Not finished and not public yet."
+  },
+  "categories": [
+    {
+      "id": "products",
+      "label": "Products and applications",
+      "description": "Things people can use, or will be able to."
+    },
+    {
+      "id": "ai-ml",
+      "label": "AI and machine learning",
+      "description": "LLM applications, retrieval, and evaluation work."
+    },
+    {
+      "id": "gtm",
+      "label": "GTM engineering and business systems",
+      "description": "Data and decision systems for revenue work."
+    },
+    {
+      "id": "software",
+      "label": "Software engineering and infrastructure",
+      "description": "Audit, compliance, and security tooling with deterministic behaviour."
+    },
+    {
+      "id": "research",
+      "label": "Research, analysis, and experimentation",
+      "description": "Analysis where the method matters as much as the result."
+    },
+    {
+      "id": "public-policy",
+      "label": "Public policy and civic work",
+      "description": "Policy research, drafting, and scheme review."
+    },
+    {
+      "id": "ongoing",
+      "label": "Ongoing personal projects",
+      "description": "Long-running work that is not public yet."
+    }
+  ],
+  "entries": [
+    {
+      "id": "revenueroles",
+      "title": "RevenueRoles",
+      "summary": "Job discovery for technical revenue roles such as GTM engineer, RevOps engineer, and forward deployed engineer, classified by the work a posting describes rather than by its title.",
+      "category": "products",
+      "status": "live",
+      "date": "2026",
+      "role": "Builder",
+      "href": "/sites/products/revenueroles",
+      "links": [
+        { "label": "Live site", "href": "https://revenueroles.in/" },
+        { "label": "GitHub", "href": "https://github.com/ayushrai-hub/RevenueRoles" }
+      ],
+      "related": ["gtm-engineering"],
+      "featured": true
+    },
+    {
+      "id": "shiksha-mitra",
+      "title": "Shiksha-Mitra",
+      "summary": "A collaborative learning platform where peers share resources, acknowledge progress, and support each other's career and education journeys.",
+      "category": "products",
+      "status": "live",
+      "date": "2024",
+      "role": "Builder",
+      "href": "/sites/products/shiksha-mitra",
+      "links": [
+        { "label": "Live site", "href": "https://shiksha-mitra.vercel.app/" },
+        { "label": "GitHub", "href": "https://github.com/ayushrai-hub/Shiksha-Mitra" }
+      ]
+    },
+    {
+      "id": "the-open-framework",
+      "title": "The Open Framework",
+      "summary": "An early digital public infrastructure concept for civil-society coordination, published as a front-end prototype rather than as live national infrastructure.",
+      "category": "products",
+      "status": "live",
+      "date": "2025",
+      "href": "https://www.ayushrai.site/work/the-open-framework",
+      "links": [
+        { "label": "Prototype", "href": "https://the-open-frameworks.vercel.app/" },
+        { "label": "GitHub", "href": "https://github.com/ayushrai-hub/the-open-framework" }
+      ],
+      "related": ["public-policy"]
+    },
+    {
+      "id": "agenyra",
+      "title": "AGENYRA",
+      "summary": "A distribution layer for AI products, starting with structured representation and builder onboarding, with discovery and placement still at earlier stages.",
+      "category": "products",
+      "status": "live",
+      "date": "2026",
+      "href": "https://www.ayushrai.site/work/agenyra",
+      "links": [
+        { "label": "Live site", "href": "https://agenyra.space/" },
+        { "label": "GitHub", "href": "https://github.com/ayushrai-hub/AGENYRA_product" }
+      ]
+    },
+    {
+      "id": "medvoice",
+      "title": "MedVoice",
+      "summary": "A voice-assisted order and billing workflow for pharmaceutical wholesalers, where speech proposes a line and deterministic rules decide identity, tax, and posting.",
+      "category": "products",
+      "status": "public-code",
+      "date": "2026",
+      "href": "https://www.ayushrai.site/work/medvoice",
+      "links": [
+        { "label": "GitHub", "href": "https://github.com/ayushrai-hub/MedVoiceERP" }
+      ]
+    },
+    {
+      "id": "adaptive-rag",
+      "title": "Adaptive RAG",
+      "summary": "Agentic retrieval-augmented generation with LangGraph: query rewriting, relevance grading, web-search fallback, and routing between retrieval, search, and plain reasoning.",
+      "category": "ai-ml",
+      "status": "public-code",
+      "date": "2026",
+      "role": "Author and engineer",
+      "href": "https://github.com/ayushrai-hub/adaptive-rag",
+      "featured": true
+    },
+    {
+      "id": "mailu",
+      "title": "MailU",
+      "summary": "Local email intelligence: Gmail API sync, zero-shot categorization, semantic search, and RAG chat over your own mail on a local model.",
+      "category": "ai-ml",
+      "status": "public-code",
+      "date": "2026",
+      "role": "Author and engineer",
+      "href": "https://github.com/ayushrai-hub/MailU"
+    },
+    {
+      "id": "openai-rlhf",
+      "title": "OpenAI-RLHF",
+      "summary": "An archive of coding-evaluation tasks with a task generator, test runner, and validation tooling. It is not an RLHF trainer.",
+      "category": "ai-ml",
+      "status": "public-code",
+      "date": "2025",
+      "role": "Author and engineer",
+      "href": "https://github.com/ayushrai-hub/OpenAI-RLHF"
+    },
+    {
+      "id": "rlhf-tasks",
+      "title": "RLHF-tasks",
+      "summary": "Coding-agent evaluation toolchain: Harbor and Terminus task systems, Dockerized oracles, and review CLIs.",
+      "category": "ai-ml",
+      "status": "public-code",
+      "date": "2026",
+      "href": "https://github.com/ayushrai-hub/RLHF-tasks"
+    },
+    {
+      "id": "gtm-engineering",
+      "title": "GTM engineering",
+      "summary": "Data and decision systems for revenue work: job-market data pipelines, entity resolution, explainable scoring, and human-approval workflows. The page covers RevenueRoles, the Revenue Intelligence Engine, the Relationship Intelligence Engine, SpiderWeb, and MailU, and separates what I have built from what I am still learning.",
+      "category": "gtm",
+      "status": "live",
+      "date": "2026",
+      "href": "https://www.ayushrai.site/gtm",
+      "related": ["revenueroles", "mailu"],
+      "featured": true
+    },
+    {
+      "id": "security-audit",
+      "title": "security-audit",
+      "summary": "Read-only, cross-platform host audit toolkit with DFIR-style inventory and MITRE-mapped findings.",
+      "category": "software",
+      "status": "public-code",
+      "date": "2026",
+      "href": "https://github.com/ayushrai-hub/security-audit"
+    },
+    {
+      "id": "sopia",
+      "title": "SoPia",
+      "summary": "Deterministic SOP compliance auditor.",
+      "category": "software",
+      "status": "public-code",
+      "date": "2026",
+      "href": "https://github.com/ayushrai-hub/SoPia"
+    },
+    {
+      "id": "ias-system",
+      "title": "IAS-system",
+      "summary": "Judgment and case-file audit pipeline: OCR, SOP checks, then scoring.",
+      "category": "software",
+      "status": "public-code",
+      "date": "2026",
+      "href": "https://github.com/ayushrai-hub/IAS-system"
+    },
+    {
+      "id": "amex",
+      "title": "amex",
+      "summary": "Interpretable business analytics: constrained P&L scoring instead of proxy-target machine learning.",
+      "category": "research",
+      "status": "public-code",
+      "date": "2026",
+      "href": "https://github.com/ayushrai-hub/amex"
+    },
+    {
+      "id": "public-policy",
+      "title": "Public policy work in 2025",
+      "summary": "GCTP 2025, about five drafted policy proposals on geopolitical contexts in India and city development, a review of government schemes, and a three-day public policy challenge.",
+      "category": "public-policy",
+      "status": "completed",
+      "date": "2025",
+      "role": "Participant and drafter",
+      "href": "/sites/work/public-policy",
+      "featured": true
+    },
+    {
+      "id": "book",
+      "title": "A book",
+      "summary": "I am writing a book. The subject and timing will be shared when it is ready.",
+      "category": "ongoing",
+      "status": "in-progress",
+      "href": "/sites/interests#book"
+    },
+    {
+      "id": "long-running-application",
+      "title": "A long-running application",
+      "summary": "An application I have been building over roughly six to seven years. It is in development and not public yet.",
+      "category": "ongoing",
+      "status": "in-progress",
+      "href": "/sites/interests#application"
+    }
+  ]
+}

@@ -33,7 +33,7 @@ AI, data, and platforms collide with governance; I want literate opinions.
 
 ## Current understanding
 
-Observer stage. Reading and thinking notes; no policy credentials claimed.
+Practitioner-in-training. In 2025: Takshashila Public Policy Analysis (`education.takshashila-public-policy-analysis`) and GCTP 2025 (`event.gctp-2025`), with about five drafted proposals and a scheme review. Nothing implemented or adopted is claimed. Public page: `/sites/work/public-policy`.
 
 ## Current goals
 

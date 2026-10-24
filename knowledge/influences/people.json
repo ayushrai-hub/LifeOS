@@ -1,0 +1,14 @@
+{
+  "id": "influences.people",
+  "type": "influence_index",
+  "title": "People whose work I learn from",
+  "slug": "influences",
+  "status": "published",
+  "visibility": "public",
+  "created": "2026-10-25",
+  "updated": "2026-10-25",
+  "author": "person.owner",
+  "version": "1.0.0",
+  "schema": "knowledge/influences/README.md",
+  "entries": []
+}

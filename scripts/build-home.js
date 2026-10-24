@@ -372,6 +372,19 @@ function loadRecentlyUpdated(limit, learningUpdated) {
   const status = loadEntityYaml(path.join(KNOWLEDGE, "_system/site-status.yaml"));
   const items = [];
 
+  const workPath = path.join(KNOWLEDGE, "work/work.json");
+  if (fs.existsSync(workPath)) {
+    const work = JSON.parse(read(workPath));
+    if (work.updated) {
+      items.push({
+        title: "Work",
+        date: work.updated,
+        summary: "Proof of work grouped by area, each entry linked to its evidence.",
+        href: "/sites/work",
+      });
+    }
+  }
+
   const readingPath = path.join(KNOWLEDGE, "reading/currently-reading.json");
   if (fs.existsSync(readingPath)) {
     const reading = JSON.parse(read(readingPath));
@@ -843,6 +856,7 @@ function main() {
       "knowledge/learning/currently-learning.md",
       "knowledge/_system/site-status.yaml",
       "knowledge/reading/currently-reading.json",
+      "knowledge/work/work.json",
       "data/imports/github-knowledge-index.json",
     ],
   };

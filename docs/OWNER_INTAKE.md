@@ -287,6 +287,52 @@ Anything already on the site or in `/knowledge` that is wrong, outdated, or over
 
 ---
 
+## 13. Life story, policy, and influences (added 2026-10-25)
+
+These pages are live with placeholders or restrained copy until you answer. See `docs/workflows/ADDING_LIFE_CONTENT.md` for where each answer goes.
+
+**Story (`/about/story`)**
+
+1. Town spelling: the site uses "Seoni" (official; locals also say Sivni). You wrote "Shivni". Keep Seoni?  
+   >
+2. School name: records say "Mission English Higher Secondary School". You wrote "Mission English Secondary School". Which is right? Years for class 10 and class 12?  
+   >
+3. Forests: you wrote "Pench and Kana". The site assumes Kanha. Correct?  
+   >
+4. Read the "The longer path" and "Questions I keep returning to" sections. Edit or approve; they are drafts in your voice.  
+   >
+
+**Public policy (`/sites/work/public-policy`)**
+
+5. Full name of GCTP and the organising body. (Is it a Takshashila programme? Their graduate certificates include a three-day in-person policy simulation.)  
+   >
+6. Was the three-day challenge part of GCTP, or separate? Its name, dates, and who ran it.  
+   >
+7. Titles or themes of the ~5 policy proposals, and which ones can be public.  
+   >
+8. Which government schemes you reviewed, and what the review looked at.  
+   >
+9. Any public outcome: ranking, certificate, publication, or a link.  
+   >
+
+**Interests and ongoing projects (`/sites/interests`)**
+
+10. Travel: destinations or trips you want to write about.  
+    >
+11. The book: anything you want public now (working title, subject, timing). Default is "in progress" only.  
+    >
+12. The application (six to seven years): name, what it does, and whether it can be public.  
+    >
+
+**Influences and books (`/sites/influences`, `/sites/books`)**
+
+13. People whose work you admire, and for each: what you take from their work.  
+    >
+14. Books that influenced you, and for each: what changed in how you work (only if true).  
+    >
+
+---
+
 ## When you are done
 
 1. Save this file with your answers, or paste replies in chat.  

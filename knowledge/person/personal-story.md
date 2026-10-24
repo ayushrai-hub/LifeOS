@@ -4,26 +4,40 @@ type: person_narrative
 title: Personal Story
 slug: personal-story
 description: "Path narrative; grows as life does."
-status: draft
-visibility: private
+status: review
+visibility: public
 created: 2026-07-23
-updated: 2026-07-24
+updated: 2026-10-25
 author: person.owner
-version: 0.2.0
+version: 0.3.0
+published_at: /about/story
+relationships:
+  related_organizations: [organization.mission-english-hss-seoni]
+  related_education: [education.mission-english-hss-12th]
 ---
 
 # Personal Story
 
-I am Ayush Rai, based in Bhopal, Madhya Pradesh, India. I work as an AI Engineer (also Applied AI / LLM & Evaluation): shipping production LLM applications, RAG systems, evaluation pipelines, and AI automation, with a Python and FastAPI backend foundation.
+Public reading view: `about/story/index.html` (served at `/about/story`). Keep the two in sync.
 
-## Arc so far (honest, short)
+## Owner-supplied facts (2026-10-25)
 
-Public work centers on production AI systems (Adaptive RAG, MailU), evaluation infrastructure (OpenAI-RLHF and related programs), coding-agent evaluation, compliance/audit-shaped systems, and product UIs in TypeScript/React. Parallel to the code, I am deliberately training the human crafts: speaking, storytelling, market sense, and a sober reading of geopolitics; because builders who only touch keyboards miss the world their tools inhabit.
+- Grew up and lived in Seoni, Madhya Pradesh. The owner writes it "Shivni"; the official spelling is Seoni and locals also say Sivni. Existing records (LinkedIn import) use Seoni.
+- Completed both 10th and 12th grades at Mission English Higher Secondary School, Seoni. The owner wrote "Mission English Secondary School"; imported records name it "Higher Secondary School".
+- The family came to the town from a village to pursue education, especially English-language education, and worked hard to build a home and create better education and career chances for the children.
+- Hometown connection to Pench (owner wrote "Pench and Kana"; Kanha is the likely second reference) and to Kipling's The Jungle Book. A conversation starter, not a headline.
 
-## What this system is for
+## Verified context
 
-Not a frozen portfolio. A living graph of projects, communities, events, fitness, impact, courses, failures, and reflections; so decades from now the path is still navigable.
+- Pench Tiger Reserve borders Seoni district; Kipling's "Seeonee hills" are named after the town; Kipling never visited. Sources: https://www.penchtiger.org/ and https://www.kiplingsociety.co.uk/readers-guide/rg_junglebook_location.htm
+- Kanha Tiger Reserve is in Mandla and Balaghat districts, not Seoni. Public copy says the old forest "survives mainly as Pench and Kanha" rather than placing Kanha in Seoni.
+
+## Themes (owner-supplied; not events)
+
+Moving beyond the limits of one's immediate environment; how mindsets and surroundings shape opportunity; learning business, technology, institutions, and global perspectives; seeking exposure beyond the local context; building useful products, professional credibility, and global recognition; contributing to society and making knowledge accessible; helping people learn, build, and connect with communities; giving more while staying open to learning.
+
+Do not add hardships, sacrifices, or milestones that the owner has not stated.
 
 ## Still to write
 
-Childhood, education chronology, key people, and inflection events; add as timeline entities with dates, not myth.
+Key people and inflection events; add as timeline entities with dates, not myth.

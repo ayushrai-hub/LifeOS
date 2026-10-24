@@ -7,7 +7,7 @@
  *   node scripts/orank-check.js                 # cached score vs baseline
  *   node scripts/orank-check.js --scan          # POST /api/scan first (rate limited: ~6 forced scans/day)
  *   node scripts/orank-check.js --scan --force  # force a fresh scan
- *   node scripts/orank-check.js --baseline reports/orank-baseline.json --out reports/orank-latest
+ *   node scripts/orank-check.js --baseline docs/reports/orank/orank-baseline.json --out docs/reports/orank/orank-latest
  *
  * Exit codes: 0 ok, 1 score regressed versus baseline, 2 API failure.
  */
@@ -80,8 +80,8 @@ function render(current, baseline) {
 }
 
 async function main() {
-  const baselinePath = path.resolve(ROOT, arg("--baseline", "reports/orank-baseline.json"));
-  const outBase = path.resolve(ROOT, arg("--out", "reports/orank-latest"));
+  const baselinePath = path.resolve(ROOT, arg("--baseline", "docs/reports/orank/orank-baseline.json"));
+  const outBase = path.resolve(ROOT, arg("--out", "docs/reports/orank/orank-latest"));
   const baseline = fs.existsSync(baselinePath) ? JSON.parse(fs.readFileSync(baselinePath, "utf8")) : null;
 
   let current;

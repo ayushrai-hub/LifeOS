@@ -48,9 +48,11 @@
 │   ├── site-chrome.js   # theme toggle (progressive enhancement)
 │   ├── live-clock.js    # optional; not wired
 │   └── knowledge/       # validate + import
-├── templates/pages/     # HTML starters
-├── includes/            # optional fragments (not SSI'd yet)
-├── components/          # optional fragments
+├── templates/
+│   ├── pages/           # HTML starters
+│   ├── includes/        # optional fragments (not SSI'd yet)
+│   ├── components/      # optional fragments
+│   └── partials/
 ├── assets/images/       # web media
 ├── config/              # site.json / site.yaml / seo-pages.json
 ├── docs/                # this tree

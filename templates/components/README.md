@@ -8,4 +8,4 @@ Reusable HTML snippets. Because the core site has no build step, **copy** these 
 | `toc-case-study.html` | On-this-page nav for case studies |
 | `meta-row.html` | Date / role line |
 
-CSS counterparts live in `/styles/components/`.
+Styles for these fragments live in `/styles/site.css`.

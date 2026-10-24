@@ -35,3 +35,5 @@ relationships:
 ## Notes
 
 Date span may cover more than class 12 alone; needs owner confirmation.
+
+Owner confirmed (2026-10-25): completed both class 10 and class 12 at this school. Exact years still unconfirmed.

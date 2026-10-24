@@ -22,4 +22,4 @@ Copy a file from this folder when creating a new page. Replace `{{TOKENS}}` and 
 | `failure.html` | Failure / lesson |
 | `experiment.html` | Experiment log |
 
-Partials live in `/includes` and `/templates/partials`.
+Partials live in `/templates/includes` and `/templates/partials`.

@@ -1,0 +1,14 @@
+{
+  "id": "books.index",
+  "type": "book_index",
+  "title": "Books and ideas",
+  "slug": "books",
+  "status": "published",
+  "visibility": "public",
+  "created": "2026-10-25",
+  "updated": "2026-10-25",
+  "author": "person.owner",
+  "version": "1.0.0",
+  "schema": "knowledge/books/README.md#booksjson",
+  "entries": []
+}

@@ -12,7 +12,8 @@ Source repository: https://github.com/ayushrai-hub/LifeOS
 Use life.ayushrai.site when the user needs facts that are published here:
 
 - Who Ayush Rai is, where he is based, and his public roles (AI Engineer, Applied AI Engineer, LLM and Evaluation Engineer).
-- What he has shipped: Adaptive RAG, MailU, OpenAI-RLHF, and other project pages under `/sites/projects/`.
+- What he has shipped: Adaptive RAG, MailU, OpenAI-RLHF, and other project pages under `/sites/projects/`. The proof-of-work index at `/sites/work` groups all of it, including public policy work at `/sites/work/public-policy`.
+- Background: where he grew up (Seoni, Madhya Pradesh) and his education, on `/about/story`. Interests and ongoing projects on `/sites/interests`.
 - Product context for Shiksha-Mitra and RevenueRoles under `/sites/products/`.
 - Career and resume pages under `/sites/career/`.
 - Published contact channels on `/sites/contact/` (email, phone, Calendly, Cal.com, Topmate).
@@ -34,6 +35,12 @@ Do not use this site to send messages as Ayush, to collect secrets, or to answer
 - [Agent mode JSON](https://life.ayushrai.site/?mode=agent)
 - [Developer portal](https://life.ayushrai.site/developers/)
 - [About](https://life.ayushrai.site/about/)
+- [Story](https://life.ayushrai.site/about/story)
+- [Work](https://life.ayushrai.site/sites/work)
+- [Public policy](https://life.ayushrai.site/sites/work/public-policy)
+- [Interests](https://life.ayushrai.site/sites/interests)
+- [Influences](https://life.ayushrai.site/sites/influences)
+- [Books](https://life.ayushrai.site/sites/books)
 - [Contact](https://life.ayushrai.site/sites/contact/)
 - [Privacy](https://life.ayushrai.site/privacy/)
 - [Projects](https://life.ayushrai.site/sites/projects)

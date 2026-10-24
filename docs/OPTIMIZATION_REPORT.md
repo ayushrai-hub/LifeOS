@@ -33,7 +33,7 @@ Reduce duplication, remove dead presentation code, keep one CSS system, clarify 
 | Item | Recommendation |
 |------|----------------|
 | `styles/main.css` | Keep as alias or delete after confirming no external refs |
-| `includes/`, `components/` | Wire into generator or delete |
+| `templates/includes/`, `templates/components/` | Wire into generator or delete |
 | `scripts/live-clock.js` | Ship on pages or remove from status docs |
 | Topic / domain / portfolio triples | Consolidate URLs over time with redirects |
 | Duplicate portrait bytes | `assets/` vs `knowledge/media/photos/` copy; accept or generate one from the other |

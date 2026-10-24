@@ -1,1 +1,1 @@
-<!-- Shared partials (copy into pages). See /includes for head/footer. -->
+<!-- Shared partials (copy into pages). See /templates/includes for head/footer. -->

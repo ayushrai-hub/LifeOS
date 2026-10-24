@@ -2,7 +2,7 @@
 
 Reusable HTML fragments. The static site does **not** use server-side includes yet. Fragments are copied manually or inlined by generators.
 
-## `includes/`
+## `templates/includes/`
 
 | File | Intent | Wired? |
 |------|--------|--------|
@@ -10,7 +10,7 @@ Reusable HTML fragments. The static site does **not** use server-side includes y
 | `footer.html` | Home link footer | No (`foot` class inlined) |
 | `skip-link.html` | Skip to content | Pattern copied into pages |
 
-## `components/`
+## `templates/components/`
 
 | File | Intent | Wired? |
 |------|--------|--------|
@@ -35,7 +35,7 @@ Starters for new page types (`resume.html`, `portfolio-home.html`, `project-case
 
 ## Extension
 
-To introduce true includes: add a small build step that concatenates `includes/*` into pages, or adopt HTML SSI on the host. Until then, keep fragments as references and regenerate via scripts.
+To introduce true includes: add a small build step that concatenates `templates/includes/*` into pages, or adopt HTML SSI on the host. Until then, keep fragments as references and regenerate via scripts.
 
 ## Related
 

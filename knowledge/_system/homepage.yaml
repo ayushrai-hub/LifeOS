@@ -27,6 +27,8 @@ intro:
 
 # Primary browse links on the homepage (order matters).
 doors_nav:
+  - about
+  - work
   - projects
   - engineering
   - ai
@@ -51,6 +53,9 @@ doors_nav:
 
 # Root-absolute paths so links work when the homepage is served at / (canonical).
 doors:
+  about: "/about"
+  work: "/sites/work"
+  interests: "/sites/interests"
   projects: "/sites/projects"
   engineering: "/sites/engineering"
   ai: "/sites/ai"

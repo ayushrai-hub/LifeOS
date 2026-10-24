@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17",
+  "generated_at": "2026-10-24",
   "name": "Ayush Rai",
   "tagline": "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines.",
   "seo_title": "Ayush Rai; personal website of an AI Engineer in Bhopal",
@@ -8,6 +8,9 @@
     "Personal knowledge system: what I ship, what broke, and what I would do differently. Evidence lives in the pages below. Start wherever curiosity points."
   ],
   "doors": {
+    "about": "/about",
+    "work": "/sites/work",
+    "interests": "/sites/interests",
     "projects": "/sites/projects",
     "engineering": "/sites/engineering",
     "ai": "/sites/ai",
@@ -40,6 +43,8 @@
     "certifications": "/sites/certifications"
   },
   "doors_nav": [
+    "about",
+    "work",
     "projects",
     "engineering",
     "ai",
@@ -161,6 +166,12 @@
   ],
   "recently_updated": [
     {
+      "title": "Work",
+      "date": "2026-10-25",
+      "summary": "Proof of work grouped by area, each entry linked to its evidence.",
+      "href": "/sites/work"
+    },
+    {
       "title": "Currently Reading",
       "date": "2026-09-29",
       "summary": "What I'm reading, learning, and building from.",
@@ -182,12 +193,6 @@
       "title": "GitHub ingest",
       "date": "2026-07-23",
       "summary": "Public repositories indexed for projects and latest work.",
-      "href": "/sites/projects"
-    },
-    {
-      "title": "Projects index",
-      "date": "2026-07-23",
-      "summary": "Canonical project entities under knowledge/projects.",
       "href": "/sites/projects"
     }
   ],
@@ -237,6 +242,7 @@
     "knowledge/learning/currently-learning.md",
     "knowledge/_system/site-status.yaml",
     "knowledge/reading/currently-reading.json",
+    "knowledge/work/work.json",
     "data/imports/github-knowledge-index.json"
   ]
 }

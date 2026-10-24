@@ -81,6 +81,18 @@
       "description": "Outcomes Ayush Rai can point to with public evidence."
     },
     {
+      "file": "sites/influences/index.html",
+      "path": "/sites/influences",
+      "title": "Influences; Ayush Rai",
+      "description": "People whose work Ayush Rai studies across society, business, and leadership, with sources for what they did and notes on what he learned."
+    },
+    {
+      "file": "sites/interests/index.html",
+      "path": "/sites/interests",
+      "title": "Interests; Ayush Rai",
+      "description": "What Ayush Rai does beyond client and product work: fitness, travel, reading, writing, a book in progress, and a long-running application."
+    },
+    {
       "file": "sites/leadership/index.html",
       "path": "/sites/leadership",
       "title": "Leadership; Ayush Rai",
@@ -181,6 +193,24 @@
       "path": "/sites/writing",
       "title": "Writing; Ayush Rai",
       "description": "Durable essays and careful notes: decisions, failures, and methods someone else could reuse."
+    },
+    {
+      "file": "sites/work/index.html",
+      "path": "/sites/work",
+      "title": "Work; Ayush Rai",
+      "description": "Proof of work from Ayush Rai: products, AI systems, GTM engineering, audit tooling, research, and public policy, each linked to its evidence."
+    },
+    {
+      "file": "sites/work/public-policy/index.html",
+      "path": "/sites/work/public-policy",
+      "title": "Public policy; Ayush Rai",
+      "description": "Public policy work by Ayush Rai in 2025: GCTP 2025, drafted policy proposals, a review of government schemes, and a three-day policy challenge."
+    },
+    {
+      "file": "about/story/index.html",
+      "path": "/about/story",
+      "title": "Story; Ayush Rai",
+      "description": "Where Ayush Rai grew up in Seoni, Madhya Pradesh, why his family moved for English-medium education, and the questions he keeps working on."
     }
   ],
   "sitemap_extra": [

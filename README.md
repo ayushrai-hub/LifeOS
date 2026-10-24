@@ -39,7 +39,10 @@ npm run check:agent    # agent surface checks (negotiation, discovery, jobs, tru
 npm run local            # full local site on http://localhost:3000 (vercel dev: middleware, rewrites, api/)
 npm start              # static-only preview (Python http.server; no rewrites or api/)
 node scripts/build-home.js   # regenerate homepage from knowledge/_system/homepage.yaml
+npm run build:collections    # work index, books, influences from knowledge/{work,books,influences}/*.json
 ```
+
+Adding work, books, people, essays, and policy case studies: [docs/workflows/ADDING_LIFE_CONTENT.md](docs/workflows/ADDING_LIFE_CONTENT.md).
 
 Browse the homepage at `/` under `npm run local`. Public site: https://life.ayushrai.site/. Developer portal: https://life.ayushrai.site/developers/.
 

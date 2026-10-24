@@ -1,0 +1,32 @@
+name: Collections
+
+on:
+  push:
+    paths:
+      - "knowledge/work/work.json"
+      - "knowledge/books/books.json"
+      - "knowledge/influences/people.json"
+      - "scripts/build-collections.js"
+      - "sites/work/index.html"
+      - "sites/books/index.html"
+      - "sites/influences/index.html"
+  pull_request:
+    paths:
+      - "knowledge/work/work.json"
+      - "knowledge/books/books.json"
+      - "knowledge/influences/people.json"
+      - "scripts/build-collections.js"
+      - "sites/work/index.html"
+      - "sites/books/index.html"
+      - "sites/influences/index.html"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate data and confirm generated pages are current
+        run: node scripts/build-collections.js --check
