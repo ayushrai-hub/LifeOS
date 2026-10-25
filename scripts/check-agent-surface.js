@@ -393,7 +393,7 @@ async function main() {
   check("html 404", () => {
     assert.equal(missingHtml.statusCode, 404);
     assert.match(missingHtml.headers["content-type"], /text\/html/);
-    assert.match(missingHtml.body, /Not found/);
+    assert.match(missingHtml.body, /WORK IN PROGRESS/);
     assert.match(missingHtml.body, /llms\.txt/);
   });
 

@@ -93,16 +93,16 @@ function html404(pathname) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Not found; Ayush Rai</title>
+  <title>Work in progress; Ayush Rai</title>
   <meta name="robots" content="noindex">
   <link rel="canonical" href="${ORIGIN}${pathname}">
-  <link rel="stylesheet" href="/styles/site.css?v=20261016">
+  <link rel="stylesheet" href="/styles/site.css?v=20261025">
 </head>
 <body>
   <main class="page knowledge-page">
-    <h1>Not found</h1>
-    <p>The page <code>${pathname}</code> could not be found on this site.</p>
-    <p><a href="${ORIGIN}/">Home</a> · <a href="${ORIGIN}/llms.txt">llms.txt</a> · <a href="${ORIGIN}/sitemap.xml">Sitemap</a></p>
+    <h1 class="wip-title">WORK IN PROGRESS</h1>
+    <p>Nothing is published at <code>${pathname}</code> yet. Parts of this site are still being written.</p>
+    <p><a href="${ORIGIN}/">Home</a> · <a href="${ORIGIN}/sites/work">Work</a> · <a href="${ORIGIN}/about">About</a> · <a href="${ORIGIN}/sitemap.xml">Sitemap</a> · <a href="${ORIGIN}/llms.txt">llms.txt</a></p>
   </main>
 </body>
 </html>`;

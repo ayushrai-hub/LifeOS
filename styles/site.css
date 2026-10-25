@@ -617,6 +617,14 @@ samp {
   margin: 0 0 var(--space-1);
 }
 
+/* Missing-page view (middleware.js and api/not-found.js) */
+.wip-title {
+  font-size: clamp(2.75rem, 2rem + 6vw, 6rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  margin: var(--space-6) 0 var(--space-4);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
