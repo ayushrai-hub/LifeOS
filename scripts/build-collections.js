@@ -32,6 +32,7 @@ const INTERNAL_RE = /^(\/|#)\S*$/;
 const MD_LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g;
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const BOOK_STATUSES = ["Reading", "Re-reading", "Finished", "Paused"];
+const POW_ORIGIN = "https://www.ayushrai.site/";
 const WORK_STATUS_LABELS = {
   live: "Live",
   "public-code": "Public code",
@@ -171,10 +172,22 @@ function validateWork(data) {
     if (!str(c.label)) v.err(`categories[${i}]`, "label is required");
     categoryIds.add(c.id);
   });
+  const powIds = new Set();
+  (Array.isArray(data.pow) ? data.pow : []).forEach((p, i) => {
+    const where = `pow[${i}]`;
+    if (!p || !ID_RE.test(str(p.id))) return v.err(where, "id must be kebab-case");
+    if (powIds.has(p.id)) v.err(where, "duplicate id");
+    powIds.add(p.id);
+    for (const f of ["label", "description", "href"]) if (!str(p[f])) v.err(where, `${f} is required`);
+    if (str(p.href) && !str(p.href).startsWith(POW_ORIGIN))
+      v.err(where, `href must be a canonical page under ${POW_ORIGIN}`);
+  });
   const entries = v.checkEntryBase(data, ids);
   entries.forEach((e, i) => {
     const where = `entries[${i}] (${e.id})`;
-    for (const f of ["title", "summary", "href"]) if (!str(e[f])) v.err(where, `${f} is required`);
+    for (const f of ["title", "summary"]) if (!str(e[f])) v.err(where, `${f} is required`);
+    if (e.pow !== undefined && !powIds.has(e.pow)) v.err(where, `pow must be one of: ${[...powIds].join(", ")}`);
+    if (!str(e.href) && e.pow === undefined) v.err(where, "href is required unless pow supplies it");
     if (!categoryIds.has(e.category)) v.err(where, `category must be one of: ${[...categoryIds].join(", ")}`);
     if (!statuses[e.status]) v.err(where, `status must be one of: ${Object.keys(statuses).join(", ")}`);
     v.checkDate(`${where}.date`, e.date, false);
@@ -300,7 +313,22 @@ ${body}
 
 // ---------------------------------------------------------------- work
 
-function renderWorkItem(e, byId) {
+function powLink(p) {
+  return `<a href="${escapeHtml(p.href)}" rel="noopener noreferrer">${escapeHtml(p.label)}<span class="visually-hidden"> (on ayushrai.site)</span></a><span aria-hidden="true"> ↗</span>`;
+}
+
+function renderPow(p, entries) {
+  const i = "          ";
+  const projects = entries
+    .filter((e) => e.pow === p.id && !e.isPowPage)
+    .map((e) => `<a href="#work-${e.id}">${escapeHtml(e.title)}</a>`);
+  return `        <li class="work-item" id="pow-${p.id}">
+${i}<p class="work-item__title">${powLink(p)}</p>
+${i}<p>${inline(p.description)}</p>${projects.length ? `\n${i}<p class="meta">Projects here: ${projects.join(", ")}</p>` : ""}
+        </li>`;
+}
+
+function renderWorkItem(e, byId, powById) {
   const i = "          ";
   const external = EXTERNAL_RE.test(e.href);
   const meta = [escapeHtml(workStatusLabel(e.status))];
@@ -309,6 +337,8 @@ function renderWorkItem(e, byId) {
   const extras = [];
   if (str(e.role)) extras.push(`Role: ${escapeHtml(e.role)}`);
   for (const l of e.links || []) extras.push(anchor(l.href, l.label));
+  const pow = powById.get(e.pow);
+  if (pow && !e.isPowPage) extras.push(`Proof of work: ${powLink(pow)}`);
   const related = (e.related || [])
     .map((id) => byId.get(id))
     .filter(Boolean)
@@ -322,12 +352,29 @@ ${i}<p>${inline(e.summary)}</p>${extras.length ? `\n${i}<p class="meta">${extras
 }
 
 function renderWork(data) {
-  const entries = data.entries;
+  const pows = data.pow || [];
+  const powById = new Map(pows.map((p) => [p.id, p]));
+  const entries = data.entries.map((e) =>
+    str(e.href) ? e : { ...e, href: powById.get(e.pow).href, isPowPage: true }
+  );
   const byId = new Map(entries.map((e) => [e.id, e]));
   const filled = data.categories.filter((c) => entries.some((e) => e.category === c.id));
   const featured = entries.filter((e) => e.featured);
 
-  const toc = filled.map((c) => `<a href="#${c.id}">${escapeHtml(c.label)}</a>`).join("\n      ");
+  const toc = [
+    ...(pows.length ? [`<a href="#proof-of-work">Proof of work by role</a>`] : []),
+    ...filled.map((c) => `<a href="#${c.id}">${escapeHtml(c.label)}</a>`),
+  ].join("\n      ");
+  const powHtml = pows.length
+    ? `
+    <section aria-labelledby="proof-of-work">
+      <h2 id="proof-of-work">Proof of work by role</h2>
+      <p class="muted">Each role has its own page on my main site, <a href="https://www.ayushrai.site/" rel="noopener noreferrer">ayushrai.site</a>. Links marked ↗ leave this site.</p>
+      <ul class="work-list">
+${pows.map((p) => renderPow(p, entries)).join("\n")}
+      </ul>
+    </section>`
+    : "";
   const featuredHtml = featured.length
     ? `
     <section aria-labelledby="start-here">
@@ -349,7 +396,7 @@ ${featured
     <section aria-labelledby="${c.id}">
       <h2 id="${c.id}">${escapeHtml(c.label)}</h2>${str(c.description) ? `\n      <p class="muted">${inline(c.description)}</p>` : ""}
       <ul class="work-list">
-${items.map((e) => renderWorkItem(e, byId)).join("\n")}
+${items.map((e) => renderWorkItem(e, byId, powById)).join("\n")}
       </ul>
     </section>`;
     })
@@ -367,6 +414,7 @@ ${paragraphs(data.intro, "    ")}
     <nav class="reading-toc" aria-label="On this page">
       ${toc}
     </nav>
+${powHtml}
 ${featuredHtml}
 ${sections}
 

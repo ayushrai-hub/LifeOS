@@ -16,4 +16,5 @@ Use this skill when the user wants what Ayush Rai has built that is listed on ht
 
 1. Open https://life.ayushrai.site/sites/projects/ and https://life.ayushrai.site/sites/products/.
 2. Prefer the live product URLs already printed on those pages.
-3. If you call the API, use https://life.ayushrai.site/ask or the sandbox at https://life.ayushrai.site/api/v1/sandbox.
+3. For proof of work by role (AI benchmarking, agentic AI, FDE, AI research, founding engineer, DevOps, ML, product management, GTM), open https://life.ayushrai.site/sites/work#proof-of-work and follow its links to the canonical pages on https://www.ayushrai.site/.
+4. If you call the API, use https://life.ayushrai.site/ask or the sandbox at https://life.ayushrai.site/api/v1/sandbox.

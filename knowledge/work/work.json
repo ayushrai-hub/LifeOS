@@ -11,6 +11,62 @@
   "version": "1.0.0",
   "schema": "knowledge/work/README.md",
   "intro": "Each entry links to the page that holds the evidence, here or on [ayushrai.site](https://www.ayushrai.site/work), instead of copying it. Labels say how far each piece got.",
+  "pow": [
+    {
+      "id": "ai-benchmark",
+      "label": "AI Benchmarking",
+      "description": "Evaluation systems that turn model behaviour into measurable, reproducible evidence.",
+      "href": "https://www.ayushrai.site/pow/ai-benchmark"
+    },
+    {
+      "id": "agentic-ai",
+      "label": "Agentic AI",
+      "description": "AI systems that combine reasoning, tools, state, and verification to run multi-step tasks with control.",
+      "href": "https://www.ayushrai.site/pow/agentic-ai"
+    },
+    {
+      "id": "fde",
+      "label": "Forward Deployed Engineer (FDE)",
+      "description": "From ambiguous problem statements to working software for operational problems. The page marks its demonstration as in progress.",
+      "href": "https://www.ayushrai.site/pow/fde"
+    },
+    {
+      "id": "ai-research-engineering",
+      "label": "AI Research Engineering",
+      "description": "Reproducible experiments that connect research questions, implementations, and evaluation.",
+      "href": "https://www.ayushrai.site/pow/ai-research-engineering"
+    },
+    {
+      "id": "founding-engineer",
+      "label": "Founding Engineer",
+      "description": "Zero-to-one product work across product thinking, full-stack engineering, AI systems, and infrastructure.",
+      "href": "https://www.ayushrai.site/pow/founding-engineer"
+    },
+    {
+      "id": "devops-engineer",
+      "label": "DevOps Engineering",
+      "description": "Automating the path from code to reliable production: reproducible delivery, safe releases, predictable recovery.",
+      "href": "https://www.ayushrai.site/pow/devops-engineer"
+    },
+    {
+      "id": "ml-engineer",
+      "label": "Machine Learning Engineering",
+      "description": "Machine learning systems beyond the notebook: data pipelines, training, evaluation, inference, and reliability.",
+      "href": "https://www.ayushrai.site/pow/ml-engineer"
+    },
+    {
+      "id": "product-management",
+      "label": "Product Management",
+      "description": "Turning ambiguous problems into products people can use, worked through on RevenueRoles.",
+      "href": "https://www.ayushrai.site/pow/product-management"
+    },
+    {
+      "id": "gtm",
+      "label": "GTM Engineering",
+      "description": "Data and decision systems for revenue work: data pipelines, entity resolution, explainable scoring, and approval workflows.",
+      "href": "https://www.ayushrai.site/gtm"
+    }
+  ],
   "statuses": {
     "live": "A public URL serves it today.",
     "public-code": "Code is in a public repository. No hosted deployment is claimed.",
@@ -62,6 +118,7 @@
       "summary": "Job discovery for technical revenue roles such as GTM engineer, RevOps engineer, and forward deployed engineer, classified by the work a posting describes rather than by its title.",
       "category": "products",
       "status": "live",
+      "pow": "product-management",
       "date": "2026",
       "role": "Builder",
       "href": "/sites/products/revenueroles",
@@ -92,6 +149,7 @@
       "summary": "An early digital public infrastructure concept for civil-society coordination, published as a front-end prototype rather than as live national infrastructure.",
       "category": "products",
       "status": "live",
+      "pow": "founding-engineer",
       "date": "2025",
       "href": "https://www.ayushrai.site/work/the-open-framework",
       "links": [
@@ -106,6 +164,7 @@
       "summary": "A distribution layer for AI products, starting with structured representation and builder onboarding, with discovery and placement still at earlier stages.",
       "category": "products",
       "status": "live",
+      "pow": "founding-engineer",
       "date": "2026",
       "href": "https://www.ayushrai.site/work/agenyra",
       "links": [
@@ -119,6 +178,7 @@
       "summary": "A voice-assisted order and billing workflow for pharmaceutical wholesalers, where speech proposes a line and deterministic rules decide identity, tax, and posting.",
       "category": "products",
       "status": "public-code",
+      "pow": "founding-engineer",
       "date": "2026",
       "href": "https://www.ayushrai.site/work/medvoice",
       "links": [
@@ -131,6 +191,7 @@
       "summary": "Agentic retrieval-augmented generation with LangGraph: query rewriting, relevance grading, web-search fallback, and routing between retrieval, search, and plain reasoning.",
       "category": "ai-ml",
       "status": "public-code",
+      "pow": "agentic-ai",
       "date": "2026",
       "role": "Author and engineer",
       "href": "https://github.com/ayushrai-hub/adaptive-rag",
@@ -142,6 +203,7 @@
       "summary": "Local email intelligence: Gmail API sync, zero-shot categorization, semantic search, and RAG chat over your own mail on a local model.",
       "category": "ai-ml",
       "status": "public-code",
+      "pow": "gtm",
       "date": "2026",
       "role": "Author and engineer",
       "href": "https://github.com/ayushrai-hub/MailU"
@@ -152,6 +214,7 @@
       "summary": "An archive of coding-evaluation tasks with a task generator, test runner, and validation tooling. It is not an RLHF trainer.",
       "category": "ai-ml",
       "status": "public-code",
+      "pow": "ai-benchmark",
       "date": "2025",
       "role": "Author and engineer",
       "href": "https://github.com/ayushrai-hub/OpenAI-RLHF"
@@ -162,6 +225,7 @@
       "summary": "Coding-agent evaluation toolchain: Harbor and Terminus task systems, Dockerized oracles, and review CLIs.",
       "category": "ai-ml",
       "status": "public-code",
+      "pow": "ai-benchmark",
       "date": "2026",
       "href": "https://github.com/ayushrai-hub/RLHF-tasks"
     },
@@ -171,8 +235,8 @@
       "summary": "Data and decision systems for revenue work: job-market data pipelines, entity resolution, explainable scoring, and human-approval workflows. The page covers RevenueRoles, the Revenue Intelligence Engine, the Relationship Intelligence Engine, SpiderWeb, and MailU, and separates what I have built from what I am still learning.",
       "category": "gtm",
       "status": "live",
+      "pow": "gtm",
       "date": "2026",
-      "href": "https://www.ayushrai.site/gtm",
       "related": ["revenueroles", "mailu"],
       "featured": true
     },

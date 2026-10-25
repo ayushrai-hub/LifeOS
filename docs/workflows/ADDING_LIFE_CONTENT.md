@@ -14,7 +14,7 @@ How to add content to the sections added in October 2026. Every path below is in
 | `/sites/books` | `knowledge/books/books.json` | `npm run build:collections` |
 | `/sites/influences` | `knowledge/influences/people.json` | `npm run build:collections` |
 
-GTM engineering stays canonical at https://www.ayushrai.site/gtm. The work index links to it; do not copy its content here.
+Proof of work by role (the `/pow/*` pages and `/gtm`) is canonical on https://www.ayushrai.site/. Those URLs live only in the `pow` list of `knowledge/work/work.json`; hand-written pages link to `/sites/work#proof-of-work` instead. Do not copy their content here or create local POW pages that forward there.
 
 ## 1. A proof-of-work project
 

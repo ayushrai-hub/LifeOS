@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24",
+  "generated_at": "2026-10-25",
   "name": "Ayush Rai",
   "tagline": "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines.",
   "seo_title": "Ayush Rai; personal website of an AI Engineer in Bhopal",
@@ -168,7 +168,7 @@
     {
       "title": "Work",
       "date": "2026-10-25",
-      "summary": "Proof of work grouped by area, each entry linked to its evidence.",
+      "summary": "Proof of work by role and by project, each linked to its evidence.",
       "href": "/sites/work"
     },
     {

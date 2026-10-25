@@ -379,7 +379,7 @@ function loadRecentlyUpdated(limit, learningUpdated) {
       items.push({
         title: "Work",
         date: work.updated,
-        summary: "Proof of work grouped by area, each entry linked to its evidence.",
+        summary: "Proof of work by role and by project, each linked to its evidence.",
         href: "/sites/work",
       });
     }
