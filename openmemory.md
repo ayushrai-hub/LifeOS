@@ -43,7 +43,7 @@ Owner-canonical professional profile (2026-07-24): **Ayush Rai**, Bhopal; roles 
 - **Contact surfaces:** Booking (Calendly + Cal.com) and Support (Buy Me a Coffee) live on `sites/contact`; Topmate mentoring on Career + Contact; never homepage hero/CTA
 - New pages: root-absolute links only (relative `../` links resolve wrongly on slashless clean URLs like `/sites/fitness`)
 - Hometown spelling: publish "Seoni" (official; owner writes "Shivni", locals say "Sivni"). Kanha is not in Seoni district; phrase forest links carefully. Never expand "GCTP" without owner confirmation
-- Internal-only fragments live in `templates/{components,includes,partials,pages}`; orank scan reports in `docs/reports/orank/`. Other root dirs are public URL paths; do not move them
+- Internal-only fragments live in `templates/{components,includes,partials,pages}`; orank scan reports in `docs/reports/orank/`. All website pages live under `sites/` (including about, developers, guides, privacy, reference, sandbox, feeds) and discovery docs under `discovery/` (including section-llms), served at public URLs via rewrites in `vercel.json`.
 - `knowledge/github/repositories/expert-o/` is a gitignored local clone (nested `.git`, `node_modules`, `.env.local`); never commit or edit it
 
 ## User Defined Namespaces

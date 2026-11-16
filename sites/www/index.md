@@ -2,7 +2,7 @@
 title: Ayush Rai
 description: AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines.
 canonical: https://life.ayushrai.site/index.md
-last-updated: 2026-10-25
+last-updated: 2026-11-16
 ---
 
 # Ayush Rai

@@ -72,21 +72,21 @@ function main() {
 
   check("developer pages name the product and use slashless canonicals", () => {
     const pages = {
-      "developers/index.html": "/developers",
-      "developers/deprecation/index.html": "/developers/deprecation",
-      "reference/index.html": "/reference",
+      "sites/developers/index.html": "/developers",
+      "sites/developers/deprecation/index.html": "/developers/deprecation",
+      "sites/reference/index.html": "/reference",
       "docs/index.html": "/docs",
-      "guides/index.html": "/guides",
-      "sandbox/index.html": "/sandbox",
-      "about/index.html": "/about",
-      "privacy/index.html": "/privacy",
+      "sites/guides/index.html": "/guides",
+      "sites/sandbox/index.html": "/sandbox",
+      "sites/about/index.html": "/about",
+      "sites/privacy/index.html": "/privacy",
     };
     for (const [rel, urlPath] of Object.entries(pages)) {
       const html = read(rel);
       assert.strictEqual(extract(html, /rel="canonical"\s+href="([^"]+)"/i), `${origin}${urlPath}`, rel);
       const ogUrl = extract(html, /property="og:url"\s+content="([^"]+)"/i);
       if (ogUrl) assert.strictEqual(ogUrl, `${origin}${urlPath}`, `${rel} og:url`);
-      if (!["about/index.html", "privacy/index.html"].includes(rel)) {
+      if (!["sites/about/index.html", "sites/privacy/index.html"].includes(rel)) {
         assert.match(extract(html, /<title>([^<]*)<\/title>/i), /life\.ayushrai\.site/, `${rel} title`);
       }
     }

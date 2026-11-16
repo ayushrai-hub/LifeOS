@@ -204,11 +204,11 @@ async function main() {
   });
 
   check("trust pages are long enough", () => {
-    for (const rel of ["about/index.html", "privacy/index.html", "sites/contact/index.html"]) {
+    for (const rel of ["sites/about/index.html", "sites/privacy/index.html", "sites/contact/index.html"]) {
       const text = read(rel).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
       assert.ok(text.length >= 500, `${rel} has ${text.length} characters`);
     }
-    for (const rel of ["about/index.md", "privacy/index.md", "discovery/pricing.md"]) {
+    for (const rel of ["sites/about/index.md", "sites/privacy/index.md", "discovery/pricing.md"]) {
       const text = read(rel).trim();
       assert.ok(text.length >= 500, `${rel} has ${text.length} characters`);
       assert.match(text, /^# /m);
@@ -612,7 +612,7 @@ async function main() {
     for (const src of ["/developer", "/api-docs", "/docs/api", "/sdk", "/cli", "/deprecation", "/versioning"]) {
       assert.ok(redirect(src), `missing redirect ${src}`);
     }
-    assert.ok(read("developers/deprecation/index.html").includes("Deprecation: @1792195200"));
+    assert.ok(read("sites/developers/deprecation/index.html").includes("Deprecation: @1792195200"));
   });
 
   check("HTML agent view is generated, current, and link-rich", () => {

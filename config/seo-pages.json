@@ -207,7 +207,7 @@
       "description": "Public policy work by Ayush Rai in 2025: GCTP 2025, drafted policy proposals, a review of government schemes, and a three-day policy challenge."
     },
     {
-      "file": "about/story/index.html",
+      "file": "sites/about/story/index.html",
       "path": "/about/story",
       "title": "Story; Ayush Rai",
       "description": "Where Ayush Rai grew up in Seoni, Madhya Pradesh, why his family moved for English-medium education, and the questions he keeps working on."
@@ -215,19 +215,19 @@
   ],
   "sitemap_extra": [
     { "path": "/", "file": "sites/www/index.html" },
-    { "path": "/about", "file": "about/index.md" },
+    { "path": "/about", "file": "sites/about/index.md" },
     { "path": "/agents.md", "file": "AGENTS.md" },
     { "path": "/auth.md", "file": "discovery/auth.md" },
-    { "path": "/developers", "file": "developers/index.html" },
-    { "path": "/developers/deprecation", "file": "developers/deprecation/index.html" },
+    { "path": "/developers", "file": "sites/developers/index.html" },
+    { "path": "/developers/deprecation", "file": "sites/developers/deprecation/index.html" },
     { "path": "/docs", "file": "docs/index.html" },
-    { "path": "/guides", "file": "guides/index.html" },
+    { "path": "/guides", "file": "sites/guides/index.html" },
     { "path": "/index.md", "file": "sites/www/index.md" },
     { "path": "/llms.txt", "file": "llms.txt" },
     { "path": "/pricing.md", "file": "discovery/pricing.md" },
-    { "path": "/privacy", "file": "privacy/index.md" },
-    { "path": "/reference", "file": "reference/index.html" },
-    { "path": "/sandbox", "file": "sandbox/index.html" },
+    { "path": "/privacy", "file": "sites/privacy/index.md" },
+    { "path": "/reference", "file": "sites/reference/index.html" },
+    { "path": "/sandbox", "file": "sites/sandbox/index.html" },
     { "path": "/skills.md", "file": "discovery/skills.md" },
     { "path": "/sites/career/resumes", "file": "sites/career/resumes/index.html" },
     { "path": "/sites/currently-reading", "file": "sites/currently-reading/index.html" }
