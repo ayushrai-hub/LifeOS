@@ -207,6 +207,7 @@ async function main() {
     assert.match(home, /smithery\.ai\/servers\/ayushrai0211\/life-ayushrai/);
     assert.match(home, /href="\/openapi\.json"/);
     assert.match(home, /href="\/auth\.md"/);
+    assert.match(home, /href="\/pricing"/);
   });
 
   check("trust pages are long enough", () => {

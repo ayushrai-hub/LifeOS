@@ -88,7 +88,7 @@ function handle(request) {
   }).action;
 
   if (action === "agent-view") {
-    return rewrite(new URL("/agent/mode.html", request.url), {
+    return rewrite(new URL("/agent/mode", request.url), {
       headers: varyLink(`${LINK}, </agent/mode.json>; rel="alternate"; type="application/json"`),
     });
   }

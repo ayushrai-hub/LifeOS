@@ -1,15 +1,28 @@
 const { toolResult, ORIGIN } = require("../agent/answers");
 const { rateLimitHeaders, cors, readJson, INVALID_JSON } = require("../agent/http");
 
+const FACTS_OUTPUT = {
+  type: "object",
+  properties: {
+    text: {
+      type: "string",
+      description: "Plain-text public facts from life.ayushrai.site. Never secrets or invented metrics.",
+    },
+  },
+  required: ["text"],
+  additionalProperties: true,
+};
+
 const PRODUCT = {
   name: "site.ayushrai.life/product",
   version: "1.0.0",
   instructions:
-    "Product MCP server. Take read-only actions against Ayush Rai's public profile, projects, and contact facts. Do not invent metrics.",
+    "Product MCP for life.ayushrai.site. Use get_profile, get_contact, search_public_facts, and book_a_conversation to read published facts about Ayush Rai. All tools are free and read-only besides returning booking URLs. Do not invent metrics, private emails, or employer impact.",
   tools: [
     {
       name: "get_profile",
-      description: "Return Ayush Rai's public profile summary.",
+      description: "Return Ayush Rai's public profile summary from life.ayushrai.site, including roles and location. Optional include_contact adds the published email and phone.",
+      outputSchema: FACTS_OUTPUT,
       inputSchema: {
         type: "object",
         properties: {
@@ -24,7 +37,8 @@ const PRODUCT = {
     },
     {
       name: "get_contact",
-      description: "Return public email, phone, and booking links.",
+      description: "Return Ayush Rai's published email, phone, and booking links from the contact page. Optional channel filters to email, phone, or booking.",
+      outputSchema: FACTS_OUTPUT,
       inputSchema: {
         type: "object",
         properties: {
@@ -39,7 +53,8 @@ const PRODUCT = {
     },
     {
       name: "search_public_facts",
-      description: "Search public site pages by a short query.",
+      description: "Search public life.ayushrai.site pages by a short query and return matching published facts. Do not use this for private data.",
+      outputSchema: FACTS_OUTPUT,
       inputSchema: {
         type: "object",
         properties: { query: { type: "string", description: "Words to match against public pages." } },
@@ -50,7 +65,8 @@ const PRODUCT = {
     },
     {
       name: "book_a_conversation",
-      description: "Return Ayush Rai's public booking links so the caller can schedule time.",
+      description: "Return Ayush Rai's public Calendly, Cal.com, and Topmate booking links so the caller can schedule time. This tool does not create a booking itself.",
+      outputSchema: FACTS_OUTPUT,
       inputSchema: {
         type: "object",
         properties: {
@@ -70,11 +86,13 @@ const PRODUCT = {
 const DOCS = {
   name: "site.ayushrai.life/docs",
   version: "1.0.0",
-  instructions: "Answer from the public documentation index. Cite the page URL.",
+  instructions:
+    "Docs MCP for life.ayushrai.site. Use list_docs to see public documentation pages, then read_doc to match a topic. Cite the page URL you used. Do not invent unpublished docs or paid plans; public reads are free.",
   tools: [
     {
       name: "list_docs",
-      description: "List public documentation and section pages.",
+      description: "List public documentation and section pages on life.ayushrai.site (developers, auth, OpenAPI, sandbox, jobs). Optional section name narrows the list.",
+      outputSchema: FACTS_OUTPUT,
       inputSchema: {
         type: "object",
         properties: {
@@ -89,7 +107,8 @@ const DOCS = {
     },
     {
       name: "read_doc",
-      description: "Find documentation pages that match a query.",
+      description: "Find documentation pages on life.ayushrai.site that match a query and return titles with URLs to cite.",
+      outputSchema: FACTS_OUTPUT,
       inputSchema: {
         type: "object",
         properties: { query: { type: "string", description: "Documentation topic." } },

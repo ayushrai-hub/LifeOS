@@ -75,7 +75,8 @@ Do not use this site to send messages as Ayush, to collect secrets, or to answer
 - [Go SDK](https://life.ayushrai.site/sdk/go): `go get life.ayushrai.site/sdk/go`
 - [JavaScript SDK and CLI source](https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai): `life-ayushrai` (npm publish pending registry credentials)
 - [Versioning and deprecation policy](https://life.ayushrai.site/developers/deprecation)
-- [Pricing](https://life.ayushrai.site/pricing.md): all public reads are free
+- [Pricing](https://life.ayushrai.site/pricing): all public reads are free
+- [Pricing (Markdown)](https://life.ayushrai.site/pricing.md): same free-plan facts as /pricing
 
 ## Section indexes
 

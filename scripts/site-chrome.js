@@ -133,14 +133,12 @@
       },
     ];
 
-    function register(ctx) {
-      if (!ctx || typeof ctx.registerTool !== "function") return false;
-      for (var i = 0; i < tools.length; i++) ctx.registerTool(tools[i]);
-      return true;
+    if (document.modelContext && typeof document.modelContext.registerTool === "function") {
+      for (var i = 0; i < tools.length; i++) document.modelContext.registerTool(tools[i]);
+      return;
     }
-
-    if (!register(document.modelContext)) {
-      register(navigator.modelContext);
+    if (navigator.modelContext && typeof navigator.modelContext.registerTool === "function") {
+      for (var j = 0; j < tools.length; j++) navigator.modelContext.registerTool(tools[j]);
     }
   }
 

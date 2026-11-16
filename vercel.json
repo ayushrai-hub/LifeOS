@@ -95,7 +95,7 @@
     {
       "source": "/",
       "has": [{ "type": "query", "key": "mode", "value": "agent" }],
-      "destination": "/agent/mode.html"
+      "destination": "/agent/mode"
     },
     {
       "source": "/",
@@ -117,6 +117,8 @@
     { "source": "/favicon.svg", "destination": "/assets/icons/favicon.svg" },
     { "source": "/auth.md", "destination": "/discovery/auth.md" },
     { "source": "/pricing.md", "destination": "/discovery/pricing.md" },
+    { "source": "/pricing", "destination": "/discovery/pricing.md" },
+    { "source": "/pricing/", "destination": "/discovery/pricing.md" },
     { "source": "/skills.md", "destination": "/discovery/skills.md" },
     { "source": "/agent.md", "destination": "/discovery/agent.md" },
     { "source": "/api.md", "destination": "/discovery/api.md" },

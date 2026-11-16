@@ -717,6 +717,8 @@ ${recentHtml || '          <li class="muted">Nothing published yet.</li>'}
       ·
       <a href="/auth.md">Auth</a>
       ·
+      <a href="/pricing">Pricing</a>
+      ·
       <a href="/mcp">MCP</a>
       ·
       <a href="https://smithery.ai/servers/ayushrai0211/life-ayushrai" rel="noopener noreferrer">Smithery</a>
