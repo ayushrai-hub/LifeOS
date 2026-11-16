@@ -657,6 +657,7 @@ ${schemaHtml}
       <div class="home-lede">
         <header>
           <h1>${escapeHtml(home.name)}</h1>
+          <p class="home-brand">life.ayushrai.site personal website</p>
           <p class="tagline">${escapeHtml(home.tagline)}</p>
         </header>
 
@@ -712,13 +713,24 @@ ${recentHtml || '          <li class="muted">Nothing published yet.</li>'}
       ·
       <a href="/llms.txt">llms.txt</a>
       ·
+      <a href="/openapi.json">OpenAPI</a>
+      ·
+      <a href="/auth.md">Auth</a>
+      ·
+      <a href="/mcp">MCP</a>
+      ·
+      <a href="https://smithery.ai/servers/ayushrai0211/life-ayushrai" rel="noopener noreferrer">Smithery</a>
+      ·
       <a href="/api/v1/jobs">Jobs API</a>
       ·
       <a href="https://skills.sh/ayushrai-hub/LifeOS" rel="noopener noreferrer">skills.sh</a>
       ·
+      <a href="https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai" rel="noopener noreferrer">SDK/CLI</a>
+      ·
       <a href="https://github.com/ayushrai-hub/LifeOS" rel="noopener noreferrer">Site source</a>
     </p>
   </main>
+  <script src="/scripts/webmcp.js"></script>
   <script src="/scripts/site-chrome.js" defer></script>
 </body>
 </html>
@@ -744,7 +756,7 @@ last-updated: ${home.generated_at}
 
 # ${home.name}
 
-${home.tagline}
+life.ayushrai.site personal website. ${home.tagline}
 
 Personal knowledge site for Ayush Rai, an AI Engineer in Bhopal, Madhya Pradesh, India.
 
@@ -756,6 +768,12 @@ Use this page when you need public facts about Ayush Rai: his roles, projects, p
 
 - [Homepage](https://life.ayushrai.site/)
 - [llms.txt](https://life.ayushrai.site/llms.txt)
+- [Developer portal](https://life.ayushrai.site/developers/)
+- [OpenAPI spec](https://life.ayushrai.site/openapi.json)
+- [Auth guide](https://life.ayushrai.site/auth.md)
+- [MCP servers](https://life.ayushrai.site/mcp)
+- [Smithery MCP listing](https://smithery.ai/servers/ayushrai0211/life-ayushrai)
+- [SDK and CLI source](https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai)
 - [Sitemap](https://life.ayushrai.site/sitemap.xml)
 - [About](https://life.ayushrai.site/about/)
 - [Contact](https://life.ayushrai.site/sites/contact/)

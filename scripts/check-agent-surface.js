@@ -201,6 +201,12 @@ async function main() {
     assert.match(home, /"@type": "WebSite"/);
     assert.match(read("scripts/site-chrome.js"), /document\.modelContext/);
     assert.match(read("scripts/site-chrome.js"), /navigator\.modelContext/);
+    assert.match(read("scripts/webmcp.js"), /document\.modelContext\.registerTool|ctx\.registerTool/);
+    assert.match(home, /src="\/scripts\/webmcp\.js"/);
+    assert.match(home, /life\.ayushrai\.site personal website/);
+    assert.match(home, /smithery\.ai\/servers\/ayushrai0211\/life-ayushrai/);
+    assert.match(home, /href="\/openapi\.json"/);
+    assert.match(home, /href="\/auth\.md"/);
   });
 
   check("trust pages are long enough", () => {
@@ -602,11 +608,11 @@ async function main() {
     assert.equal(rewrite("/oauth/register").destination, "/api/agent?op=register");
     assert.equal(rewrite("/mcp").destination, "/mcp.json");
     assert.equal(rewrite("/a2a/").destination, "/api/a2a");
-    assert.equal(
-      rewrite("/:path(.*)"),
-      undefined,
-      "no catch-all rewrite; HTML misses use 404.html, API misses use /api/not-found"
+    const markdownMiss = config.rewrites.find(
+      (item) => item.source === "/:path(.*)" && Array.isArray(item.has)
     );
+    assert.equal(markdownMiss.destination, "/api/not-found?path=:path");
+    assert.equal(markdownMiss.has[0].value, "text/markdown");
     assert.equal(rewrite("/api/v1/:path*").destination, "/api/not-found?path=api/v1/:path*");
     const redirect = (src) => config.redirects.find((item) => item.source === src);
     for (const src of ["/developer", "/api-docs", "/docs/api", "/sdk", "/cli", "/deprecation", "/versioning"]) {

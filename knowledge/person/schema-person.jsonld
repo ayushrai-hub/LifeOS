@@ -33,7 +33,9 @@
         "https://linktr.ee/ayush_rai02",
         "https://calendly.com/ayushrai0211",
         "https://cal.com/ayush-rai-02",
-        "https://topmate.io/ayush_rai02"
+        "https://topmate.io/ayush_rai02",
+        "https://smithery.ai/servers/ayushrai0211/life-ayushrai",
+        "https://skills.sh/ayushrai-hub/LifeOS"
       ]
     },
     {
@@ -55,7 +57,7 @@
       "@type": "ProfilePage",
       "@id": "https://life.ayushrai.site/#profilepage",
       "url": "https://life.ayushrai.site/",
-      "name": "Ayush Rai; personal website of an AI Engineer in Bhopal",
+      "name": "Ayush Rai; life.ayushrai.site personal website",
       "isPartOf": { "@id": "https://life.ayushrai.site/#website" },
       "mainEntity": { "@id": "https://life.ayushrai.site/#person" },
       "about": { "@id": "https://life.ayushrai.site/#person" }

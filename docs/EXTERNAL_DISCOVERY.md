@@ -21,8 +21,8 @@ npx @smithery/cli auth login
 npx @smithery/cli mcp publish https://life.ayushrai.site/mcp/product -n <your-org>/life-product
 ```
 
-- [x] Official MCP Registry: `site.ayushrai.life/product` and `site.ayushrai.life/docs` published 2026-10-17 via HTTP domain verification (`/.well-known/mcp-registry-auth`; signing key kept outside the repo at `~/.config/mcp-registry/`). Linked from `/developers`, `/llms.txt`, and `/?mode=agent`.
-- [x] Smithery: `ayushrai0211/life-ayushrai` published 2026-10-17 (https://smithery.ai/servers/ayushrai0211/life-ayushrai), linked from `/developers`, `/llms.txt`, and `/?mode=agent`.
+- [x] Official MCP Registry: `site.ayushrai.life/product` and `site.ayushrai.life/docs` published 2026-10-17 via HTTP domain verification (`/.well-known/mcp-registry-auth`; signing key kept outside the repo at `~/.config/mcp-registry/`). Linked from `/developers`, `/llms.txt`, homepage, and `/?mode=agent`.
+- [ ] Smithery: `ayushrai0211/life-ayushrai` was published 2026-10-17 (https://smithery.ai/servers/ayushrai0211/life-ayushrai) and is linked from `/developers`, `/llms.txt`, homepage, and `/?mode=agent`. Rechecked 2026-11-16: the listing URL 404s. Republish with `npx @smithery/cli` so Ora can verify the listing.
 - [ ] mcp.so: optional; needs GitHub sign-in on the submit form.
 
 ## npm + PyPI SDK/CLI (Discovery −1, Usability −3/−3)

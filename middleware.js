@@ -14,7 +14,7 @@ const STATIC_FILE = /\.(md|txt|json|xml|css|js|svg|png|jpe?g|webp|gif|ico|woff2?
 
 export const config = {
   runtime: "edge",
-  matcher: ["/((?!assets/|styles/|scripts/|_vercel/).*)"],
+  matcher: ["/((?!assets/|styles/|scripts/|_vercel/|llms\\.txt$|robots\\.txt$|sitemap\\.xml$).*)"],
 };
 
 function varyLink(extraLink) {

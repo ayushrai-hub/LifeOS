@@ -7,7 +7,7 @@ last-updated: 2026-11-16
 
 # Ayush Rai
 
-AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines.
+life.ayushrai.site personal website. AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines.
 
 Personal knowledge site for Ayush Rai, an AI Engineer in Bhopal, Madhya Pradesh, India.
 
@@ -19,6 +19,12 @@ Use this page when you need public facts about Ayush Rai: his roles, projects, p
 
 - [Homepage](https://life.ayushrai.site/)
 - [llms.txt](https://life.ayushrai.site/llms.txt)
+- [Developer portal](https://life.ayushrai.site/developers/)
+- [OpenAPI spec](https://life.ayushrai.site/openapi.json)
+- [Auth guide](https://life.ayushrai.site/auth.md)
+- [MCP servers](https://life.ayushrai.site/mcp)
+- [Smithery MCP listing](https://smithery.ai/servers/ayushrai0211/life-ayushrai)
+- [SDK and CLI source](https://github.com/ayushrai-hub/LifeOS/tree/main/packages/life-ayushrai)
 - [Sitemap](https://life.ayushrai.site/sitemap.xml)
 - [About](https://life.ayushrai.site/about/)
 - [Contact](https://life.ayushrai.site/sites/contact/)

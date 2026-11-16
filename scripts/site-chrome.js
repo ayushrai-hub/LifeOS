@@ -86,11 +86,13 @@
   }
 
   function registerModelTools() {
+    if (window.__lifeWebmcp) return;
+    window.__lifeWebmcp = true;
     var tools = [
       {
         name: "ask_ayush_rai",
         description:
-          "Ask a question about Ayush Rai's public profile, projects, writing, and contact details.",
+          "Ask a question about Ayush Rai's public profile, projects, writing, and contact details. Returns the JSON answer from GET /ask.",
         inputSchema: {
           type: "object",
           properties: {
@@ -101,6 +103,11 @@
           },
           required: ["query"],
         },
+        annotations: {
+          readOnlyHint: true,
+          openWorldHint: false,
+          destructiveHint: false,
+        },
         execute: async function (input) {
           var query = input && input.query ? input.query : "";
           var response = await fetch("/ask?query=" + encodeURIComponent(query));
@@ -110,8 +117,13 @@
       {
         name: "get_public_contact",
         description:
-          "Return Ayush Rai's published email, phone, and booking links.",
+          "Return Ayush Rai's published email, phone, and booking links from the public /ask catalog.",
         inputSchema: { type: "object", properties: {} },
+        annotations: {
+          readOnlyHint: true,
+          openWorldHint: false,
+          destructiveHint: false,
+        },
         execute: async function () {
           var response = await fetch(
             "/ask?query=" + encodeURIComponent("How do I contact Ayush Rai?")

@@ -214,6 +214,11 @@
     { "source": "/a2a/", "destination": "/api/a2a" },
     { "source": "/api/v1/:path*", "destination": "/api/not-found?path=api/v1/:path*" },
     { "source": "/v1/:path*", "destination": "/api/not-found?path=v1/:path*" },
-    { "source": "/v2/:path*", "destination": "/api/not-found?path=v2/:path*" }
+    { "source": "/v2/:path*", "destination": "/api/not-found?path=v2/:path*" },
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "header", "key": "accept", "value": "text/markdown" }],
+      "destination": "/api/not-found?path=:path"
+    }
   ]
 }
