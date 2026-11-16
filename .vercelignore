@@ -1,0 +1,23 @@
+# Local / IDE
+.cursor
+.DS_Store
+**/.DS_Store
+*.log
+.vercel/cache
+temp
+tmp
+private
+inbox-private
+
+# Never ship the local Expert-O clone (nested .git, node_modules, secrets)
+knowledge/github/repositories/expert-o
+
+# Import provenance and product snapshots (not the public knowledge base)
+data/imports/graahak-snapshot
+data/imports/ayushrai-site-crawl
+data/imports/github-readmes
+data/imports/github-trees-top.json
+data/imports/github-repos.json
+
+# Heavy internal reports (not agent discovery surface)
+docs/reports

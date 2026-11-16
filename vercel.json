@@ -193,6 +193,8 @@
     { "source": "/mcp/docs/", "destination": "/api/mcp?surface=docs" },
     { "source": "/a2a", "destination": "/api/a2a" },
     { "source": "/a2a/", "destination": "/api/a2a" },
-    { "source": "/:path(.*)", "destination": "/api/not-found?path=:path" }
+    { "source": "/api/v1/:path*", "destination": "/api/not-found?path=api/v1/:path*" },
+    { "source": "/v1/:path*", "destination": "/api/not-found?path=v1/:path*" },
+    { "source": "/v2/:path*", "destination": "/api/not-found?path=v2/:path*" }
   ]
 }

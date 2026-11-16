@@ -597,11 +597,17 @@ async function main() {
 
   check("vercel.json routes", () => {
     const config = json("vercel.json");
+    assert.equal(config.services, undefined, "single-project deploy; no Vercel services key");
     const rewrite = (src) => config.rewrites.find((item) => item.source === src);
     assert.equal(rewrite("/oauth/register").destination, "/api/agent?op=register");
     assert.equal(rewrite("/mcp").destination, "/mcp.json");
-    const catchAll = config.rewrites[config.rewrites.length - 1];
-    assert.equal(catchAll.source, "/:path(.*)");
+    assert.equal(rewrite("/a2a/").destination, "/api/a2a");
+    assert.equal(
+      rewrite("/:path(.*)"),
+      undefined,
+      "no catch-all rewrite; HTML misses use 404.html, API misses use /api/not-found"
+    );
+    assert.equal(rewrite("/api/v1/:path*").destination, "/api/not-found?path=api/v1/:path*");
     const redirect = (src) => config.redirects.find((item) => item.source === src);
     for (const src of ["/developer", "/api-docs", "/docs/api", "/sdk", "/cli", "/deprecation", "/versioning"]) {
       assert.ok(redirect(src), `missing redirect ${src}`);
