@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 import json
+import os
 import urllib.error
 import urllib.parse
 import urllib.request
 from typing import Any
 
-ORIGIN = "https://life.ayushrai.site"
+ORIGIN = os.environ.get("MAIN_SERVICE_URL") or os.environ.get("LIFE_API_BASE_URL") or "https://life.ayushrai.site"
 
 
 def _get_json(url: str) -> Any:

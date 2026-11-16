@@ -15,7 +15,11 @@ class LifeApiError extends Error {
 }
 
 function resolveOrigin(options) {
-  const configured = (options && options.origin) || process.env.LIFE_API_BASE_URL || ORIGIN;
+  const configured =
+    (options && options.origin) ||
+    process.env.MAIN_SERVICE_URL ||
+    process.env.LIFE_API_BASE_URL ||
+    ORIGIN;
   return String(configured).replace(/\/+$/, "");
 }
 

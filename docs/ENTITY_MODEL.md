@@ -122,7 +122,7 @@ Required sections / fields:
 - `evidence` (metrics, links, artifacts)
 - `articles` / learning resources
 
-Template: `knowledge/templates/skill.md`
+Template: `knowledge/templates/skills.md`
 
 ---
 
