@@ -14,8 +14,8 @@ tags:
   - ai
   - engineering
   - evaluation
-description: "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
-summary: "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
+description: "Indie Builder (Engineer) shipping products, services, then AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
+summary: "Indie Builder (Engineer) shipping products, services, then AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
 status: review
 visibility: public
 priority: 100
@@ -27,7 +27,7 @@ author: person.owner
 version: 0.4.0
 seo:
   title: Ayush Rai
-  description: "AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
+  description: "Indie Builder (Engineer) shipping products, services, then AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines."
   canonical_path: /
 preferred_name: Ayush Rai
 primary_roles:

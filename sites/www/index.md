@@ -1,13 +1,13 @@
 ---
 title: Ayush Rai
-description: AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines.
+description: Indie Builder (Engineer) shipping products, services, then AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines.
 canonical: https://life.ayushrai.site/index.md
-last-updated: 2026-11-16
+last-updated: 2026-11-19
 ---
 
 # Ayush Rai
 
-life.ayushrai.site personal website. AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines.
+life.ayushrai.site personal website. Indie Builder (Engineer) shipping products, services, then AI Engineer designing and shipping production LLM applications, RAG systems, and evaluation pipelines.
 
 Personal knowledge site for Ayush Rai, an AI Engineer in Bhopal, Madhya Pradesh, India.
 

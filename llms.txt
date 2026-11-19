@@ -1,8 +1,8 @@
 # Ayush Rai (life.ayushrai.site)
 
-> life.ayushrai.site personal website and public knowledge base of Ayush Rai, AI Engineer in Bhopal. Includes a free, read-only life.ayushrai.site API with an OpenAPI spec, MCP servers, and an SDK/CLI.
+> life.ayushrai.site personal website and public knowledge base of Ayush Rai, Indie Builder (Engineer) shipping products, services, then AI Engineer in Bhopal. Includes a free, read-only life.ayushrai.site API with an OpenAPI spec, MCP servers, and an SDK/CLI.
 
-AI Engineer in Bhopal, Madhya Pradesh, India. This site is his public knowledge base: career notes, software projects, products, writing, and published contact details.
+Indie Builder (Engineer) shipping products, services, then AI Engineer in Bhopal, Madhya Pradesh, India. This site is his public knowledge base: career notes, software projects, products, writing, and published contact details.
 
 Canonical homepage: https://life.ayushrai.site/
 Source repository: https://github.com/ayushrai-hub/LifeOS

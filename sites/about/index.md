@@ -1,6 +1,6 @@
 # About
 
-Ayush Rai is an AI Engineer based in Bhopal, Madhya Pradesh, India. Public roles on this site are AI Engineer, Applied AI Engineer, and LLM and Evaluation Engineer.
+Ayush Rai is an Indie Builder (Engineer) shipping products, services, then AI Engineer based in Bhopal, Madhya Pradesh, India. Public roles on this site are Indie Builder, AI Engineer, Applied AI Engineer, and LLM and Evaluation Engineer.
 
 This site is the public reading view of his knowledge notes. The primary engineering role described here is at FoCDoT Technologies. Flagship projects are Adaptive RAG, MailU, and OpenAI-RLHF. Public products named on the site are Shiksha-Mitra and RevenueRoles.
 
